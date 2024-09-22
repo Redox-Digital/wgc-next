@@ -1,0 +1,78 @@
+.home {
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+
+    &.ourChallenges,
+    &.howtoplay {
+      justify-content: center;
+      text-align: center;
+    }
+
+    &.ourChallenges {
+      background: var(--grey);
+
+      > .challenges {
+        display: flex;
+        flex-direction: column;
+        gap: var(--margin);
+        align-items: center;
+      }
+    }
+
+    &.howtoplay > ol {
+      text-align: left;
+      list-style: none;
+      counter-reset: item;
+      padding: 0;
+      margin: 0;
+
+      > li {
+        counter-increment: item;
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--padding);
+        align-items: center;
+
+        border-bottom: solid 2px var(--primary);
+        padding-block: 30px;
+        margin: 0;
+
+        &:before {
+          margin-right: 10px;
+          content: counter(item);
+          background: var(--primary);
+          border-radius: 100%;
+          color: var(--white);
+          width: 25px;
+          height: 25px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &:last-of-type {
+          border: none;
+        }
+
+        > b {
+        }
+
+        > span {
+          width: 100%;
+        }
+      }
+    }
+
+    > .titles {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: var(--padding);
+    }
+  }
+}

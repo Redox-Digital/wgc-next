@@ -1,52 +1,80 @@
 import css from './Home.module.scss';
 import Head from 'next/head';
-import Hero from '@/components/layouts/Hero';
-import TextImageSection from '@/components/layouts/TextImageSection';
+import Hero from '@/components/Hero';
 import Button from '@/components/navigation/Button';
-import ContactCTA from '@/components/content/ContactCTA';
-import ContactForm from '@/components/content/ContactForm';
-import Map from '@/components/content/Map';
+import ContactCTA from '@/components/ContactCTA';
+import Link from 'next/link';
+import Image from 'next/image';
+import PricePool from '@/components/PricePool';
+import Challenge from '@/components/Challenge';
+import CardsSection from '@/components/CardsSection';
 
-const structuredData = {
-  '@context': 'https://schema.org/',
-  '@type': 'Organization',
-  'url': process.env.domain,
-  'name': 'My Company',
-  'address': {
-    '@type': 'PostalAddress',
-    'streetAddress': 'Address Line 1',
-    'addressLocality': 'City',
-    'addressRegion': 'NE',
-    'postalCode': '2000',
-    'addressCountry': 'CH',
-  },
-  'logo': `${process.env.domain}/logos/logoipsum.svg`,
-  'telephone': process.env.phone,
+type ChallengeType = {
+  url: string;
+  img: string;
+  title: string;
+  dates: string;
+  gameType: string;
+  hcp: string;
+  price?: number;
+  currentPlayers: number;
 };
 
 export default function Home() {
+  const howToSteps: { title: string; desc: string }[] = [
+    { title: 'At your golf club 🏡⛳', desc: '✏️ Register to WGC Tournament' },
+    {
+      title: 'On www.wgc.gg 📲💻 ',
+      desc: '📝 Create a free account online ✏️ Join for free the Challenge in your category of the date 📆 you are physically playing the WGC Tournament',
+    },
+    {
+      title: 'At your golf club 🏡⛳',
+      desc: '🏌 Have fun playing WGC Tournament 18 holes Net Stableford',
+    },
+    {
+      title: 'On www.wgc.gg 📲💻',
+      desc: '✏️ Enter your score on 📲 💻 www.wgc.gg after your round, the same day you played before 10pm CET🕙',
+    },
+    {
+      title: 'On www.wgc.gg 📲💻',
+      desc: '🏆 Check the Leaderboard section and wait until the WGC Tournament is finished (10pm / Aug 21st) to see your final position',
+    },
+  ];
+
+  const challenges: ChallengeType[] = [
+    {
+      url: 'https://worldgolfchallenge-test.azurewebsites.net/lobby/3384',
+      img: '/layouts/placeholder1.jpg',
+      title: 'EXTRACURRICULAR',
+      dates: 'Mar. 14th to Mar. 18th',
+      gameType: 'Net Strableford',
+      hcp: 'single',
+      currentPlayers: 11,
+    },
+    {
+      url: 'https://worldgolfchallenge-test.azurewebsites.net/lobby/3384',
+      img: '/layouts/placeholder1.jpg',
+      title: 'EXTRACURRICULAR',
+      dates: 'Mar. 14th to Mar. 18th',
+      gameType: 'Net Strableford',
+      hcp: 'up to 18',
+      currentPlayers: 8,
+    },
+    {
+      url: 'https://worldgolfchallenge-test.azurewebsites.net/lobby/3384',
+      img: '/layouts/placeholder1.jpg',
+      title: 'EXTRACURRICULAR',
+      dates: 'Mar. 14th to Mar. 18th',
+      gameType: 'Net Strableford',
+      hcp: 'up to 54',
+      currentPlayers: 0,
+    },
+  ];
+
   return (
     <>
       <Head>
         <title>My Company | Welcome</title>
-
-        <meta name="keywords" content="" />
-        <meta name="description" content="" />
-        <meta name="author" content="Redox Digital" />
-
-        <meta property="og:title" content="" />
-        <meta property="og:description" content="" />
-        <meta property="og:image" content="https://mydomain.com/socials/social_thumbnail.png" />
-        <meta property="og:url" content="https://mydomain.com" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="" />
-        <meta name="twitter:description" content="" />
-        <meta name="twitter:image" content="https://mydomain.com/socials/social_thumbnail.png" />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
       </Head>
 
       <Hero
@@ -55,43 +83,68 @@ export default function Home() {
         subtitle="We make the best NextJS templates"
         source="./layouts/placeholder1.jpg"
       />
-      <main className="home">
-        <TextImageSection title={'Section Title'} imgPath="./layouts/placeholder2.jpg">
-          <>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint nisi odio culpa ratione?
-              Ipsam minima laudantium vitae laboriosam id alias dolorem, perferendis aperiam error
-              sed iste voluptates accusantium necessitatibus dolorum!
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint nisi odio culpa ratione?
-              Ipsam minima laudantium vitae laboriosam id alias dolorem!
-            </p>
-            <Button to={'/about'}>Read more</Button>
-          </>
-        </TextImageSection>
+      <main className={css.home}>
+        <CardsSection
+          title={'The concept'}
+          desc={
+            'World Golf Challenge is the first digital golf platform enabling all levels of amateurs players worldwide to compete in virtual Challenges online while playing on real courses.'
+          }
+          cards={[
+            {
+              icon: 'pen',
+              title: 'Join a Challenge',
+              desc: 'Any day, choose a Challenge on the screen',
+            },
+            {
+              icon: 'ball',
+              title: 'Go out, play golf',
+              desc: 'Real action on the greens',
+            },
+            {
+              icon: 'write',
+              title: 'Enter your score & win',
+              desc: 'Lots of fun and great prizes',
+            },
+          ]}
+        />
 
-        <ContactCTA />
+        <PricePool />
 
-        <TextImageSection title={'Section Title'} imgPath="./layouts/placeholder2.jpg" dark>
-          <>
+        <section className={css.ourChallenges}>
+          <div className={css.titles}>
+            <h2>Our Challenges</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint nisi odio culpa ratione?
-              Ipsam minima laudantium vitae laboriosam id alias dolorem, perferendis aperiam error
-              sed iste voluptates accusantium necessitatibus dolorum!
+              Choose the category that suits you the most and join our tournament against players
+              from all around the world.
             </p>
+          </div>
+          <div className={css.challenges}>
+            {challenges.map((challenge, key) => (
+              <Challenge key={key} {...challenge} />
+            ))}
+          </div>
+        </section>
+
+        <section className={css.howtoplay}>
+          <div className={css.titles}>
+            <h2>How to play</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint nisi odio culpa ratione?
-              Ipsam minima laudantium vitae laboriosam id alias dolorem!
+              Joining a challenge requires, like World Golf Challenge, some work in your Golf Club,
+              and some work on your phone or computer.
             </p>
-            <Button to={'/about'}>Read more</Button>
-          </>
-        </TextImageSection>
-
-        {/* <InstagramGallery /> */}
-        <Map url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2721.920463044422!2d6.900426376694955!3d46.98289683083848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e89633cc35043%3A0x639791bb8e74ddf1!2sRedox%20Digital%20S%C3%A0rl!5e0!3m2!1sfr!2sch!4v1690360916650!5m2!1sfr!2sch" />
-
-        <ContactForm />
+          </div>
+          <ol>
+            {howToSteps.map((step, key) => (
+              <li key={key}>
+                <b>{step.title}</b>
+                <span>{step.desc}</span>
+              </li>
+            ))}
+          </ol>
+          <div className={css.steps}>
+            <div className={css.row}></div>
+          </div>
+        </section>
       </main>
     </>
   );

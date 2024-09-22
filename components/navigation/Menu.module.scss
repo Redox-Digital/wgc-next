@@ -4,6 +4,8 @@
   z-index: 10;
   width: 100%;
   transition: all 0.3s ease-in-out;
+  background: var(--white);
+  box-shadow: var(--shadow-hover);
 
   &__hidden {
     top: calc(var(--navbar-height) * -1);
@@ -36,9 +38,8 @@
 
   &:hover {
     > .mainMenu {
-      background: var(--black);
+      background: var(--white);
       transition: all 0.3s ease-in-out;
-      border-bottom: 1px solid rgba(125, 125, 125, 0.5);
     }
   }
 
@@ -69,13 +70,8 @@
   display: flex;
 }
 
-.menu__scrolling {
-  background: var(--dark);
-  border-bottom: 1px solid rgba(125, 125, 125, 0.5);
-}
-
 .menu__open {
-  background: var(--black);
+  background: var(--white);
   border-bottom: 1px solid rgba(125, 125, 125, 0.5);
 }
 
