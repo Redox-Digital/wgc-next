@@ -12,64 +12,83 @@
 
     &.ourChallenges {
       background: var(--grey);
+      align-items: center;
 
       > .challenges {
         display: flex;
         flex-direction: column;
         gap: var(--margin);
         align-items: center;
+        justify-content: center;
+
+        @media screen and (min-width: 900px) {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
       }
     }
 
-    &.howtoplay > ol {
-      text-align: left;
-      list-style: none;
-      counter-reset: item;
-      padding: 0;
-      margin: 0;
-
-      > li {
-        counter-increment: item;
-        margin-bottom: 5px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: var(--padding);
-        align-items: center;
-
-        border-bottom: solid 2px var(--primary);
-        padding-block: 30px;
+    &.howtoplay {
+      align-items: center;
+      > ol {
+        text-align: left;
+        list-style: none;
+        counter-reset: item;
+        padding: 0;
         margin: 0;
 
-        &:before {
-          margin-right: 10px;
-          content: counter(item);
-          background: var(--primary);
-          border-radius: 100%;
-          color: var(--white);
-          width: 25px;
-          height: 25px;
+        > li {
+          counter-increment: item;
+          margin-bottom: 5px;
           display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: var(--padding);
           align-items: center;
-          justify-content: center;
-        }
 
-        &:last-of-type {
-          border: none;
-        }
+          border-bottom: solid 2px var(--primary);
+          padding-block: 30px;
+          margin: 0;
 
-        > b {
-        }
+          @media screen and (min-width: 900px) {
+            flex-wrap: nowrap;
+          }
 
-        > span {
-          width: 100%;
+          &:before {
+            margin-right: 10px;
+            content: counter(item);
+            background: var(--primary);
+            border-radius: 100%;
+            color: var(--white);
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1;
+          }
+
+          &:last-of-type {
+            border: none;
+          }
+
+          > b {
+            width: fit-content;
+            @media screen and (min-width: 900px) {
+              min-width: 200px;
+            }
+          }
+
+          > span {
+            width: 100%;
+          }
         }
       }
     }
 
     > .titles {
       width: 100%;
-      max-width: 600px;
+      max-width: var(--max-block-width);
       display: flex;
       flex-direction: column;
       gap: var(--padding);

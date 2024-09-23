@@ -78,10 +78,17 @@ export default function Home() {
       </Head>
 
       <Hero
-        title="Playing golf physically while competing digitally"
+        title={
+          <>
+            Playing golf physically&nbsp;
+            <br />
+            while competing digitally
+          </>
+        }
         home
         subtitle="Play in the club of your choice in real life while measuring yourself & your score, virtually against any other player in the world!"
         source="./layouts/placeholder1.jpg"
+        opacity={0.4}
       />
       <main className={css.home}>
         <CardsSection

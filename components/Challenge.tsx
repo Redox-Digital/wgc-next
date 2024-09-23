@@ -38,7 +38,9 @@ export default function Challenge({
         </p>
         <div className={css.copyBtn}>
           <input type="text" value={url} disabled />
-          <button>Copy</button>
+          <button>
+            <Image src={'/pictograms/copy.svg'} alt={'Copy Link'} width={20} height={20} />
+          </button>
         </div>
       </div>
       <div className={css.banner}>HCP {hcp}</div>

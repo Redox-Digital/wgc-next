@@ -2,10 +2,25 @@
   flex-direction: column;
   gap: var(--gap);
 
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > .texts,
+    > .gameRules {
+      width: calc((100% - var(--gap)) / 2);
+    }
+  }
+
   > img {
     width: 100%;
     height: auto;
     max-width: 300px;
+
+    @media screen and (min-width: 900px) {
+      max-width: none;
+      max-height: 120px;
+    }
   }
 
   > .texts {

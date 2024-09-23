@@ -36,9 +36,7 @@
     flex-direction: column;
     gap: var(--padding);
     width: 100%;
-    max-width: var(--max-container-width);
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 900px;
     padding: 50px 0;
     padding-top: var(--navbar-height);
     z-index: 2;
@@ -61,6 +59,14 @@
       text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 
+    > h1 > br {
+      display: none;
+
+      @media screen and (min-width: 600px) {
+        display: block;
+      }
+    }
+
     > p {
       text-transform: uppercase;
     }
@@ -72,6 +78,10 @@
     height: 80svh;
     min-height: 700px;
     max-height: calc(800px + var(--navbar-height));
+
+    @media screen and (min-width: 1200px) {
+      max-height: 900px;
+    }
 
     > .hero__content {
       align-items: flex-start;
@@ -112,6 +122,16 @@
       height: 60px;
       border-radius: 100%;
       padding: 10px;
+
+      @media screen and (min-width: 900px) {
+        width: 80px;
+        height: 80px;
+      }
+
+      @media screen and (min-width: 1200px) {
+        width: 100px;
+        height: 100px;
+      }
     }
   }
 }

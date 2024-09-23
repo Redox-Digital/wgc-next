@@ -2,7 +2,7 @@
   background: var(--white);
   box-shadow: var(--shadow-hover);
   border-radius: 20px;
-
+  width: 100%;
   border-collapse: collapse;
 
   > thead {
@@ -73,6 +73,11 @@
   background: var(--white);
   border-radius: 20px;
   width: 100%;
+  max-width: var(--max-block-width);
+
+  @media screen and (min-width: 900px) {
+    max-width: calc((100% - var(--margin)) / 2);
+  }
 
   > .head {
     background: var(--primary);

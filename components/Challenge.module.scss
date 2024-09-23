@@ -9,6 +9,10 @@
   width: 100%;
   max-width: var(--max-card-width);
 
+  @media screen and (min-width: 900px) {
+    max-width: calc((100% - var(--margin)) / 2);
+  }
+
   .head {
     padding: 20px;
     height: 130px;
@@ -55,6 +59,9 @@
         border-radius: 0px 10px 10px 0px;
         padding: 6px 10px;
         color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         cursor: pointer;
 

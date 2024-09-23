@@ -22,7 +22,7 @@ const Header = () => {
         <div className={css.mainMenu}>
           <div className={css.mainMenu__container}>
             <Link href="/" className={css.logo} aria-label="Accéder à la page d'accueil">
-              <Image src={logo} alt="" height={30} className="logo" />
+              <Image src={logo} alt="" height={50} className="logo" />
             </Link>
 
             <div className={css.menu__links}>

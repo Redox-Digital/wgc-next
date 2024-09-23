@@ -6,7 +6,12 @@ import CardsSection from '@/components/CardsSection';
 export default function Rankings() {
   return (
     <>
-      <Hero title={'And the winner is...'} subtitle={''} source={'/layouts/placeholder1.jpg'} />
+      <Hero
+        title={'And the winner is...'}
+        subtitle={''}
+        source={'/layouts/placeholder1.jpg'}
+        opacity={0.4}
+      />
       <main>
         <section className={css.results}>
           <div className={css.titles}>
