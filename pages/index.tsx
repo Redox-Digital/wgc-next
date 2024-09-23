@@ -44,7 +44,7 @@ export default function Home() {
   const challenges: ChallengeType[] = [
     {
       url: 'https://worldgolfchallenge-test.azurewebsites.net/lobby/3384',
-      img: '/layouts/placeholder1.jpg',
+      img: '/layouts/Logo_EXCRx4ACES.png',
       title: 'EXTRACURRICULAR',
       dates: 'Mar. 14th to Mar. 18th',
       gameType: 'Net Strableford',
@@ -53,7 +53,7 @@ export default function Home() {
     },
     {
       url: 'https://worldgolfchallenge-test.azurewebsites.net/lobby/3384',
-      img: '/logos/logoipsum.svg',
+      img: '/layouts/Logo_EXCRx4ACES.png',
       title: 'EXTRACURRICULAR',
       dates: 'Mar. 14th to Mar. 18th',
       gameType: 'Net Strableford',
@@ -62,7 +62,7 @@ export default function Home() {
     },
     {
       url: 'https://worldgolfchallenge-test.azurewebsites.net/lobby/3384',
-      img: '/layouts/placeholder1.jpg',
+      img: '/layouts/Logo_EXCRx4ACES.png',
       title: 'EXTRACURRICULAR',
       dates: 'Mar. 14th to Mar. 18th',
       gameType: 'Net Strableford',
