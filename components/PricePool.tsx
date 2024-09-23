@@ -7,9 +7,9 @@ type Props = {
 
 export default function PricePool({ alt }: Props) {
   const prices = [
-    { img: '/layouts/placeholder2.jpg', title: 'Price Title', desc: 'Price Description' },
-    { img: '/layouts/placeholder1.jpg', title: 'Price Title', desc: 'Price Description' },
-    { img: '/layouts/placeholder2.jpg', title: 'Price Title', desc: 'Price Description' },
+    { img: '/layouts/polo1.webp', title: 'Price Title', desc: 'Price Description' },
+    { img: '/layouts/polo2.webp', title: 'Price Title', desc: 'Price Description' },
+    { img: '/layouts/hat.webp', title: 'Price Title', desc: 'Price Description' },
   ];
   return (
     <section className={`${css.pricePool} ${alt && css.alt}`}>

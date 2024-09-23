@@ -16,7 +16,7 @@ export default function ContactCTA() {
         </Button>
       </div>
       <div className={css.contactCTA__img}>
-        <Image src={'/layouts/placeholder1.jpg'} alt={''} fill />
+        <Image src={'/layouts/contact-cta.webp'} alt={''} fill />
       </div>
     </section>
   );

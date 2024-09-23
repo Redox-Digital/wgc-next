@@ -87,8 +87,8 @@ export default function Home() {
         }
         home
         subtitle="Play in the club of your choice in real life while measuring yourself & your score, virtually against any other player in the world!"
-        source="./layouts/placeholder1.jpg"
-        opacity={0.4}
+        source="./layouts/home_hero.webp"
+        opacity={0.25}
       />
       <main className={css.home}>
         <CardsSection

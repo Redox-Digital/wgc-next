@@ -6,15 +6,19 @@ import Image from 'next/image';
 import Button from '@/components/navigation/Button';
 import Link from 'next/link';
 import Rankings from '@/components/Rankings';
+import Head from 'next/head';
 
 export default function Lobby() {
   return (
     <>
+      <Head>
+        <title>Lobby | EXTRACURRICULAR x WGC</title>
+      </Head>
       <Hero
         title={'EXTRACURRICULAR - HCP Single'}
         subtitle={'Net Stableford - 18 Holes - Ongoing'}
-        source={'/layouts/placeholder2.jpg'}
-        opacity={0.4}
+        source={'/layouts/lobby_hero.webp'}
+        opacity={0.25}
       />
       <main>
         <section className={css.intro}>

@@ -4,19 +4,19 @@ import Image from 'next/image';
 const players = [
   {
     name: 'J. Jaeggi',
-    img: '/layouts/placeholder2.jpg',
+    img: '/layouts/profile-placeholder.webp',
     hcp: 16,
     score: 257,
   },
   {
     name: 'J. Jaeggi',
-    img: '/layouts/placeholder1.jpg',
+    img: '/layouts/profile-placeholder.webp',
     hcp: 18,
     score: 250,
   },
   {
     name: 'J. Jaeggi',
-    img: '/layouts/placeholder2.jpg',
+    img: '/layouts/profile-placeholder.webp',
     hcp: 16,
     score: 245,
   },
@@ -68,17 +68,17 @@ export function RankingsWithPrices() {
         <div className={css.price}>
           <h4 title="1st, winner">🥇</h4>
           <p>J. Jaeggi</p>
-          <Image src={'/layouts/placeholder1.jpg'} alt={''} width={120} height={120} />
+          <Image src={'/layouts/polo1.webp'} alt={''} width={120} height={120} />
         </div>
         <div className={css.price}>
           <h4 title="2nd">🥈</h4>
           <p>J. Jaeggi</p>
-          <Image src={'/layouts/placeholder2.jpg'} alt={''} width={120} height={120} />
+          <Image src={'/layouts/polo2.webp'} alt={''} width={120} height={120} />
         </div>
         <div className={css.price}>
           <h4 title="3rd">🥉</h4>
           <p>J. Jaeggi</p>
-          <Image src={'/layouts/placeholder1.jpg'} alt={''} width={120} height={120} />
+          <Image src={'/layouts/hat.webp'} alt={''} width={120} height={120} />
         </div>
       </div>
       <table className={css.rankings}>

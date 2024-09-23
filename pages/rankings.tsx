@@ -3,14 +3,18 @@ import css from './Rankings.module.scss';
 import Hero from '@/components/Hero';
 import { RankingsWithPrices } from '@/components/Rankings';
 import CardsSection from '@/components/CardsSection';
+import Head from 'next/head';
 export default function Rankings() {
   return (
     <>
+      <Head>
+        <title>Rankings | EXTRACURRICULAR x WGC</title>
+      </Head>
       <Hero
         title={'And the winner is...'}
         subtitle={''}
-        source={'/layouts/placeholder1.jpg'}
-        opacity={0.4}
+        source={'/layouts/rankings_hero.webp'}
+        opacity={0.3}
       />
       <main>
         <section className={css.results}>
