@@ -6,7 +6,7 @@ export default function ContactCTA() {
   return (
     <section className={css.contactCTA}>
       <div className={css.contactCTA__texts}>
-        <h3>Do you want more ?</h3>
+        <h2>Do you want more&nbsp;?</h2>
         <p>
           More Free and Buy-in Challenges available on wgc.gg & your own Challenges with friends,
           clients, club members to create!

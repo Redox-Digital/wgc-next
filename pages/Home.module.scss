@@ -20,16 +20,29 @@
         gap: var(--margin);
         align-items: center;
         justify-content: center;
+        width: 100%;
 
         @media screen and (min-width: 900px) {
           flex-direction: row;
           flex-wrap: wrap;
+        }
+
+        @media screen and (min-width: 1600px) {
+          max-width: var(--max-large-container-width);
+          margin-inline: auto;
         }
       }
     }
 
     &.howtoplay {
       align-items: center;
+      max-width: var(--max-container-width);
+      margin-inline: auto;
+
+      > .titles {
+        max-width: 600px;
+      }
+
       > ol {
         text-align: left;
         list-style: none;

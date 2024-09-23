@@ -13,11 +13,19 @@
     max-width: calc((100% - var(--margin)) / 2);
   }
 
+  @media screen and (min-width: 1200px) {
+    min-width: 320px;
+    max-width: calc((100% - 2 * var(--margin)) / 3);
+  }
+
   .head {
     padding: 20px;
     height: 130px;
     position: relative;
     border-bottom: 1px solid var(--grey, #eeecec);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     > img {
       width: 100%;
@@ -33,6 +41,10 @@
     flex-direction: column;
     gap: 10px;
     align-items: flex-start;
+
+    > h3 {
+      font-size: 24px;
+    }
 
     > p {
       margin: 0;

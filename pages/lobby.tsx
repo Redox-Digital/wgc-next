@@ -20,6 +20,8 @@ export default function Lobby() {
         <section className={css.intro}>
           <Image src={'/logos/logoipsum.svg'} alt={''} width={800} height={120} />
           <div className={css.texts}>
+            <Image src={'/logos/logoipsum.svg'} alt={''} width={800} height={120} />
+
             <h3>Challenge #7607</h3>
             <p>
               <b>Start time:</b> 2024-09-16 11:00

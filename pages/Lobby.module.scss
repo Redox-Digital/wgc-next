@@ -12,6 +12,11 @@
     }
   }
 
+  @media screen and (min-width: 1600px) {
+    max-width: var(--max-large-container-width);
+    margin-inline: auto;
+  }
+
   > img {
     width: 100%;
     height: auto;
@@ -21,12 +26,31 @@
       max-width: none;
       max-height: 120px;
     }
+
+    @media screen and (min-width: 1200px) {
+      display: none;
+    }
   }
 
   > .texts {
     display: flex;
     flex-direction: column;
     gap: var(--margin);
+
+    @media screen and (min-width: 1200px) {
+      max-width: 360px;
+    }
+
+    > img {
+      display: none;
+      max-width: 100%;
+      max-height: 120px;
+      object-fit: contain;
+
+      @media screen and (min-width: 1200px) {
+        display: flex;
+      }
+    }
 
     > a.textLink {
       color: var(--dark-grey);
@@ -38,6 +62,30 @@
     display: flex;
     flex-direction: column;
     gap: var(--margin);
+
+    @media screen and (min-width: 1200px) {
+      order: 5;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0;
+      max-width: var(--max-container-width);
+      margin-inline: auto;
+
+      > .rule {
+        width: 100%;
+        border-right: solid 1px var(--black);
+        justify-content: center;
+
+        &:last-of-type {
+          border: none;
+        }
+      }
+
+      > h4 {
+        display: none;
+      }
+    }
 
     > .rule {
       display: flex;

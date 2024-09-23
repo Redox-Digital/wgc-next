@@ -53,7 +53,7 @@ export default function Home() {
     },
     {
       url: 'https://worldgolfchallenge-test.azurewebsites.net/lobby/3384',
-      img: '/layouts/placeholder1.jpg',
+      img: '/logos/logoipsum.svg',
       title: 'EXTRACURRICULAR',
       dates: 'Mar. 14th to Mar. 18th',
       gameType: 'Net Strableford',

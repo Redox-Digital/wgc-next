@@ -17,5 +17,11 @@
     flex-wrap: wrap;
     gap: var(--margin);
     justify-content: center;
+    width: 100%;
+
+    @media screen and (min-width: 1600px) {
+      max-width: var(--max-large-container-width);
+      margin-inline: auto;
+    }
   }
 }

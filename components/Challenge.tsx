@@ -46,7 +46,10 @@ export default function Challenge({
       <div className={css.banner}>HCP {hcp}</div>
       <div className={css.footer}>
         <span className={css.price}>{price || 'free'}</span>
-        <span className={css.players}>{currentPlayers}</span>
+        <span className={css.players}>
+          <Image src={'/pictograms/user.svg'} alt={'Users participating'} width={20} height={20} />
+          &nbsp;{currentPlayers}
+        </span>
         <Link className={btn.btn} href={url}>
           Join now
         </Link>

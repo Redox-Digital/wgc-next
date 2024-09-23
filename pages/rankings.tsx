@@ -21,7 +21,6 @@ export default function Rankings() {
           <div className={css.tables}>
             <RankingsWithPrices />
             <RankingsWithPrices />
-
             <RankingsWithPrices />
           </div>
         </section>
