@@ -1,0 +1,38 @@
+.intro {
+  flex-direction: column;
+  gap: var(--gap);
+
+  > img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
+
+  > .texts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin);
+
+    > a.textLink {
+      color: var(--dark-grey);
+      text-decoration: underline;
+    }
+  }
+
+  > .gameRules {
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin);
+
+    > .rule {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--margin);
+
+      > p {
+        margin: 0;
+      }
+    }
+  }
+}
