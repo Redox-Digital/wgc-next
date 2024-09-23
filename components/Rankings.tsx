@@ -3,19 +3,19 @@ import Image from 'next/image';
 
 const players = [
   {
-    name: 'J. Jaeggi 🇨🇭',
+    name: 'J. Jaeggi',
     img: '/layouts/placeholder2.jpg',
     hcp: 16,
     score: 257,
   },
   {
-    name: 'J. Jaeggi 🇨🇭',
+    name: 'J. Jaeggi',
     img: '/layouts/placeholder1.jpg',
     hcp: 18,
     score: 250,
   },
   {
-    name: 'J. Jaeggi 🇨🇭',
+    name: 'J. Jaeggi',
     img: '/layouts/placeholder2.jpg',
     hcp: 16,
     score: 245,
@@ -67,17 +67,17 @@ export function RankingsWithPrices() {
       <div className={css.prices}>
         <div className={css.price}>
           <h4 title="1st, winner">🥇</h4>
-          <p>J. Jaeggi 🇨🇭</p>
+          <p>J. Jaeggi</p>
           <Image src={'/layouts/placeholder1.jpg'} alt={''} width={120} height={120} />
         </div>
         <div className={css.price}>
           <h4 title="2nd">🥈</h4>
-          <p>J. Jaeggi 🇨🇭</p>
+          <p>J. Jaeggi</p>
           <Image src={'/layouts/placeholder2.jpg'} alt={''} width={120} height={120} />
         </div>
         <div className={css.price}>
           <h4 title="3rd">🥉</h4>
-          <p>J. Jaeggi 🇨🇭</p>
+          <p>J. Jaeggi</p>
           <Image src={'/layouts/placeholder1.jpg'} alt={''} width={120} height={120} />
         </div>
       </div>
