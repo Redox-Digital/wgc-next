@@ -19,9 +19,11 @@
   .card {
     background: var(--white);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: var(--margin);
     padding: var(--margin);
+    align-items: center;
 
     box-shadow: var(--shadow-hover);
     border-radius: 10px;
@@ -37,10 +39,15 @@
       align-items: center;
       justify-content: center;
       line-height: 100%;
+      padding: 7px;
     }
 
     > p {
       margin: 0;
+
+      &:last-of-type {
+        width: 100%;
+      }
     }
   }
 }

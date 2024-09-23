@@ -1,13 +1,18 @@
 import css from './PricePool.module.scss';
 import Image from 'next/image';
-export default function PricePool() {
+
+type Props = {
+  alt?: boolean;
+};
+
+export default function PricePool({ alt }: Props) {
   const prices = [
     { img: '/layouts/placeholder2.jpg', title: 'Price Title', desc: 'Price Description' },
     { img: '/layouts/placeholder1.jpg', title: 'Price Title', desc: 'Price Description' },
     { img: '/layouts/placeholder2.jpg', title: 'Price Title', desc: 'Price Description' },
   ];
   return (
-    <section className={css.pricePool}>
+    <section className={`${css.pricePool} ${alt && css.alt}`}>
       <h3>Price pool</h3>
       <div className={css.prices}>
         {prices.map((p, key) => (

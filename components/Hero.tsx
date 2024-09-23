@@ -4,6 +4,7 @@ import Link from 'next/link';
 import arrowDown from '/public/pictograms/arrow-down.svg';
 import logo from '/public/logos/logoipsum.svg';
 import { useEffect, useState } from 'react';
+import Button from './navigation/Button';
 
 type Props = {
   title: string | JSX.Element;
@@ -28,13 +29,20 @@ const Hero = (props: Props) => {
 
           <p className={css.subtitle}>{subtitle}</p>
           {home ? (
-            <Link href="#intro" scroll={false} aria-hidden>
-              <Image src={arrowDown} alt={''}></Image>
-            </Link>
+            <div className={css.btns}>
+              <Button to={'#challenges'}>The Challenges</Button>
+              <Button to={'#howtoplay'} white>
+                How To Play
+              </Button>
+            </div>
           ) : (
             ''
           )}
         </div>
+        <Link className={css.badge} href={'https://wgc.gg'}>
+          <p>Powered by</p>
+          <Image src="/logos/logo-wgc.svg" alt={''} width={200} height={200} />
+        </Link>
       </header>
       <span id="intro">{/* Anchor */}</span>
     </>

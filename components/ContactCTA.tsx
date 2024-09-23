@@ -11,7 +11,7 @@ export default function ContactCTA() {
           More Free and Buy-in Challenges available on wgc.gg & your own Challenges with friends,
           clients, club members to create!
         </p>
-        <Button wgc to="https://wgc.gg" blank>
+        <Button to="https://wgc.gg" blank>
           visit wgc.gg
         </Button>
       </div>

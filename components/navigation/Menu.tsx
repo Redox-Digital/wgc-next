@@ -26,32 +26,10 @@ const Header = () => {
             </Link>
 
             <div className={css.menu__links}>
-              <Link href="/" aria-label="Accéder à la page d'accueil">
-                Home
-              </Link>
-              <Link
-                href="#"
-                scroll={false}
-                className={css.submenu}
-                aria-label="Afficher nos services"
-              >
-                Services
-              </Link>
-
-              <Link href="/about" aria-label="Accéder à la page d'à propos">
-                About
-              </Link>
-              <Link href="/careers" aria-label="Accéder à la page d'emplois">
-                Careers
-              </Link>
-              <Button
-                ariaLabel="Vers le formulaire de contact"
-                to="/contact"
-                size="small"
-                addClass="btn"
-              >
-                Contact us
-              </Button>
+              <Link href="/#challenges">Challenges</Link>
+              <Link href="/lobby">Lobby</Link>
+              <Link href="/rankings">Rankings</Link>
+              <Link href="/#howtoplay">How To Play</Link>
             </div>
             <button
               className={`${burgerStyle.burger} ${menuOpen ? burgerStyle.burger__closed : ''}`}

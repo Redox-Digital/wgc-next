@@ -1,4 +1,5 @@
 import css from './CardsSection.module.scss';
+import Image from 'next/image';
 
 type Props = {
   title: string;
@@ -16,7 +17,8 @@ export default function CardsSection({ title, desc, cards }: Props) {
       <div className={css.cards}>
         {cards.map((card, key) => (
           <div className={css.card} key={key}>
-            <i className={css.icon}>{card.icon}</i>
+            <Image className={css.icon} src={card.icon} alt={''} width={40} height={40} />
+
             <b>{card.title}</b>
             <p>{card.desc}</p>
           </div>

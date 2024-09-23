@@ -74,13 +74,13 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>My Company | Welcome</title>
+        <title>EXTRACURRICULAR x WGC | Welcome</title>
       </Head>
 
       <Hero
-        title="My Company"
+        title="Playing golf physically while competing digitally"
         home
-        subtitle="We make the best NextJS templates"
+        subtitle="Play in the club of your choice in real life while measuring yourself & your score, virtually against any other player in the world!"
         source="./layouts/placeholder1.jpg"
       />
       <main className={css.home}>
@@ -91,17 +91,17 @@ export default function Home() {
           }
           cards={[
             {
-              icon: 'pen',
+              icon: '/pictograms/clipboard.svg',
               title: 'Join a Challenge',
               desc: 'Any day, choose a Challenge on the screen',
             },
             {
-              icon: 'ball',
+              icon: '/pictograms/golf-white.svg',
               title: 'Go out, play golf',
               desc: 'Real action on the greens',
             },
             {
-              icon: 'write',
+              icon: '/pictograms/pen.svg',
               title: 'Enter your score & win',
               desc: 'Lots of fun and great prizes',
             },

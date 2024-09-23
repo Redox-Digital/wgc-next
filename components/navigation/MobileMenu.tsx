@@ -13,12 +13,6 @@ type Props = {
 export default function MobileMenu(props: Props) {
   const { open, toggleMenu } = props;
 
-  const [subMenuOpen, setSubMenuOpen] = useState<boolean>(false);
-
-  const toggleSubMenu = () => {
-    setSubMenuOpen(!subMenuOpen);
-  };
-
   useEffect(() => {
     open ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'auto');
   }, [open]);
@@ -31,17 +25,17 @@ export default function MobileMenu(props: Props) {
         }`}
       >
         <div className={style.mobileMenu__links}>
-          <Link href="/" onClick={toggleMenu} aria-label="Accéder à la page d'accueil">
-            Home
+          <Link href="/#challenges" onClick={toggleMenu}>
+            Challenges
           </Link>
-          <Link href="/about" onClick={toggleMenu} aria-label="Accéder à la page d'à propos">
-            About
+          <Link href="/lobby" onClick={toggleMenu}>
+            Lobby
           </Link>
-          <Link href="/careers" onClick={toggleMenu} aria-label="Accéder à la page d'emplois">
-            Careers
+          <Link href="/rankings" onClick={toggleMenu}>
+            Rankings
           </Link>
-          <Link href="/contact" onClick={toggleMenu} aria-label="Accéder à la page de contact">
-            Contact us
+          <Link href="/#howtoplay" onClick={toggleMenu}>
+            How To Play
           </Link>
         </div>
       </nav>

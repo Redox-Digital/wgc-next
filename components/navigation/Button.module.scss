@@ -61,4 +61,18 @@
       color: var(--wgc-color);
     }
   }
+
+  &.white {
+    background: var(--white);
+    color: var(--primary);
+
+    &:hover {
+      border-color: var(--primary);
+    }
+    &:active {
+      border-color: var(--white);
+      color: var(--white);
+      background: var(--primary);
+    }
+  }
 }
