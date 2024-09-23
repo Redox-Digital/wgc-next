@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from '/public/logos/logoipsum.svg';
+import logo from '/public/logos/logo_excr.svg';
 import css from './Menu.module.scss';
 import burgerStyle from './Burger.module.scss';
 import Button from './Button';

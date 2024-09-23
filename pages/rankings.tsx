@@ -20,7 +20,7 @@ export default function Rankings() {
         <section className={css.results}>
           <div className={css.titles}>
             <h2>The results</h2>
-            <p>Congratulation for participating!</p>
+            <p>Congratulations for playing!</p>
           </div>
           <div className={css.tables}>
             <RankingsWithPrices />
@@ -45,7 +45,7 @@ export default function Rankings() {
             {
               icon: '/pictograms/gift.svg',
               title: 'A. lot. of. prizes.',
-              desc: 'Over 60 prices to reward you - including golf trip, watches, golf gears and more!',
+              desc: 'Extracurricular Prices to reward you - we will get in touch!',
             },
           ]}
         />

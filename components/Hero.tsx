@@ -1,9 +1,6 @@
 import Image from 'next/image';
 import css from './Hero.module.scss';
 import Link from 'next/link';
-import arrowDown from '/public/pictograms/arrow-down.svg';
-import logo from '/public/logos/logoipsum.svg';
-import { useEffect, useState } from 'react';
 import Button from './navigation/Button';
 
 type Props = {

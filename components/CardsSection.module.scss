@@ -1,5 +1,4 @@
 .section {
-  text-align: left;
   background: var(--grey);
   flex-direction: column;
   gap: var(--gap);
@@ -10,9 +9,10 @@
     display: flex;
     flex-direction: column;
     gap: var(--padding);
+    text-align: center;
 
     @media screen and (min-width: 1200px) {
-      max-width: var(--max-container-width);
+      max-width: 800px;
       margin-inline: auto;
     }
   }
