@@ -161,8 +161,8 @@ export default function Home() {
           <div className={css.titles}>
             <h2>How to play</h2>
             <p>
-              Joining a challenge requires, like World Golf Challenge, some work in your Golf Club,
-              and some work on your phone or computer.
+              Joining a challenge requires, like World Golf Challenge, some work on your
+              phone or computer.
             </p>
           </div>
           <ol>

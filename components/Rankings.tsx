@@ -55,10 +55,12 @@ export function RankingsWithPrices() {
   return (
     <div className={css.card}>
       <div className={css.head}>
-        <h3>
+        <Image src={'/logos/logo_excr_white.svg'} alt={''} width={600} height={200} />
+        <h5>HCP Up to 54</h5>
+        {/*<h3>
           EXTRACURRICULAR
           <br />- HCP Single
-        </h3>
+        </h3> */}
         <p>Mar. 14th to Mar. 18th</p>
         <p>
           Game type : <b>Net Strableford</b>
