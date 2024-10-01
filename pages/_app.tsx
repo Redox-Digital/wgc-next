@@ -13,8 +13,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <style jsx global>
         {`
           :root {
-            --roboto-font: ${roboto.style.fontFamily};
-            --montserrat-font: ${montserrat.style.fontFamily};
+            --excr-roboto-font: ${roboto.style.fontFamily};
+            --excr-montserrat-font: ${montserrat.style.fontFamily};
           }
         `}
       </style>

@@ -1,14 +1,14 @@
 .section {
-  background: var(--grey);
+  background: var(--excr-grey);
   flex-direction: column;
-  gap: var(--gap);
+  gap: var(--excr-gap);
 
   > .titles {
     width: 100%;
-    max-width: var(--max-block-width);
+    max-width: var(--excr-max-block-width);
     display: flex;
     flex-direction: column;
-    gap: var(--padding);
+    gap: var(--excr-padding);
     text-align: center;
 
     @media screen and (min-width: 1200px) {
@@ -21,9 +21,9 @@
 .cards {
   display: flex;
   flex-direction: column;
-  gap: var(--margin);
+  gap: var(--excr-margin);
   width: 100%;
-  max-width: var(--max-container-width);
+  max-width: var(--excr-max-container-width);
   margin-inline: auto;
 
   @media screen and (min-width: 900px) {
@@ -31,15 +31,15 @@
   }
 
   .card {
-    background: var(--white);
+    background: var(--excr-white);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: var(--margin);
-    padding: var(--margin);
+    gap: var(--excr-margin);
+    padding: var(--excr-margin);
     align-items: center;
 
-    box-shadow: var(--shadow-hover);
+    box-shadow: var(--excr-shadow-hover);
     border-radius: 10px;
 
     @media screen and (min-width: 900px) {
@@ -49,8 +49,8 @@
     }
 
     > .icon {
-      background: var(--primary);
-      color: var(--white);
+      background: var(--excr-primary);
+      color: var(--excr-white);
       display: flex;
       padding: 2px;
       border-radius: 20px;

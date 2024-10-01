@@ -27,11 +27,11 @@
     }
   }
   &__texts {
-    padding: 75px var(--sct-horiz-margin);
+    padding: 75px var(--excr-sct-horiz-margin);
     min-height: 270px;
     display: flex;
     flex-direction: column;
-    gap: var(--padding);
+    gap: var(--excr-padding);
     justify-content: center;
     max-width: 800px;
     margin-inline: auto;

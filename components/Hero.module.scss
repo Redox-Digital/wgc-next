@@ -1,8 +1,8 @@
 .hero {
   height: 50vh;
   height: 50svh;
-  min-height: calc(300px + var(--navbar-height));
-  max-height: calc(400px + var(--navbar-height));
+  min-height: calc(300px + var(--excr-navbar-height));
+  max-height: calc(400px + var(--excr-navbar-height));
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -15,9 +15,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: var(--padding);
+  gap: var(--excr-padding);
 
-  padding: 0 var(--sct-horiz-margin);
+  padding: 0 var(--excr-sct-horiz-margin);
 
   &__overlay {
     position: absolute;
@@ -27,17 +27,17 @@
     right: 0;
     height: 100%;
     width: 100%;
-    background-color: var(--black);
+    background-color: var(--excr-black);
     z-index: 1;
   }
 
   > .hero__content {
     display: flex;
     flex-direction: column;
-    gap: var(--padding);
+    gap: var(--excr-padding);
     width: 100%;
     padding: 50px 0;
-    padding-top: var(--navbar-height);
+    padding-top: var(--excr-navbar-height);
     z-index: 2;
 
     @media screen and (min-width: 1200px) {
@@ -47,7 +47,7 @@
     > .btns {
       display: flex;
       flex-direction: row;
-      gap: var(--padding);
+      gap: var(--excr-padding);
       margin-top: 30px;
       flex-wrap: wrap;
 
@@ -80,7 +80,7 @@
     height: 80vh;
     height: 80svh;
     min-height: 700px;
-    max-height: calc(800px + var(--navbar-height));
+    max-height: calc(800px + var(--excr-navbar-height));
 
     @media screen and (min-width: 1200px) {
       max-height: 900px;
@@ -91,7 +91,7 @@
       text-align: left;
 
       @media screen and (min-width: 1600px) {
-        max-width: var(--max-large-container-width);
+        max-width: var(--excr-max-large-container-width);
         margin-inline: auto;
       }
 
@@ -106,15 +106,15 @@
   > .badge {
     position: absolute;
     z-index: 2;
-    right: var(--sct-horiz-margin);
-    bottom: var(--sct-horiz-margin);
+    right: var(--excr-sct-horiz-margin);
+    bottom: var(--excr-sct-horiz-margin);
     display: flex;
     flex-direction: column;
     gap: 8px;
     text-align: center;
 
     &:hover {
-      color: var(--white);
+      color: var(--excr-white);
       transform: translateY(-2px);
     }
 
@@ -125,8 +125,8 @@
     }
 
     > img {
-      background: var(--white);
-      box-shadow: var(--shadow-hover);
+      background: var(--excr-white);
+      box-shadow: var(--excr-shadow-hover);
       width: 60px;
       height: 60px;
       border-radius: 100%;

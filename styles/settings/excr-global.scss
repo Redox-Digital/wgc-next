@@ -1,9 +1,9 @@
 html {
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--excr-white);
+  color: var(--excr-black);
 
   scroll-behavior: smooth;
-  font-family: var(--roboto-font);
+  font-family: var(--excr-roboto-font);
 }
 
 body {
@@ -22,14 +22,14 @@ abbr[title] {
 }
 
 section {
-  padding: var(--sct-vert-margin) var(--sct-horiz-margin);
+  padding: var(--excr-sct-vert-margin) var(--excr-sct-horiz-margin);
   display: flex;
-  color: var(--black);
+  color: var(--excr-black);
 }
 
 .container {
   width: 100%;
-  max-width: var(--large-content-width);
+  max-width: var(--excr-large-content-width);
   display: flex;
   flex-direction: column;
   margin-left: auto;
@@ -51,23 +51,23 @@ section {
 
 // Colors
 .color-primary {
-  color: var(--primary) !important;
+  color: var(--excr-primary) !important;
 }
 .color-accent {
-  color: var(--accent) !important;
+  color: var(--excr-accent) !important;
 }
 
 .color-dark {
-  color: var(--dark) !important;
+  color: var(--excr-dark) !important;
 }
 
 .color-accent-dark {
-  color: var(--accent-dark) !important;
+  color: var(--excr-accent-dark) !important;
 }
 
 // For menu OnScroll
 .bg-dark {
-  background: var(--dark);
+  background: var(--excr-dark);
 }
 
 .noscroll {

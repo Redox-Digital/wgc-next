@@ -1,6 +1,6 @@
 .intro {
   flex-direction: column;
-  gap: var(--gap);
+  gap: var(--excr-gap);
 
   @media screen and (min-width: 900px) {
     flex-direction: row;
@@ -8,12 +8,12 @@
 
     > .texts,
     > .gameRules {
-      width: calc((100% - var(--gap)) / 2);
+      width: calc((100% - var(--excr-gap)) / 2);
     }
   }
 
   @media screen and (min-width: 1600px) {
-    max-width: var(--max-large-container-width);
+    max-width: var(--excr-max-large-container-width);
     margin-inline: auto;
   }
 
@@ -35,7 +35,7 @@
   > .texts {
     display: flex;
     flex-direction: column;
-    gap: var(--margin);
+    gap: var(--excr-margin);
 
     @media screen and (min-width: 1200px) {
       max-width: 360px;
@@ -53,7 +53,7 @@
     }
 
     > a.textLink {
-      color: var(--dark-grey);
+      color: var(--excr-dark-grey);
       text-decoration: underline;
     }
   }
@@ -61,7 +61,7 @@
   > .gameRules {
     display: flex;
     flex-direction: column;
-    gap: var(--margin);
+    gap: var(--excr-margin);
 
     @media screen and (min-width: 1200px) {
       order: 5;
@@ -69,12 +69,12 @@
       flex-direction: row;
       justify-content: space-between;
       gap: 0;
-      max-width: var(--max-container-width);
+      max-width: var(--excr-max-container-width);
       margin-inline: auto;
 
       > .rule {
         width: 100%;
-        border-right: solid 1px var(--black);
+        border-right: solid 1px var(--excr-black);
         justify-content: center;
 
         &:last-of-type {
@@ -91,7 +91,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: var(--margin);
+      gap: var(--excr-margin);
 
       > p {
         margin: 0;

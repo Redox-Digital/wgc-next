@@ -1,28 +1,28 @@
 .challenge {
-  background: var(--white);
+  background: var(--excr-white);
   border-radius: 20px;
-  color: var(--primary);
+  color: var(--excr-primary);
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-hover);
+  box-shadow: var(--excr-shadow-hover);
 
   width: 100%;
-  max-width: var(--max-card-width);
+  max-width: var(--excr-max-card-width);
 
   @media screen and (min-width: 900px) {
-    max-width: calc((100% - var(--margin)) / 2);
+    max-width: calc((100% - var(--excr-margin)) / 2);
   }
 
   @media screen and (min-width: 1200px) {
     min-width: 320px;
-    max-width: calc((100% - 2 * var(--margin)) / 3);
+    max-width: calc((100% - 2 * var(--excr-margin)) / 3);
   }
 
   .head {
     padding: 20px;
     height: 130px;
     position: relative;
-    border-bottom: 1px solid var(--grey, #eeecec);
+    border-bottom: 1px solid var(--excr-grey, #eeecec);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,18 +59,18 @@
         width: 100%;
         border-radius: 10px 0px 0px 10px;
         border: none;
-        background: var(--grey);
+        background: var(--excr-grey);
         font-size: 10px;
         font-weight: 500;
         padding: 6px 10px;
       }
 
       > button {
-        background: var(--primary);
+        background: var(--excr-primary);
         border: none;
         border-radius: 0px 10px 10px 0px;
         padding: 6px 10px;
-        color: var(--white);
+        color: var(--excr-white);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -78,7 +78,7 @@
         cursor: pointer;
 
         &:hover {
-          background: var(--black);
+          background: var(--excr-black);
         }
       }
     }
@@ -87,13 +87,13 @@
   .banner {
     width: 100%;
     display: flex;
-    background-color: var(--secondary);
-    color: var(--white);
+    background-color: var(--excr-secondary);
+    color: var(--excr-white);
     text-align: center;
     align-items: center;
     justify-content: center;
     padding: 5px;
-    font-family: var(--montserrat-font);
+    font-family: var(--excr-montserrat-font);
     font-size: 14px;
     letter-spacing: 0.08em;
     font-weight: 700;
@@ -108,9 +108,9 @@
     align-items: center;
 
     .price {
-      background: var(--secondary);
-      color: var(--white);
-      font-family: var(--montserrat-font);
+      background: var(--excr-secondary);
+      color: var(--excr-white);
+      font-family: var(--excr-montserrat-font);
       font-weight: 700;
       font-size: 24px;
       letter-spacing: 0.08em;

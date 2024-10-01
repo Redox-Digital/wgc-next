@@ -8,7 +8,7 @@
   width: fit-content;
 
   border: solid 2px;
-  border-color: var(--primary);
+  border-color: var(--excr-primary);
 
   font-size: 18px;
   font-weight: 700;
@@ -16,63 +16,63 @@
   text-transform: uppercase;
   transition: all 0.3s ease-in-out;
 
-  background: var(--primary);
-  color: var(--white);
+  background: var(--excr-primary);
+  color: var(--excr-white);
 
   border-radius: 10px;
 
-  box-shadow: var(--shadow-hover);
+  box-shadow: var(--excr-shadow-hover);
 
   &:hover {
     cursor: pointer;
-    border-color: var(--primary);
-    background: var(--white);
-    color: var(--primary);
+    border-color: var(--excr-primary);
+    background: var(--excr-white);
+    color: var(--excr-primary);
     transition: all 0.3s ease-in-out;
     transform: translateY(-1px);
-    box-shadow: var(--shadow-hover);
+    box-shadow: var(--excr-shadow-hover);
   }
 
   &:active {
-    border: solid 2px var(--white);
-    background: var(--primary);
-    box-shadow: var(--shadow-clicked);
-    color: var(--white);
+    border: solid 2px var(--excr-white);
+    background: var(--excr-primary);
+    box-shadow: var(--excr-shadow-clicked);
+    color: var(--excr-white);
     transition: all 0s;
   }
 
   // Types
 
   &Wgc {
-    border-color: var(--wgc-color);
-    color: var(--white);
-    background: var(--wgc-color);
+    border-color: var(--excr-wgc-color);
+    color: var(--excr-white);
+    background: var(--excr-wgc-color);
 
     &:hover {
-      background: var(--white);
-      color: var(--wgc-color);
+      background: var(--excr-white);
+      color: var(--excr-wgc-color);
 
-      border-color: var(--wgc-color);
+      border-color: var(--excr-wgc-color);
     }
 
     &:active {
-      border-color: var(--white);
-      background: var(--white);
-      color: var(--wgc-color);
+      border-color: var(--excr-white);
+      background: var(--excr-white);
+      color: var(--excr-wgc-color);
     }
   }
 
   &.white {
-    background: var(--white);
-    color: var(--primary);
+    background: var(--excr-white);
+    color: var(--excr-primary);
 
     &:hover {
-      border-color: var(--primary);
+      border-color: var(--excr-primary);
     }
     &:active {
-      border-color: var(--white);
-      color: var(--white);
-      background: var(--primary);
+      border-color: var(--excr-white);
+      color: var(--excr-white);
+      background: var(--excr-primary);
     }
   }
 }

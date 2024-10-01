@@ -2,20 +2,20 @@
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  gap: var(--gap);
+  gap: var(--excr-gap);
 
   &.alt {
-    background: var(--grey);
+    background: var(--excr-grey);
 
     > .prices > .price {
-      background: var(--white);
+      background: var(--excr-white);
     }
   }
 
   > .prices {
     display: flex;
     flex-direction: column;
-    gap: var(--margin);
+    gap: var(--excr-margin);
     align-items: center;
     justify-content: center;
 
@@ -26,16 +26,16 @@
     > .price {
       display: flex;
       flex-direction: column;
-      background: var(--grey);
+      background: var(--excr-grey);
       border-radius: 20px;
       padding: 20px;
       gap: 10px;
       align-items: center;
       justify-content: flex-start;
-      box-shadow: var(--shadow-hover);
+      box-shadow: var(--excr-shadow-hover);
 
       width: 100%;
-      max-width: var(--max-card-width);
+      max-width: var(--excr-max-card-width);
 
       > img {
         width: 100%;
@@ -45,7 +45,7 @@
       > .texts {
         display: flex;
         flex-direction: column;
-        gap: var(--padding);
+        gap: var(--excr-padding);
       }
     }
   }

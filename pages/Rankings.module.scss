@@ -1,13 +1,13 @@
 .results {
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
+  gap: var(--excr-gap);
   align-items: center;
 
   .titles {
     display: flex;
     flex-direction: column;
-    gap: var(--padding);
+    gap: var(--excr-padding);
     text-align: center;
   }
 
@@ -15,12 +15,12 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: var(--margin);
+    gap: var(--excr-margin);
     justify-content: center;
     width: 100%;
 
     @media screen and (min-width: 1600px) {
-      max-width: var(--max-large-container-width);
+      max-width: var(--excr-max-large-container-width);
       margin-inline: auto;
     }
   }

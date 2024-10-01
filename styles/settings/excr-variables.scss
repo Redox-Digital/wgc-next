@@ -1,0 +1,80 @@
+* {
+  --excr-white: #fafafa;
+  --excr-grey: #eeecec;
+  --excr-dark-grey: #797979;
+  --excr-black: #050505;
+
+  --excr-primary: #252c32;
+  --excr-wgc-color: #488f4b;
+
+  --excr-secondary: #000000;
+
+  --excr-accent: #000000;
+
+  --excr-danger: #d33232;
+  --excr-warning: #d38932;
+  --excr-info: #327cd3;
+  --excr-success: #23ad29;
+
+  --excr-shadow-hover: 3px 3px 8px 0px rgba(0, 0, 0, 0.25);
+  --excr-shadow-clicked: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+  --excr-shadow-img: 0px 36px 20px -20px rgba(62, 85, 65, 0.25);
+  --excr-shadow-card: 0px 12px 16px -20px rgba(62, 85, 65, 0.15);
+  --excr-shadow-card-sm: 0px 4px 12px 0px rgba(51, 67, 54, 0.1);
+
+  --excr-fs-h1: 32px;
+  --excr-fs-h2: 28px;
+  --excr-fs-h3: 25px;
+  --excr-fs-h4: 21px;
+  --excr-fs-h5: 18px;
+  --excr-fs-h6: 14px;
+  --excr-fs-p: 16px;
+  --excr-fs-sm: 12px;
+
+  --excr-margin: 20px;
+  --excr-padding: 10px;
+  --excr-gap: 50px;
+
+  --excr-sct-vert-margin: 75px;
+  --excr-subsct-vert-margin: 75px; // not used
+  --excr-sct-horiz-margin: 15px;
+
+  --excr-navbar-height: 90px;
+
+  --excr-max-large-container-width: 1600px;
+  --excr-max-container-width: 1200px;
+  --excr-max-block-width: 600px;
+  --excr-max-card-width: 400px;
+}
+
+@media screen and (min-width: 900px) {
+  * {
+    --excr-fs-h1: 60px;
+    --excr-fs-h2: 45px;
+    --excr-fs-h3: 32px;
+    --excr-fs-h4: 26px;
+    --excr-fs-h5: 24px;
+    --excr-fs-h6: 16px;
+    --excr-fs-p: 18px;
+    --excr-fs-sm: 14px;
+
+    --excr-margin: 20px;
+    --excr-padding: 15px;
+
+    --excr-sct-vert-margin: 100px;
+    --excr-sct-horiz-margin: 50px;
+
+    --excr-navbar-height: 100px;
+    --excr-max-block-width: 800px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  * {
+    --excr-margin: 20px;
+    --excr-padding: 15px;
+
+    --excr-navbar-height: 120px;
+    --excr-max-block-width: 1200px;
+  }
+}
