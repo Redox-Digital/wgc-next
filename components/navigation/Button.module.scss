@@ -17,7 +17,7 @@
   transition: all 0.3s ease-in-out;
 
   background: var(--excr-primary);
-  color: var(--excr-white);
+  color: var(--excr-white) !important;
 
   border-radius: 10px;
 
@@ -64,7 +64,7 @@
 
   &.white {
     background: var(--excr-white);
-    color: var(--excr-primary);
+    color: var(--excr-primary) !important;
 
     &:hover {
       border-color: var(--excr-primary);

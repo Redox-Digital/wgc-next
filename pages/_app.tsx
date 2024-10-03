@@ -1,6 +1,6 @@
 import Layout from '@/components/Layout';
 import type { AppProps } from 'next/app';
-import '@/styles/globals.scss';
+import '@/styles/excr-globals.scss';
 
 import { Roboto, Montserrat } from 'next/font/google';
 
