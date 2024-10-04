@@ -77,9 +77,9 @@
 
   &__home {
     position: relative;
-    height: 80vh;
-    height: 80svh;
-    min-height: 700px;
+    height: 70vh;
+    height: 70svh;
+    min-height: 600px;
     max-height: calc(800px + var(--excr-navbar-height));
 
     @media screen and (min-width: 1200px) {
