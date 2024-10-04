@@ -27,7 +27,7 @@
     cursor: pointer;
     border-color: var(--excr-primary);
     background: var(--excr-white);
-    color: var(--excr-primary);
+    color: var(--excr-primary) !important;
     transition: all 0.3s ease-in-out;
     transform: translateY(-1px);
     box-shadow: var(--excr-shadow-hover);
