@@ -14,6 +14,11 @@ export default function PricePool({ alt }: Props) {
     },
     { img: '/layouts/WGC-EXCR_price_500.png', title: '500 $ GIFT CARD', desc: 'Price Description' },
     { img: '/layouts/WGC-EXCR_price_250.png', title: '250 $ GIFT CARD', desc: 'Price Description' },
+    {
+      img: '/layouts/WGC-EXCR_price_50percents.png',
+      title: '50% OFF GIFT CARD',
+      desc: 'For every participant!',
+    },
   ];
   return (
     <section className={`${css.pricePool} ${alt && css.alt}`}>
