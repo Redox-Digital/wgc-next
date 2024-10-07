@@ -2,21 +2,29 @@ import css from './ContactCTA.module.scss';
 import Button from './navigation/Button';
 import Image from 'next/image';
 
-export default function ContactCTA() {
+type Props = {
+  title: React.ReactNode;
+  desc: React.ReactNode;
+  btnLink?: string;
+  btnLabel?: string;
+  img: string;
+  grey?: boolean;
+};
+
+export default function ContactCTA({ title, desc, btnLink, btnLabel, grey, img }: Props) {
   return (
-    <section className={css.contactCTA}>
+    <section className={`${css.contactCTA} ${grey && css.grey}`}>
       <div className={css.contactCTA__texts}>
-        <h2>Do you want more&nbsp;?</h2>
-        <p>
-          More Free and Buy-in Challenges available on wgc.gg & your own Challenges with friends,
-          clients, club members to create!
-        </p>
-        <Button to="https://wgc.gg" blank>
-          visit wgc.gg
-        </Button>
+        <h2>{title}</h2>
+        <p>{desc}</p>
+        {btnLink && (
+          <Button to={btnLink} blank>
+            {btnLabel || 'Learn more'}
+          </Button>
+        )}
       </div>
       <div className={css.contactCTA__img}>
-        <Image src={'/layouts/contact-cta.webp'} alt={''} fill />
+        <Image src={img} alt={''} fill />
       </div>
     </section>
   );

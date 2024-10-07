@@ -179,6 +179,19 @@ export default function Home() {
             <div className={css.row}></div>
           </div>
         </section>
+        <ContactCTA
+          img="/layouts/home_excr-cta.jpg"
+          grey
+          title={'Look fresh on the greens'}
+          desc={
+            <>
+              Elevate your wardrobe by visiting our sponsor&apos;s e-shop, <b>Extracurricular</b>,
+              and discover men&apos;s premium golf apparel including polos, hats, shorts, and pants.
+            </>
+          }
+          btnLabel="The shop"
+          btnLink="https://ex-cr.com/?utm_source=wgc"
+        />
       </main>
     </>
   );

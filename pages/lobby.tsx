@@ -69,7 +69,13 @@ export default function Lobby() {
           <Rankings />
         </section>
         <PricePool alt />
-        <ContactCTA />
+        <ContactCTA
+          img="/layouts/contact-cta.webp"
+          title={<>Do you want more&nbsp;?</>}
+          desc="More Free and Buy-in Challenges available on wgc.gg & your own Challenges with friends, clients, club members to create!"
+          btnLabel="Visit wgc.gg"
+          btnLink="https://wgc.gg"
+        />
       </main>
     </>
   );
