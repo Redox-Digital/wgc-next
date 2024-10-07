@@ -1,0 +1,121 @@
+.cta {
+  position: fixed;
+  background-color: var(--excr-accent);
+  padding-inline: 20px;
+  padding-bottom: 0px;
+  z-index: 2;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  border-radius: 0;
+  box-shadow: var(--excr-shadow-hover);
+  transition: all 0.3s ease-in-out;
+
+  &.open {
+    transition: all 0.3s ease-in-out;
+
+    padding-bottom: 20px;
+    gap: 10px;
+
+    > button > img {
+      transition: all 0.3s ease-in-out;
+      transform: rotate(180deg);
+    }
+
+    > .content {
+      max-height: 500px;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    width: 300px;
+    left: var(--excr-margin);
+    bottom: var(--excr-margin);
+    border-radius: 10px;
+  }
+
+  > * {
+    color: var(--excr-white) !important;
+  }
+
+  > button {
+    font-family: var(--excr-roboto-font), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: none;
+    border: none;
+    display: flex;
+    font-size: var(--excr-fs-p);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 700;
+    align-items: center;
+    height: 50px;
+    padding: 0;
+
+    flex-direction: row;
+    justify-content: space-between;
+
+    > img {
+      display: block;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: fit-content;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+
+    @media screen and (min-width: 900px) {
+      gap: 10px;
+      flex-direction: column;
+    }
+
+    .head {
+      text-align: left;
+      width: calc((100% - 20px) / 2);
+
+      @media screen and (min-width: 900px) {
+        width: 100%;
+      }
+    }
+
+    .body {
+      text-align: right;
+      width: calc((100% - 20px) / 2);
+
+      @media screen and (min-width: 900px) {
+        width: 100%;
+        text-align: left;
+      }
+
+      > span {
+        color: var(--excr-grey);
+      }
+    }
+
+    > a {
+      font-size: 14px;
+      color: var(--excr-primary);
+      background-color: var(--excr-white);
+      border-radius: 5px;
+      width: 100%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+      padding: 4px 5px;
+    }
+  }
+}

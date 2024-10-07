@@ -8,6 +8,7 @@ import Image from 'next/image';
 import PricePool from '@/components/PricePool';
 import Challenge from '@/components/Challenge';
 import CardsSection from '@/components/CardsSection';
+import YourChallengeCTA from '@/components/navigation/YourChallengeCTA';
 
 type ChallengeType = {
   url: string;
@@ -115,6 +116,7 @@ export default function Home() {
         source="./layouts/home_hero.webp"
         opacity={0.25}
       />
+      <YourChallengeCTA />
       <main className={css.home}>
         <section className={css.ourChallenges}>
           <div className={css.titles}>
