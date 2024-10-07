@@ -44,6 +44,17 @@
       &:last-of-type {
         border: none;
       }
+
+      > td {
+        &.hcp {
+          min-width: 30px;
+          text-align: right;
+        }
+        &.score {
+          min-width: 42px;
+          text-align: right;
+        }
+      }
     }
   }
 

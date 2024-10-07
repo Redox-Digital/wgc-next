@@ -18,7 +18,6 @@ const players = [
     name: 'J. Jaeggi',
     img: '/layouts/profile-placeholder.webp',
     hcp: 16,
-    score: 245,
   },
 ];
 
@@ -41,9 +40,8 @@ export default function Rankings() {
             <td className={css.profile}>
               <Image src={p.img} alt={''} width={50} height={50} /> <span>{p.name}</span>
             </td>
-
-            <td>{p.hcp}</td>
-            <td>{p.score}</td>
+            <td className={css.hcp}>{p.hcp}</td>
+            <td className={css.score}>{p.score}</td>
           </tr>
         ))}
       </tbody>
@@ -100,9 +98,8 @@ export function RankingsWithPrices() {
               <td className={css.profile}>
                 <Image src={p.img} alt={''} width={50} height={50} /> <span>{p.name}</span>
               </td>
-
-              <td>{p.hcp}</td>
-              <td>{p.score}</td>
+              <td className={css.hcp}>{p.hcp}</td>
+              <td className={css.score}>{p.score}</td>
             </tr>
           ))}
         </tbody>
