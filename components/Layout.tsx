@@ -1,5 +1,7 @@
-import Header from './navigation/Menu';
-import Footer from './Footer';
+import Header from './navigation/SponsoredMenu';
+import Footer from './navigation/Footer';
+import Menu from './navigation/Menu';
+import { MainNavLinks } from '@/pages/constants/Navigation';
 
 type Props = {
   children: string | JSX.Element;
@@ -8,7 +10,7 @@ type Props = {
 export default function Layout({ children }: Props) {
   return (
     <>
-      <Header />
+      <Menu logo={'/logos/logo-wgc.svg'} logoUrl={'/'} links={MainNavLinks} />
       {children}
       <Footer />
     </>

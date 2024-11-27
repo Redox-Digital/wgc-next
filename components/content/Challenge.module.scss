@@ -1,0 +1,126 @@
+.challenge {
+  background: var(--excr-white);
+  border-radius: 20px;
+  color: var(--excr-primary);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--excr-shadow-hover);
+
+  width: 100%;
+  max-width: var(--excr-max-card-width);
+
+  @media screen and (min-width: 900px) {
+    max-width: calc((100% - var(--excr-margin)) / 2);
+  }
+
+  @media screen and (min-width: 1200px) {
+    min-width: 320px;
+    max-width: calc((100% - 2 * var(--excr-margin)) / 3);
+  }
+
+  .head {
+    padding: 20px;
+    height: 130px;
+    position: relative;
+    border-bottom: 1px solid var(--excr-grey, #eeecec);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > img {
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+
+    > h3 {
+      font-size: 24px;
+    }
+
+    > p {
+      margin: 0;
+    }
+
+    > .copyBtn {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+
+      > input {
+        width: 100%;
+        border-radius: 10px 0px 0px 10px;
+        border: none;
+        background: var(--excr-grey);
+        font-size: 10px;
+        font-weight: 500;
+        padding: 6px 10px;
+        margin: 0;
+      }
+
+      > button {
+        background: var(--excr-primary);
+        border: none;
+        border-radius: 0px 10px 10px 0px;
+        padding: 6px 10px;
+        color: var(--excr-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+
+        &:hover {
+          background: var(--excr-black);
+        }
+      }
+    }
+  }
+
+  .banner {
+    width: 100%;
+    display: flex;
+    background-color: var(--excr-secondary);
+    color: var(--excr-white);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    font-family: var(--excr-montserrat-font);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+
+    .price {
+      background: var(--excr-secondary);
+      color: var(--excr-white);
+      font-family: var(--excr-montserrat-font);
+      font-weight: 700;
+      font-size: 24px;
+      letter-spacing: 0.08em;
+      padding: 10px;
+      border-radius: 10px;
+      text-transform: uppercase;
+    }
+
+    .players {
+    }
+  }
+}

@@ -1,110 +1,40 @@
-.home {
-  section {
-    display: flex;
-    flex-direction: column;
-    gap: var(--excr-gap);
+.intro {
+  background-color: var(--color-primary);
+  background-image: url('/layouts/img/hero-section.jpg');
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
 
-    &.ourChallenges,
-    &.howtoplay {
-      justify-content: center;
-      text-align: center;
+  &Gradient {
+    background: rgb(59, 115, 62);
+    background: -moz-linear-gradient(90deg, rgba(59, 115, 62, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(59, 115, 62, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(90deg, rgba(59, 115, 62, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3b733e",endColorstr="#000000",GradientType=1);
+  }
+
+  .container {
+    padding-top: 120px;
+    padding-bottom: 180px;
+
+    @media (min-width: 1200px) {
+      padding-top: 170px;
+      padding-bottom: 230px;
     }
+  }
 
-    &.ourChallenges {
-      background: var(--excr-grey);
-      align-items: center;
+  h1,
+  p {
+    color: var(--color-white);
+  }
 
-      > .challenges {
-        display: flex;
-        flex-direction: column;
-        gap: var(--excr-margin);
-        align-items: center;
-        justify-content: center;
-        width: 100%;
+  h1 {
+    max-width: 800px;
+  }
 
-        @media screen and (min-width: 900px) {
-          flex-direction: row;
-          flex-wrap: wrap;
-        }
-
-        @media screen and (min-width: 1600px) {
-          max-width: var(--excr-max-large-container-width);
-          margin-inline: auto;
-        }
-      }
-    }
-
-    &.howtoplay {
-      align-items: center;
-      max-width: var(--excr-max-container-width);
-      margin-inline: auto;
-
-      > .titles {
-        max-width: 600px;
-      }
-
-      > ol {
-        text-align: left;
-        list-style: none;
-        counter-reset: item;
-        padding: 0;
-        margin: 0;
-
-        > li {
-          counter-increment: item;
-          margin-bottom: 5px;
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          gap: var(--excr-padding);
-          align-items: center;
-
-          border-bottom: solid 2px var(--excr-primary);
-          padding-block: 30px;
-          margin: 0;
-
-          @media screen and (min-width: 900px) {
-            flex-wrap: nowrap;
-          }
-
-          &:before {
-            margin-right: 10px;
-            content: counter(item);
-            background: var(--excr-primary);
-            border-radius: 100%;
-            color: var(--excr-white);
-            width: 25px;
-            height: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            aspect-ratio: 1;
-          }
-
-          &:last-of-type {
-            border: none;
-          }
-
-          > b {
-            width: fit-content;
-            @media screen and (min-width: 900px) {
-              min-width: 210px;
-            }
-          }
-
-          > span {
-            width: 100%;
-          }
-        }
-      }
-    }
-
-    > .titles {
-      width: 100%;
-      max-width: var(--excr-max-block-width);
-      display: flex;
-      flex-direction: column;
-      gap: var(--excr-padding);
-    }
+  p {
+    max-width: 560px;
   }
 }

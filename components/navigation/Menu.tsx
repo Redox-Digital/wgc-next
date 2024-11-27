@@ -1,13 +1,18 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import logo from '/public/logos/logo_excr.svg';
+import { useState } from 'react';
 import css from './Menu.module.scss';
 import burgerStyle from './Burger.module.scss';
-import Button from './Button';
-import { useState } from 'react';
+import { NavLink, MainNavLinks } from '@/pages/constants/Navigation';
+import Link from 'next/link';
+import Image from 'next/image';
 import MobileMenu from './MobileMenu';
 
-const Header = () => {
+type MenuProps = {
+  logo: string;
+  logoUrl: string;
+  links: NavLink[];
+};
+
+export default function Menu({ logo, logoUrl, links }: MenuProps) {
   //navbar scroll when active state
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
@@ -22,14 +27,16 @@ const Header = () => {
         <div className={css.mainMenu}>
           <div className={css.mainMenu__container}>
             <Link href="/" className={css.logo} aria-label="Accéder à la page d'accueil">
-              <Image src={logo} alt="" height={50} className="logo" />
+              <Image src={logo} alt="" width={85} height={50} className="logo" />
             </Link>
 
             <div className={css.menu__links}>
-              <Link href="/#challenges">Challenges</Link>
-              <Link href="/lobby">Lobby</Link>
-              <Link href="/rankings">Rankings</Link>
-              <Link href="/#howtoplay">How To Play</Link>
+              {links.map((link) => (
+                <Link key={link.url} href={link.url}>
+                  {link.icon ? <i>{link.icon}</i> : ''}
+                  <span>{link.label}</span>
+                </Link>
+              ))}
             </div>
             <button
               className={`${burgerStyle.burger} ${menuOpen ? burgerStyle.burger__closed : ''}`}
@@ -46,6 +53,4 @@ const Header = () => {
       <MobileMenu open={menuOpen} toggleMenu={toggleMenu} />
     </>
   );
-};
-
-export default Header;
+}

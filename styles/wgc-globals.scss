@@ -1,0 +1,153 @@
+@import './wgc-variables.scss';
+
+.wgc {
+  margin: 0;
+  background-color: var(--wgc-bg-color);
+  box-sizing: border-box;
+
+  // Fonts
+  font-family: var(--wgc-roboto-font), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--wgc-fs-p);
+  color: var(--wgc-white);
+
+  * {
+    box-sizing: inherit;
+  }
+
+  section {
+    padding: var(--wgc-sct-vert-margin) var(--wgc-sct-horiz-margin);
+    display: flex;
+    color: var(--wgc-black);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--wgc-montserrat-font);
+    margin: 0;
+    font-weight: 900;
+  }
+
+  h1 {
+    font-size: var(--wgc-fs-h1);
+  }
+
+  h2 {
+    font-size: var(--wgc-fs-h2);
+    line-height: 1.2em;
+    letter-spacing: 0.03em;
+  }
+
+  h3 {
+    font-size: var(--wgc-fs-h3);
+    letter-spacing: 0.03em;
+  }
+
+  h4 {
+    font-size: var(--wgc-fs-h4);
+    line-height: 1.2em;
+    letter-spacing: 0.03em;
+  }
+
+  h5 {
+    font-size: var(--wgc-fs-h5);
+    line-height: auto;
+    letter-spacing: 0.08em;
+  }
+
+  h6 {
+    font-size: var(--wgc-fs-h6);
+    letter-spacing: 0.07em;
+    line-height: auto;
+  }
+
+  a {
+    transition: all ease-in-out 0.2s;
+  }
+
+  a:hover {
+    color: var(--wgc-primary);
+    transition: all ease-in-out 0.2s;
+  }
+
+  p {
+    line-height: 1.3em;
+    letter-spacing: 0.01em;
+
+    &:first-of-type {
+      margin-top: 0px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0px;
+    }
+  }
+
+  small {
+    font-size: var(--wgc-fs-sm);
+    line-height: 1.3em;
+    letter-spacing: 0.01em;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--wgc-black);
+  }
+
+  img {
+    border-style: none;
+  }
+
+  .container {
+    width: 100%;
+    max-width: var(--wgc-large-content-width);
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // Display
+  .d-none {
+    display: none !important;
+  }
+
+  .d-block {
+    display: block !important;
+  }
+
+  .d-flex {
+    display: flex !important;
+  }
+
+  // Colors
+  .color-primary {
+    color: var(--wgc-primary) !important;
+  }
+  .color-accent {
+    color: var(--wgc-accent) !important;
+  }
+
+  .color-dark {
+    color: var(--wgc-dark) !important;
+  }
+
+  .color-accent-dark {
+    color: var(--wgc-accent-dark) !important;
+  }
+
+  // For menu OnScroll
+  .bg-dark {
+    background: var(--wgc-dark);
+  }
+
+  .noscroll {
+    overflow: hidden;
+  }
+}

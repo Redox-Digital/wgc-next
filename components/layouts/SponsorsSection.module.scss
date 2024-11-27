@@ -1,0 +1,14 @@
+.section {
+  background-color: var(--wgc-white);
+  padding-block: var(--wgc-gap) !important;
+
+  > ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--wgc-padding);
+    list-style-type: none;
+  }
+}

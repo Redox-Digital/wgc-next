@@ -1,6 +1,6 @@
 import Layout from '@/components/Layout';
 import type { AppProps } from 'next/app';
-import '@/styles/excr-globals.scss';
+import '@/styles/wgc-globals.scss';
 
 import { Roboto, Montserrat } from 'next/font/google';
 
@@ -13,8 +13,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <style jsx global>
         {`
           :root {
-            --excr-roboto-font: ${roboto.style.fontFamily};
-            --excr-montserrat-font: ${montserrat.style.fontFamily};
+            --wgc-roboto-font: ${roboto.style.fontFamily};
+            --wgc-montserrat-font: ${montserrat.style.fontFamily};
           }
         `}
       </style>

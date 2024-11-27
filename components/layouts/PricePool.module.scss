@@ -1,0 +1,58 @@
+.pricePool {
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  gap: var(--excr-gap);
+
+  &.alt {
+    background: var(--excr-grey);
+
+    > .prices > .price {
+      background: var(--excr-white);
+    }
+  }
+
+  > .prices {
+    display: flex;
+    flex-direction: column;
+    gap: var(--excr-margin);
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: 900px) {
+      flex-direction: row;
+    }
+
+    > .price {
+      display: flex;
+      flex-direction: column;
+      background: var(--excr-grey);
+      border-radius: 20px;
+      padding: 20px;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-start;
+      box-shadow: var(--excr-shadow-hover);
+
+      width: 100%;
+      max-width: var(--excr-max-card-width);
+
+      > img {
+        width: 100%;
+        object-fit: contain;
+        overflow: hidden;
+      }
+
+      > .texts {
+        display: flex;
+        flex-direction: column;
+        gap: var(--excr-padding);
+        line-height: 1rem;
+
+        > b {
+          padding-top: var(--excr-padding);
+        }
+      }
+    }
+  }
+}

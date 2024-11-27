@@ -1,198 +1,288 @@
-import css from './Home.module.scss';
-import Head from 'next/head';
-import Hero from '@/components/Hero';
-import Button from '@/components/navigation/Button';
-import ContactCTA from '@/components/ContactCTA';
 import Link from 'next/link';
-import Image from 'next/image';
-import PricePool from '@/components/PricePool';
-import Challenge from '@/components/Challenge';
-import CardsSection from '@/components/CardsSection';
-import YourChallengeCTA from '@/components/navigation/YourChallengeCTA';
-
-type ChallengeType = {
-  url: string;
-  img: string;
-  title: string;
-  dates: string;
-  gameType: string;
-  hcp: string;
-  price?: number;
-  currentPlayers: number;
-};
+import css from './Home.module.scss';
 
 export default function Home() {
-  const howToSteps: { title: string; desc: string }[] = [
-    /* { title: 'At your golf club 🏡⛳', desc: '✏️ Register to WGC Tournament' },*/
-    {
-      title: 'On www.wgc.gg 📲💻 ',
-      desc: '📝 Create a free account online ✏️ Join for free the Challenge in your handicap category',
-    },
-    {
-      title: 'On the golf course 🏡⛳',
-      desc: '🏌 Have fun playing Extracurricular Challenge 18 holes Net Stableford',
-    },
-    {
-      title: 'On www.wgc.gg 📲💻',
-      desc: '✏️ Enter your score on www.wgc.gg after your round, the same day you played before 10pm CT🕙',
-    },
-    {
-      title: 'On www.wgc.gg 📲💻',
-      desc: '🏆 Check the Leaderboard section and wait until the Extracurricular Challenge is finished (10pm / Oct 24th) to see your final position',
-    },
-  ];
-
-  const challenges: ChallengeType[] = [
-    {
-      url: 'https://worldgolfchallenge-test.azurewebsites.net/lobby/3384',
-      img: '/logos/logo_excr.svg',
-      title: 'EXTRACURRICULAR',
-      dates: 'Mar. 14th to Mar. 18th',
-      gameType: 'Net Strableford',
-      hcp: 'single',
-      currentPlayers: 11,
-    },
-    {
-      url: 'https://worldgolfchallenge-test.azurewebsites.net/lobby/3384',
-      img: '/logos/logo_excr.svg',
-      title: 'EXTRACURRICULAR',
-      dates: 'Mar. 14th to Mar. 18th',
-      gameType: 'Net Strableford',
-      hcp: 'up to 18',
-      currentPlayers: 8,
-    },
-    {
-      url: 'https://worldgolfchallenge-test.azurewebsites.net/lobby/3384',
-      img: '/logos/logo_excr.svg',
-      title: 'EXTRACURRICULAR',
-      dates: 'Mar. 14th to Mar. 18th',
-      gameType: 'Net Strableford',
-      hcp: 'up to 54',
-      currentPlayers: 0,
-    },
-  ];
-
   return (
-    <>
-      <Head>
-        <title>EXTRACURRICULAR x WGC | Welcome</title>
-        <meta
-          name="keywords"
-          content="golf, challenge, golf course, golf challenge, extracurricular"
-        />
-        <meta
-          name="description"
-          content="Playing golf physically while competing digitally, Extracurricular Prices to reward you!"
-        />
-        <meta name="author" content="Redox Digital" />
-        <meta property="og:title" content="EXTRACURRICULAR x World Golf Challenge" />
-        <meta
-          property="og:description"
-          content="Playing golf physically while competing digitally, Extracurricular Prices to reward you!"
-        />
-        <meta property="og:image" content={`https://wgc.rdox.ch/socials/social_thumbnail.jpg`} />
-        {/*<!-- Update domain -->*/}
-        <meta property="og:url" content="https://wgc.rdox.ch" /> {/*<!-- Update domain -->*/}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="EXTRACURRICULAR x World Golf Challenge" />
-        <meta
-          name="twitter:description"
-          content="Playing golf physically while competing digitally, Extracurricular Prices to reward you!"
-        />
-        <meta name="twitter:image" content={`https://wgc.rdox.ch/socials/social_thumbnail.jpg`} />
-        {/*<!-- Update domain -->*/}
-      </Head>
-
-      <Hero
-        title={
-          <>
-            Playing golf physically&nbsp;
-            <br />
-            while competing digitally
-          </>
-        }
-        home
-        subtitle="Play in the club of your choice in real life while measuring yourself & your score, virtually against any other player in the world!"
-        source="./layouts/home_hero.webp"
-        opacity={0.25}
-      />
-      <YourChallengeCTA />
-      <main className={css.home}>
-        <section className={css.ourChallenges}>
-          <div className={css.titles}>
-            <h2>Our Challenges</h2>
-            <p>
-              Choose the category that suits you the most and join players from all around the
-              world.
+    <main>
+      <section id="intro-section" className={css.intro}>
+        <div className={css.introGradient}>
+          <div className={css.container}>
+            <h1 className="text-shadow">
+              Joue au golf physiquement tout en rivalisant digitalement
+            </h1>
+            <p className="on-image text-shadow">
+              Jouez physiquement dans le club de votre choix en vous mesurant virtuellement à
+              n&apos;importe quel autre joueur dans le monde!
             </p>
-          </div>
-          <div className={css.challenges}>
-            {challenges.map((challenge, key) => (
-              <Challenge key={key} {...challenge} />
-            ))}
-          </div>
-        </section>
 
-        <PricePool />
-
-        <CardsSection
-          title={'The concept'}
-          desc={
-            'World Golf Challenge is the first digital golf platform enabling all levels of amateur players worldwide to compete in virtual Challenges online while playing on real courses.'
-          }
-          cards={[
-            {
-              icon: '/pictograms/clipboard.svg',
-              title: 'Join a Challenge',
-              desc: 'Any day, choose a Challenge on the screen',
-            },
-            {
-              icon: '/pictograms/golf-white.svg',
-              title: 'Go out, play golf',
-              desc: 'Real action on the greens',
-            },
-            {
-              icon: '/pictograms/pen.svg',
-              title: 'Enter your score & win',
-              desc: 'Lots of fun and great prizes',
-            },
-          ]}
-        />
-
-        <section className={css.howtoplay}>
-          <div className={css.titles}>
-            <h2>How to play</h2>
-            <p>
-              Joining a challenge requires, like World Golf Challenge, some work on your
-              phone or computer.
-            </p>
+            <a href="#" className="btn btn-primary btn-m-100">
+              Vers les challenges
+            </a>
+            <a href="#how-to-section" className="btn btn-secondary btn-m-100">
+              Comment jouer
+            </a>
           </div>
-          <ol>
-            {howToSteps.map((step, key) => (
-              <li key={key}>
-                <b>{step.title}</b>
-                <span>{step.desc}</span>
-              </li>
-            ))}
-          </ol>
-          <div className={css.steps}>
-            <div className={css.row}></div>
+        </div>
+      </section>
+      <div id="temp-events" className="container">
+        <div className="row">
+          <div className="col-0 col-lg-2 col-xl-4">{/* Spacer */}</div>
+          <div className="col-12 col-md-6 col-lg-5 col-xl-4">
+            <Link href="#" className="event">
+              <div className="img-container">
+                <img src="/layouts/stensen1.jpeg" alt="Henrik Stensen Eyewear Event" />
+              </div>
+
+              <div className="texts">
+                <div className="surtitle">
+                  <sup>De 1er avril au 15 juin</sup>
+                </div>
+                <h5>Championnat HS</h5>
+                <i className="fa-solid fa-arrow-right-long"></i>
+              </div>
+            </Link>
           </div>
-        </section>
-        <ContactCTA
-          img="/layouts/home_excr-cta.jpg"
-          grey
-          title={'Look fresh on the greens'}
-          desc={
-            <>
-              Elevate your wardrobe by visiting our sponsor&apos;s e-shop, <b>Extracurricular</b>,
-              and discover men&apos;s premium golf apparel including polos, hats, shorts, and pants.
-            </>
-          }
-          btnLabel="The shop"
-          btnLink="https://ex-cr.com/?utm_source=wgc"
-        />
-      </main>
-    </>
+
+          <div className="col-12 col-md-6 col-lg-5 col-xl-4">
+            <a href="#" className="event">
+              <div className="img-container">
+                <img src="/layouts/trackman.jpg" alt="Join us on Trackman" />
+              </div>
+
+              <div className="texts">
+                <h5>WGC Winter Challenge sur TRACKMAN</h5>
+                <i className="fa-solid fa-arrow-right-long"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <section id="concept-section">
+        <div className="container">
+          <h2>Le concept</h2>
+          <p className="subtitle">
+            World Golf Challenge est la première plateforme digitale de golf réunissant des joueurs
+            de tous niveaux, qui s’affrontent sur de vrais parcours lors de Challenges virtuels. Le
+            meilleur du golf en phygital !
+          </p>
+
+          <div className="row mt-4">
+            <div className="col col-12 col-sm-6 col-lg-3">
+              <div className="concept-item">
+                <div className="icon">
+                  <i className="fa-solid fa-pencil"></i>
+                </div>
+
+                <p>
+                  <b>Rejoins un Challenge</b>
+                </p>
+
+                <p>Chaque jour, choisis un Challenge sur l&apos;écran</p>
+              </div>
+            </div>
+
+            <div className="col col-12 col-sm-6 col-lg-3">
+              <div className="concept-item">
+                <div className="icon">
+                  <i className="fa-solid fa-golf-ball-tee"></i>
+                </div>
+
+                <p>
+                  <b>Joue au golf</b>
+                </p>
+
+                <p>Real action on the greens</p>
+              </div>
+            </div>
+
+            <div className="col col-12 col-sm-6 col-lg-3">
+              <div className="concept-item">
+                <div className="icon">
+                  <i className="fa-solid fa-medal"></i>
+                </div>
+
+                <p>
+                  <b>Entre ton score & gagne !</b>
+                </p>
+
+                <p>Beaucoup d&apos;amusement et de bons prix</p>
+              </div>
+            </div>
+
+            <div className="col col-12 col-sm-6 col-lg-3">
+              <div className="concept-item">
+                <div className="icon">
+                  <i className="fa-solid fa-sack-dollar"></i>
+                </div>
+
+                <p>
+                  <b>Paie ton Challenge</b>
+                </p>
+
+                <p>Paiement simple & sécurisé via Paypal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-to-section">
+        <div className="one-two-thirds-section">
+          <div className="one-third">
+            <div className="container">
+              <h2 className="text-shadow">Comment jouer</h2>
+              <p className="on-image text-shadow">
+                Choisis un Challenge correspondant au jour de ta partie de golf. Pour un Buy-in,
+                charge ton compte via PayPal en toute sécurité. La répartition des gains sera
+                visible dans le Lobby. Un amateur peut rejoindre un Challenge de catégories
+                d’handicap plus élevées mais pas inférieures. Les Pros ne participent pas aux
+                compétitions amateurs (hors Private).
+              </p>
+              {/* <!-- to the About page --> */}
+              <a href="#" className="btn btn-secondary">
+                Plus d&apos;informations
+              </a>
+            </div>
+          </div>
+          <div className="two-thirds">
+            <div className="container">
+              <div className="numbered-items">
+                <div className="item">
+                  <div className="item-title">
+                    <span className="item-number">1</span>
+                    <h5>Rejoins un Challenge</h5>
+                  </div>
+
+                  <p>
+                    Choisis un Challenge à l&apos;écran, va jouer sur le terrain de ton choix. Pour
+                    les Buy-in, utilise notre partenaire Paypal pour créditer ton compte de façon
+                    sécurisée. Toutes les informations seront disponibles dans le Lobby du
+                    Challenge.
+                  </p>
+                </div>
+                <div className="item">
+                  <div className="item-title">
+                    <span className="item-number">2</span>
+                    <h5>Inscris ton score</h5>
+                  </div>
+                  <p>
+                    Ton parcours terminé, rejoins ton lobby (bande verte en bas de ton portable, ou
+                    carré vert sur ton desktop) et inscris ton score dans le Challenge que tu viens
+                    de jouer. Assure-toi de bien entrer ton score au bon format de jeu (p.e. Net
+                    Stableford vs Net Stroke Play).
+                  </p>
+                </div>
+                <div className="item">
+                  <div className="item-title">
+                    <span className="item-number">3</span>
+                    <h5>Classement</h5>
+                  </div>
+                  <p>
+                    Le ranking final du Challenge de la journée <i>(10pm CET)</i>. Tu peux découvrir
+                    tes classements dans ton profile ou sur l’onglet Leaderboard{' '}
+                    <i>(hors Private)</i>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="horiz-banner">
+        <img className="d-none d-md-block" src="/layouts/banner.jpg" alt="HS Championship" />
+        <img className="d-block d-md-none" src="/layouts/banner-mobile.jpg" alt="HS Championship" />
+      </div>
+
+      <section id="challenges-categories-section">
+        <div className="container">
+          <h2>Rivalise avec d&apos;autres joueurs</h2>
+          <p className="subtitle">
+            Choisis la catégorie qui correspond à ton handicap ou au-dessus, rejoins un Challenge et
+            défie le monde!
+          </p>
+
+          <div className="row my-4">
+            {/* <!-- to the Clubhouse, challenges already filtered ? --> */}
+            <a href="#" className="col-12 col-sm-6 col-lg-3">
+              <div className="category-card cat-hcp-single">
+                <div className="top">
+                  <h4>HCP Single</h4>
+                </div>
+                <div className="bottom"></div>
+              </div>
+            </a>
+            <a href="#" className="col-12 col-sm-6 col-lg-3">
+              <div className="category-card cat-hcp-16">
+                <div className="top">
+                  <h4>HCP up to 16</h4>
+                </div>
+                <div className="bottom"></div>
+              </div>
+            </a>
+            <a href="#" className="col-12 col-sm-6 col-lg-3">
+              <div className="category-card cat-hcp-54">
+                <div className="top">
+                  <h4>HCP up to 54</h4>
+                </div>
+                <div className="bottom"></div>
+              </div>
+            </a>
+            <a href="#" className="col-12 col-sm-6 col-lg-3">
+              <div className="category-card cat-hcp-pro">
+                <div className="top">
+                  <h4>Pro</h4>
+                </div>
+                <div className="bottom"></div>
+              </div>
+            </a>
+          </div>
+
+          {/* <!-- to the Clubhouse --> */}
+          <a href="#" className="btn btn-secondary">
+            Voir tous les challenges
+          </a>
+        </div>
+      </section>
+
+      <section id="private-challenges-section">
+        <div className="two-one-thirds-section">
+          <div className="two-thirds">
+            <div className="container">
+              <h2>Tournois privés</h2>
+              <p>
+                Que tu sois un joueur, un club, une société, crée ton propre Challenge. Détermine le
+                format <i>(free/buy-in, amateurs et/ou pros)</i>, les dates et le type de jeu. La
+                plateforme génère un lien privé que tu peux envoyer aux participants de ton choix.
+              </p>
+              {/* <!-- to the Clubhouse, Private challenges section --> */}
+              <Link href="#" className="btn btn-primary">
+                Crée ton challenge
+              </Link>
+            </div>
+          </div>
+          <div className="one-third"></div>
+        </div>
+      </section>
+
+      <section id="cta" className="">
+        <div className="cta-background container">
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <h3 className="text-shadow">
+                Rejoins dès à présent, et joue contre d&apos;autres golfeurs
+              </h3>
+            </div>
+            <div className="col-12  col-md-6">
+              {/*<!-- to Register -->*/}
+              <a className="btn btn-primary" href="#">
+                Rejoindre gratuitement
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

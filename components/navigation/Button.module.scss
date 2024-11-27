@@ -8,7 +8,7 @@
   width: fit-content;
 
   border: solid 2px;
-  border-color: var(--excr-primary);
+  border-color: var(--wgc-primary);
 
   font-size: 18px;
   font-weight: 700;
@@ -16,63 +16,63 @@
   text-transform: uppercase;
   transition: all 0.3s ease-in-out;
 
-  background: var(--excr-primary);
-  color: var(--excr-white) !important;
+  background: var(--wgc-primary);
+  color: var(--wgc-white) !important;
 
   border-radius: 10px;
 
-  box-shadow: var(--excr-shadow-hover);
+  box-shadow: var(--wgc-shadow-hover);
 
   &:hover {
     cursor: pointer;
-    border-color: var(--excr-primary);
-    background: var(--excr-white);
-    color: var(--excr-primary) !important;
+    border-color: var(--wgc-primary);
+    background: var(--wgc-white);
+    color: var(--wgc-primary) !important;
     transition: all 0.3s ease-in-out;
     transform: translateY(-1px);
-    box-shadow: var(--excr-shadow-hover);
+    box-shadow: var(--wgc-shadow-hover);
   }
 
   &:active {
-    border: solid 2px var(--excr-white);
-    background: var(--excr-primary);
-    box-shadow: var(--excr-shadow-clicked);
-    color: var(--excr-white);
+    border: solid 2px var(--wgc-white);
+    background: var(--wgc-primary);
+    box-shadow: var(--wgc-shadow-clicked);
+    color: var(--wgc-white);
     transition: all 0s;
   }
 
   // Types
 
   &Wgc {
-    border-color: var(--excr-wgc-color);
-    color: var(--excr-white);
-    background: var(--excr-wgc-color);
+    border-color: var(--wgc-wgc-color);
+    color: var(--wgc-white);
+    background: var(--wgc-wgc-color);
 
     &:hover {
-      background: var(--excr-white);
-      color: var(--excr-wgc-color);
+      background: var(--wgc-white);
+      color: var(--wgc-wgc-color);
 
-      border-color: var(--excr-wgc-color);
+      border-color: var(--wgc-wgc-color);
     }
 
     &:active {
-      border-color: var(--excr-white);
-      background: var(--excr-white);
-      color: var(--excr-wgc-color);
+      border-color: var(--wgc-white);
+      background: var(--wgc-white);
+      color: var(--wgc-wgc-color);
     }
   }
 
   &.white {
-    background: var(--excr-white);
-    color: var(--excr-primary) !important;
+    background: var(--wgc-white);
+    color: var(--wgc-primary) !important;
 
     &:hover {
-      border-color: var(--excr-primary);
+      border-color: var(--wgc-primary);
     }
     &:active {
-      border-color: var(--excr-white);
-      color: var(--excr-white);
-      background: var(--excr-primary);
+      border-color: var(--wgc-white);
+      color: var(--wgc-white);
+      background: var(--wgc-primary);
     }
   }
 }
