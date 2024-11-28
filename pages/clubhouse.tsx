@@ -63,8 +63,8 @@ export default function Clubhouse() {
     {
       name: 'B. Anders',
       flag: '🇸🇪',
-      pointsScored: 0,
-      challengesWon: 0,
+      pointsScored: 123,
+      challengesWon: 2,
       moneyWon: 67,
       img: 'https://images.unsplash.com/photo-1593282153762-a41e3cceb06c?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },

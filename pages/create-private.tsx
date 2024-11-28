@@ -4,6 +4,7 @@ import btnCss from '../components/navigation/Button.module.scss';
 import Button from '@/components/navigation/Button';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type TextInputType = {
   id: string;
@@ -19,6 +20,7 @@ type SelectInputType = {
   id: string;
   label: string;
   half?: boolean;
+  onChange?: () => string;
   options: { value: string; label: string }[];
 };
 
@@ -138,6 +140,9 @@ export default function CreatePrivate() {
           Create your challenge
         </button>
       </form>
+      <Link href="/clubhouse" className={css.textLink}>
+        Return to Clubhouse
+      </Link>
     </main>
   );
 }
@@ -167,12 +172,12 @@ export function TextInput({
   );
 }
 
-export function SelectInput({ id, label, options, half }: SelectInputType) {
+export function SelectInput({ id, label, options, half, onChange }: SelectInputType) {
   return (
     <label htmlFor={id} className={`${css.input} ${half && css.half}`}>
       <span>{label}</span>
 
-      <select name={id} id={id}>
+      <select name={id} id={id} onChange={onChange}>
         {options.map((o) => (
           <option value={o.value} key={o.value}>
             {o.label}

@@ -1,8 +1,8 @@
 .notFoundPage {
-  margin-top: var(--excr-navbar-height);
+  margin-top: var(--wgc-navbar-height);
 
   > div {
     flex-direction: column;
-    gap: var(--excr-margin);
+    gap: var(--wgc-margin);
   }
 }

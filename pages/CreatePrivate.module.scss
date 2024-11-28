@@ -95,3 +95,9 @@
     min-height: 150px;
   }
 }
+
+.textLink {
+  display: block;
+  text-decoration: underline !important;
+  margin-top: var(--wgc-margin);
+}

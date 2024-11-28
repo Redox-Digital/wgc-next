@@ -3,9 +3,37 @@
   flex-direction: column;
 
   .radioBtns {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    gap: var(--wgc-padding);
+    gap: 0;
+    justify-content: center;
+
+    > button {
+      &:hover {
+        transform: none;
+        outline: none;
+        // box-shadow: none;
+      }
+
+      &:disabled {
+        &:active {
+          color: initial;
+          background: initial;
+          box-shadow: none;
+        }
+      }
+
+      &:first-of-type {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+
+      &:last-of-type {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+      }
+    }
   }
 }
 

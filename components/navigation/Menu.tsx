@@ -5,6 +5,7 @@ import { NavLink, MainNavLinks } from '@/pages/constants/Navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import MobileMenu from './MobileMenu';
+import Button from './Button';
 
 type MenuProps = {
   logo: string;
@@ -15,11 +16,10 @@ type MenuProps = {
 export default function Menu({ logo, logoUrl, links }: MenuProps) {
   //navbar scroll when active state
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [registered, setRegistered] = useState<boolean>(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-    console.log(menuOpen);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const toggleRegistered = () => setRegistered(!registered);
 
   return (
     <>
@@ -33,10 +33,16 @@ export default function Menu({ logo, logoUrl, links }: MenuProps) {
             <div className={css.menu__links}>
               {links.map((link) => (
                 <Link key={link.url} href={link.url}>
-                  {link.icon ? <i>{link.icon}</i> : ''}
+                  {link.icon ? <Image src={link.icon} alt={''} width={20} height={20} /> : ''}
                   <span>{link.label}</span>
                 </Link>
               ))}
+              <Button to={'#'} onClick={toggleRegistered}>
+                Register
+              </Button>
+              <Button white to={'#'} onClick={toggleRegistered}>
+                Login
+              </Button>
             </div>
             <button
               className={`${burgerStyle.burger} ${menuOpen ? burgerStyle.burger__closed : ''}`}

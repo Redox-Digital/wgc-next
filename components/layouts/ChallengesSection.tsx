@@ -1,11 +1,16 @@
 import { useState } from 'react';
 import css from './ChallengeSection.module.scss';
+import btnCss from '../navigation/Button.module.scss';
 import Image from 'next/image';
 import Button from '../navigation/Button';
 import SectionTitle from './SectionTitle';
+import { SelectInput } from '@/pages/create-private';
 
 export default function ChallengeSection() {
   const [showPrivate, setShowPrivate] = useState<boolean>(false);
+  const [hcpFilter, setHcpFilter] = useState<'single' | 'up to 18' | 'up to 54' | undefined>(
+    undefined
+  );
 
   const toggleView = () => setShowPrivate(!showPrivate);
 
@@ -40,10 +45,18 @@ export default function ChallengeSection() {
   return (
     <section className={css.section}>
       <div className={css.radioBtns}>
-        <button onClick={toggleView} disabled={!showPrivate}>
+        <button
+          className={`${btnCss.btn} ${showPrivate && btnCss.white}`}
+          onClick={toggleView}
+          disabled={!showPrivate}
+        >
           Available Challenges
         </button>
-        <button onClick={toggleView} disabled={showPrivate}>
+        <button
+          onClick={toggleView}
+          className={`${btnCss.btn} ${showPrivate || btnCss.white}`}
+          disabled={showPrivate}
+        >
           Private Challenges
         </button>
       </div>
@@ -102,7 +115,31 @@ export default function ChallengeSection() {
         </div>
       ) : (
         <div className={css.challenges}>
-          <div>Filters</div>
+          <div>
+            <SelectInput
+              id={'filters'}
+              label={'filters'}
+              onChange={setHcpFilter}
+              options={[
+                {
+                  value: '',
+                  label: 'All',
+                },
+                {
+                  value: 'single',
+                  label: 'Single',
+                },
+                {
+                  value: 'up to 18',
+                  label: 'Up to 18',
+                },
+                {
+                  value: 'up to 54',
+                  label: 'Up to 54',
+                },
+              ]}
+            ></SelectInput>
+          </div>
           {/* 8 cols */}
           <div className={css.head}>
             <span className={css.id}>Id</span>
@@ -116,9 +153,9 @@ export default function ChallengeSection() {
             <span></span>
           </div>
           <div className={css.body}>
-            {challenges.map((c) => (
-              <ChallengePreview key={c.id} {...c} />
-            ))}
+            {challenges.map((c) =>
+              !hcpFilter || hcpFilter === c.hcp ? <ChallengePreview key={c.id} {...c} /> : ''
+            )}
           </div>
           <Button to={'#'} white>
             Show more

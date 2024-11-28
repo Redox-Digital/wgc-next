@@ -8,21 +8,21 @@ export const MainNavLinks: NavLink[] = [
   {
     url: '/clubhouse',
     label: 'Clubhouse',
-    icon: 'fa-house',
+    icon: '/pictograms/house-flag-black.svg',
   },
   {
     url: '/leaderboard',
     label: 'Leaderboard',
-    icon: 'fa-bars',
+    icon: '/pictograms/chart-column.svg',
   },
   {
     url: '/about',
     label: 'About',
-    icon: 'fa-info-circle',
+    icon: '/pictograms/circle-info-black.svg',
   },
   {
     url: '/faq',
     label: 'FAQ',
-    icon: 'fa-speech-bubble-square',
+    icon: '/pictograms/message.svg',
   },
 ];

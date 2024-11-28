@@ -14,10 +14,12 @@ type Player = {
   moneyWon: number;
 };
 
+
+
 type ChallengePreview = {
   id: number;
   img? : string;
-  hcp: "single" | "up to 18" | "up to 54"
+  hcp:  "single" | "up to 18" | "up to 54";
   name: string;
   pool: number;
   gameType: string;
