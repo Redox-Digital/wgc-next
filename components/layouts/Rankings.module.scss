@@ -1,21 +1,21 @@
 .rankings {
-  background: var(--excr-white);
-  box-shadow: var(--excr-shadow-hover);
+  background: var(--wgc-white);
+  box-shadow: var(--wgc-shadow-hover);
   border-radius: 20px;
   width: 100%;
   border-collapse: collapse;
 
   @media screen and (min-width: 1200px) {
-    width: calc(100% - 360px - var(--excr-gap));
+    width: calc(100% - 360px - var(--wgc-gap));
   }
 
   > thead {
-    background: var(--excr-primary);
-    color: var(--excr-white);
+    background: var(--wgc-primary);
+    color: var(--wgc-white);
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: var(--excr-margin) var(--excr-padding);
+    padding: var(--wgc-margin) var(--wgc-padding);
     display: flex;
     border-radius: 20px 20px 0px 0px;
 
@@ -31,15 +31,15 @@
   }
 
   > tbody {
-    padding: var(--excr-padding);
+    padding: var(--wgc-padding);
     display: flex;
     flex-direction: column;
-    gap: var(--excr-padding);
+    gap: var(--wgc-padding);
 
     > tr {
-      padding-block: var(--excr-padding);
+      padding-block: var(--wgc-padding);
 
-      border-bottom: 1px solid var(--excr-black);
+      border-bottom: 1px solid var(--wgc-black);
 
       &:last-of-type {
         border: none;
@@ -73,7 +73,7 @@
     gap: 20px;
 
     > span {
-      color: var(--excr-dark-grey);
+      color: var(--wgc-dark-grey);
     }
 
     > img {
@@ -84,25 +84,25 @@
 }
 
 .card {
-  box-shadow: var(--excr-shadow-hover);
-  background: var(--excr-white);
+  box-shadow: var(--wgc-shadow-hover);
+  background: var(--wgc-white);
   border-radius: 20px;
   width: 100%;
-  max-width: var(--excr-max-block-width);
+  max-width: var(--wgc-max-block-width);
 
   @media screen and (min-width: 900px) {
-    max-width: calc((100% - var(--excr-margin)) / 2);
+    max-width: calc((100% - var(--wgc-margin)) / 2);
   }
 
   @media screen and (min-width: 1200px) {
-    max-width: calc((100% - var(--excr-margin) * 2) / 3);
+    max-width: calc((100% - var(--wgc-margin) * 2) / 3);
   }
 
   > .head {
-    background: var(--excr-primary);
-    color: var(--excr-white);
+    background: var(--wgc-primary);
+    color: var(--wgc-white);
     border-radius: 20px 20px 0px 0px;
-    padding: 20px var(--excr-padding);
+    padding: 20px var(--wgc-padding);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -113,11 +113,11 @@
       width: 100%;
       max-width: 400px;
       height: auto;
-      margin-bottom: var(--excr-padding);
+      margin-bottom: var(--wgc-padding);
     }
 
     > h5 {
-      font-family: var(--excr-roboto-font);
+      font-family: var(--wgc-roboto-font);
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -133,11 +133,11 @@
   }
 
   > .prices {
-    padding-inline: var(--excr-padding);
+    padding-inline: var(--wgc-padding);
     display: flex;
     flex-direction: row;
-    gap: var(--excr-padding);
-    padding-top: var(--excr-margin);
+    gap: var(--wgc-padding);
+    padding-top: var(--wgc-margin);
     width: 100%;
     justify-content: center;
 
@@ -145,7 +145,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: calc((100% - 2 * var(--excr-padding)) / 3);
+      width: calc((100% - 2 * var(--wgc-padding)) / 3);
 
       > img {
         object-fit: contain;
@@ -174,10 +174,10 @@
     width: 100%;
 
     > thead {
-      color: var(--excr-black);
+      color: var(--wgc-black);
       background: none;
-      border-bottom: 1px solid var(--excr-black);
-      margin-inline: var(--excr-padding);
+      border-bottom: 1px solid var(--wgc-black);
+      margin-inline: var(--wgc-padding);
       padding-inline: 0;
     }
   }

@@ -26,3 +26,18 @@ export const MainNavLinks: NavLink[] = [
     icon: '/pictograms/message.svg',
   },
 ];
+
+export const UserLinks: NavLink[] = [
+  {
+    url: '#',
+    label: 'Wallet',
+  },
+  {
+    url: '#',
+    label: 'Settings',
+  },
+  {
+    url: '#',
+    label: 'Sign Out',
+  },
+];

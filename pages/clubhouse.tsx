@@ -80,10 +80,7 @@ export default function Clubhouse() {
       <main>
         <section>
           <SectionTitle title="Available challenges">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus iaculis, tellus eget
-              accumsan lacinia, ipsum felis finibus erat, at pharetra nulla lacus sed leo.
-            </p>
+            <p>E-Meet, compete, and connect with golfers around the globe.</p>
           </SectionTitle>
         </section>
         {sponsors && <SponsorsSection sponsors={sponsors} />}
@@ -92,27 +89,27 @@ export default function Clubhouse() {
         <CardsSection
           white
           title={'The concept'}
-          desc={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
+          desc={'World Golf Challenge is golf… just leveled up.'}
           cards={[
             {
               icon: '/pictograms/golf-white.svg',
-              title: 'Net Stableford, 18 holes',
-              desc: 'Pick any course in the world & adjust your strokes. Only Net Stableford counts.',
+              title: 'Join a Challenge',
+              desc: 'Any day, choose a Challenge on the screen',
             },
             {
               icon: '/pictograms/genders.svg',
-              title: 'Only HCP matters',
-              desc: 'Gender and age mixed into 3 different categories : Single / HCP 10 to 18 / HCP +18',
+              title: 'Go out, play golf',
+              desc: 'Real action on the greens',
             },
             {
               icon: '/pictograms/gift.svg',
-              title: 'A. lot. of. prizes.',
-              desc: 'Extracurricular Prices to reward you - we will get in touch!',
+              title: 'Enter your score & win',
+              desc: 'Lots of fun and great prizes',
             },
             {
               icon: '/pictograms/gift.svg',
-              title: 'A. lot. of. prizes.',
-              desc: 'Extracurricular Prices to reward you - we will get in touch!',
+              title: 'Pay for your Challenge',
+              desc: 'Easy & secure payments with Paypal',
             },
           ]}
         />

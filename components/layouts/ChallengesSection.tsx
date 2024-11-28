@@ -62,12 +62,7 @@ export default function ChallengeSection() {
       </div>
       {showPrivate ? (
         <div className={`${css.challenges} ${css.private}`}>
-          <SectionTitle title="Your Challenges">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus iaculis, tellus eget
-              accumsan lacinia, ipsum felis finibus erat, at pharetra nulla lacus sed leo.
-            </p>
-          </SectionTitle>
+          <SectionTitle title="Your Challenges"></SectionTitle>
           <div className={css.head}>
             <span className={css.id}>Id</span>
             <span></span>
@@ -87,23 +82,16 @@ export default function ChallengeSection() {
           <div className={css.cards}>
             <div className={css.card}>
               <h4>Private challenge</h4>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus iaculis, tellus
-                eget accumsan lacinia, ipsum felis finibus erat, at pharetra nulla lacus sed leo.
-              </p>
+              <p>Create one and invite your friends to start playing!</p>
               <Button to={'/create-private'}>Create your own challenge</Button>
             </div>
             <div className={css.card}>
               <h4>Invitations</h4>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus iaculis, tellus
-                eget accumsan lacinia, ipsum felis finibus erat, at pharetra nulla lacus sed leo.
-              </p>
               {invites.length > 0 ? (
                 <ul>
                   {invites.map((i) => (
                     <li key={i.id}>
-                      #{i.id} {i.name} <Button to="#">Join</Button>
+                      #{i.id} {i.name} <Button to="/lobby">Join</Button>
                     </li>
                   ))}
                 </ul>
@@ -115,11 +103,10 @@ export default function ChallengeSection() {
         </div>
       ) : (
         <div className={css.challenges}>
-          <div>
+          <div className={css.challenges__header}>
             <SelectInput
               id={'filters'}
-              label={'filters'}
-              onChange={setHcpFilter}
+              label={''}
               options={[
                 {
                   value: '',
@@ -138,7 +125,31 @@ export default function ChallengeSection() {
                   label: 'Up to 54',
                 },
               ]}
-            ></SelectInput>
+              className={css.filter}
+            />
+            <SelectInput
+              id={'sortBy'}
+              label={''}
+              options={[
+                {
+                  value: 'dateAsc',
+                  label: 'By date - ascending',
+                },
+                {
+                  value: 'dateDesc',
+                  label: 'By date - descending',
+                },
+                {
+                  value: 'priceAsc',
+                  label: 'By price pool - ascending',
+                },
+                {
+                  value: 'priceDesc',
+                  label: 'By price pool - descending',
+                },
+              ]}
+              className={css.filter}
+            />
           </div>
           {/* 8 cols */}
           <div className={css.head}>
@@ -193,7 +204,7 @@ export function ChallengePreview({
         </span>
         <span className={css.dates}>{dates}</span>
         <span className={css.btn}>
-          <Button small to={'#'}>
+          <Button small to={'/lobby'}>
             {fee ? `Buy-in ${fee}$` : 'Join for free'}
           </Button>
         </span>

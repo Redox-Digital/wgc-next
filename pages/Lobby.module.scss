@@ -1,0 +1,107 @@
+.intro {
+  background-color: var(--wgc-white);
+
+  .container {
+    flex-direction: column;
+    gap: var(--wgc-gap);
+    width: 100%;
+    display: flex;
+
+    @media screen and (min-width: 900px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      > .texts,
+      > .gameRules {
+        width: calc((100% - var(--wgc-gap)) / 2);
+      }
+    }
+
+    @media screen and (min-width: 1600px) {
+      max-width: var(--wgc-max-large-container-width);
+      margin-inline: auto;
+    }
+
+    > img {
+      width: 100%;
+      height: auto;
+      max-width: 300px;
+
+      @media screen and (min-width: 900px) {
+        max-width: none;
+        max-height: 120px;
+      }
+
+      @media screen and (min-width: 1200px) {
+        display: none;
+      }
+    }
+
+    > .texts {
+      display: flex;
+      flex-direction: column;
+      gap: var(--wgc-margin);
+
+      @media screen and (min-width: 1200px) {
+        max-width: 360px;
+      }
+
+      > img {
+        display: none;
+        max-width: 100%;
+        max-height: 120px;
+        object-fit: contain;
+
+        @media screen and (min-width: 1200px) {
+          display: flex;
+        }
+      }
+
+      > a.textLink {
+        color: var(--wgc-dark-grey);
+        text-decoration: underline;
+      }
+    }
+
+    > .gameRules {
+      display: flex;
+      flex-direction: column;
+      gap: var(--wgc-margin);
+
+      @media screen and (min-width: 1200px) {
+        order: 5;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0;
+        max-width: var(--wgc-max-container-width);
+        margin-inline: auto;
+
+        > .rule {
+          width: 100%;
+          border-right: solid 1px var(--wgc-black);
+          justify-content: center;
+
+          &:last-of-type {
+            border: none;
+          }
+        }
+
+        > h4 {
+          display: none;
+        }
+      }
+
+      > .rule {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--wgc-margin);
+
+        > p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

@@ -10,9 +10,10 @@ type Props = {
   home?: boolean;
   sponsored?: boolean;
   opacity?: number;
+  btns?: boolean;
 };
 
-const Hero = ({ title, subtitle, source, home, opacity, sponsored }: Props) => {
+const Hero = ({ title, subtitle, source, home, opacity, sponsored, btns }: Props) => {
   return (
     <>
       <header
@@ -28,12 +29,14 @@ const Hero = ({ title, subtitle, source, home, opacity, sponsored }: Props) => {
 
           {subtitle && <p className={css.subtitle}>{subtitle}</p>}
 
-          <div className={css.btns}>
-            <Button to={'#challenges'}>The Challenges</Button>
-            <Button to={'#howtoplay'} white>
-              How To Play
-            </Button>
-          </div>
+          {btns && (
+            <div className={css.btns}>
+              <Button to={'#challenges'}>The Challenges</Button>
+              <Button to={'#howtoplay'} white>
+                How To Play
+              </Button>
+            </div>
+          )}
         </div>
         {sponsored && (
           <Link className={css.badge} href={'https://wgc.gg'}>

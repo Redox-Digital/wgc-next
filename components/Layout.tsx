@@ -1,7 +1,7 @@
 import Header from './navigation/SponsoredMenu';
 import Footer from './navigation/Footer';
 import Menu from './navigation/Menu';
-import { MainNavLinks } from '@/pages/constants/Navigation';
+import { MainNavLinks } from '@/constants/Navigation';
 
 type Props = {
   children: string | JSX.Element;

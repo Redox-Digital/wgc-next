@@ -43,6 +43,24 @@
   gap: var(--wgc-padding);
   --grid-template: 1fr 50px 250px 1fr 60px 1fr 80px 2fr 140px;
 
+  &__header {
+    display: flex;
+    flex-direction: row;
+    gap: var(--wgc-padding);
+    justify-content: flex-end;
+    margin-top: var(--wgc-gap);
+
+    > label {
+      width: fit-content;
+    }
+
+    select {
+      font-size: var(--wgc-fs-sm);
+      padding: 5px var(--wgc-padding);
+      border-radius: 5px;
+    }
+  }
+
   .head {
     font-size: var(--wgc-fs-sm);
     font-weight: 700;
@@ -142,6 +160,7 @@
     gap: var(--wgc-margin);
 
     > .card {
+      width: 100%;
       background-color: var(--wgc-white);
       padding: 30px;
       display: flex;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import css from './Menu.module.scss';
 import burgerStyle from './Burger.module.scss';
-import { NavLink, MainNavLinks } from '@/pages/constants/Navigation';
+import { NavLink, MainNavLinks, UserLinks } from '@/constants/Navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import MobileMenu from './MobileMenu';
@@ -11,15 +11,16 @@ type MenuProps = {
   logo: string;
   logoUrl: string;
   links: NavLink[];
+  sponsored?: boolean;
 };
 
-export default function Menu({ logo, logoUrl, links }: MenuProps) {
+export default function Menu({ logo, logoUrl, links, sponsored }: MenuProps) {
   //navbar scroll when active state
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const [registered, setRegistered] = useState<boolean>(false);
+  const [logged, setLogged] = useState<boolean>(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
-  const toggleRegistered = () => setRegistered(!registered);
+  const toggleLog = () => setLogged(!logged);
 
   return (
     <>
@@ -37,12 +38,30 @@ export default function Menu({ logo, logoUrl, links }: MenuProps) {
                   <span>{link.label}</span>
                 </Link>
               ))}
-              <Button to={'#'} onClick={toggleRegistered}>
-                Register
-              </Button>
-              <Button white to={'#'} onClick={toggleRegistered}>
-                Login
-              </Button>
+              <div className={css.btns}>
+                {logged ? (
+                  <UserMenu
+                    name={'Mikaël Ruffieux'}
+                    hcp={'16.0'}
+                    img={'https://wgc.gg/images/profile-picture.png'}
+                    toggleLog={toggleLog}
+                  />
+                ) : (
+                  <>
+                    <Button to={'#'} onClick={toggleLog} addClass={css.btn}>
+                      Register
+                    </Button>
+                    <Button
+                      white
+                      to={'#'}
+                      onClick={toggleLog}
+                      addClass={`${css.btn} ${css.btn__white}`}
+                    >
+                      Login
+                    </Button>
+                  </>
+                )}
+              </div>
             </div>
             <button
               className={`${burgerStyle.burger} ${menuOpen ? burgerStyle.burger__closed : ''}`}
@@ -58,5 +77,27 @@ export default function Menu({ logo, logoUrl, links }: MenuProps) {
       </nav>
       <MobileMenu open={menuOpen} toggleMenu={toggleMenu} />
     </>
+  );
+}
+
+type UserMenuType = {
+  name: string;
+  hcp: string;
+  img: string;
+  toggleLog: () => void;
+};
+
+export function UserMenu({ name, img, hcp, toggleLog }: UserMenuType) {
+  return (
+    <div className={css.userMenu}>
+      <Link href={'#'} onClick={toggleLog}>
+        <small>
+          {name}
+          <br />
+          HCP: {hcp}
+        </small>
+        <Image src={img} alt={''} width={35} height={35} />
+      </Link>
+    </div>
   );
 }

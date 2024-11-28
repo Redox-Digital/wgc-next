@@ -141,19 +141,15 @@ export default function Home() {
         />
 
         <HowToPlaySection />
-        <ContactCTA
-          img="/layouts/home_excr-cta.jpg"
-          grey
-          title={'Look fresh on the greens'}
-          desc={
-            <>
-              Elevate your wardrobe by visiting our sponsor&apos;s e-shop, <b>Extracurricular</b>,
-              and discover men&apos;s premium golf apparel including polos, hats, shorts, and pants.
-            </>
-          }
-          btnLabel="The shop"
-          btnLink="https://ex-cr.com/?utm_source=wgc"
-        />
+        <ContactCTA img="/layouts/home_excr-cta.jpg" title={'Look fresh on the greens'}>
+          <p>
+            Elevate your wardrobe by visiting our sponsor&apos;s e-shop, <b>Extracurricular</b>, and
+            discover men&apos;s premium golf apparel including polos, hats, shorts, and pants.
+          </p>
+          <Button to={'https://ex-cr.com/?utm_source=wgc'} blank>
+            The shop
+          </Button>
+        </ContactCTA>
       </main>
     </>
   );

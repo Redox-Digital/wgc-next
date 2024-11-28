@@ -1,23 +1,99 @@
 .footer {
-  background-color: var(--excr-primary);
-  color: var(--excr-white);
-  display: flex;
-  padding: 20px var(--excr-sct-horiz-margin);
-  padding-bottom: calc(20px + 50px);
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  background: var(--wgc-white);
 
-  @media screen and (min-width: 900px) {
-    padding-bottom: 20px;
+  .container {
+    width: 100%;
+    max-width: var(--wgc-max-container-width);
+    margin-inline: auto;
+    padding-inline: var(--wgc-sct-horiz-margin);
+    padding-block: var(--wgc-sct-vert-margin) var(--wgc-subsct-vert-margin);
+    display: flex;
+    flex-direction: column;
+    gap: var(--wgc-gap);
+    color: var(--wgc-black);
+
+    .userLinks > a:last-of-type {
+      color: var(--wgc-danger);
+    }
+
+    img {
+      object-fit: contain;
+    }
+
+    .socials {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    > .body,
+    > .foot {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    > .body {
+      justify-content: space-between;
+      gap: var(--wgc-gap);
+
+      > .col {
+        width: 100%;
+        max-width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: var(--wgc-padding);
+
+        &:first-of-type,
+        &:last-of-type {
+          align-items: center;
+        }
+      }
+    }
+
+    > .foot {
+      justify-content: center;
+      gap: var(--wgc-padding);
+
+      a {
+        color: var(--wgc-primary) !important;
+
+        &:hover {
+          color: inherit;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    > .spacer {
+      background: var(--wgc-gradient);
+      height: 2px;
+      display: block;
+      border-radius: 100%;
+    }
   }
 
-  > a {
-    color: var(--white) !important;
-  }
+  &Sponsored {
+    background-color: var(--wgc-primary);
+    color: var(--wgc-white);
+    display: flex;
+    padding: 20px var(--wgc-sct-horiz-margin);
+    padding-bottom: calc(20px + 50px);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
-  > a:hover {
-    color: inherit;
-    text-decoration: underline;
+    @media screen and (min-width: 900px) {
+      padding-bottom: 20px;
+    }
+
+    > a {
+      color: var(--white) !important;
+    }
+
+    > a:hover {
+      color: inherit;
+      text-decoration: underline;
+    }
   }
 }

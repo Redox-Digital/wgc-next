@@ -6,24 +6,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-type TextInputType = {
-  id: string;
-  label: string;
-  defaultValue?: string;
-  placeholder?: string;
-  className?: string;
-  half?: boolean;
-  type: 'text' | 'number' | 'date' | 'textarea' | 'file';
-};
-
-type SelectInputType = {
-  id: string;
-  label: string;
-  half?: boolean;
-  onChange?: () => string;
-  options: { value: string; label: string }[];
-};
-
 export default function CreatePrivate() {
   // Not working, only for dev purpose
   const [dates, setDates] = useState<number[]>([1]);
@@ -147,6 +129,16 @@ export default function CreatePrivate() {
   );
 }
 
+type TextInputType = {
+  id: string;
+  label: string;
+  defaultValue?: string;
+  placeholder?: string;
+  className?: string;
+  half?: boolean;
+  type: 'text' | 'number' | 'date' | 'textarea' | 'file';
+};
+
 export function TextInput({
   id,
   label,
@@ -172,12 +164,20 @@ export function TextInput({
   );
 }
 
-export function SelectInput({ id, label, options, half, onChange }: SelectInputType) {
+type SelectInputType = {
+  id: string;
+  label: string;
+  half?: boolean;
+  className?: string;
+  options: { value: string; label: string }[];
+};
+
+export function SelectInput({ id, label, options, half, className }: SelectInputType) {
   return (
-    <label htmlFor={id} className={`${css.input} ${half && css.half}`}>
+    <label htmlFor={id} className={`${css.input} ${half && css.half} ${className}`}>
       <span>{label}</span>
 
-      <select name={id} id={id} onChange={onChange}>
+      <select name={id} id={id}>
         {options.map((o) => (
           <option value={o.value} key={o.value}>
             {o.label}

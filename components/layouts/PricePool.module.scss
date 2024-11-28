@@ -2,20 +2,21 @@
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  gap: var(--excr-gap);
+  gap: var(--wgc-gap);
+  background: var(--wgc-white);
 
   &.alt {
-    background: var(--excr-grey);
+    background: var(--wgc-bg-color);
 
     > .prices > .price {
-      background: var(--excr-white);
+      background: var(--wgc-white);
     }
   }
 
   > .prices {
     display: flex;
     flex-direction: column;
-    gap: var(--excr-margin);
+    gap: var(--wgc-margin);
     align-items: center;
     justify-content: center;
 
@@ -26,16 +27,22 @@
     > .price {
       display: flex;
       flex-direction: column;
-      background: var(--excr-grey);
+      background: var(--wgc-bg-color);
       border-radius: 20px;
       padding: 20px;
       gap: 10px;
       align-items: center;
       justify-content: flex-start;
-      box-shadow: var(--excr-shadow-hover);
+      box-shadow: var(--wgc-shadow-hover);
+
+      > h4 {
+        background: var(--wgc-gold);
+        padding: 10px;
+        border-radius: 10px;
+      }
 
       width: 100%;
-      max-width: var(--excr-max-card-width);
+      max-width: var(--wgc-max-card-width);
 
       > img {
         width: 100%;
@@ -46,11 +53,11 @@
       > .texts {
         display: flex;
         flex-direction: column;
-        gap: var(--excr-padding);
+        gap: var(--wgc-padding);
         line-height: 1rem;
 
         > b {
-          padding-top: var(--excr-padding);
+          padding-top: var(--wgc-padding);
         }
       }
     }

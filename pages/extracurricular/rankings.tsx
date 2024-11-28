@@ -4,6 +4,7 @@ import Hero from '@/components/layouts/Hero';
 import { RankingsWithPrices } from '@/components/layouts/Rankings';
 import CardsSection from '@/components/layouts/CardsSection';
 import Head from 'next/head';
+import Button from '@/components/navigation/Button';
 export default function Rankings() {
   return (
     <>
@@ -50,12 +51,18 @@ export default function Rankings() {
           ]}
         />
         <ContactCTA
-          img="/layouts/contact-cta.webp"
+          img="/layouts/clubhouse/private_cta.webp"
+          altBackground
           title={<>Do you want more&nbsp;?</>}
-          desc="More Free and Buy-in Challenges available on wgc.gg & your own Challenges with friends, clients, club members to create!"
-          btnLabel="Visit wgc.gg"
-          btnLink="https://wgc.gg"
-        />
+        >
+          <p>
+            More Free and Buy-in Challenges available on wgc.gg & your own Challenges with friends,
+            clients, club members to create!
+          </p>
+          <Button to={'https://wgc.gg'} blank>
+            Visit wgc.gg
+          </Button>
+        </ContactCTA>
       </main>
     </>
   );

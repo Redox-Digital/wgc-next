@@ -74,6 +74,27 @@
       }
     }
   }
+
+  .btns {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: 100%;
+    align-items: center;
+  }
+
+  .btn {
+    box-shadow: none;
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+
+    &__white {
+      outline: 2px var(--wgc-primary) solid;
+    }
+  }
 }
 
 .logo {
@@ -112,5 +133,28 @@
 @media screen and (min-width: 900px) {
   .menu__links {
     display: flex;
+  }
+}
+
+.userMenu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+
+  > a {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    > img {
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    > small {
+      text-align: right;
+      font-weight: 700;
+    }
   }
 }
