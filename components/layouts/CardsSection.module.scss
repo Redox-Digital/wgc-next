@@ -1,7 +1,15 @@
 .section {
-  background: var(--wgc-grey);
+  background: var(--wgc-bg-color);
   flex-direction: column;
   gap: var(--wgc-gap);
+
+  &.white {
+    background: var(--wgc-white);
+
+    .card {
+      background: var(--wgc-bg-color);
+    }
+  }
 
   > .titles {
     width: 100%;

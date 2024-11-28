@@ -6,11 +6,12 @@ type Props = {
   title: string;
   desc: string;
   cards: { icon: string; title: string; desc: string }[];
+  white?: boolean;
 };
 
-export default function CardsSection({ title, desc, cards }: Props) {
+export default function CardsSection({ title, desc, cards, white }: Props) {
   return (
-    <section className={css.section}>
+    <section className={`${css.section} ${white && css.white}`}>
       <SectionTitle title={title}>
         <p>{desc}</p>
       </SectionTitle>

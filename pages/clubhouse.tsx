@@ -7,6 +7,7 @@ import CardsSection from '@/components/layouts/CardsSection';
 import ContactCTA from '@/components/content/ContactCTA';
 import Button from '@/components/navigation/Button';
 import TopPlayers from '@/components/layouts/TopPlayers';
+import ChallengeSection from '@/components/layouts/ChallengesSection';
 
 export default function Clubhouse() {
   const sponsors: Sponsor[] = [
@@ -87,8 +88,9 @@ export default function Clubhouse() {
         </section>
         {sponsors && <SponsorsSection sponsors={sponsors} />}
 
-        <section>Available / Private</section>
+        <ChallengeSection />
         <CardsSection
+          white
           title={'The concept'}
           desc={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
           cards={[
@@ -101,6 +103,11 @@ export default function Clubhouse() {
               icon: '/pictograms/genders.svg',
               title: 'Only HCP matters',
               desc: 'Gender and age mixed into 3 different categories : Single / HCP 10 to 18 / HCP +18',
+            },
+            {
+              icon: '/pictograms/gift.svg',
+              title: 'A. lot. of. prizes.',
+              desc: 'Extracurricular Prices to reward you - we will get in touch!',
             },
             {
               icon: '/pictograms/gift.svg',
