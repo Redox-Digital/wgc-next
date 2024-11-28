@@ -30,7 +30,7 @@
 
       &.first {
         order: 2;
-        padding-bottom: calc(var(--pb) * 2);
+        padding-bottom: calc(var(--pb) * 2.5);
 
         > .rank {
           background: var(--wgc-gold);
