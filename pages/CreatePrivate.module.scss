@@ -1,0 +1,97 @@
+.private {
+  margin-top: var(--wgc-navbar-height);
+
+  padding: 100px var(--wgc-sct-horiz-margin);
+  width: 100%;
+  max-width: var(--wgc-max-container-width);
+  margin-inline: auto;
+
+  color: var(--wgc-black);
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wgc-sct-vert-margin);
+    margin-top: var(--wgc-gap);
+
+    > fieldset {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: var(--wgc-margin);
+      border: none;
+      margin: 0;
+      padding: 0;
+
+      > legend {
+        margin-bottom: var(--wgc-margin);
+      }
+
+      > label {
+      }
+    }
+  }
+
+  .dates {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--wgc-padding);
+    padding: 0;
+    margin: 0;
+
+    .dateLine {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      gap: var(--wgc-padding);
+      align-items: flex-end;
+
+      > .delBtn {
+        background: var(--wgc-danger);
+        width: 40px;
+        padding: 10px;
+      }
+
+      > .date {
+        width: calc((100% - 2 * var(--wgc-padding) - 40px) / 2);
+      }
+    }
+  }
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--wgc-padding);
+  width: 100%;
+
+  &.half {
+    width: calc((100% - var(--wgc-margin)) / 2);
+  }
+
+  > span {
+    margin-left: var(--wgc-padding);
+    font-weight: 500;
+  }
+
+  > input,
+  > textarea,
+  > select {
+    font-size: var(--wgc-fs-p);
+    border: none;
+    outline: 2px solid transparent;
+    padding: var(--wgc-padding);
+    border-radius: 15px;
+    font-family: var(--wgc-roboto-font);
+    background: var(--wgc-white);
+
+    &:focus {
+      outline-color: var(--wgc-primary);
+    }
+  }
+
+  > textarea {
+    min-height: 150px;
+  }
+}
