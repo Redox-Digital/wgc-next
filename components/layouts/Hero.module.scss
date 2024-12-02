@@ -45,7 +45,7 @@
     z-index: 2;
 
     @media screen and (min-width: 1200px) {
-      text-align: center;
+      max-width: var(--wgc-max-container-width);
     }
 
     > .btns {
@@ -93,11 +93,6 @@
     > .hero__content {
       align-items: flex-start;
       text-align: left;
-
-      @media screen and (min-width: 1600px) {
-        max-width: var(--wgc-max-large-container-width);
-        margin-inline: auto;
-      }
 
       > p {
         text-transform: none;

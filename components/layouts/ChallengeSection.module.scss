@@ -1,6 +1,7 @@
 .section {
   display: flex;
   flex-direction: column;
+  padding-top: var(--wgc-subsct-vert-margin) !important;
 
   .radioBtns {
     width: 100%;

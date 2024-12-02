@@ -29,15 +29,11 @@ export const MainNavLinks: NavLink[] = [
 
 export const UserLinks: NavLink[] = [
   {
-    url: '#',
+    url: '/wallet',
     label: 'Wallet',
   },
   {
-    url: '#',
+    url: '/settings',
     label: 'Settings',
-  },
-  {
-    url: '#',
-    label: 'Sign Out',
   },
 ];

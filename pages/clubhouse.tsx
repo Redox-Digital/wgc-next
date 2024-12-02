@@ -78,7 +78,7 @@ export default function Clubhouse() {
         source={'/layouts/clubhouse/clubhouse_hero.jpg'}
       />
       <main>
-        <section>
+        <section className={css.introSct}>
           <SectionTitle title="Available challenges">
             <p>E-Meet, compete, and connect with golfers around the globe.</p>
           </SectionTitle>
