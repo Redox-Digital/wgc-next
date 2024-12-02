@@ -110,47 +110,6 @@
 .hcp {
 }
 
-.challenge {
-  border-radius: 20px;
-  background-color: var(--wgc-white);
-  width: 100%;
-  display: grid;
-  grid-template-columns: var(--grid-template);
-  grid-template-rows: 1fr;
-  grid-column-gap: var(--wgc-padding);
-  align-items: center;
-  padding: 10px var(--wgc-padding);
-
-  .id {
-  }
-
-  .id,
-  .hcp,
-  .pool {
-    font-weight: 900;
-    font-size: var(--wgc-fs-sm);
-    font-family: var(--wgc-montserrat-font);
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-  }
-
-  .hcp {
-    font-weight: 700;
-    width: fit-content;
-  }
-
-  .pool {
-    padding: 5px 10px;
-    background: var(--wgc-gold);
-    border-radius: 10px;
-  }
-
-  .dates,
-  .gameType {
-    font-size: var(--wgc-fs-sm);
-  }
-}
-
 .private {
   margin-top: var(--wgc-subsct-vert-margin);
 

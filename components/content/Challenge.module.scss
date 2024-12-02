@@ -1,28 +1,28 @@
 .challenge {
-  background: var(--excr-white);
+  background: var(--wgc-white);
   border-radius: 20px;
-  color: var(--excr-primary);
+  color: var(--wgc-primary);
   display: flex;
   flex-direction: column;
-  box-shadow: var(--excr-shadow-hover);
+  box-shadow: var(--wgc-shadow-hover);
 
   width: 100%;
-  max-width: var(--excr-max-card-width);
+  max-width: var(--wgc-max-card-width);
 
   @media screen and (min-width: 900px) {
-    max-width: calc((100% - var(--excr-margin)) / 2);
+    max-width: calc((100% - var(--wgc-margin)) / 2);
   }
 
   @media screen and (min-width: 1200px) {
     min-width: 320px;
-    max-width: calc((100% - 2 * var(--excr-margin)) / 3);
+    max-width: calc((100% - 2 * var(--wgc-margin)) / 3);
   }
 
   .head {
     padding: 20px;
     height: 130px;
     position: relative;
-    border-bottom: 1px solid var(--excr-grey, #eeecec);
+    border-bottom: 1px solid var(--wgc-grey, #eeecec);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,7 +59,7 @@
         width: 100%;
         border-radius: 10px 0px 0px 10px;
         border: none;
-        background: var(--excr-grey);
+        background: var(--wgc-grey);
         font-size: 10px;
         font-weight: 500;
         padding: 6px 10px;
@@ -67,11 +67,11 @@
       }
 
       > button {
-        background: var(--excr-primary);
+        background: var(--wgc-primary);
         border: none;
         border-radius: 0px 10px 10px 0px;
         padding: 6px 10px;
-        color: var(--excr-white);
+        color: var(--wgc-white);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -79,7 +79,7 @@
         cursor: pointer;
 
         &:hover {
-          background: var(--excr-black);
+          background: var(--wgc-black);
         }
       }
     }
@@ -88,13 +88,13 @@
   .banner {
     width: 100%;
     display: flex;
-    background-color: var(--excr-secondary);
-    color: var(--excr-white);
+    background-color: var(--wgc-secondary);
+    color: var(--wgc-white);
     text-align: center;
     align-items: center;
     justify-content: center;
     padding: 5px;
-    font-family: var(--excr-montserrat-font);
+    font-family: var(--wgc-montserrat-font);
     font-size: 14px;
     letter-spacing: 0.08em;
     font-weight: 700;
@@ -109,9 +109,9 @@
     align-items: center;
 
     .price {
-      background: var(--excr-secondary);
-      color: var(--excr-white);
-      font-family: var(--excr-montserrat-font);
+      background: var(--wgc-secondary);
+      color: var(--wgc-white);
+      font-family: var(--wgc-montserrat-font);
       font-weight: 700;
       font-size: 24px;
       letter-spacing: 0.08em;
