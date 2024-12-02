@@ -22,7 +22,7 @@ export default function SponsorsSection({ sponsors }: Props) {
             <Link href={s.url}>
               <Image src={s.img} alt={''} height={250} width={250} />
               <h5>{s.name}</h5>
-              <p>{s.runningChallenge} running Challenge(s)</p>
+              <small>{s.runningChallenge} running Challenge(s)</small>
             </Link>
           </li>
         ))}

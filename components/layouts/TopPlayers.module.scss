@@ -6,31 +6,65 @@
 
   .podium {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: var(--wgc-margin);
     width: 100%;
     color: var(--wgc-white);
     margin-top: var(--wgc-sct-vert-margin);
     align-items: flex-end;
 
+    @media screen and (min-width: 720px) {
+      flex-direction: row;
+    }
+
     &Step {
       --pb: 40px;
-      background-color: var(--wgc-primary);
       width: 100%;
+      color: var(--wgc-black);
+      background-color: var(--wgc-white);
+      border-radius: 15px;
+
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
       align-items: center;
       position: relative;
-      padding-inline: var(--wgc-margin);
-      padding-block: 60px var(--pb);
-      border-radius: 30px;
-      box-shadow: var(--wgc-shadow-hover);
-      gap: 7px;
-      height: fit-content;
+      padding-bottom: var(--wgc-padding);
+      padding-right: var(--wgc-padding);
+      justify-content: end;
+
+      gap: var(--wgc-padding);
+
+      @media screen and (min-width: 720px) {
+        gap: 7px;
+
+        height: 400px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        color: Var(--wgc-white);
+        background-color: var(--wgc-primary);
+        box-shadow: var(--wgc-shadow-hover);
+        padding-inline: var(--wgc-margin);
+        padding-block: 60px var(--pb);
+        border-radius: 30px;
+      }
+
+      > h4:last-of-type {
+        width: calc(100% - var(--wgc-padding) - 60px);
+        text-align: left;
+
+        @media screen and (min-width: 720px) {
+          width: 100%;
+          text-align: center;
+        }
+      }
 
       &.first {
-        order: 2;
-        padding-bottom: calc(var(--pb) * 2.5);
+        @media screen and (min-width: 720px) {
+          order: 2;
+          padding-bottom: calc(var(--pb) * 2.5);
+        }
 
         > .rank {
           background: var(--wgc-gold);
@@ -38,7 +72,12 @@
       }
 
       &.second {
-        order: 1;
+        max-height: calc(400px * 0.9);
+
+        @media screen and (min-width: 720px) {
+          order: 1;
+        }
+
         // padding-bottom: calc(var(--pb) * 1.5);
 
         > .rank {
@@ -47,32 +86,70 @@
       }
 
       &.third {
-        order: 3;
+        max-height: calc(400px * 0.8);
+
+        @media screen and (min-width: 720px) {
+          order: 3;
+        }
+
         > .rank {
           background: var(--wgc-bronze);
         }
       }
 
       > .rank {
-        width: 60px;
-        height: 60px;
+        width: 30px;
+        height: 30px;
+        font-size: var(--wgc-fs-p);
+
         display: flex;
         align-items: center;
         justify-content: center;
         background: var(--wgc-secondary);
         border-radius: 100%;
         line-height: 1em;
+        color: var(--wgc-white);
+
+        position: absolute;
+        top: -15px;
+        left: 40px;
+
+        @media screen and (min-width: 720px) {
+          width: 60px;
+          height: 60px;
+          position: relative;
+          top: auto;
+          left: auto;
+          font-size: var(--wgc-fs-h4);
+        }
       }
 
       > p {
         margin: 0;
+        font-size: var(--wgc-fs-sm);
+        font-weight: 500;
+
+        @media screen and (min-width: 720px) {
+          font-size: var(--wgc-fs-p);
+        }
       }
 
       > img {
-        position: absolute;
-        top: -40px;
-        border-radius: 20px;
+        position: relative;
+        border-radius: 10px;
+
         object-fit: cover;
+        width: 60px;
+        height: 60px;
+
+        @media screen and (min-width: 720px) {
+          width: 80px;
+          height: 80px;
+          border-radius: 20px;
+
+          position: absolute;
+          top: -40px;
+        }
       }
     }
   }

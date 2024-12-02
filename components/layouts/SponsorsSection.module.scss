@@ -1,6 +1,7 @@
 .section {
   background-color: var(--wgc-white);
   padding-block: var(--wgc-gap) !important;
+  justify-content: center;
 
   > ul {
     margin: 0;
@@ -8,7 +9,44 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     gap: var(--wgc-padding);
     list-style-type: none;
+
+    --img-w: 200px;
+
+    > li {
+      width: calc((100% - var(--wgc-padding)) / 2);
+      max-width: var(--img-w);
+      text-align: center;
+
+      > a {
+        display: flex;
+        flex-direction: column;
+      }
+
+      @media screen and (min-width: 900px) {
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        max-width: var(--img-w);
+        height: auto;
+        object-fit: contain;
+      }
+
+      h5 {
+        font-size: var(--wgc-fs-p);
+        font-family: var(--wgc-roboto-font);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        padding-top: var(--wgc-padding);
+      }
+
+      small {
+        font-size: 14px;
+      }
+    }
   }
 }

@@ -17,7 +17,7 @@ export default function TopPlayers({ first, second, third }: Props) {
       <div className={css.podium}>
         <div className={`${css.podiumStep} ${css.first}`}>
           <Image src={first.img} alt={''} width={80} height={80} />
-          <h4 className={css.rank}>#1</h4>
+          <h4 className={css.rank}>1</h4>
           <h4>
             {first.name} {first.flag}
           </h4>
@@ -28,7 +28,7 @@ export default function TopPlayers({ first, second, third }: Props) {
 
         <div className={`${css.podiumStep} ${css.second}`}>
           <Image src={second.img} alt={''} width={80} height={80} />
-          <h4 className={css.rank}>#2</h4>
+          <h4 className={css.rank}>2</h4>
           <h4>
             {second.name} {second.flag}
           </h4>
@@ -39,7 +39,7 @@ export default function TopPlayers({ first, second, third }: Props) {
 
         <div className={`${css.podiumStep} ${css.third}`}>
           <Image src={third.img} alt={''} width={80} height={80} />
-          <h4 className={css.rank}>#3</h4>
+          <h4 className={css.rank}>3</h4>
           <h4>
             {third.name} {third.flag}
           </h4>
