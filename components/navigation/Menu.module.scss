@@ -138,13 +138,15 @@
 
 .userMenu {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
   justify-content: center;
+  gap: var(--wgc-padding);
 
   > a {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 10px;
 
     > img {
@@ -155,6 +157,58 @@
     > small {
       text-align: right;
       font-weight: 700;
+    }
+  }
+
+  .wallet {
+    display: grid;
+    grid-template-columns: auto, 1fr;
+    grid-template-rows: repeat(2, 20px);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+
+    > span {
+      grid-area: 1 / 1 / 3 / 2;
+
+      color: var(--wgc-black);
+      background: var(--wgc-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
+
+    > button {
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--wgc-white);
+      background: var(--wgc-black);
+      border: none;
+      outline: 1px solid var(--wgc-black);
+
+      font-size: 12px;
+
+      &:first-of-type {
+        grid-area: 1 / 2 / 2 / 3;
+      }
+      &:last-of-type {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+
+      &:hover {
+        color: var(--wgc-black);
+        background: var(--wgc-white);
+        outline-color: var(--wgc-black);
+      }
+
+      &:active {
+        background: var(--wgc-primary);
+      }
     }
   }
 }

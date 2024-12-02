@@ -75,7 +75,12 @@ export default function Menu({ logo, logoUrl, links, sponsored }: MenuProps) {
           </div>
         </div>
       </nav>
-      <MobileMenu open={menuOpen} toggleMenu={toggleMenu} />
+      <MobileMenu
+        open={menuOpen}
+        toggleMenu={toggleMenu}
+        toggleLogged={toggleLog}
+        logged={logged}
+      />
     </>
   );
 }
@@ -84,20 +89,26 @@ type UserMenuType = {
   name: string;
   hcp: string;
   img: string;
-  toggleLog: () => void;
+  toggleLog?: () => void;
+  className?: string;
 };
 
-export function UserMenu({ name, img, hcp, toggleLog }: UserMenuType) {
+export function UserMenu({ name, img, hcp, toggleLog, className }: UserMenuType) {
   return (
-    <div className={css.userMenu}>
+    <div className={`${css.userMenu} ${className}`}>
       <Link href={'#'} onClick={toggleLog}>
         <small>
           {name}
           <br />
           HCP: {hcp}
         </small>
-        <Image src={img} alt={''} width={35} height={35} />
+        <Image src={img} alt={''} width={45} height={45} />
       </Link>
+      <div className={css.wallet}>
+        <span>$1000</span>
+        <button>+</button>
+        <button>-</button>
+      </div>
     </div>
   );
 }
