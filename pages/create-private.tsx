@@ -168,16 +168,17 @@ type SelectInputType = {
   id: string;
   label: string;
   half?: boolean;
+  small?: boolean;
   className?: string;
   options: { value: string; label: string }[];
 };
 
-export function SelectInput({ id, label, options, half, className }: SelectInputType) {
+export function SelectInput({ id, label, options, half, className, small }: SelectInputType) {
   return (
     <label htmlFor={id} className={`${css.input} ${half && css.half} ${className}`}>
       <span>{label}</span>
 
-      <select name={id} id={id}>
+      <select name={id} id={id} className={`${small && css.small}`}>
         {options.map((o) => (
           <option value={o.value} key={o.value}>
             {o.label}
