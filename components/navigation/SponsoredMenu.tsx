@@ -43,7 +43,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      <MobileMenu open={menuOpen} toggleMenu={toggleMenu} />
+      {/* <MobileMenu open={menuOpen} toggleMenu={toggleMenu} /> */}
     </>
   );
 };
