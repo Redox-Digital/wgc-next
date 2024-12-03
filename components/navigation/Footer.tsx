@@ -2,6 +2,7 @@ import Link from 'next/link';
 import css from './Footer.module.scss';
 import { MainNavLinks, UserLinks } from '@/constants/Navigation';
 import Image from 'next/image';
+import { SelectInput } from '@/pages/create-private';
 
 type Props = {
   sponsored?: boolean;
@@ -52,6 +53,12 @@ export default function Footer({ sponsored }: Props) {
                 {link.label}
               </Link>
             ))}
+            <span>
+              Region :{' '}
+              <select name="region" id="region">
+                <option value="eu">Europe</option>
+              </select>
+            </span>
           </div>
           <div className={css.col}>
             <Image src={'/layouts/home/paypal.png'} alt={''} width={90} height={50} />
