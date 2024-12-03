@@ -8,6 +8,7 @@ import ContactCTA from '@/components/content/ContactCTA';
 import Button from '@/components/navigation/Button';
 import TopPlayers from '@/components/layouts/TopPlayers';
 import ChallengeSection from '@/components/layouts/ChallengesSection';
+import YourChallengeCTA from '@/components/navigation/YourChallengeCTA';
 
 export default function Clubhouse() {
   const sponsors: Sponsor[] = [
@@ -127,6 +128,7 @@ export default function Clubhouse() {
           <Button to="/create-private">Create your own Challenge</Button>
         </ContactCTA>
         <TopPlayers first={topPlayers[0]} second={topPlayers[1]} third={topPlayers[2]} />
+        <YourChallengeCTA />
       </main>
     </>
   );
