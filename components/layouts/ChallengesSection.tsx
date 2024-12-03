@@ -64,7 +64,7 @@ export default function ChallengeSection() {
       {showPrivate ? (
         <div className={`${css.challenges} ${css.private}`}>
           <SectionTitle title="Your Challenges"></SectionTitle>
-          <div className={css.head}>
+          <div className={`${css.head} ${css.headDesktop}`}>
             <span className={css.id}>Id</span>
             <span></span>
             <span className={css.name}>Name</span>
@@ -75,6 +75,12 @@ export default function ChallengeSection() {
             <span className={css.dates}>Dates</span>
             <span></span>
           </div>
+
+          <div className={`${css.head} ${css.headMobile}`}>
+            <span className={css.name}>Name & Players</span>
+            <span className={css.pool}>Pool</span>
+          </div>
+
           <div className={css.body}>
             {challenges.map((c) => (
               <ChallengePreview key={c.id} {...c} />
@@ -92,7 +98,10 @@ export default function ChallengeSection() {
                 <ul>
                   {invites.map((i) => (
                     <li key={i.id}>
-                      #{i.id} {i.name} <Button to="/lobby">Join</Button>
+                      #{i.id} {i.name}{' '}
+                      <Button to="/lobby" small>
+                        Join
+                      </Button>
                     </li>
                   ))}
                 </ul>
@@ -127,10 +136,12 @@ export default function ChallengeSection() {
                 },
               ]}
               className={css.filter}
+              small
             />
             <SelectInput
               id={'sortBy'}
               label={''}
+              small
               options={[
                 {
                   value: 'dateAsc',
@@ -153,7 +164,7 @@ export default function ChallengeSection() {
             />
           </div>
           {/* 8 cols */}
-          <div className={css.head}>
+          <div className={`${css.head} ${css.headDesktop}`}>
             <span className={css.id}>Id</span>
             <span></span>
             <span className={css.name}>Name</span>
@@ -163,6 +174,11 @@ export default function ChallengeSection() {
             <span className={css.players}>Players</span>
             <span className={css.dates}>Dates</span>
             <span></span>
+          </div>
+
+          <div className={`${css.head} ${css.headMobile}`}>
+            <span className={css.name}>Name & Players</span>
+            <span className={css.pool}>Pool</span>
           </div>
           <div className={css.body}>
             {challenges.map((c) =>
