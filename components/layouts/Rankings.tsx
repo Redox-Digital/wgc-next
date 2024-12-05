@@ -3,19 +3,19 @@ import Image from 'next/image';
 
 const players = [
   {
-    name: 'J. Jaeggi',
+    name: 'J. Jaeggi 🇨🇭',
     img: 'https://wgc.gg/images/profile-picture.png',
     hcp: 16,
     score: 257,
   },
   {
-    name: 'J. Jaeggi',
+    name: 'J. Jaeggi 🇨🇭',
     img: 'https://wgc.gg/images/profile-picture.png',
     hcp: 18,
     score: 250,
   },
   {
-    name: 'J. Jaeggi',
+    name: 'J. Jaeggi 🇨🇭',
     img: 'https://wgc.gg/images/profile-picture.png',
     hcp: 16,
   },
