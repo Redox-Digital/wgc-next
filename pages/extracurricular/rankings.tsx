@@ -1,10 +1,10 @@
-import ContactCTA from '@/components/content/ContactCTA';
 import css from './Rankings.module.scss';
 import Hero from '@/components/layouts/Hero';
 import { RankingsWithPrices } from '@/components/layouts/Rankings';
 import CardsSection from '@/components/layouts/CardsSection';
 import Head from 'next/head';
 import Button from '@/components/navigation/Button';
+import CTA from '@/components/navigation/CTA';
 export default function Rankings() {
   return (
     <>
@@ -13,10 +13,9 @@ export default function Rankings() {
       </Head>
       <Hero
         title={'And the winner is...'}
-        subtitle={''}
         source={'/layouts/rankings_hero.webp'}
         opacity={0.3}
-      />
+      ></Hero>
       <main>
         <section className={css.results}>
           <div className={css.titles}>
@@ -50,19 +49,19 @@ export default function Rankings() {
             },
           ]}
         />
-        <ContactCTA
-          img="/layouts/clubhouse/private_cta.webp"
-          altBackground
-          title={<>Do you want more&nbsp;?</>}
-        >
-          <p>
-            More Free and Buy-in Challenges available on wgc.gg & your own Challenges with friends,
-            clients, club members to create!
-          </p>
-          <Button href={'https://wgc.gg'} blank>
-            Visit wgc.gg
-          </Button>
-        </ContactCTA>
+        <CTA
+          title={'Do you want more&nbsp;?'}
+          description={
+            <p>
+              More Free and Buy-in Challenges available on wgc.gg & your own Challenges with
+              friends, clients, club members to create!
+            </p>
+          }
+          btnLabel={'Visit wgc.gg'}
+          btnBlank
+          href={'https://wgc.gg'}
+          img={'/layouts/contact-cta.webp'}
+        />
       </main>
     </>
   );

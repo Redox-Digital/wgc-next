@@ -1,3 +1,22 @@
-.introSct {
-  padding-bottom: var(--wgc-subsct-vert-margin) !important;
+.ctaSct {
+  gap: var(--s-m);
+  padding: var(--sct-def-margins);
+}
+
+.clubhouse {
+  background-color: var(--white);
+  border-radius: var(--s-m);
+  padding: var(--sct-def-margins);
+}
+
+.logoSct {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: var(--s-l);
+
+  > img {
+    width: 100%;
+    padding-inline: var(--sct-horiz-margin);
+  }
 }

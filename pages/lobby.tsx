@@ -1,4 +1,3 @@
-import ContactCTA from '@/components/content/ContactCTA';
 import css from './Lobby.module.scss';
 import Hero from '@/components/layouts/Hero';
 import PricePool from '@/components/layouts/PricePool';
@@ -7,15 +6,14 @@ import Button from '@/components/navigation/Button';
 import Link from 'next/link';
 import Rankings from '@/components/layouts/Rankings';
 import Head from 'next/head';
+import CTA from '@/components/navigation/CTA';
 
 export default function Lobby() {
   return (
     <>
-      <Hero
-        title={'Challenge #7607 - HCP Single'}
-        subtitle={'Net Stableford - 18 Holes - Ongoing'}
-        source={'/layouts/clubhouse/clubhouse_hero.jpg'}
-      />
+      <Hero title={'Challenge #7607 - HCP Single'} source={'/layouts/clubhouse/clubhouse_hero.jpg'}>
+        <p>Net Stableford - 18 Holes - Ongoing</p>
+      </Hero>
       <main>
         <section className={css.intro}>
           <div className={css.container}>
@@ -67,17 +65,19 @@ export default function Lobby() {
           </div>
         </section>
         <PricePool moneyPool alt />
-        <ContactCTA
-          img="/layouts/clubhouse/private_cta.webp"
-          altBackground
-          title={<>Do you want more&nbsp;?</>}
-        >
-          <p>
-            More Free and Buy-in Challenges available on wgc.gg & your own Challenges with friends,
-            clients, club members to create!
-          </p>
-          <Button href={'/'}>Visit wgc.gg</Button>
-        </ContactCTA>
+        <CTA
+          title={'Do you want more&nbsp;?'}
+          description={
+            <p>
+              More Free and Buy-in Challenges available on wgc.gg & your own Challenges with
+              friends, clients, club members to create!
+            </p>
+          }
+          btnLabel={'Visit wgc.gg'}
+          btnBlank
+          href={'https://wgc.gg'}
+          img={'/layouts/contact-cta.webp'}
+        />
       </main>
     </>
   );

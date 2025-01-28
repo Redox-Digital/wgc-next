@@ -4,44 +4,28 @@ import Link from 'next/link';
 import Button from '../navigation/Button';
 
 type Props = {
-  title: string | JSX.Element;
-  subtitle?: string | JSX.Element;
+  title: string | React.ReactNode;
+  children?: string | React.ReactNode;
   source: string;
   home?: boolean;
-  sponsored?: boolean;
   opacity?: number;
-  btns?: boolean;
+  btns?: { text: string; href: string; plain?: boolean }[];
 };
 
-const Hero = ({ title, subtitle, source, home, opacity, sponsored, btns }: Props) => {
+const Hero = ({ title, children, source, home, opacity, btns }: Props) => {
   return (
     <>
-      <header
-        className={`${css.hero} ${home ? css.hero__home : ''}`}
-        style={{ backgroundImage: `url(${source})` }}
-      >
-        <div
-          className={`${css.hero__overlay} ${sponsored && css.sponsored}`}
-          style={{ opacity: opacity || 0.5 }}
-        />
-        <div className={css.hero__content}>
-          <h1 className={css.title}>{title}</h1>
-
-          {subtitle && <p className={css.subtitle}>{subtitle}</p>}
-
-          {btns && (
-            <div className={css.btns}>
-              <Button href={'#challenges'}>The Challenges</Button>
-              <Button href={'#howtoplay'}>How To Play</Button>
-            </div>
-          )}
+      <header className={`${css.hero}`}>
+        <h1>{title}</h1>
+        <div className={css.content}>{children}</div>
+        <div className={css.btns}>
+          {btns &&
+            btns.map((btn) => (
+              <Button key={btn.href} href={btn.href} outline={!btn.plain} small darkBg>
+                {btn.text}
+              </Button>
+            ))}
         </div>
-        {sponsored && (
-          <Link className={css.badge} href={'https://wgc.gg'}>
-            <p>Powered by</p>
-            <Image src="/logos/logo-wgc.svg" alt={''} width={200} height={200} />
-          </Link>
-        )}
       </header>
       <span id="intro">{/* Anchor */}</span>
     </>

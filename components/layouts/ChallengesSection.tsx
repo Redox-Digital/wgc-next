@@ -4,7 +4,7 @@ import btnCss from '../navigation/Button.module.scss';
 import Image from 'next/image';
 import Button from '../navigation/Button';
 import SectionTitle from './SectionTitle';
-import { SelectInput } from '@/pages/create-private';
+import { SelectInput } from '@/pages/private';
 import ChallengePreview from '../content/ChallengePreview';
 
 export default function ChallengeSection() {
@@ -45,22 +45,21 @@ export default function ChallengeSection() {
 
   return (
     <section className={css.section}>
-      <div className={css.radioBtns}>
-        <button
-          className={`${btnCss.btn} ${showPrivate && btnCss.white}`}
-          onClick={toggleView}
-          disabled={!showPrivate}
-        >
-          Available Challenges
-        </button>
-        <button
-          onClick={toggleView}
-          className={`${btnCss.btn} ${showPrivate || btnCss.white}`}
-          disabled={showPrivate}
-        >
-          Private Challenges
-        </button>
-      </div>
+      <SectionTitle title="Next Challenges">
+        <p>Join your first challenges and try to win against your opponents !</p>
+      </SectionTitle>
+      <Button href="/challenges" small>
+        All Challenges
+      </Button>
+      <Button href="/challenges" small outline>
+        Your Challenges
+      </Button>
+    </section>
+  );
+}
+
+/* OLD
+
       {showPrivate ? (
         <div className={`${css.challenges} ${css.private}`}>
           <SectionTitle title="Your Challenges"></SectionTitle>
@@ -163,7 +162,7 @@ export default function ChallengeSection() {
               className={css.filter}
             />
           </div>
-          {/* 8 cols */}
+          /* 8 cols 
           <div className={`${css.head} ${css.headDesktop}`}>
             <span className={css.id}>Id</span>
             <span></span>
@@ -188,6 +187,5 @@ export default function ChallengeSection() {
           <Button href={'#'}>Show more</Button>
         </div>
       )}
-    </section>
-  );
-}
+ 
+ */

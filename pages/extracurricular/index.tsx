@@ -2,7 +2,6 @@ import css from './Home.module.scss';
 import Head from 'next/head';
 import Hero from '@/components/layouts/Hero';
 import Button from '@/components/navigation/Button';
-import ContactCTA from '@/components/content/ContactCTA';
 import Link from 'next/link';
 import Image from 'next/image';
 import PricePool from '@/components/layouts/PricePool';
@@ -10,6 +9,7 @@ import Challenge from '@/components/content/Challenge';
 import CardsSection from '@/components/layouts/CardsSection';
 import YourChallengeCTA from '@/components/navigation/YourChallengeCTA';
 import HowToPlaySection from '@/components/layouts/HowToPlaySection';
+import CTA from '@/components/navigation/CTA';
 
 type ChallengeType = {
   url: string;
@@ -86,17 +86,21 @@ export default function Home() {
 
       <Hero
         title={
-          <>
+          <span>
             Playing golf physically&nbsp;
             <br />
             while competing digitally
-          </>
+          </span>
         }
         home
-        subtitle="Play in the club of your choice in real life while measuring yourself & your score, virtually against any other player in the world!"
         source="/layouts/home_hero.webp"
         opacity={0.25}
-      />
+      >
+        <p>
+          Play in the club of your choice in real life while measuring yourself & your score,
+          virtually against any other player in the world!
+        </p>
+      </Hero>
       <YourChallengeCTA />
       <main className={css.home}>
         <section className={css.ourChallenges}>
@@ -141,15 +145,19 @@ export default function Home() {
         />
 
         <HowToPlaySection />
-        <ContactCTA img="/layouts/home_excr-cta.jpg" title={'Look fresh on the greens'}>
-          <p>
-            Elevate your wardrobe by visiting our sponsor&apos;s e-shop, <b>Extracurricular</b>, and
-            discover men&apos;s premium golf apparel including polos, hats, shorts, and pants.
-          </p>
-          <Button href={'https://ex-cr.com/?utm_source=wgc'} blank>
-            The shop
-          </Button>
-        </ContactCTA>
+        <CTA
+          title={'Look fresh on the greens'}
+          description={
+            <>
+              Elevate your wardrobe by visiting our sponsor&apos;s e-shop, <b>Extracurricular</b>,
+              and discover men&apos;s premium golf apparel including polos, hats, shorts, and pants.
+            </>
+          }
+          btnLabel={'The shop'}
+          href={'https://ex-cr.com/?utm_source=wgc'}
+          btnBlank
+          img={'/layouts/home_excr-cta.jpg'}
+        ></CTA>
       </main>
     </>
   );

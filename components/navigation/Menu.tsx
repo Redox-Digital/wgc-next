@@ -96,7 +96,10 @@ export function UserMenu({ name, img, hcp, className, flag = '🏳️' }: UserMe
       <h2>
         {name} {flag}
       </h2>
-      <small>HCP: {hcp} | Wallet : $100.00</small>
+      <small>
+        HCP: {hcp} | <Image src="/pictograms/wallet.png" alt="Wallet" width={15} height={15} />
+        &nbsp;$100.00
+      </small>
       <Button href={'/profile'} small>
         See your profile
       </Button>

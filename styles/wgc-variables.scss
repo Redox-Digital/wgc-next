@@ -9,7 +9,6 @@
   --black: #0a1a11;
 
   --primary: #002f18;
-  --primary--dark: var(--black);
 
   --secondary: #c7f7fd; // TBC
   --accent: #c8f843;
@@ -42,6 +41,7 @@
   --fs-h3: 20px;
   --fs-h4: 12px;
   --fs-h5: 18px;
+  --fs-h6: var(--fs-xs);
 
   --fs-p: 16px;
   --fs-sm: 12px;

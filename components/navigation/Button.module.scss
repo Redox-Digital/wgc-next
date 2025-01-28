@@ -74,3 +74,37 @@
     text-decoration: underline;
   }
 }
+
+.settingBtn {
+  padding: var(--s-s) var(--s-m);
+  border: solid 1px var(--grey);
+  border-radius: var(--s-s);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--s-s);
+
+  background: none;
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+
+  > span {
+    width: 100%;
+    text-align: left;
+  }
+
+  &.danger {
+    color: var(--danger) !important;
+  }
+
+  &:hover {
+    background: var(--grey);
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:active {
+    border-color: var(--black);
+  }
+}

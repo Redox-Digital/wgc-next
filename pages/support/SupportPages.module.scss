@@ -46,7 +46,7 @@
 .table {
   border: solid 1px var(--grey);
   border-radius: var(--s-m);
-  padding: var(--s-s);
+  padding: var(--s-xs) var(--s-s);
   margin-block: var(--s-s);
 
   > tr {
@@ -54,6 +54,7 @@
     flex-direction: row;
     border-bottom: solid 1px var(--grey);
     padding-block: var(--s-s);
+    gap: var(--s-xs);
 
     &:last-of-type {
       border: none;
@@ -68,9 +69,10 @@
       }
 
       &:last-of-type {
-        width: 60px;
+        width: 65px;
         font-size: 20px;
         font-weight: 600;
+        line-height: 1.5em;
         text-align: right;
       }
 
