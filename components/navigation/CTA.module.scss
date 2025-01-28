@@ -1,0 +1,46 @@
+.cta {
+  position: relative;
+  border-radius: var(--s-m);
+  overflow: hidden;
+  color: var(--white);
+  padding: var(--s-m) var(--s-s);
+  height: 300px;
+  gap: var(--s-m);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  > img {
+    z-index: 0;
+    object-fit: cover;
+  }
+
+  > .overlay {
+    z-index: 1;
+    background-color: var(--black);
+    position: absolute;
+    inset: 0;
+    opacity: 0.4;
+  }
+
+  > .texts,
+  > a {
+    z-index: 2;
+    position: relative;
+  }
+
+  > .texts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-xs);
+
+    h2 {
+      margin: 0;
+    }
+
+    p {
+      max-width: 320px;
+      opacity: 1;
+    }
+  }
+}

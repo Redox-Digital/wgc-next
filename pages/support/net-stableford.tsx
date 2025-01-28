@@ -4,6 +4,38 @@ import Image from 'next/image';
 import Button from '@/components/navigation/Button';
 
 export default function NetStableford() {
+  const rules = [
+    {
+      text: 'Net Double Bogey or worse',
+      sub: '2 or more strokes above net par',
+      pts: 0,
+    },
+    {
+      text: 'Net Bogey',
+      sub: '1 stroke above net par',
+      pts: 1,
+    },
+    {
+      text: 'Net Par',
+      sub: 'Equal to net par',
+      pts: 2,
+    },
+    {
+      text: 'Net Birdie',
+      sub: '1 stroke below net par',
+      pts: 3,
+    },
+    {
+      text: 'Net Eagle',
+      sub: '2 stroke below net par',
+      pts: 4,
+    },
+    {
+      text: 'Net Albatross or better',
+      sub: '3 strokes below net par',
+      pts: 5,
+    },
+  ];
   return (
     <main className={css.supportPage}>
       <PageTitle title="Net Stableford" returnBtn>
@@ -23,14 +55,17 @@ export default function NetStableford() {
           In Stableford scoring, the points awarded for each hole are typically based on the
           player&apos;s score relative to par. Here&apos;s a common breakdown:
         </p>
-        <ul>
-          <li>Net Double Bogey or worse: 0 points</li>
-          <li>Net Bogey: 1 point</li>
-          <li>Net Par: 2 points</li>
-          <li>Net Birdie: 3 points</li>
-          <li>Net Eagle: 4 points</li>
-          <li>Net Albatross or better: 5 points</li>
-        </ul>
+        <table className={css.table}>
+          {rules.map((rule) => (
+            <tr key={rule.pts}>
+              <td>
+                <h5>{rule.text}</h5>
+                <small>{rule.sub}</small>
+              </td>
+              <td>{rule.pts} pts</td>
+            </tr>
+          ))}
+        </table>
 
         <p>Net par = par + extra strokes received due to the player&apos;s handicap.</p>
       </section>

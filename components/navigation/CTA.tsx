@@ -16,12 +16,13 @@ export default function CTA({ title, description, btnLabel, href, img }: Props) 
       <Image src={img} alt="" fill />
       <div className={css.overlay} />
 
-      <div className={css.text}>
+      <div className={css.texts}>
         <h2>{title}</h2>
         <p>{description}</p>
       </div>
-
-      <Button href={href}>{btnLabel}</Button>
+      <Button href={href} darkBg>
+        {btnLabel}
+      </Button>
     </div>
   );
 }

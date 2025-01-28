@@ -37,7 +37,7 @@ export default function Support() {
           description={'If you have any question, or need further assistance, we are here for you.'}
           btnLabel={'hello@wgc.gg'}
           href={'mailto:hello@wgc.gg'}
-          img={''}
+          img={'https://picsum.photos/300/300'}
         />
       </div>
     </main>
