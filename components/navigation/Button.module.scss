@@ -4,83 +4,73 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 12px 20px;
+  padding: 18px 24px; // TBC
   width: fit-content;
   height: fit-content !important;
   border: none;
-  outline: 2px solid transparent;
+  outline: 1px solid var(--accent);
+  min-width: 150px;
 
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: var(--fs-p);
   transition: all 0.3s ease-in-out;
 
-  background: var(--wgc-gradient);
-  color: var(--wgc-white) !important;
+  background: var(--accent);
+  color: var(--black) !important;
 
-  border-radius: 10px;
-
-  box-shadow: var(--wgc-shadow-hover);
+  border-radius: 1000px;
 
   &:hover {
     cursor: pointer;
-    outline: 2px solid var(--wgc-white);
-    // background: var(--wgc-white);
-    // color: var(--wgc-primary) !important;
     transition: all 0.3s ease-in-out;
     transform: translateY(-1px);
-    box-shadow: var(--wgc-shadow-hover);
+    box-shadow: var(--shadow-hover);
   }
 
   &:active {
-    outline: solid 2px var(--wgc-white);
-    background: var(--wgc-primary);
-    box-shadow: var(--wgc-shadow-clicked);
-    color: var(--wgc-white);
+    outline-color: var(--black);
+    box-shadow: inset var(--shadow-clicked);
     transition: all 0s;
   }
 
   // Types
 
-  &Wgc {
-    border-color: var(--wgc-wgc-color);
-    color: var(--wgc-white);
-    background: var(--wgc-wgc-color);
+  &.outline {
+    background: transparent;
+
+    &.darkBg {
+      color: var(--white) !important;
+    }
 
     &:hover {
-      background: var(--wgc-white);
-      color: var(--wgc-wgc-color);
-
-      border-color: var(--wgc-wgc-color);
-    }
-
-    &:active {
-      border-color: var(--wgc-white);
-      background: var(--wgc-white);
-      color: var(--wgc-wgc-color);
-    }
-  }
-
-  &.white {
-    background: var(--wgc-white);
-    color: var(--wgc-primary) !important;
-
-    &:hover {
-      border-color: var(--wgc-primary);
+      border-color: var(--primary);
     }
     &:active {
-      border-color: var(--wgc-white);
-      color: var(--wgc-white) !important;
-      background: var(--wgc-primary);
+      border-color: var(--white);
+      color: var(--white) !important;
+      background: var(--primary);
     }
   }
 
   &.small {
-    padding: 5px var(--wgc-margin);
-    text-transform: none;
-    font-weight: 500;
-    font-size: var(--wgc-fs-sm);
-    box-shadow: none;
+    min-width: auto;
+
+    padding: 8px 24px;
+    font-size: var(--fs-sm);
+  }
+}
+
+.return {
+  display: flex;
+  align-items: center;
+  background-color: var(--accent);
+  border: none;
+  height: 32px;
+  width: 32px;
+  border-radius: 100px;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
   }
 }

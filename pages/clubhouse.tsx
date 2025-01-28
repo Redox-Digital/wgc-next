@@ -125,7 +125,7 @@ export default function Clubhouse() {
             accumsan lacinia, ipsum felis finibus erat, at pharetra nulla lacus sed leo. Curabitur
             at risus diam.
           </p>
-          <Button to="/create-private">Create your own Challenge</Button>
+          <Button href="/create-private">Create your own Challenge</Button>
         </ContactCTA>
         <TopPlayers first={topPlayers[0]} second={topPlayers[1]} third={topPlayers[2]} />
         <YourChallengeCTA />

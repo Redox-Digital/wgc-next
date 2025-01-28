@@ -1,0 +1,44 @@
+.supportPage {
+  p {
+    opacity: 0.7;
+  }
+
+  h2 {
+    margin-bottom: var(--s-m);
+  }
+
+  h3 {
+    margin-bottom: var(--s-s);
+  }
+}
+
+.navBtns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--s-xs);
+
+  > a {
+    background-color: var(--primary);
+    color: var(--white);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: var(--s-xs);
+    padding: var(--s-s) var(--s-m);
+
+    width: calc((100% - var(--s-xs)) / 2);
+    height: 90px;
+
+    border-radius: var(--s-xs);
+
+    &:hover {
+      background-color: var(--accent);
+    }
+
+    &:active {
+      outline: 1px solid var(--black);
+    }
+  }
+}

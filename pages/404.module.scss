@@ -1,8 +1,4 @@
-.notFoundPage {
-  margin-top: var(--wgc-navbar-height);
-
-  > div {
-    flex-direction: column;
-    gap: var(--wgc-margin);
-  }
+.notFound {
+  min-height: calc(50vh);
+  justify-content: center;
 }

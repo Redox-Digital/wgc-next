@@ -90,7 +90,7 @@ export default function ChallengeSection() {
             <div className={css.card}>
               <h4>Private challenge</h4>
               <p>Create one and invite your friends to start playing!</p>
-              <Button to={'/create-private'}>Create your own challenge</Button>
+              <Button href={'/create-private'}>Create your own challenge</Button>
             </div>
             <div className={css.card}>
               <h4>Invitations</h4>
@@ -99,7 +99,7 @@ export default function ChallengeSection() {
                   {invites.map((i) => (
                     <li key={i.id}>
                       #{i.id} {i.name}{' '}
-                      <Button to="/lobby" small>
+                      <Button href="/lobby" small>
                         Join
                       </Button>
                     </li>
@@ -185,9 +185,7 @@ export default function ChallengeSection() {
               !hcpFilter || hcpFilter === c.hcp ? <ChallengePreview key={c.id} {...c} /> : ''
             )}
           </div>
-          <Button to={'#'} white>
-            Show more
-          </Button>
+          <Button href={'#'}>Show more</Button>
         </div>
       )}
     </section>

@@ -31,10 +31,8 @@ const Hero = ({ title, subtitle, source, home, opacity, sponsored, btns }: Props
 
           {btns && (
             <div className={css.btns}>
-              <Button to={'#challenges'}>The Challenges</Button>
-              <Button to={'#howtoplay'} white>
-                How To Play
-              </Button>
+              <Button href={'#challenges'}>The Challenges</Button>
+              <Button href={'#howtoplay'}>How To Play</Button>
             </div>
           )}
         </div>

@@ -32,7 +32,7 @@ export default function Lobby() {
               <br />
               <b>End time:</b> 2024-09-20 21:59
             </p>
-            <Button to={'#'}>Enter score</Button>
+            <Button href={'#'}>Enter score</Button>
             <Link className={css.textLink} href={'#'}>
               Unregister
             </Link>
@@ -74,7 +74,7 @@ export default function Lobby() {
             More Free and Buy-in Challenges available on wgc.gg & your own Challenges with friends,
             clients, club members to create!
           </p>
-          <Button to={'https://wgc.gg'} blank>
+          <Button href={'https://wgc.gg'} blank>
             Visit wgc.gg
           </Button>
         </ContactCTA>

@@ -146,7 +146,7 @@ export default function Home() {
             Elevate your wardrobe by visiting our sponsor&apos;s e-shop, <b>Extracurricular</b>, and
             discover men&apos;s premium golf apparel including polos, hats, shorts, and pants.
           </p>
-          <Button to={'https://ex-cr.com/?utm_source=wgc'} blank>
+          <Button href={'https://ex-cr.com/?utm_source=wgc'} blank>
             The shop
           </Button>
         </ContactCTA>

@@ -1,7 +1,7 @@
 import css from './MobileMenu.module.scss';
 import menu from './Menu.module.scss';
 import burgerStyle from './Burger.module.scss';
-import { NavLink, MainNavLinks, UserLinks } from '@/constants/Navigation';
+import { NavLink, MainNavLinks, UserLinks, LegalLinks } from '@/constants/Navigation';
 import Image from 'next/image';
 
 import Link from 'next/link';
@@ -24,51 +24,78 @@ export default function MobileMenu({ open, toggleMenu, toggleLogged, logged }: P
   return (
     <>
       <nav className={`${css.mobileMenu} ${open ? css.mobileMenu__open : css.mobileMenu__closed}`}>
-        <div className={css.mobileMenu__links}>
-          <div className={css.quickBtns}>
+        <div className={css.head}>
+          {logged ? (
+            <>
+              <UserMenu
+                name={'Mikaël Ruffieux'}
+                hcp={'16.0'}
+                img={'https://wgc.gg/images/profile-picture.png'}
+                className={css.userProfile}
+              />
+            </>
+          ) : (
+            <>
+              <Button href={'/login'} onClick={toggleLogged}>
+                Login
+              </Button>
+              <Button href={'/register'} outline darkBg onClick={toggleLogged}>
+                Register
+              </Button>
+            </>
+          )}
+        </div>
+        <div className={css.body}>
+          <div className={css.item}>
+            <h4>Navigation</h4>
+            {MainNavLinks.map((l) => (
+              <Link key={l.url} href={l.url} onClick={toggleMenu} className={css.link}>
+                {l.icon && <Image src={l.icon} alt={''} width={20} height={20} />}
+                {l.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className={`${css.item} ${css.userLinks}`}>
+            <h4>Profile</h4>
+
             {logged ? (
               <>
-                <UserMenu
-                  name={'Mikaël Ruffieux'}
-                  hcp={'16.0'}
-                  img={'https://wgc.gg/images/profile-picture.png'}
-                  className={css.userProfile}
-                />
+                {UserLinks.map((l) => (
+                  <Link key={`u-${l.url}`} href={l.url} onClick={toggleMenu} className={css.link}>
+                    {l.icon && <Image src={l.icon} alt={''} width={20} height={20} />}
+                    {l.label}
+                  </Link>
+                ))}
+                <Link href={'#'} onClick={toggleLogged} className={css.danger}>
+                  Sign Out
+                </Link>
               </>
             ) : (
               <>
-                <Button to={'#'} onClick={toggleLogged}>
-                  Register
-                </Button>
-                <Button to={'#'} white onClick={toggleLogged}>
-                  Login
-                </Button>
+                <Link href="/login">Login</Link>
+                <Link href="/register">Register</Link>
               </>
             )}
           </div>
-          {MainNavLinks.map((l) => (
-            <Link key={l.url} href={l.url} onClick={toggleMenu} className={css.link}>
-              {l.icon && <Image src={l.icon} alt={''} width={20} height={20} />}
-              {l.label}
-            </Link>
-          ))}
 
-          {logged ? (
-            <>
-              <hr />
-              {UserLinks.map((l) => (
-                <Link key={`u-${l.url}`} href={l.url} onClick={toggleMenu} className={css.link}>
-                  {l.icon && <Image src={l.icon} alt={''} width={20} height={20} />}
-                  {l.label}
-                </Link>
-              ))}
-              <Button to={'#'} addClass={css.danger} onClick={toggleLogged}>
-                Sign Out
-              </Button>
-            </>
-          ) : (
-            ''
-          )}
+          <div className={css.item}>
+            <h4>Legal</h4>
+            {LegalLinks.map((link) => (
+              <Link key={link.url} href={link.url}>
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          <small>
+            Region :{' '}
+            <select name="region" id="region">
+              <option value="eu">Europe</option>
+              <option value="am">Americas</option>
+              <option value="as">Asia</option>
+            </select>
+          </small>
         </div>
       </nav>
     </>

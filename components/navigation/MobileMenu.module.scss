@@ -1,11 +1,12 @@
 .mobileMenu {
-  z-index: 10;
-  padding: 30px var(--wgc-margin);
-  background: var(--wgc-white);
-  height: calc(100vh - var(--wgc-navbar-height));
-  height: calc(100svh - var(--wgc-navbar-height));
+  z-index: 9;
+  padding: var(--s-l) var(--s-s);
+  padding-top: calc(var(--navbar-height) + var(--s-l));
+  background: var(--black);
+  height: calc(100vh);
+  height: calc(100svh);
   position: fixed;
-  top: var(--wgc-navbar-height);
+  top: 0;
   scrollbar-width: none;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -18,7 +19,7 @@
 
   display: flex;
   flex-direction: column;
-  gap: var(--wgc-margin);
+  gap: var(--s-l);
 
   &__open {
     left: 0px;
@@ -26,163 +27,36 @@
   }
 
   &__closed {
-    left: 100%;
+    left: -100%;
     transition: left 0.3s ease-in-out;
   }
 
-  &__links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    > hr {
-      width: 100%;
-      border-color: var(--wgc-secondary);
-    }
-
-    > .link {
-      padding: 18px 0px;
-      border-bottom: 1px solid var(--wgc-white);
-      font-size: var(--wgc-fs-h5);
-      letter-spacing: 0.08em;
-      text-align: left;
-      color: var(--wgc-black);
-      font-weight: 700;
-      text-transform: uppercase;
-      justify-content: center;
-
-      display: flex;
-      flex-direction: row;
-      gap: var(--wgc-padding);
-    }
-
-    .danger {
-      background: var(--wgc-danger);
-      margin-top: var(--wgc-margin);
-    }
-
-    > .quickBtns {
-      margin-bottom: var(--wgc-margin);
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: var(--wgc-padding);
-      justify-content: center;
-
-      > .userProfile {
-        width: 100%;
-        flex-direction: column;
-
-        > div > span {
-          font-weight: 700;
-        }
-
-        > a {
-          display: flex;
-          flex-direction: column-reverse;
-          align-items: center;
-
-          > img {
-            width: 50px;
-            height: 50px;
-          }
-
-          > small {
-            text-align: center;
-            font-size: var(--wgc-fs-p);
-          }
-        }
-      }
-    }
-  }
-
-  &__contactInfos {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-
-    &__elt > h5 {
-      color: var(--wgc-primary);
-    }
-  }
-
-  &__socials {
-    border-top: 1px solid rgba(250, 250, 250, 0.5);
+  .head {
     display: flex;
     flex-direction: row;
-    font-size: 30px;
-    gap: 30px;
-    padding: 20px 0;
-    > a {
-      color: var(--wgc-primary);
-    }
-  }
-}
-
-.mobileSubMenu {
-  z-index: 11;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: var(--wgc-black);
-  width: 100%;
-  height: 100vh;
-  height: 100svh;
-
-  &__open {
-    left: 0px;
-    transition: left 0.3s ease-in-out;
+    gap: var(--s-s);
   }
 
-  &__closed {
-    left: 100%;
-    transition: left 0.3s ease-in-out;
-  }
-
-  &__top {
-    height: var(--wgc-navbar-height);
+  .body {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px var(--wgc-sct-horiz-margin);
+    flex-direction: column;
+    gap: var(--s-m);
 
-    > button[type='button'] {
-      background: none;
-      border: none;
-      font-size: var(--wgc-fs-h5);
-      letter-spacing: 0.08em;
-      color: var(--wgc-white);
-      transition: color 0.3s ease-in-out;
-
-      &:hover {
-        transition: color 0.3s ease-in-out;
-        color: var(--wgc-primary-dark);
-        cursor: pointer;
-      }
-
-      &::before {
-        content: '◂ ';
-        color: var(--wgc-primary);
-      }
-    }
-  }
-
-  &__body {
-    height: 100%;
-
-    > a {
+    .item {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: calc((100% - var(--wgc-navbar-height)) / 3);
-      background-size: cover;
-      background-position: center;
-      position: relative;
+      flex-direction: column;
+      gap: var(--s-xs);
 
-      > h5 {
-        z-index: 2;
+      > h4 {
+        color: var(--accent);
+      }
+
+      > a {
+        color: var(--white);
+        font-size: var(--fs-h2);
+        font-family: var(--fontfamily-titles);
+        font-weight: 600;
+        line-height: 1.25em;
       }
     }
   }
@@ -198,4 +72,8 @@
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+.danger {
+  color: var(--danger) !important;
 }

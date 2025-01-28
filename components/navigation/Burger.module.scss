@@ -1,7 +1,7 @@
 .burger {
   z-index: 12;
-  width: 30px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   position: relative;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -19,10 +19,9 @@
   > span {
     display: block;
     position: absolute;
-    height: 3px;
-    border-radius: 10px;
+    height: 1px;
     width: 100%;
-    background: var(--wgc-gradient);
+    background: var(--white);
     opacity: 1;
     left: 0;
     -webkit-transform: rotate(0deg);
@@ -32,10 +31,10 @@
     -webkit-transition: 0.25s ease-in-out;
     -moz-transition: 0.25s ease-in-out;
     -o-transition: 0.25s ease-in-out;
-    transition: 0.25s ease-in-out;
+    transition: 0.25s all ease-in-out;
 
     &:nth-child(1) {
-      top: 0px;
+      top: calc(40px / 2 - 6px);
       -webkit-transform-origin: left center;
       -moz-transform-origin: left center;
       -o-transform-origin: left center;
@@ -43,15 +42,17 @@
     }
 
     &:nth-child(2) {
-      top: 10px;
+      top: calc(40px / 2);
       -webkit-transform-origin: left center;
       -moz-transform-origin: left center;
       -o-transform-origin: left center;
       transform-origin: left center;
+      width: 100%;
     }
 
     &:nth-child(3) {
-      top: 20px;
+      top: calc(40px / 2 + 6px);
+      width: 50%;
       -webkit-transform-origin: left center;
       -moz-transform-origin: left center;
       -o-transform-origin: left center;
@@ -61,18 +62,21 @@
 
   &__closed {
     > span {
+      background: var(--black);
+
       &:nth-child(1) {
         -webkit-transform: rotate(45deg);
         -moz-transform: rotate(45deg);
         -o-transform: rotate(45deg);
         transform: rotate(45deg);
-        top: 0px;
+        top: calc(40px / 2 - 10px);
         left: 4px;
+        width: 75%;
       }
 
       &:nth-child(2) {
         width: 0%;
-        opacity: 0;
+        // opacity: 0;
       }
 
       &:nth-child(3) {
@@ -80,8 +84,9 @@
         -moz-transform: rotate(-45deg);
         -o-transform: rotate(-45deg);
         transform: rotate(-45deg);
-        top: 21px;
+        top: calc(40px / 2 + 11px);
         left: 4px;
+        width: 75%;
       }
     }
   }

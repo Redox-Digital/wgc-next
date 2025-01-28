@@ -12,24 +12,23 @@
   font-weight: 500;
   line-height: 1.4em;
   font-size: var(--fs-p);
-  color: var(--white);
+  color: var(--black);
 
   * {
     box-sizing: inherit;
   }
 
   section {
-    padding: var(--sct-vert-margin) var(--sct-horiz-margin);
+    // padding: var(--sct-vert-margin) var(--sct-horiz-margin);
     display: flex;
+    flex-direction: column;
     color: var(--black);
   }
 
   h1,
   h2,
   h3,
-  h4,
-  h5,
-  h6 {
+  h4 {
     font-family: var(--fontfamily-titles);
     margin: 0;
     font-weight: 700;
@@ -42,7 +41,7 @@
 
   h2 {
     font-size: var(--fs-h2);
-    line-height: auto;
+    line-height: normal;
     font-weight: 600;
   }
 
@@ -53,7 +52,12 @@
 
   h4 {
     font-size: var(--fs-h4);
-    line-height: auto;
+    line-height: normal;
+  }
+
+  h5 {
+    font-size: var(--fs-h5);
+    line-height: normal;
   }
 
   a {
@@ -66,9 +70,8 @@
   }
 
   p {
-    &:first-of-type {
-      margin-top: 0px;
-    }
+    margin: 0;
+    margin-bottom: var(--s-s);
 
     &:last-of-type {
       margin-bottom: 0px;
@@ -77,7 +80,7 @@
 
   small {
     font-size: var(--fs-sm);
-    line-height: auto;
+    line-height: normal;
   }
 
   .xs {
@@ -124,4 +127,12 @@
   .noscroll {
     overflow: hidden;
   }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-l);
+  padding: var(--sct-def-margins);
+  padding-top: calc(var(--navbar-height) + var(--s-l));
 }

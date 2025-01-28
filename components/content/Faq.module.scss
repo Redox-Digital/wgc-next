@@ -1,0 +1,83 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-xs);
+
+  > details {
+    border: solid 1px var(--grey);
+    border-radius: var(--s-m);
+
+    &[open] {
+      background-color: var(--black);
+      color: var(--white);
+
+      transition: all 0.3s ease-in-out;
+
+      .sign {
+        background-color: var(--white);
+
+        > span {
+          background-color: var(--primary);
+          transition: all 0.3s ease-in-out;
+
+          &:first-of-type {
+            transform: rotate(-180deg);
+          }
+
+          &:last-of-type {
+            transform: rotate(-180deg);
+          }
+        }
+      }
+    }
+
+    > summary {
+      padding: var(--s-s);
+      padding-left: var(--s-m);
+      display: flex;
+      flex-direction: row;
+      gap: var(--s-s);
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+
+      &::marker {
+        content: '';
+      }
+
+      > h5 {
+        margin: 0;
+      }
+
+      > .sign {
+        width: 32px;
+        height: 32px;
+        background-color: var(--primary);
+        position: relative;
+        border-radius: 1000px;
+
+        > span {
+          display: block;
+          position: absolute;
+          background-color: var(--white);
+          width: 14px;
+          height: 2px;
+          top: calc((100% - 2px) / 2);
+          left: calc((100% - 14px) / 2);
+          transition: all 0.3s ease-in-out;
+
+          &:first-of-type {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+
+    > small {
+      display: block;
+      padding-block: var(--s-xs) var(--s-m);
+      padding-inline: var(--s-m);
+      opacity: 0.8;
+    }
+  }
+}

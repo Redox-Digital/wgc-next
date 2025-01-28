@@ -12,57 +12,22 @@ type MenuProps = {
   logoUrl: string;
   links: NavLink[];
   sponsored?: boolean;
+  logged?: boolean;
+  setLogged: (logged: boolean) => void;
 };
 
-export default function Menu({ logo, logoUrl, links, sponsored }: MenuProps) {
+export default function Menu({ logo, logoUrl, links, sponsored, logged, setLogged }: MenuProps) {
   //navbar scroll when active state
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const [logged, setLogged] = useState<boolean>(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const toggleLog = () => setLogged(!logged);
 
   return (
     <>
-      <nav className={`${css.menu} ${menuOpen ? css.menu__open : ''}`}>
+      <nav className={`${css.menu} ${menuOpen ? css.open : ''}`}>
         <div className={css.mainMenu}>
           <div className={css.mainMenu__container}>
-            <Link href="/" className={css.logo} aria-label="Accéder à la page d'accueil">
-              <Image src={logo} alt="" width={85} height={50} className="logo" />
-            </Link>
-
-            <div className={css.menu__links}>
-              {links.map((link) => (
-                <Link key={link.url} href={link.url}>
-                  {link.icon ? <Image src={link.icon} alt={''} width={20} height={20} /> : ''}
-                  <span>{link.label}</span>
-                </Link>
-              ))}
-              <div className={css.btns}>
-                {logged ? (
-                  <UserMenu
-                    name={'Mikaël Ruffieux'}
-                    hcp={'16.0'}
-                    img={'https://wgc.gg/images/profile-picture.png'}
-                    toggleLog={toggleLog}
-                  />
-                ) : (
-                  <>
-                    <Button to={'#'} onClick={toggleLog} addClass={css.btn}>
-                      Register
-                    </Button>
-                    <Button
-                      white
-                      to={'#'}
-                      onClick={toggleLog}
-                      addClass={`${css.btn} ${css.btn__white}`}
-                    >
-                      Login
-                    </Button>
-                  </>
-                )}
-              </div>
-            </div>
             <button
               className={`${burgerStyle.burger} ${menuOpen ? burgerStyle.burger__closed : ''}`}
               onClick={toggleMenu}
@@ -72,6 +37,37 @@ export default function Menu({ logo, logoUrl, links, sponsored }: MenuProps) {
               <span></span>
               <span></span>
             </button>
+
+            <Link href="/" className={css.logo} aria-label="Accéder à la page d'accueil">
+              <h4>{menuOpen ? 'Menu' : 'World Golf Challenge'}</h4>
+              {/* <Image src={logo} alt="" width={85} height={50} className="logo" /> */}
+            </Link>
+            {/* 
+                          {links.map((link) => (
+                <Link key={link.url} href={link.url}>
+                  {link.icon ? <Image src={link.icon} alt={''} width={20} height={20} /> : ''}
+                  <span>{link.label}</span>
+                </Link>
+              ))}
+            
+            */}
+
+            {logged ? (
+              <Link href="/profile" className={css.profile}>
+                <Image
+                  src="https://wgc.gg/images/profile-picture.png"
+                  width={40}
+                  height={40}
+                  alt="Username"
+                />
+              </Link>
+            ) : (
+              <>
+                <Link href="/join" className={`${css.profile} ${css.notLogged}`}>
+                  <Image src="/pictograms/user.svg" width={20} height={20} alt="Username" />
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </nav>
@@ -89,26 +85,21 @@ type UserMenuType = {
   name: string;
   hcp: string;
   img: string;
-  toggleLog?: () => void;
   className?: string;
+  flag?: string;
 };
 
-export function UserMenu({ name, img, hcp, toggleLog, className }: UserMenuType) {
+export function UserMenu({ name, img, hcp, className, flag = '🏳️' }: UserMenuType) {
   return (
     <div className={`${css.userMenu} ${className}`}>
-      <Link href={'#'} onClick={toggleLog}>
-        <small>
-          {name}
-          <br />
-          HCP: {hcp}
-        </small>
-        <Image src={img} alt={''} width={45} height={45} />
-      </Link>
-      <div className={css.wallet}>
-        <span>$1000</span>
-        <button>+</button>
-        <button>-</button>
-      </div>
+      <Image src={img} alt={''} width={80} height={80} />
+      <h2>
+        {name} {flag}
+      </h2>
+      <small>HCP: {hcp} | Wallet : $100.00</small>
+      <Button href={'/profile'} small>
+        See your profile
+      </Button>
     </div>
   );
 }

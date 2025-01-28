@@ -29,7 +29,7 @@ export default function ChallengePreview({
         </span>
         <span className={css.dates}>{dates}</span>
         <span className={css.btn}>
-          <Button small to={'/lobby'}>
+          <Button small href={'/lobby'}>
             {fee ? `Buy-in ${fee}$` : 'Join for free'}
           </Button>
         </span>
@@ -62,7 +62,7 @@ export default function ChallengePreview({
             Dates : <span className={css.dates}>{dates}</span>
           </p>
           <div className={css.btn}>
-            <Button small to={'/lobby'}>
+            <Button small href={'/lobby'}>
               {fee ? `Buy-in ${fee}$` : 'Join for free'}
             </Button>
           </div>

@@ -1,0 +1,19 @@
+.titles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--s-s);
+  align-items: center;
+
+  > p {
+    width: 100%;
+    opacity: 0.7;
+  }
+
+  > img {
+    width: 100%;
+    margin-top: var(--s-s);
+    border-radius: var(--s-m);
+    object-fit: cover;
+  }
+}
