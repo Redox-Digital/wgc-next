@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import css from './Footer.module.scss';
-import { MainNavLinks, UserLinks } from '@/constants/Navigation';
+import { LegalLinks, MainNavLinks, UserLinks } from '@/constants/Navigation';
 import Image from 'next/image';
 import { SelectInput } from '@/pages/create-private';
 
@@ -9,22 +9,43 @@ type Props = {
 };
 
 export default function Footer({ sponsored }: Props) {
-  if (sponsored)
-    return (
-      <footer className={css.footerSponsored}>
-        Copyright 2024 -&nbsp;
-        <Link href={'https://wgc.gg'} target="_blank">
-          World Golf Challenge
-        </Link>
-      </footer>
-    );
   return (
     <footer className={css.footer}>
       <div className={css.container}>
-        {' '}
         <div className={css.body}>
           <div className={css.col}>
-            <Image src={'/logos/logo-wgc.svg'} alt={''} width={150} height={100} />
+            <h4>Navigation</h4>
+            {MainNavLinks.map((link) => (
+              <Link key={link.url} href={link.url}>
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <div className={`${css.col} ${css.userLinks}`}>
+            <h4>Profile</h4>
+            {UserLinks.map((link) => (
+              <Link key={link.url} href={link.url}>
+                {link.label}
+              </Link>
+            ))}
+            <span>
+              Region :{' '}
+              <select name="region" id="region">
+                <option value="eu">Europe</option>
+              </select>
+            </span>
+          </div>
+          <div className={css.col}>
+            <h4>Legal</h4>
+            {LegalLinks.map((link) => (
+              <Link key={link.url} href={link.url}>
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className={css.col}>
+            <h4>Socials</h4>
             <div className={css.socials}>
               <Link href={'#'}>
                 <Image width={20} height={20} src={'/pictograms/instagram.svg'} alt={'Instagram'} />
@@ -40,46 +61,15 @@ export default function Footer({ sponsored }: Props) {
               </Link>
             </div>
           </div>
-          <div className={css.col}>
-            {MainNavLinks.map((link) => (
-              <Link key={link.url} href={link.url}>
-                {link.label}
-              </Link>
-            ))}
-          </div>
-          <div className={`${css.col} ${css.userLinks}`}>
-            {UserLinks.map((link) => (
-              <Link key={link.url} href={link.url}>
-                {link.label}
-              </Link>
-            ))}
-            <span>
-              Region :{' '}
-              <select name="region" id="region">
-                <option value="eu">Europe</option>
-              </select>
-            </span>
-          </div>
-          <div className={css.col}>
-            <Image src={'/layouts/home/paypal.png'} alt={''} width={90} height={50} />
-          </div>
         </div>
-        <span className={css.spacer}></span>
         <div className={css.foot}>
           <span>
-            Copyright 2024 -&nbsp;
+            &copy; 2025{' '}
             <Link href={'https://wgc.gg'} target="_blank">
               World Golf Challenge
             </Link>
           </span>
-          |
-          <span>
-            <Link href={'#'}>Privacy Policy</Link>
-          </span>
-          |
-          <span>
-            <Link href={'#'}>Terms of agreement</Link>
-          </span>
+          <Image src={'/logos/logo-wgc.svg'} alt={''} width={50} height={50} />
         </div>
       </div>
     </footer>
