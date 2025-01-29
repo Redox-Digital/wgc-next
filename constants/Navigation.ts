@@ -26,18 +26,18 @@ export const MainNavLinks: NavLink[] = [
 
 export const UserLinks: NavLink[] = [
   {
-    url: '/settings',
+    url: '/profile',
     label: 'Settings',
   },
   {
-    url: '/wallet',
+    url: '/profile/wallet',
     label: 'Wallet',
   },
 ];
 
 export const LegalLinks: NavLink[] = [
   {
-    url: '/privay',
+    url: '/privacy',
     label: 'Privacy policy',
   },
   {
