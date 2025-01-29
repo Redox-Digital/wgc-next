@@ -39,7 +39,7 @@ export default function Button({
       className={`${css.btn} ${small && css.small} ${outline && css.outline} ${
         darkBg && css.darkBg
       } ${className}`}
-      onClick={() => history.back()} /* TBC */
+      onClick={onClick ? onClick : () => history.back()} /* TBC */
     >
       {children}
     </button>
