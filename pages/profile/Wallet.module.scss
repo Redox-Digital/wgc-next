@@ -1,0 +1,88 @@
+.walletSct {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-m);
+
+  .btns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--s-s);
+  }
+}
+
+.wallet {
+  background-color: var(--black);
+  display: flex;
+  padding: var(--s-m);
+  border-radius: var(--s-s);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 120px;
+
+  > small {
+    color: var(--accent);
+    position: absolute;
+    top: var(--s-s);
+  }
+
+  > h2 {
+    color: var(--white);
+  }
+}
+
+.transactions {
+  .head {
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.7;
+    padding-bottom: var(--s-s);
+    padding-inline: var(--s-s);
+  }
+
+  .body {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-xs);
+
+    > li {
+      display: flex;
+      padding: var(--s-s);
+      justify-content: space-between;
+      align-items: center;
+
+      border-radius: var(--s-s);
+      border: 1px solid var(--black);
+
+      &.gain {
+        background-color: var(--black);
+        color: var(--accent);
+
+        small {
+          color: var(--white);
+        }
+      }
+
+      &.loss {
+      }
+
+      .identifier {
+        display: flex;
+        flex-direction: column;
+        // color: var(--accent);
+
+        > small {
+          // color: var(--black);
+        }
+      }
+
+      .amount {
+      }
+    }
+  }
+}
