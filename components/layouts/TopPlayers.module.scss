@@ -3,153 +3,100 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
+  padding: var(--sct-def-margins);
+  padding-bottom: 0;
+  gap: var(--s-m);
+
+  h2,
+  small {
+    color: var(--white);
+  }
 
   .podium {
     display: flex;
-    flex-direction: column;
-    gap: var(--margin);
+    flex-direction: row;
+    gap: var(--s-s);
     width: 100%;
-    color: var(--white);
-    margin-top: var(--sct-vert-margin);
     align-items: flex-end;
 
-    @media screen and (min-width: 720px) {
-      flex-direction: row;
-    }
-
     &Step {
-      --pb: 40px;
       width: 100%;
       color: var(--black);
-      background-color: var(--white);
-      border-radius: 15px;
+      background-color: var(--accent);
+      border-radius: var(--s-s);
 
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+      flex-direction: column;
       align-items: center;
       position: relative;
-      padding-bottom: var(--padding);
-      padding-right: var(--padding);
+      padding: var(--s-s) var(--s-xs);
+      padding-top: calc(var(--s-s) + 18px);
       justify-content: end;
 
-      gap: var(--padding);
-
-      @media screen and (min-width: 720px) {
-        gap: 7px;
-
-        height: 400px;
-        flex-direction: column;
-        flex-wrap: nowrap;
-
-        color: Var(--white);
-        background-color: var(--primary);
-        box-shadow: var(--shadow-hover);
-        padding-inline: var(--margin);
-        padding-block: 60px var(--pb);
-        border-radius: 30px;
-      }
-
-      > h4:last-of-type {
-        width: calc(100% - var(--padding) - 60px);
-        text-align: left;
-
-        @media screen and (min-width: 720px) {
-          width: 100%;
-          text-align: center;
-        }
-      }
-
-      &.first {
-        @media screen and (min-width: 720px) {
-          order: 2;
-          padding-bottom: calc(var(--pb) * 2.5);
-        }
-
-        > .rank {
-          background: var(--gold);
-        }
-      }
-
-      &.second {
-        max-height: calc(400px * 0.9);
-
-        @media screen and (min-width: 720px) {
-          order: 1;
-        }
-
-        // padding-bottom: calc(var(--pb) * 1.5);
-
-        > .rank {
-          background: var(--silver);
-        }
-      }
-
-      &.third {
-        max-height: calc(400px * 0.8);
-
-        @media screen and (min-width: 720px) {
-          order: 3;
-        }
-
-        > .rank {
-          background: var(--bronze);
-        }
-      }
+      gap: var(--s-xs);
 
       > .rank {
-        width: 30px;
-        height: 30px;
-        font-size: var(--fs-p);
+        width: 24px;
+        height: 24px;
+        font-size: var(--fs-s);
+        font-weight: 500;
 
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--secondary);
+        background: var(--black);
         border-radius: 100%;
         line-height: 1em;
         color: var(--white);
+      }
 
-        position: absolute;
-        top: -15px;
-        left: 40px;
-
-        @media screen and (min-width: 720px) {
-          width: 60px;
-          height: 60px;
-          position: relative;
-          top: auto;
-          left: auto;
-          font-size: var(--fs-h4);
-        }
+      > h5 {
+        font-size: var(--fs-s);
+        font-weight: 500;
+        word-break: break-all; // DEV : maybe column design ?
+        margin-bottom: var(--s-xs);
       }
 
       > p {
         margin: 0;
-        font-size: var(--fs-sm);
+        font-size: var(--fs-xs);
         font-weight: 500;
+        line-height: 1em;
 
-        @media screen and (min-width: 720px) {
-          font-size: var(--fs-p);
+        &:first-of-type {
+          font-size: var(--fs-h4);
+          font-family: var(--fontfamily-titles);
+          font-weight: 700;
         }
       }
 
       > img {
-        position: relative;
-        border-radius: 10px;
+        position: absolute;
+        border-radius: var(--s-xs);
+        top: -18px;
 
         object-fit: cover;
-        width: 60px;
-        height: 60px;
+        width: 36px;
+        height: 36px;
+      }
 
-        @media screen and (min-width: 720px) {
-          width: 80px;
-          height: 80px;
-          border-radius: 20px;
+      &.first {
+        order: 2;
 
-          position: absolute;
-          top: -40px;
+        h5 {
+          margin-bottom: var(--s-m);
         }
+      }
+
+      &.second {
+        order: 1;
+        h5 {
+          margin-bottom: var(--s-s);
+        }
+      }
+
+      &.third {
+        order: 3;
       }
     }
   }

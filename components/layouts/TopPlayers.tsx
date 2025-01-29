@@ -1,3 +1,4 @@
+import Button from '../navigation/Button';
 import SectionTitle from './SectionTitle';
 import css from './TopPlayers.module.scss';
 import Image from 'next/image';
@@ -12,42 +13,45 @@ export default function TopPlayers({ first, second, third }: Props) {
   return (
     <section className={css.topPlayers}>
       <SectionTitle title="Players of the month">
-        <p>Placement resets on the 1st day of each month.</p>
+        <small>Placement resets on the 1st day of each month.</small>
       </SectionTitle>
       <div className={css.podium}>
         <div className={`${css.podiumStep} ${css.first}`}>
-          <Image src={first.img} alt={''} width={80} height={80} />
-          <h4 className={css.rank}>1</h4>
-          <h4>
+          <Image src={first.img} alt={''} width={40} height={40} />
+          <span className={css.rank}>1</span>
+          <h5>
             {first.name} {first.flag}
-          </h4>
-          <p>{first.pointsScored} points scored</p>
-          <p>{first.challengesWon} challenges won</p>
-          <p>{first.moneyWon}$ won</p>
+          </h5>
+          <p>{first.pointsScored} pts</p>
+          <p>{first.challengesWon} win(s)</p>
+          <p>$ {first.moneyWon} won</p>
         </div>
 
         <div className={`${css.podiumStep} ${css.second}`}>
-          <Image src={second.img} alt={''} width={80} height={80} />
-          <h4 className={css.rank}>2</h4>
-          <h4>
+          <Image src={second.img} alt={''} width={40} height={40} />
+          <span className={css.rank}>2</span>
+          <h5>
             {second.name} {second.flag}
-          </h4>
-          <p>{second.pointsScored} points scored</p>
-          <p>{second.challengesWon} challenges won</p>
-          <p>{second.moneyWon}$ won</p>
+          </h5>
+          <p>{second.pointsScored} pts</p>
+          <p>{second.challengesWon} win(s)</p>
+          <p>$ {second.moneyWon} won</p>
         </div>
 
         <div className={`${css.podiumStep} ${css.third}`}>
-          <Image src={third.img} alt={''} width={80} height={80} />
-          <h4 className={css.rank}>3</h4>
-          <h4>
+          <Image src={third.img} alt={''} width={40} height={40} />
+          <span className={css.rank}>3</span>
+          <h5>
             {third.name} {third.flag}
-          </h4>
-          <p>{third.pointsScored} points scored</p>
-          <p>{third.challengesWon} challenges won</p>
-          <p>{third.moneyWon}$ won</p>
+          </h5>
+          <p>{third.pointsScored} pts</p>
+          <p>{third.challengesWon} win(s)</p>
+          <p>$ {third.moneyWon} won</p>
         </div>
       </div>
+      <Button href="/leaderboards" outline small darkBg>
+        All Leaderboards
+      </Button>
     </section>
   );
 }
