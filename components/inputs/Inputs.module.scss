@@ -1,0 +1,50 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s);
+  width: 100%;
+
+  &.half {
+    width: calc((100% - var(--margin)) / 2);
+  }
+
+  > span {
+    margin-left: var(--padding);
+    font-weight: 500;
+  }
+
+  > input,
+  > textarea,
+  > select {
+    font-size: var(--fs-p);
+    border: 1px var(--grey) solid;
+
+    outline: 2px solid transparent;
+    padding: var(--padding);
+    border-radius: 15px;
+    font-family: var(--roboto-font);
+    background: var(--white);
+
+    &:focus {
+      outline-color: var(--primary);
+    }
+  }
+
+  > select.small {
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    color: var(--primary);
+    padding: 5px 10px;
+    border-radius: 2px;
+    background: transparent;
+    text-decoration: underline;
+
+    &:focus {
+      outline-color: var(--primary);
+    }
+  }
+
+  > textarea {
+    min-height: 150px;
+  }
+}

@@ -86,56 +86,6 @@
   }
 }
 
-.input {
-  display: flex;
-  flex-direction: column;
-  gap: var(--wgc-padding);
-  width: 100%;
-
-  &.half {
-    width: calc((100% - var(--wgc-margin)) / 2);
-  }
-
-  > span {
-    margin-left: var(--wgc-padding);
-    font-weight: 500;
-  }
-
-  > input,
-  > textarea,
-  > select {
-    font-size: var(--wgc-fs-p);
-    border: none;
-    outline: 2px solid transparent;
-    padding: var(--wgc-padding);
-    border-radius: 15px;
-    font-family: var(--wgc-roboto-font);
-    background: var(--wgc-white);
-
-    &:focus {
-      outline-color: var(--wgc-primary);
-    }
-  }
-
-  > select.small {
-    font-size: var(--wgc-fs-sm);
-    font-weight: 500;
-    color: var(--wgc-primary);
-    padding: 5px 10px;
-    border-radius: 2px;
-    background: transparent;
-    text-decoration: underline;
-
-    &:focus {
-      outline-color: var(--wgc-primary);
-    }
-  }
-
-  > textarea {
-    min-height: 150px;
-  }
-}
-
 .textLink {
   display: block;
   text-decoration: underline !important;
