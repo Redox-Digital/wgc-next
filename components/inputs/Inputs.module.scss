@@ -1,50 +1,64 @@
 .input {
   display: flex;
   flex-direction: column;
-  gap: var(--s);
+  gap: var(--xs);
   width: 100%;
 
-  &.half {
-    width: calc((100% - var(--margin)) / 2);
+  &.w50 {
+    width: calc((100% - var(--sm)) / 2);
+  }
+
+  &.w33 {
+    width: calc((100% - var(--sm)) / 3);
+  }
+
+  &.w66 {
+    width: calc((100% - var(--sm)) / 3 * 2);
+  }
+
+  &.dark {
+    > span {
+      color: var(--accent);
+    }
+
+    > input,
+    > textarea,
+    > select {
+      outline: 1px transparent solid;
+    }
   }
 
   > span {
-    margin-left: var(--padding);
-    font-weight: 500;
+    margin-left: var(--sm);
+    font-size: var(--fs-xs);
+    line-height: 1em;
+    color: var(--primary);
   }
 
   > input,
   > textarea,
   > select {
     font-size: var(--fs-p);
-    border: 1px var(--grey) solid;
-
-    outline: 2px solid transparent;
-    padding: var(--padding);
-    border-radius: 15px;
-    font-family: var(--roboto-font);
-    background: var(--white);
+    outline: 1px var(--grey) solid;
+    border: none;
+    padding: var(--sm);
+    border-radius: var(--sm);
+    background: var(--true-white);
 
     &:focus {
-      outline-color: var(--primary);
-    }
-  }
-
-  > select.small {
-    font-size: var(--fs-sm);
-    font-weight: 500;
-    color: var(--primary);
-    padding: 5px 10px;
-    border-radius: 2px;
-    background: transparent;
-    text-decoration: underline;
-
-    &:focus {
-      outline-color: var(--primary);
+      outline-color: var(--accent);
     }
   }
 
   > textarea {
     min-height: 150px;
   }
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  gap: var(--sm);
+
+  padding-block: var(--xs);
 }
