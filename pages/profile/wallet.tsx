@@ -3,6 +3,8 @@ import Button from '@/components/navigation/Button';
 import css from './Wallet.module.scss';
 import { useState } from 'react';
 import Modal from '@/components/layouts/Modal';
+import Image from 'next/image';
+import { Checkbox, TextInput } from '@/components/inputs/Inputs';
 
 export default function Wallet() {
   const transactions = [
@@ -19,15 +21,44 @@ export default function Wallet() {
     <main className={css.walletPage}>
       <Modal
         title="Withdraw"
+        className={`${css.modal} ${css.withdraw}`}
         open={modal === 'withdraw'}
         closeModal={() => setModal(undefined)}
-      ></Modal>
-
-      <Modal title="Deposit" open={modal === 'deposit'} closeModal={() => setModal(undefined)}>
-        <div className={css.body}></div>
+      >
+        <form>
+          <TextInput id={'amount'} label={'Amount'} type={'number'} dark />
+          <TextInput id={'mail'} label={'PayPal E-Mail'} type={'text'} dark />
+        </form>
+        <Button onClick={() => setModal(undefined)} small>
+          Request widthdrawal
+        </Button>
       </Modal>
 
-      <PageTitle title={'Challenge History'} returnBtn>
+      <Modal
+        title="Deposit"
+        className={`${css.modal} ${css.deposit}`}
+        open={modal === 'deposit'}
+        closeModal={() => setModal(undefined)}
+      >
+        <form>
+          <TextInput id={'amount'} label={'Amount'} type={'number'} dark />
+          <small>
+            <span>Provider fee (3.5%)</span>
+            <span>$ 0.35</span>
+          </small>
+          <p>
+            <span>Total Cost</span>
+            <span>$ 10.35</span>
+          </p>
+          <Checkbox id={'adult'}>I am over 18 years of age.</Checkbox>
+        </form>
+
+        <Button onClick={() => setModal(undefined)} small>
+          Pay with PayPal <Image src="/pictograms/paypal-dark.svg" alt="" width={12} height={20} />
+        </Button>
+      </Modal>
+
+      <PageTitle title={'Wallet'} returnBtn>
         <p>
           Check your wallet to monitor your earnings and investments across the various challenges.
         </p>

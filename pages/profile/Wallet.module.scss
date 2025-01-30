@@ -60,7 +60,7 @@
       border: 1px solid var(--black);
 
       &.gain {
-        background-color: var(--black);
+        background-color: var(--primary);
         color: var(--accent);
 
         small {
@@ -84,5 +84,39 @@
       .amount {
       }
     }
+  }
+}
+
+.modal {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
+  }
+
+  button {
+    margin-top: var(--md);
+    width: 100%;
+  }
+
+  &.deposit form {
+    gap: var(--md);
+
+    small,
+    p {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    p {
+      font-family: var(--fontfamily-titles);
+      font-size: var(--fs-h3);
+      font-weight: 700;
+    }
+  }
+
+  &.withdraw {
   }
 }
