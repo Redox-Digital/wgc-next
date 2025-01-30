@@ -91,3 +91,34 @@
   text-decoration: underline !important;
   margin-top: var(--wgc-margin);
 }
+
+.editPrivatePage {
+  form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--sm);
+  }
+
+  .btns {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: var(--sm);
+    justify-content: space-between;
+  }
+
+  .deleteTextLink {
+    cursor: pointer;
+    display: block;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    color: var(--danger);
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    width: fit-content;
+    font-size: var(--fs-sm);
+  }
+}
