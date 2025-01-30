@@ -122,3 +122,31 @@
     font-size: var(--fs-sm);
   }
 }
+
+.successPage {
+  min-height: 800px;
+  justify-content: center;
+  align-items: center;
+
+  .btns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--sm);
+    width: 100%;
+
+    > a {
+      width: 100%;
+    }
+  }
+}
+
+.createForm {
+  > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // Fullscreen - top padding - bottom - padding
+    min-height: calc(100vh - var(--navbar-height) - var(--lg) - var(--lg));
+  }
+}

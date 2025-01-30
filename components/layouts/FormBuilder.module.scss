@@ -1,0 +1,62 @@
+.hideTitle {
+  display: none;
+}
+
+.formStep {
+  display: none !important;
+
+  &.show {
+    display: flex !important;
+  }
+
+  fieldset {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    border: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--sm);
+    margin: 0;
+    min-inline-size: 100%; // normalize
+
+    margin-block: var(--md);
+  }
+}
+
+.progressBar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sm);
+  align-items: center;
+
+  .bar {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: var(--grey);
+    border-radius: 1000px;
+    overflow: hidden;
+
+    .progress {
+      min-width: 24px;
+      max-width: 90%;
+      height: 100%;
+      display: block;
+      content: '';
+      background: var(--gradient);
+    }
+  }
+}
+
+// DEV : Move to other file ?
+
+.formNav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--md);
+  justify-content: space-between;
+}

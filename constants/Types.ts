@@ -32,3 +32,10 @@ type GearType = {
   brand: string;
   model: string;
 };
+
+type FormStep = {
+  id: number;
+  title: string;
+  description: string;
+  body: string | React.ReactNode;
+};
