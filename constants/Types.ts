@@ -14,16 +14,21 @@ type Player = {
   moneyWon: number;
 };
 
-
-
 type ChallengePreview = {
   id: number;
-  img? : string;
-  hcp:  "single" | "up to 18" | "up to 54";
+  img?: string;
+  hcp: 'single' | 'up to 18' | 'up to 54';
   name: string;
   pool: number;
   gameType: string;
   players: number;
   dates: string;
   fee: number;
-}
+};
+
+type GearType = {
+  id: number;
+  gear: string;
+  brand: string;
+  model: string;
+};
