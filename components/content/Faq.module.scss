@@ -1,11 +1,11 @@
 .faq {
   display: flex;
   flex-direction: column;
-  gap: var(--s-xs);
+  gap: var(--xs);
 
   > details {
     border: solid 1px var(--grey);
-    border-radius: var(--s-m);
+    border-radius: var(--md);
 
     &[open] {
       background-color: var(--black);
@@ -32,11 +32,11 @@
     }
 
     > summary {
-      padding: var(--s-s);
-      padding-left: var(--s-m);
+      padding: var(--sm);
+      padding-left: var(--md);
       display: flex;
       flex-direction: row;
-      gap: var(--s-s);
+      gap: var(--sm);
       align-items: center;
       justify-content: space-between;
       cursor: pointer;
@@ -75,8 +75,8 @@
 
     > small {
       display: block;
-      padding-block: var(--s-xs) var(--s-m);
-      padding-inline: var(--s-m);
+      padding-block: var(--xs) var(--md);
+      padding-inline: var(--md);
       opacity: 0.8;
     }
   }

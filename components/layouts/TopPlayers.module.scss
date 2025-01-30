@@ -5,7 +5,7 @@
   align-items: center;
   padding: var(--sct-def-margins);
   padding-bottom: 0;
-  gap: var(--s-m);
+  gap: var(--md);
 
   h2,
   small {
@@ -15,7 +15,7 @@
   .podium {
     display: flex;
     flex-direction: row;
-    gap: var(--s-s);
+    gap: var(--sm);
     width: 100%;
     align-items: flex-end;
 
@@ -23,17 +23,17 @@
       width: 100%;
       color: var(--black);
       background-color: var(--accent);
-      border-radius: var(--s-s);
+      border-radius: var(--sm);
 
       display: flex;
       flex-direction: column;
       align-items: center;
       position: relative;
-      padding: var(--s-s) var(--s-xs);
-      padding-top: calc(var(--s-s) + 18px);
+      padding: var(--sm) var(--xs);
+      padding-top: calc(var(--sm) + 18px);
       justify-content: end;
 
-      gap: var(--s-xs);
+      gap: var(--xs);
 
       > .rank {
         width: 24px;
@@ -54,7 +54,7 @@
         font-size: var(--fs-s);
         font-weight: 500;
         word-break: break-all; // DEV : maybe column design ?
-        margin-bottom: var(--s-xs);
+        margin-bottom: var(--xs);
       }
 
       > p {
@@ -72,7 +72,7 @@
 
       > img {
         position: absolute;
-        border-radius: var(--s-xs);
+        border-radius: var(--xs);
         top: -18px;
 
         object-fit: cover;
@@ -84,14 +84,14 @@
         order: 2;
 
         h5 {
-          margin-bottom: var(--s-m);
+          margin-bottom: var(--md);
         }
       }
 
       &.second {
         order: 1;
         h5 {
-          margin-bottom: var(--s-s);
+          margin-bottom: var(--sm);
         }
       }
 

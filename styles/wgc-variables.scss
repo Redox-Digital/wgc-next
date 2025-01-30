@@ -48,19 +48,19 @@
   --fs-xs: 10px;
 
   // Testing new spacing system
-  --s-xs: 6px;
-  --s-s: 12px;
-  --s-m: 24px;
-  --s-l: 48px;
-  --s-xl: 96px;
+  --xs: 6px;
+  --sm: 12px;
+  --md: 24px;
+  --lg: 48px;
+  --xl: 96px;
 
   // --margin: 20px;
   // --padding: 10px;
   // --gap: 50px;
 
-  --sct-vert-margin: var(--s-l);
-  --subsct-vert-margin: var(--s-m);
-  --sct-horiz-margin: var(--s-s);
+  --sct-vert-margin: var(--lg);
+  --subsct-vert-margin: var(--md);
+  --sct-horiz-margin: var(--sm);
   --sct-def-margins: var(--sct-vert-margin) var(--sct-horiz-margin);
 
   --navbar-height: 90px;

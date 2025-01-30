@@ -87,9 +87,10 @@ type UserMenuType = {
   img: string;
   className?: string;
   flag?: string;
+  onClick?: () => void;
 };
 
-export function UserMenu({ name, img, hcp, className, flag = '🏳️' }: UserMenuType) {
+export function UserMenu({ name, img, hcp, className, flag = '🏳️', onClick }: UserMenuType) {
   return (
     <div className={`${css.userMenu} ${className}`}>
       <Image src={img} alt={''} width={80} height={80} />
@@ -100,7 +101,7 @@ export function UserMenu({ name, img, hcp, className, flag = '🏳️' }: UserMe
         HCP: {hcp} | <Image src="/pictograms/wallet.png" alt="Wallet" width={15} height={15} />
         &nbsp;$100.00
       </small>
-      <Button href={'/profile'} small>
+      <Button href={'/profile'} onClick={onClick}>
         See your profile
       </Button>
     </div>

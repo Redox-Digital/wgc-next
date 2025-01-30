@@ -5,8 +5,8 @@
   width: 100%;
   transition: all 0.3s ease-in-out;
   background: var(--black);
-  border-bottom-right-radius: var(--s-m);
-  border-bottom-left-radius: var(--s-m);
+  border-bottom-right-radius: var(--md);
+  border-bottom-left-radius: var(--md);
   // box-shadow: var(--shadow-hover);
 
   &__hidden {
@@ -20,7 +20,7 @@
 
     display: flex;
 
-    padding: var(--s-s);
+    padding: var(--sm);
 
     transition: all 0.3s ease-in-out;
 
@@ -96,7 +96,7 @@
 .userMenu {
   display: flex;
   flex-direction: column;
-  gap: var(--s-xs);
+  gap: var(--xs);
   width: 100%;
   align-items: center;
   color: var(--white);

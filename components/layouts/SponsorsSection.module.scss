@@ -1,7 +1,7 @@
 .section {
   background-color: var(--white);
   justify-content: center;
-  gap: var(--s-s);
+  gap: var(--sm);
 
   > ul {
     margin: 0;
@@ -10,17 +10,17 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--s-s);
+    gap: var(--sm);
     list-style-type: none;
 
     > li {
-      width: calc((100% - var(--s-s)) / 2);
+      width: calc((100% - var(--sm)) / 2);
 
       > a {
         display: flex;
         flex-direction: column;
         background-color: var(--black);
-        border-radius: var(--s-s);
+        border-radius: var(--sm);
         overflow: hidden;
         color: var(--white);
         outline: 1px solid var(--black);
@@ -43,7 +43,7 @@
         }
 
         > .texts {
-          padding: var(--s-s);
+          padding: var(--sm);
           display: flex;
           flex-direction: column;
           gap: 2px;

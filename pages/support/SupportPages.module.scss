@@ -4,11 +4,11 @@
   }
 
   h2 {
-    margin-bottom: var(--s-m);
+    margin-bottom: var(--md);
   }
 
   h3 {
-    margin-bottom: var(--s-s);
+    margin-bottom: var(--sm);
   }
 }
 
@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: var(--s-xs);
+  gap: var(--xs);
 
   > a {
     background-color: var(--primary);
@@ -25,13 +25,13 @@
     flex-direction: row;
     align-items: center;
 
-    gap: var(--s-xs);
-    padding: var(--s-s) var(--s-m);
+    gap: var(--xs);
+    padding: var(--sm) var(--md);
 
-    width: calc((100% - var(--s-xs)) / 2);
+    width: calc((100% - var(--xs)) / 2);
     height: 90px;
 
-    border-radius: var(--s-xs);
+    border-radius: var(--xs);
 
     &:hover {
       background-color: var(--accent);
@@ -45,16 +45,16 @@
 
 .table {
   border: solid 1px var(--grey);
-  border-radius: var(--s-m);
-  padding: var(--s-xs) var(--s-s);
-  margin-block: var(--s-s);
+  border-radius: var(--md);
+  padding: var(--xs) var(--sm);
+  margin-block: var(--sm);
 
   > tr {
     display: flex;
     flex-direction: row;
     border-bottom: solid 1px var(--grey);
-    padding-block: var(--s-s);
-    gap: var(--s-xs);
+    padding-block: var(--sm);
+    gap: var(--xs);
 
     &:last-of-type {
       border: none;

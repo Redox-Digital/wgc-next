@@ -1,11 +1,11 @@
 .ctaSct {
-  gap: var(--s-m);
+  gap: var(--md);
   padding: var(--sct-def-margins);
 }
 
 .clubhouse {
   background-color: var(--white);
-  border-radius: var(--s-m);
+  border-radius: var(--md);
   padding: var(--sct-def-margins);
 }
 
@@ -13,7 +13,7 @@
   position: relative;
   width: 100%;
   min-height: 100px;
-  margin-bottom: var(--s-l);
+  margin-bottom: var(--lg);
 
   > img {
     width: 100%;

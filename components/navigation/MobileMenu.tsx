@@ -32,14 +32,13 @@ export default function MobileMenu({ open, toggleMenu, toggleLogged, logged }: P
                 hcp={'16.0'}
                 img={'https://wgc.gg/images/profile-picture.png'}
                 className={css.userProfile}
+                onClick={toggleMenu}
               />
             </>
           ) : (
             <>
-              <Button href={'/login'} onClick={toggleLogged}>
-                Login
-              </Button>
-              <Button href={'/register'} outline darkBg onClick={toggleLogged}>
+              <Button href={'/login'}>Login</Button>
+              <Button href={'/register'} outline darkBg>
                 Register
               </Button>
             </>

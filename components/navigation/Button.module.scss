@@ -76,14 +76,14 @@
 }
 
 .settingBtn {
-  padding: var(--s-s) var(--s-m);
+  padding: var(--sm) var(--md);
   border: solid 1px var(--grey);
-  border-radius: var(--s-s);
+  border-radius: var(--sm);
 
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: var(--s-s);
+  gap: var(--sm);
 
   background: none;
   cursor: pointer;

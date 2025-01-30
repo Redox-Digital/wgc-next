@@ -1,11 +1,11 @@
 .cta {
   position: relative;
-  border-radius: var(--s-m);
+  border-radius: var(--md);
   overflow: hidden;
   color: var(--white);
-  padding: var(--s-m) var(--s-s);
+  padding: var(--md) var(--sm);
   height: 300px;
-  gap: var(--s-m);
+  gap: var(--md);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -31,7 +31,7 @@
   > .texts {
     display: flex;
     flex-direction: column;
-    gap: var(--s-xs);
+    gap: var(--xs);
 
     h2 {
       margin: 0;

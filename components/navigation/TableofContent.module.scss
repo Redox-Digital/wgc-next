@@ -1,8 +1,8 @@
 .tableOfContent {
   border: 1px solid var(--grey);
-  border-radius: var(--s-m);
-  padding-block: var(--s-s);
-  padding-inline: var(--s-m) var(--s-s);
+  border-radius: var(--md);
+  padding-block: var(--sm);
+  padding-inline: var(--md) var(--sm);
   background-color: var(--white);
 
   > details {
@@ -62,7 +62,7 @@
       list-style: none;
       padding: 0;
       margin: 0;
-      padding-top: var(--s-s);
+      padding-top: var(--sm);
 
       > li {
         > a {

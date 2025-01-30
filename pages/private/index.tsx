@@ -5,6 +5,7 @@ import Button from '@/components/navigation/Button';
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { SelectInput, TextInput } from '@/components/inputs/Inputs';
 
 export default function PrivateChallenges() {
   // Not working, only for dev purpose
@@ -126,65 +127,5 @@ export default function PrivateChallenges() {
         Return to Clubhouse
       </Link>
     </main>
-  );
-}
-
-type TextInputType = {
-  id: string;
-  label: string;
-  defaultValue?: string;
-  placeholder?: string;
-  className?: string;
-  half?: boolean;
-  type: 'text' | 'number' | 'date' | 'textarea' | 'file';
-};
-
-export function TextInput({
-  id,
-  label,
-  defaultValue,
-  placeholder,
-  half,
-  className,
-  type,
-}: TextInputType) {
-  if (type === 'textarea') {
-    return (
-      <label htmlFor={id} className={`${css.input} ${className}`}>
-        <span>{label}</span>
-        <textarea id={id} name={id} placeholder={placeholder} defaultChecked></textarea>
-      </label>
-    );
-  }
-  return (
-    <label htmlFor={id} className={`${css.input} ${className} ${half && css.half}`}>
-      <span>{label}</span>
-      <input type={type} id={id} name={id} placeholder={placeholder}></input>
-    </label>
-  );
-}
-
-type SelectInputType = {
-  id: string;
-  label: string;
-  half?: boolean;
-  small?: boolean;
-  className?: string;
-  options: { value: string; label: string }[];
-};
-
-export function SelectInput({ id, label, options, half, className, small }: SelectInputType) {
-  return (
-    <label htmlFor={id} className={`${css.input} ${half && css.half} ${className}`}>
-      <span>{label}</span>
-
-      <select name={id} id={id} className={`${small && css.small}`}>
-        {options.map((o) => (
-          <option value={o.value} key={o.value}>
-            {o.label}
-          </option>
-        ))}
-      </select>
-    </label>
   );
 }

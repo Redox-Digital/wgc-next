@@ -81,7 +81,7 @@
 
   p {
     margin: 0;
-    margin-bottom: var(--s-s);
+    margin-bottom: var(--sm);
 
     &:last-of-type {
       margin-bottom: 0px;
@@ -153,7 +153,7 @@
 main {
   display: flex;
   flex-direction: column;
-  gap: var(--s-l);
+  gap: var(--lg);
   padding: var(--sct-def-margins);
-  padding-top: calc(var(--navbar-height) + var(--s-l));
+  padding-top: calc(var(--navbar-height) + var(--lg));
 }
