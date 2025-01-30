@@ -10,7 +10,7 @@ type Props = {
   className?: string;
   blank?: boolean;
   onClick?: () => void;
-  children?: string;
+  children?: string | React.ReactNode;
 };
 
 export default function Button({
@@ -86,6 +86,21 @@ export function SettingButton({
     <button onClick={onClick} className={`${css.settingBtn} ${className}`}>
       {picto && <Image src={picto} alt="" width={16} height={16} />}
       <span>{children}</span>
+    </button>
+  );
+}
+
+type GearBtnProps = {
+  gear: GearType;
+  className?: string;
+  onClick?: () => void;
+};
+
+export function GearButton({ gear, className, onClick }: GearBtnProps) {
+  return (
+    <button className={`${css.gearBtn} ${className}`} onClick={onClick}>
+      <Image src={`/brands/${gear.brand}.png`} alt={''} width={50} height={50} />
+      <span>{gear.model}</span>
     </button>
   );
 }

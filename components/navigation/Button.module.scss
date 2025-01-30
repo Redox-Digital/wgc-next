@@ -10,6 +10,7 @@
   border: none;
   outline: 1px solid var(--accent);
   min-width: 150px;
+  gap: var(--xs);
 
   font-size: var(--fs-p);
   transition: all 0.3s ease-in-out;
@@ -106,5 +107,31 @@
 
   &:active {
     border-color: var(--black);
+  }
+}
+
+.gearBtn {
+  display: flex;
+  flex-direction: row;
+  gap: var(--sm);
+  align-items: center;
+  text-align: left;
+
+  background: var(--true-white);
+  border: solid 1px var(--grey);
+
+  padding-inline: var(--sm) 16px;
+  padding-block: 10px;
+  border-radius: 36px;
+
+  cursor: pointer;
+
+  > img {
+    border-radius: 1000px;
+    object-fit: contain;
+  }
+
+  > span {
+    opacity: 0.7;
   }
 }
