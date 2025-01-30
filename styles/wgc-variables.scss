@@ -13,13 +13,7 @@
   --secondary: #c7f7fd; // TBC
   --accent: #c8f843;
 
-  --gradient: linear-gradient(
-    93deg,
-    #488f4b -3.61%,
-    #7ebb5d 29.58%,
-    #8fc863 75.71%,
-    #488f4b 104.4%
-  );
+  --gradient: linear-gradient(45deg, var(--accent) 0%, var(--primary) 100%);
 
   --gold: linear-gradient(132deg, #ffd700 6.6%, #ffb800 100.54%);
   --silver: linear-gradient(131deg, #c0c0c0 6.65%, #e4e4e4 90.1%);

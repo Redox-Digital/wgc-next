@@ -4,6 +4,11 @@
   flex-wrap: wrap;
   gap: var(--sm);
   align-items: center;
+  text-align: left;
+
+  &.center {
+    text-align: center;
+  }
 
   > p {
     width: 100%;

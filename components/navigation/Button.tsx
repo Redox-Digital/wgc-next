@@ -36,6 +36,7 @@ export default function Button({
     </Link>
   ) : (
     <button
+      type="button"
       className={`${css.btn} ${small && css.small} ${outline && css.outline} ${
         darkBg && css.darkBg
       } ${className}`}
@@ -48,7 +49,7 @@ export default function Button({
 
 export function ReturnButton() {
   return (
-    <button onClick={() => history.back()} className={css.return}>
+    <button onClick={() => history.back()} className={css.return} type="button">
       <Image src="/pictograms/arrow-return.svg" alt="Return" width={12} height={12} />
     </button>
   );
@@ -83,7 +84,7 @@ export function SettingButton({
       <Image src={'/pictograms/angle-black-right.svg'} alt="" width={10} height={10} />
     </Link>
   ) : (
-    <button onClick={onClick} className={`${css.settingBtn} ${className}`}>
+    <button type="button" onClick={onClick} className={`${css.settingBtn} ${className}`}>
       {picto && <Image src={picto} alt="" width={16} height={16} />}
       <span>{children}</span>
     </button>
@@ -98,7 +99,7 @@ type GearBtnProps = {
 
 export function GearButton({ gear, className, onClick }: GearBtnProps) {
   return (
-    <button className={`${css.gearBtn} ${className}`} onClick={onClick}>
+    <button type="button" className={`${css.gearBtn} ${className}`} onClick={onClick}>
       <Image src={`/brands/${gear.brand}.png`} alt={''} width={50} height={50} />
       <span>{gear.model}</span>
     </button>
