@@ -38,7 +38,7 @@ export default function Profile() {
     { name: 'Member since', value: '12/26/22', picto: '/pictograms/golf.svg' },
   ];
   return (
-    <main className={css.profile}>
+    <main className={css.profilePage}>
       <div className={`${css.user}`}>
         <label htmlFor="profilePicture" title="Change profile picture">
           <Image
