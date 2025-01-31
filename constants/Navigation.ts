@@ -6,7 +6,7 @@ export type NavLink = {
 
 export const MainNavLinks: NavLink[] = [
   {
-    url: '/clubhouse',
+    url: '/',
     label: 'Clubhouse',
   },
   {

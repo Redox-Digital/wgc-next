@@ -6,7 +6,7 @@
 .clubhouse {
   background-color: var(--white);
   border-radius: var(--md);
-  padding: var(--sct-def-margins);
+  padding: var(--sct-def-margins) !important;
 }
 
 .logoSct {
