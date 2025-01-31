@@ -20,7 +20,7 @@ export default function TopPlayers({ first, second, third }: Props) {
           <Image src={first.img} alt={''} width={40} height={40} />
           <span className={css.rank}>1</span>
           <h5>
-            {first.name} {first.flag}
+            {first.name} <span className={css.flag}>{first.flag}</span>
           </h5>
           <p>{first.pointsScored} pts</p>
           <p>{first.challengesWon} win(s)</p>
@@ -31,7 +31,7 @@ export default function TopPlayers({ first, second, third }: Props) {
           <Image src={second.img} alt={''} width={40} height={40} />
           <span className={css.rank}>2</span>
           <h5>
-            {second.name} {second.flag}
+            {second.name} <span className={css.flag}>{second.flag}</span>
           </h5>
           <p>{second.pointsScored} pts</p>
           <p>{second.challengesWon} win(s)</p>
@@ -42,14 +42,14 @@ export default function TopPlayers({ first, second, third }: Props) {
           <Image src={third.img} alt={''} width={40} height={40} />
           <span className={css.rank}>3</span>
           <h5>
-            {third.name} {third.flag}
+            {third.name} <span className={css.flag}>{third.flag}</span>
           </h5>
           <p>{third.pointsScored} pts</p>
           <p>{third.challengesWon} win(s)</p>
           <p>$ {third.moneyWon} won</p>
         </div>
       </div>
-      <Button href="/leaderboards" outline small darkBg>
+      <Button href="/leaderboards" outline darkBg>
         All Leaderboards
       </Button>
     </section>

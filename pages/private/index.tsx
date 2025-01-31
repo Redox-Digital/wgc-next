@@ -34,8 +34,8 @@ export default function PrivateChallenges() {
             placeholder="Enter a description for your Challenge"
           />
 
-          <TextInput id="banner" label="Banner Image" type="file" />
-          <TextInput id="leaderboard" label="Leaderboard Prize Image" type="file" />
+          <TextInput id="banner" label="Banner Image" type="image" />
+          <TextInput id="leaderboard" label="Leaderboard Prize Image" type="image" />
         </fieldset>
         <fieldset>
           <button type="button" className={btnCss.btn} onClick={addDate}>
@@ -69,7 +69,7 @@ export default function PrivateChallenges() {
           <SelectInput
             id={'status'}
             label={'Status'}
-            half
+            width="50"
             options={[
               {
                 value: 'all',
@@ -88,7 +88,7 @@ export default function PrivateChallenges() {
           <SelectInput
             id={'gameType'}
             label={'Game Type'}
-            half
+            width="50"
             options={[
               {
                 value: 'ns',
@@ -99,7 +99,7 @@ export default function PrivateChallenges() {
           <SelectInput
             id={'fee'}
             label={'Fee Type'}
-            half
+            width="50"
             options={[
               {
                 value: 'buy-in',
@@ -116,7 +116,7 @@ export default function PrivateChallenges() {
             label="Cost to join (USD)"
             type="number"
             placeholder="Choose amount (in $)"
-            half
+            width="50"
           />
         </fieldset>
         <button className={btnCss.btn} type="submit">

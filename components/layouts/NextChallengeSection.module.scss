@@ -1,0 +1,18 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--md);
+
+  .challenges {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--sm);
+  }
+}

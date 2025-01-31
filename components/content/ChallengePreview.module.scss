@@ -1,13 +1,13 @@
 .challengeDesktop {
   display: none;
   border-radius: 20px;
-  background-color: var(--wgc-white);
+  background-color: var(--white);
   width: 100%;
   grid-template-columns: var(--grid-template);
   grid-template-rows: 1fr;
-  grid-column-gap: var(--wgc-padding);
+  grid-column-gap: var(--padding);
   align-items: center;
-  padding: 10px var(--wgc-padding);
+  padding: 10px var(--padding);
 
   @media screen and (min-width: 1200px) {
     display: grid;
@@ -21,8 +21,8 @@
   .hcp,
   .pool {
     font-weight: 900;
-    font-size: var(--wgc-fs-sm);
-    font-family: var(--wgc-montserrat-font);
+    font-size: var(--fs-sm);
+    font-family: var(--montserrat-font);
     letter-spacing: 0.03em;
     text-transform: uppercase;
   }
@@ -43,7 +43,7 @@
 
   .pool {
     padding: 5px 10px;
-    background: var(--wgc-gold);
+    background: var(--gold);
     border-radius: 10px;
     text-align: center;
     width: fit-content;
@@ -55,7 +55,7 @@
 
   .dates,
   .gameType {
-    font-size: var(--wgc-fs-sm);
+    font-size: var(--fs-sm);
   }
 
   .btn {
@@ -66,43 +66,98 @@
 .challengeMobile {
   display: flex;
   flex-direction: column;
-  background: #fff;
-  border-radius: var(--wgc-padding);
-  box-shadow: var(--wgc-shadow-hover);
+  background-color: var(--primary);
+  background: var(--gradient-challenge);
+  border-radius: var(--sm);
   overflow: hidden;
+  color: var(--white);
 
   transition: all 0.3s ease-in-out;
 
   &[open] {
     .arrow {
-      transform: rotate(0deg);
+      transform: rotate(90deg);
       transition: transform 0.3s ease-in-out;
     }
   }
+
   > summary {
     cursor: pointer;
 
-    background-color: var(--wgc-white);
-    border-top-right-radius: var(--wgc-padding);
-    border-top-left-radius: var(--wgc-padding);
-    padding: 10px var(--wgc-padding);
+    padding-block: var(--sm);
+    padding-inline: var(--sm) var(--md);
 
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: var(--wgc-padding);
+    gap: var(--sm);
     list-style-type: none;
 
-    font-weight: 500;
+    > .img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--white);
+      color: var(--black);
+      border-radius: var(--xs);
+      height: 40px;
+      width: 60px;
+      overflow: hidden;
 
-    > div {
+      h5 {
+        display: block;
+        width: 100%;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      img {
+        object-fit: contain;
+        height: 100%;
+        width: auto;
+        max-width: 100%;
+      }
+    }
+
+    > .content {
       display: flex;
       flex-direction: column;
       width: 100%;
+      gap: 3px;
 
-      > .players {
-        opacity: 0.5;
-        font-size: var(--wgc-fs-sm);
+      > .topLine,
+      > .bottomLine {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      > .topLine {
+        > .name {
+          color: var(--accent);
+          font-size: var(--fs-sm);
+          font-weight: 600;
+          line-height: 1em;
+        }
+        > .pool {
+          font-size: var(--fs-sm);
+          background-color: var(--accent);
+          color: var(--black);
+          padding: 2px 8px;
+          border-radius: 100px;
+          height: fit-content;
+          line-height: normal;
+        }
+      }
+      > .bottomLine {
+        font-size: var(--fs-sm);
+
+        .players {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 3px;
+        }
       }
     }
 
@@ -111,42 +166,34 @@
       height: 20px;
       font-size: 20px;
       line-height: 20px;
-      color: var(--wgc-primary);
-      transform: rotate(-90deg);
+      color: var(--primary);
+      transform: rotate(0deg);
       transition: transform 0.3s ease-in-out;
-    }
-
-    .pool {
-      padding: 5px 10px;
-      background: var(--wgc-gold);
-      border-radius: 10px;
-      text-align: center;
-      width: fit-content;
-      font-weight: 900;
-      font-size: var(--wgc-fs-sm);
-      font-family: var(--wgc-montserrat-font);
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
     }
   }
 
   > .body {
-    padding: var(--wgc-padding);
+    padding: var(--sm);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: var(--sm);
 
-    .btn > a {
-      font-size: var(--wgc-fs-p);
-      text-transform: uppercase;
-    }
+    > .stats {
+      display: flex;
+      flex-direction: row;
+      background: var(--black);
+      padding: var(--sm);
+      border-radius: var(--sm);
 
-    > p {
-      margin: 0;
-      font-weight: 600;
+      font-size: var(--fs-xs);
+      justify-content: space-between;
 
-      > span {
-        font-weight: 400;
+      span {
+        line-height: normal;
+
+        > b {
+          color: var(--accent);
+        }
       }
     }
   }

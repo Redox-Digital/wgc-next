@@ -1,7 +1,5 @@
-import PageTitle from '@/components/content/PageTitle';
 import css from './PrivateChallenges.module.scss';
 import Button from '@/components/navigation/Button';
-import { useState } from 'react';
 import { SelectInput, TextInput } from '@/components/inputs/Inputs';
 import FormBuilder from '@/components/layouts/FormBuilder';
 
@@ -14,8 +12,8 @@ export default function CreatePrivateChallenge() {
         <>
           <TextInput id={'name'} label={'Challenge Name'} type={'text'} />
           <TextInput id={'description'} label={'Description (optional)'} type={'textarea'} />
-          <TextInput id={'banner'} label={'Banner'} type={'file'} />
-          <TextInput id={'prizes'} label={'Leaderboard Prizes'} type={'file'} />
+          <TextInput id={'banner'} label={'Banner'} type={'image'} />
+          <TextInput id={'prizes'} label={'Leaderboard Prizes'} type={'image'} />
         </>
       ),
       id: 0,
@@ -87,7 +85,7 @@ export default function CreatePrivateChallenge() {
   return (
     <main className={css.createForm}>
       <form>
-        <FormBuilder steps={formSteps} />
+        <FormBuilder steps={formSteps} confirmationUrl={'/private/success'} />
       </form>
     </main>
   );

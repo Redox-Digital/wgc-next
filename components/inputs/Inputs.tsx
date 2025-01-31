@@ -8,7 +8,7 @@ type TextInputType = {
   className?: string;
   dark?: boolean;
   width?: '50' | '33' | '66';
-  type: 'text' | 'number' | 'date' | 'textarea' | 'file';
+  type: 'text' | 'number' | 'date' | 'textarea' | 'image' | 'password' | 'email';
 };
 
 function getInputWidth(width?: '50' | '33' | '66') {

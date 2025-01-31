@@ -1,0 +1,100 @@
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.pagination {
+}
+/*
+.wrapper {
+  position: relative;
+  overflow: visible;
+  overflow-x: auto;
+
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scroll-padding: calc(300px + var(--sm));
+
+  padding-bottom: 30px;
+}
+  */
+
+.scroller {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--sm);
+  padding-right: calc(var(--sct-horiz-margin) * 2);
+  padding-bottom: var(--md);
+
+  overflow: visible;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  // scroll-snap-points-x: repeat(calc(var(--card-size) + var(--gap-size)));
+  scroll-behavior: smooth;
+  scroll-padding: var(--sct-horiz-margin);
+  -webkit-overflow-scrolling: touch;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.slide {
+  // Carousel
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  transform: translateX(var(--sm));
+
+  // General
+  width: 300px;
+  height: 350px; // TBC
+  position: relative;
+  display: flex;
+  padding: var(--md) var(--sm);
+  border-radius: var(--sm);
+  box-shadow: 0px 4px 16px 0px rgba(0, 47, 24, 0.25);
+
+  scroll-snap-align: start;
+
+  img {
+    border-radius: var(--sm);
+    object-fit: cover;
+  }
+
+  .overlay {
+    border-radius: var(--sm);
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 26, 17, 0.9) 0%,
+      rgba(10, 26, 17, 0.2) 50%,
+      rgba(10, 26, 17, 0.2) 90%,
+      rgba(10, 26, 17, 0.7) 100%
+    );
+    // opacity: 0.5;
+  }
+
+  > .content {
+    z-index: 2;
+    position: relative;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
+
+    > h2 {
+      color: var(--accent);
+    }
+  }
+}

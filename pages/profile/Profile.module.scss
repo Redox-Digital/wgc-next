@@ -82,6 +82,8 @@
     border-radius: var(--sm);
     justify-content: space-between;
 
+    text-align: center;
+
     > li {
       display: flex;
       flex-direction: column;
@@ -95,7 +97,7 @@
       }
 
       > small {
-        // font-size: var(--fs-xs);
+        font-size: var(--fs-xs);
         color: var(--accent);
       }
 

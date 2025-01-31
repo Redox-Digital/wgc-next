@@ -2,7 +2,6 @@ import Link from 'next/link';
 import css from './Footer.module.scss';
 import { LegalLinks, MainNavLinks, UserLinks } from '@/constants/Navigation';
 import Image from 'next/image';
-import { SelectInput } from '@/pages/private';
 
 type Props = {
   sponsored?: boolean;

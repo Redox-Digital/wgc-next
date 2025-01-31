@@ -21,7 +21,7 @@ const Hero = ({ title, children, source, home, opacity, btns }: Props) => {
         <div className={css.btns}>
           {btns &&
             btns.map((btn) => (
-              <Button key={btn.href} href={btn.href} outline={!btn.plain} small darkBg>
+              <Button key={btn.href} href={btn.href} outline={!btn.plain} darkBg>
                 {btn.text}
               </Button>
             ))}

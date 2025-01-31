@@ -50,7 +50,7 @@ export default function Profile() {
           <span>
             <Image src="/pictograms/pen-black.svg" alt="" width={16} height={16} />
           </span>
-          <input type="file" name="profilePicture" id="profilePicture" />
+          <input type="image" name="profilePicture" id="profilePicture" />
         </label>
 
         <h2>Mikael Ruffieux 🏳️</h2>

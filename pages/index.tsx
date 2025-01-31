@@ -1,13 +1,12 @@
 import Hero from '@/components/layouts/Hero';
 import css from './Clubhouse.module.scss';
-import SectionTitle from '@/components/layouts/SectionTitle';
 import SponsorsSection from '@/components/layouts/SponsorsSection';
 import TopPlayers from '@/components/layouts/TopPlayers';
-import ChallengeSection from '@/components/layouts/ChallengesSection';
-import YourChallengeCTA from '@/components/navigation/YourChallengeCTA';
 import CTA from '@/components/navigation/CTA';
 import Image from 'next/image';
 import { useEffect } from 'react';
+import YourChallengeFAB from '@/components/navigation/YourChallengeFAB';
+import NextChallengeSection from '@/components/layouts/NextChallengesSection';
 
 export default function Clubhouse() {
   const sponsors: Sponsor[] = [
@@ -15,31 +14,31 @@ export default function Clubhouse() {
       name: 'Extracurricular',
       img: '/layouts/clubhouse/sponsors/sponsor_excr.png',
       runningChallenge: 2,
-      url: 'extracurricular',
+      url: '/lobby', // TBD
     },
     {
       name: 'Coca Cola',
       img: '/layouts/clubhouse/sponsors/sponsor_coca.png',
       runningChallenge: 4,
-      url: 'extracurricular',
+      url: '/lobby', // TBD
     },
     {
       name: 'TaylorMade',
       img: '/layouts/clubhouse/sponsors/sponsor_taylormade.png',
       runningChallenge: 0,
-      url: 'extracurricular',
+      url: '/lobby', // TBD
     },
     {
       name: '4Aces',
       img: '/layouts/clubhouse/sponsors/sponsor_4aces.png',
       runningChallenge: 2,
-      url: 'extracurricular',
+      url: '/lobby', // TBD
     },
     {
       name: 'Bridgestone',
       img: '/layouts/clubhouse/sponsors/sponsor_bridgestone.png',
       runningChallenge: 2,
-      url: 'extracurricular',
+      url: '/lobby', // TBD
     },
   ];
 
@@ -77,9 +76,8 @@ export default function Clubhouse() {
         title={'Playing golf physically while competing digitally'}
         source={'/layouts/clubhouse/clubhouse_hero.jpg'}
         btns={[
-          { text: 'Login', href: '/login', plain: true },
-
-          { text: 'Create an account', href: '/register' },
+          { text: 'Login', href: '/profile/login', plain: true },
+          { text: 'Create an account', href: '/profile/create' },
           { text: 'How to play', href: '/support' },
         ]}
       >
@@ -89,7 +87,7 @@ export default function Clubhouse() {
       <main className={css.clubhouse}>
         <SponsorsSection sponsors={sponsors} />
 
-        <ChallengeSection />
+        <NextChallengeSection />
       </main>
 
       <TopPlayers first={topPlayers[0]} second={topPlayers[1]} third={topPlayers[2]} />
@@ -117,7 +115,7 @@ export default function Clubhouse() {
         <Image src="/logos/wgc-text.svg" alt="" fill />
       </section>
 
-      <YourChallengeCTA />
+      <YourChallengeFAB />
     </>
   );
 }

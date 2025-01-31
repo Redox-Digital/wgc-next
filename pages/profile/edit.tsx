@@ -72,7 +72,7 @@ export default function EditProfile() {
           ]}
         />
         <TextInput id={'hcp'} label={'Handicap'} type={'number'} width="50" />
-        <TextInput id={'golfId'} label={'National Golf Id'} type={'text'} width="50" />
+        <TextInput id={'golfId'} label={'National Golf Id (optional)'} type={'text'} width="50" />
 
         {/* .WGC Settings */}
       </form>

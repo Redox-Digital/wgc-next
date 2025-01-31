@@ -4,13 +4,14 @@ import PageTitle from '../content/PageTitle';
 import Button from '../navigation/Button';
 
 type Props = {
+  confirmationUrl: string;
   steps: FormStep[];
 };
 
 /**
  * Form Builder building multi-steps forms. Use it in a <form> tag.
  */
-export default function FormBuilder({ steps }: Props) {
+export default function FormBuilder({ steps, confirmationUrl }: Props) {
   const [currentStep, setStep] = useState<number>(0);
 
   const nextStep = () => setStep(currentStep + 1);
@@ -27,6 +28,7 @@ export default function FormBuilder({ steps }: Props) {
       <FormNav
         steps={steps.length}
         currentStep={currentStep}
+        confirmationUrl={confirmationUrl}
         nextStep={nextStep}
         prevStep={prevStep}
       />
@@ -73,9 +75,10 @@ function ProgressBar({ steps, currentStep }: ProgressType) {
 interface NavProps extends ProgressType {
   prevStep: () => void;
   nextStep: () => void;
+  confirmationUrl: string;
 }
 
-function FormNav({ steps, currentStep, prevStep, nextStep }: NavProps) {
+function FormNav({ steps, currentStep, confirmationUrl, prevStep, nextStep }: NavProps) {
   // DEV: Animate steps when switching
   return (
     <div className={css.formNav}>
@@ -89,7 +92,7 @@ function FormNav({ steps, currentStep, prevStep, nextStep }: NavProps) {
 
       {currentStep + 1 === steps ? (
         // Replace this with a input:submit to send and validate the form.
-        <Button href="/private/success">Create</Button>
+        <Button href={confirmationUrl}>Create</Button>
       ) : (
         <Button onClick={nextStep}>Continue</Button>
       )}

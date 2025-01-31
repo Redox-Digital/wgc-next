@@ -13,8 +13,8 @@ export default function EditPrivateChallenge() {
         {/* Address */}
         <TextInput id={'name'} label={'Challenge Name'} type={'text'} />
         <TextInput id={'description'} label={'Description (optional)'} type={'textarea'} />
-        <TextInput id={'banner'} label={'Banner'} type={'file'} />
-        <TextInput id={'prizes'} label={'Leaderboard Prizes'} type={'file'} />
+        <TextInput id={'banner'} label={'Banner'} type={'image'} />
+        <TextInput id={'prizes'} label={'Leaderboard Prizes'} type={'image'} />
 
         <TextInput id={'startDate'} label={'Start Date'} type={'date'} width="50" />
         <TextInput id={'endDate'} label={'End Date'} type={'date'} width="50" />

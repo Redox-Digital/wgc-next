@@ -29,8 +29,17 @@ export default function PricePool({ alt, moneyPool }: Props) {
       desc: 'For every participant!',
     },
   ];
-  return (
-    <section className={`${css.pricePool} ${alt && css.alt}`}>
+
+  return moneyPool ? (
+    <>
+      <div className={css.moneyPool}>
+        <small>Price Pool</small>
+        <h3>$ 102.00</h3>
+      </div>
+      <small>The price will be attributed at the end of the Challenge.</small>
+    </>
+  ) : (
+    <section className={`${css.pricePool} ${alt && css.alt}`} id="pricepool">
       <h3>Price pool</h3>
       <div className={css.prices}>
         {moneyPool ? (

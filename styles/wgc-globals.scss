@@ -101,6 +101,11 @@
   a {
     text-decoration: none;
     color: var(--black);
+
+    &.textLink {
+      color: var(--primary);
+      text-decoration: underline;
+    }
   }
 
   button {

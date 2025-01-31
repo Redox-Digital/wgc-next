@@ -147,6 +147,6 @@
     flex-direction: column;
     justify-content: space-between;
     // Fullscreen - top padding - bottom - padding
-    min-height: calc(100vh - var(--navbar-height) - var(--lg) - var(--lg));
+    min-height: var(--fullscreen-height);
   }
 }

@@ -37,8 +37,8 @@ export default function MobileMenu({ open, toggleMenu, toggleLogged, logged }: P
             </>
           ) : (
             <>
-              <Button href={'/login'}>Login</Button>
-              <Button href={'/register'} outline darkBg>
+              <Button href={'/profile/login'}>Login</Button>
+              <Button href={'/profile/create'} outline darkBg>
                 Register
               </Button>
             </>
@@ -72,8 +72,8 @@ export default function MobileMenu({ open, toggleMenu, toggleLogged, logged }: P
               </>
             ) : (
               <>
-                <Link href="/login">Login</Link>
-                <Link href="/register">Register</Link>
+                <Link href="/profile/login">Login</Link>
+                <Link href="/profile/create">Register</Link>
               </>
             )}
           </div>

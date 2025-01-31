@@ -7,7 +7,7 @@ import Image from 'next/image';
 import PricePool from '@/components/layouts/PricePool';
 import Challenge from '@/components/content/Challenge';
 import CardsSection from '@/components/layouts/CardsSection';
-import YourChallengeCTA from '@/components/navigation/YourChallengeCTA';
+import YourChallengeCTA from '@/components/navigation/YourChallengeFAB';
 import HowToPlaySection from '@/components/layouts/HowToPlaySection';
 import CTA from '@/components/navigation/CTA';
 
