@@ -2,6 +2,11 @@ import Button from '../navigation/Button';
 import css from './ChallengePreview.module.scss';
 import Image from 'next/image';
 
+interface Props extends ChallengePreview {
+  notification?: boolean; // Show red badge
+  yourChallenges?: boolean; // When used in the "Challenges" Modal
+}
+
 export default function ChallengePreview({
   id,
   img,
@@ -12,7 +17,9 @@ export default function ChallengePreview({
   players,
   dates,
   fee,
-}: ChallengePreview) {
+  notification,
+  yourChallenges,
+}: Props) {
   return (
     <>
       <div className={css.challengeDesktop}>
@@ -25,7 +32,7 @@ export default function ChallengePreview({
         <span className={css.pool}>{pool}$</span>
         <span className={css.gameType}>{gameType}</span>
         <span className={css.players}>
-          {players}/10 <Image src={'/pictograms/user.svg'} alt={''} width={15} height={15} />
+          {players}/10 <Image src={'/pictograms/user-white.svg'} alt={''} width={15} height={15} />
         </span>
         <span className={css.dates}>{dates}</span>
         <span className={css.btn}>
@@ -37,8 +44,9 @@ export default function ChallengePreview({
       {/* .Destkop */}
       {/* Mobile */}
 
-      <details className={css.challengeMobile}>
+      <details className={`${css.challengeMobile} ${yourChallenges && css.yourChallenges}`}>
         <summary>
+          {notification && <div className={css.badge} />}
           <div className={css.img}>
             {img ? <Image src={img} alt={''} width={60} height={40} /> : <h5>#{id}</h5>}
           </div>
@@ -50,7 +58,8 @@ export default function ChallengePreview({
             </div>
             <div className={css.bottomLine}>
               <span className={css.players}>
-                {players} <Image src={'/pictograms/user.svg'} alt={''} width={15} height={15} />
+                {players}{' '}
+                <Image src={'/pictograms/user-white.svg'} alt={''} width={15} height={15} />
               </span>
               <span className={css.timer}>Starting in : 10h39m04s</span>
             </div>

@@ -13,6 +13,9 @@
     display: grid;
   }
 
+  &.dark {
+  }
+
   .id {
     width: 50px;
   }
@@ -69,10 +72,22 @@
   background-color: var(--primary);
   background: var(--gradient-challenge);
   border-radius: var(--sm);
-  overflow: hidden;
+  // overflow: hidden;
   color: var(--white);
 
   transition: all 0.3s ease-in-out;
+
+  &.yourChallenges {
+    > summary,
+    > .body {
+      padding-inline: var(--xs) var(--sm);
+    }
+
+    > .body {
+      padding-top: 0;
+      gap: var(--sm);
+    }
+  }
 
   &[open] {
     .arrow {
@@ -92,6 +107,8 @@
     align-items: center;
     gap: var(--sm);
     list-style-type: none;
+
+    position: relative;
 
     > .img {
       display: flex;
@@ -177,6 +194,11 @@
     display: flex;
     flex-direction: column;
     gap: var(--sm);
+    position: relative;
+
+    > a {
+      margin-left: auto;
+    }
 
     > .stats {
       display: flex;
@@ -193,6 +215,7 @@
 
         > b {
           color: var(--accent);
+          text-transform: capitalize;
         }
       }
     }
@@ -201,4 +224,16 @@
   @media screen and (min-width: 1200px) {
     display: none;
   }
+}
+
+.badge {
+  position: absolute;
+  background-color: var(--danger);
+  width: 24px;
+  height: 24px;
+  border-radius: 1000px;
+  z-index: 1;
+
+  top: calc(var(--sm) * -1 + 6px);
+  right: -6px;
 }
