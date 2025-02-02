@@ -111,4 +111,8 @@
   > small {
     opacity: 0.7;
   }
+
+  > a {
+    margin-top: var(--sm);
+  }
 }

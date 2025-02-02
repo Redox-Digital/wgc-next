@@ -4,7 +4,7 @@ import PricePool from '@/components/layouts/PricePool';
 import Image from 'next/image';
 import Button from '@/components/navigation/Button';
 import Link from 'next/link';
-import Rankings from '@/components/layouts/Rankings';
+import Rankings from '@/components/layouts/Leaderboard';
 import Head from 'next/head';
 import CTA from '@/components/navigation/CTA';
 
@@ -14,11 +14,7 @@ export default function Lobby() {
       <Head>
         <title>Lobby | EXTRACURRICULAR x WGC</title>
       </Head>
-      <Hero
-        title={'EXTRACURRICULAR - HCP Single'}
-        source={'/layouts/lobby_hero.webp'}
-        opacity={0.25}
-      >
+      <Hero title={'EXTRACURRICULAR - HCP Single'}>
         <p>Net Stableford - 18 Holes - Ongoing</p>
       </Hero>
       <main>
@@ -67,9 +63,7 @@ export default function Lobby() {
               </p>
             </div>
           </div>
-          <Rankings />
         </section>
-        <PricePool alt />
         <CTA
           title={'Do you want more&nbsp;?'}
           description={

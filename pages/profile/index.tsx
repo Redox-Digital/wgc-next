@@ -12,30 +12,26 @@ export default function Profile() {
   const bag = [
     {
       name: 'Irons',
-      picto:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdVTeSEJNav_cfoOOFEJdfxA53sMzY_FU3ag&s',
+      picto: '/brands/br.png',
     },
     {
       name: 'Driver',
-      picto:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdVTeSEJNav_cfoOOFEJdfxA53sMzY_FU3ag&s',
+      picto: '/brands/wi.png',
     },
     {
       name: 'Putter',
-      picto:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdVTeSEJNav_cfoOOFEJdfxA53sMzY_FU3ag&s',
+      picto: '/brands/ni.png',
     },
     {
       name: 'Balls',
-      picto:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdVTeSEJNav_cfoOOFEJdfxA53sMzY_FU3ag&s',
+      picto: '/brands/tm.png',
     },
   ];
 
   const stats = [
-    { name: 'HCP', value: '16.0', picto: '/pictograms/golf.svg' },
-    { name: 'Challenges played', value: 24, picto: '/pictograms/golf.svg' },
-    { name: 'Member since', value: '12/26/22', picto: '/pictograms/golf.svg' },
+    { name: 'HCP', value: '16.0', picto: '/pictograms/profile-hcp.svg' },
+    { name: 'Challenges played', value: 24, picto: '/pictograms/profile-challenges.svg' },
+    { name: 'Member since', value: '12/26/22', picto: '/pictograms/profile-date.svg' },
   ];
   return (
     <main className={css.profilePage}>

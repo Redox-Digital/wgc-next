@@ -28,7 +28,7 @@ export default function MobileMenu({ open, toggleMenu, toggleLogged, logged }: P
           {logged ? (
             <>
               <UserMenu
-                name={'Mikaël Ruffieux'}
+                name={'Jonas Jaeggi'}
                 hcp={'16.0'}
                 img={'https://wgc.gg/images/profile-picture.png'}
                 className={css.userProfile}

@@ -7,10 +7,18 @@ import CTA from '@/components/navigation/CTA';
 
 export default function Support() {
   const btns = [
-    { label: 'Challenges', href: '/support/challenges', icon: '/pictograms/golf.svg' },
-    { label: 'Net Stableford', href: '/support/net-stableford', icon: '/pictograms/golf.svg' },
-    { label: 'Money', href: '/support/money', icon: '/pictograms/golf.svg' },
-    { label: 'About WGC', href: '/support/about', icon: '/pictograms/golf.svg' },
+    {
+      label: 'Challenges',
+      href: '/support/challenges',
+      icon: '/pictograms/support-challenge.svg',
+    },
+    {
+      label: 'Net Stableford',
+      href: '/support/net-stableford',
+      icon: '/pictograms/support-netstableford.svg',
+    },
+    { label: 'Money', href: '/support/money', icon: '/pictograms/support-money.svg' },
+    { label: 'About WGC', href: '/support/about', icon: '/pictograms/support-about.svg' },
   ];
 
   return (

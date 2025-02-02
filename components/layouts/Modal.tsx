@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import css from './Modal.module.scss';
 
 type ModalProps = {
-  title: string;
+  title: string | React.ReactNode;
   open?: boolean;
   className?: string;
   children?: React.ReactNode;

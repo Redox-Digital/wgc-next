@@ -31,26 +31,15 @@ export default function Menu({ logo, logoUrl, links, sponsored, logged, setLogge
             <button
               className={`${burgerStyle.burger} ${menuOpen ? burgerStyle.burger__closed : ''}`}
               onClick={toggleMenu}
-              aria-label="Ouvrir la navigation mobile"
             >
               <span></span>
               <span></span>
               <span></span>
             </button>
 
-            <Link href="/" className={css.logo} aria-label="Accéder à la page d'accueil">
+            <Link href="/" className={css.logo}>
               <h4>{menuOpen ? 'Menu' : 'World Golf Challenge'}</h4>
-              {/* <Image src={logo} alt="" width={85} height={50} className="logo" /> */}
             </Link>
-            {/* 
-                          {links.map((link) => (
-                <Link key={link.url} href={link.url}>
-                  {link.icon ? <Image src={link.icon} alt={''} width={20} height={20} /> : ''}
-                  <span>{link.label}</span>
-                </Link>
-              ))}
-            
-            */}
 
             {logged ? (
               <Link href="/profile" className={css.profile}>

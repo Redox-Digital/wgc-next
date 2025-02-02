@@ -1,6 +1,5 @@
 import css from './Rankings.module.scss';
 import Hero from '@/components/layouts/Hero';
-import { RankingsWithPrices } from '@/components/layouts/Rankings';
 import CardsSection from '@/components/layouts/CardsSection';
 import Head from 'next/head';
 import Button from '@/components/navigation/Button';
@@ -11,22 +10,14 @@ export default function Rankings() {
       <Head>
         <title>Rankings | EXTRACURRICULAR x WGC</title>
       </Head>
-      <Hero
-        title={'And the winner is...'}
-        source={'/layouts/rankings_hero.webp'}
-        opacity={0.3}
-      ></Hero>
+      <Hero title={'And the winner is...'}></Hero>
       <main>
         <section className={css.results}>
           <div className={css.titles}>
             <h2>The results</h2>
             <p>Congratulations for playing!</p>
           </div>
-          <div className={css.tables}>
-            <RankingsWithPrices />
-            <RankingsWithPrices />
-            <RankingsWithPrices />
-          </div>
+          <div className={css.tables}></div>
         </section>
         <CardsSection
           title={'Redeem your prize'}

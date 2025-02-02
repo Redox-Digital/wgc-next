@@ -10,8 +10,8 @@ export const MainNavLinks: NavLink[] = [
     label: 'Clubhouse',
   },
   {
-    url: '/leaderboard',
-    label: 'Leaderboard',
+    url: '/leaderboards',
+    label: 'Leaderboards',
   },
   {
     url: '/support',

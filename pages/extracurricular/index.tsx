@@ -92,16 +92,12 @@ export default function Home() {
             while competing digitally
           </span>
         }
-        home
-        source="/layouts/home_hero.webp"
-        opacity={0.25}
       >
         <p>
           Play in the club of your choice in real life while measuring yourself & your score,
           virtually against any other player in the world!
         </p>
       </Hero>
-      <YourChallengeCTA />
       <main className={css.home}>
         <section className={css.ourChallenges}>
           <div className={css.titles}>

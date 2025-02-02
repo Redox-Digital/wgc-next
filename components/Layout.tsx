@@ -1,4 +1,3 @@
-import Header from './navigation/SponsoredMenu';
 import Footer from './navigation/Footer';
 import Menu from './navigation/Menu';
 import { MainNavLinks } from '@/constants/Navigation';
@@ -9,6 +8,7 @@ type Props = {
 };
 
 export default function Layout({ children }: Props) {
+  // DEV
   const [logged, setLogged] = useState<boolean>(true);
 
   return (
