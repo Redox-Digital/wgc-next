@@ -25,6 +25,7 @@ type ChallengePreview = {
   players: number;
   dates: string;
   fee: number;
+  url?: string;
 };
 
 type GearType = {

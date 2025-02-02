@@ -70,7 +70,9 @@ export default function Lobby() {
         <Image src="/layouts/clubhouse/clubhouse_hero.jpg" alt="" width={400} height={180} />
         <h1>Challenge #7607 - HCP Single</h1>
         <div className={css.timer}>
-          <small>Ongoing – Ends in :</small>
+          <small>
+            <b>Ongoing</b> – Ends in :
+          </small>
           <small>1 Day 10:30:02</small>
         </div>
         <CopyLink text={'https://wgc.gg/extracurricular/lobby/7874'} />

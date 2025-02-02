@@ -11,10 +11,12 @@
     justify-content: space-between;
   }
 
-  img {
+  > img {
     max-width: 100%;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: var(--xs);
+    height: auto;
+    aspect-ratio: 2;
   }
 
   .timer {

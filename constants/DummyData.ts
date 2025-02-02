@@ -1,7 +1,7 @@
 export const challenges: ChallengePreview[] = [
   {
     id: 1234,
-    name: 'Challenge Name',
+    name: 'WGC April Challenge',
     hcp: 'single',
     pool: 10,
     gameType: 'Net Stableford',
@@ -19,17 +19,18 @@ export const challenges: ChallengePreview[] = [
     players: 10,
     dates: 'Nov. 18th to Nov. 22nd',
     fee: 0,
+    img: '/logos/logo_excr_small.svg',
   },
   {
     id: 1236,
-    name: 'CocaCola Challenge',
+    name: 'Coca Cola Challenge',
     hcp: 'up to 54',
     pool: 10,
     gameType: 'Net Stableford',
     players: 4,
     dates: 'Nov. 18th to Nov. 22nd',
     fee: 10,
-    img: 'https://www.bridgestoneamericas.com/content/dam/corpcomm/americas/assets/media-center/logos/bridgestone-logos/bridgestone-b-mark-logos/album-cover.png',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Coca-Cola_logo.svg',
   },
   {
     id: 1237,

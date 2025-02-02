@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 type Props = {
   title: string;
-  description: string | React.ReactNode;
+  description: React.ReactNode;
   btnLabel: string;
   btnBlank?: boolean;
   href: string;
@@ -21,7 +21,7 @@ export default function CTA({ title, description, btnLabel, href, img, opacity, 
 
       <div className={css.texts}>
         <h2>{title}</h2>
-        <p>{description}</p>
+        {description}
       </div>
       <Button href={href} darkBg blank={btnBlank}>
         {btnLabel}

@@ -87,7 +87,8 @@ export function UserMenu({ name, img, hcp, className, flag = '🏳️', onClick 
         {name} {flag}
       </h2>
       <small>
-        HCP: {hcp} | <Image src="/pictograms/wallet.png" alt="Wallet" width={15} height={15} />
+        HCP: {hcp} |{' '}
+        <Image src="/pictograms/wallet-white.svg" alt="Wallet" width={15} height={15} />
         &nbsp;$100.00
       </small>
       <Button href={'/profile'} onClick={onClick}>

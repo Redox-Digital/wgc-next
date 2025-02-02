@@ -19,6 +19,7 @@ export default function ChallengePreview({
   fee,
   notification,
   yourChallenges,
+  url,
 }: Props) {
   return (
     <>
@@ -94,7 +95,7 @@ export default function ChallengePreview({
             </span>
           </div>
 
-          <Button small href={'/lobby'}>
+          <Button small href={url || '/lobby'}>
             {fee ? `Buy-in ${fee}$` : 'Join for free'}
           </Button>
         </div>

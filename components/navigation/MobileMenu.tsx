@@ -1,11 +1,8 @@
 import css from './MobileMenu.module.scss';
-import menu from './Menu.module.scss';
-import burgerStyle from './Burger.module.scss';
-import { NavLink, MainNavLinks, UserLinks, LegalLinks } from '@/constants/Navigation';
+import { MainNavLinks, UserLinks, LegalLinks } from '@/constants/Navigation';
 import Image from 'next/image';
-
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Button from './Button';
 import { UserMenu } from './Menu';
 

@@ -53,7 +53,7 @@ export default function Profile() {
         <small>
           HCP: 16.0 |{' '}
           <span>
-            <Image src="/pictograms/wallet.png" alt="Wallet" width={15} height={15} />
+            <Image src="/pictograms/wallet-white.svg" alt="Wallet" width={15} height={15} />
             &nbsp;$100.00
           </span>
         </small>

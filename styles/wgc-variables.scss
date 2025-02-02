@@ -10,12 +10,14 @@
   --black-rgb: 10, 26, 17;
 
   --primary: #002f18;
+  --primary-rgb: 0, 47, 24;
 
   --secondary: #c7f7fd; // TBC
   --accent: #c8f843;
+  --accent-rgb: 200, 248, 67;
 
   --gradient: linear-gradient(45deg, var(--accent) 0%, var(--primary) 100%);
-  --gradient-challenge: linear-gradient(77deg, #001b0e 0.89%, #002f18 100%);
+  --gradient-challenge: linear-gradient(77deg, var(--black) 0.89%, var(--primary) 100%);
 
   --gold: linear-gradient(132deg, #ffd700 6.6%, #ffb800 100.54%);
   --silver: linear-gradient(131deg, #c0c0c0 6.65%, #e4e4e4 90.1%);
