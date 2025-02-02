@@ -12,4 +12,16 @@
   justify-content: center;
 
   background-color: var(--primary);
+
+  &.gradientBg {
+    background: radial-gradient(
+      243.18% 192.81% at -59.25% 111.85%,
+      rgba(var(--accent-rgb), 0.3) 0%,
+      rgba(var(--primary-rgb), 0.3) 82.41%
+    );
+
+    // Avoid cutting the gradient with the next section
+    margin-bottom: calc(-1 * var(--lg)) !important;
+    padding-bottom: calc(var(--lg) * 2);
+  }
 }

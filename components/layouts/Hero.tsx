@@ -1,20 +1,19 @@
-import Image from 'next/image';
 import css from './Hero.module.scss';
-import Link from 'next/link';
-import Button from '../navigation/Button';
 
 type Props = {
   title: string | React.ReactNode;
+  gradient?: boolean;
   children?: string | React.ReactNode;
 };
 
-const Hero = ({ title, children }: Props) => {
+const Hero = ({ title, children, gradient }: Props) => {
   return (
     <>
-      <header className={`${css.hero}`}>
+      <header className={`${css.hero} ${gradient && css.gradientBg}`}>
         <h1>{title}</h1>
         <div className={css.content}>{children}</div>
       </header>
+
       <span id="intro">{/* Anchor */}</span>
     </>
   );
