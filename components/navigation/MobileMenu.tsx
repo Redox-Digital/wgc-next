@@ -81,13 +81,13 @@ export default function MobileMenu({ open, toggleMenu, toggleLogged, logged }: P
           <div className={css.item}>
             <h4>Legal</h4>
             {LegalLinks.map((link) => (
-              <Link key={link.url} href={link.url}>
+              <Link key={link.url} href={link.url} onClick={toggleMenu}>
                 {link.label}
               </Link>
             ))}
           </div>
 
-          <small>
+          <small className={css.regionSelect}>
             Region :{' '}
             <select name="region" id="region">
               <option value="eu">Europe</option>

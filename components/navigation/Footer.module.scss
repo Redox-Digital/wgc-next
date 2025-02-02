@@ -53,7 +53,8 @@
       .socials {
         display: flex;
         flex-direction: row;
-        gap: 10px;
+        gap: var(--sm);
+        flex-wrap: wrap;
 
         > a {
           width: 24px;
@@ -87,5 +88,21 @@
         }
       }
     }
+  }
+}
+
+.regionSelect {
+  display: flex;
+  flex-direction: row;
+  color: var(--white);
+  gap: var(--xs);
+  align-items: center;
+
+  > select {
+    background-color: var(--accent);
+    border: none;
+    color: var(--black);
+    padding: 2px var(--sm);
+    border-radius: 1000px;
   }
 }

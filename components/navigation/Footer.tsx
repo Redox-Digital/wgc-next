@@ -53,7 +53,7 @@ export default function Footer({ sponsored }: Props) {
                 <Image width={16} height={16} src={'/pictograms/envelope.svg'} alt={'Newsletter'} />
               </Link>
 
-              <small>
+              <small className={css.regionSelect}>
                 Region :{' '}
                 <select name="region" id="region">
                   <option value="eu">Europe</option>

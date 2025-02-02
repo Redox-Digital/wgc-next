@@ -139,9 +139,8 @@
       }
 
       > h5 {
-        font-size: var(--fs-s);
+        font-size: 14px; // DEV: TBC
         font-weight: 700;
-        word-break: break-all; // DEV : maybe column design ?
         margin-bottom: var(--xs);
 
         .flag {
