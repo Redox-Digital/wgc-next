@@ -21,7 +21,7 @@ const Header = () => {
       <nav className={`${css.menu} ${menuOpen ? css.menu__open : ''}`}>
         <div className={css.mainMenu}>
           <div className={css.mainMenu__container}>
-            <Link href="/" className={css.logo} aria-label="Accéder à la page d'accueil">
+            <Link href="/" className={css.logo}>
               <Image src={logo} alt="" height={50} className="logo" />
             </Link>
 
@@ -34,7 +34,6 @@ const Header = () => {
             <button
               className={`${burgerStyle.burger} ${menuOpen ? burgerStyle.burger__closed : ''}`}
               onClick={toggleMenu}
-              aria-label="Ouvrir la navigation mobile"
             >
               <span></span>
               <span></span>
