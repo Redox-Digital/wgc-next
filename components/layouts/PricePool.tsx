@@ -1,12 +1,12 @@
 import css from './PricePool.module.scss';
 import Image from 'next/image';
+import SectionTitle from './SectionTitle';
 
 type Props = {
-  alt?: boolean;
   moneyPool?: boolean;
 };
 
-export default function PricePool({ alt, moneyPool }: Props) {
+export default function PricePool({ moneyPool }: Props) {
   const prices = [
     {
       img: '/layouts/excr/WGC-EXCR_price_1000.png',
@@ -39,25 +39,22 @@ export default function PricePool({ alt, moneyPool }: Props) {
       <small>The price will be attributed at the end of the Challenge.</small>
     </>
   ) : (
-    <section className={`${css.pricePool} ${alt && css.alt}`} id="pricepool">
-      <h3>Price pool</h3>
+    <section className={css.pricePool} id="pricepool">
+      <SectionTitle title={'Prize Pool break-down'}>
+        <p>
+          <small>The price will be attributed at the end of the Challenge.</small>
+        </p>
+      </SectionTitle>
       <div className={css.prices}>
-        {moneyPool ? (
-          <div className={css.price}>
-            <h4>100$</h4>
-            <p>The price will be attributed at the end of the Challenge.</p>
-          </div>
-        ) : (
-          prices.map((p, key) => (
-            <div className={css.price} key={key}>
-              <Image src={p.img} alt={''} width={250} height={250} />
-              <div className={css.texts}>
-                <b>{p.title}</b>
-                <p>{p.desc}</p>
-              </div>
+        {prices.map((p, key) => (
+          <div className={css.price} key={key}>
+            <Image src={p.img} alt={''} width={250} height={250} />
+            <div className={css.texts}>
+              <h4>{p.title}</h4>
+              <small>{p.desc}</small>
             </div>
-          ))
-        )}
+          </div>
+        ))}
       </div>
     </section>
   );
