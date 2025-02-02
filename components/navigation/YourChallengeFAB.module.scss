@@ -33,3 +33,13 @@
     transition: outline-color 0s;
   }
 }
+
+.yourChallengesModal {
+  padding-inline: var(--sm) !important;
+}
+
+.challenges {
+  display: flex;
+  flex-direction: column;
+  gap: var(--xs);
+}

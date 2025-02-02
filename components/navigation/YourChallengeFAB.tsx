@@ -5,16 +5,35 @@ import { useState } from 'react';
 import Modal from '../layouts/Modal';
 import Button from './Button';
 
-export default function YourChallengeFAB() {
-  const [open, toggleOpen] = useState<boolean>(false);
+import { challenges } from '@/constants/DummyData';
+import ChallengePreview from '../content/ChallengePreview';
+
+type Props = {
+  modalOpen?: boolean;
+  toggleModal: (open: boolean) => void;
+};
+
+export default function YourChallengeFAB({ modalOpen, toggleModal }: Props) {
+  const yourChallenges = challenges.slice(0, 4);
+
   return (
     <>
-      <Modal open={open} title={'Your Challenges'} closeModal={() => toggleOpen(false)}>
-        <p>Challenge</p>
+      <Modal
+        open={modalOpen}
+        title={'Your Challenges'}
+        closeModal={() => toggleModal(!modalOpen)}
+        className={css.yourChallengesModal}
+      >
+        <div className={css.challenges}>
+          {yourChallenges.map((challenge) => (
+            <ChallengePreview key={challenge.id} {...challenge} yourChallenges />
+          ))}
+        </div>
+
         <Button href="/challenges">Join more Challenges</Button>
       </Modal>
 
-      <button type="button" className={css.fab} onClick={() => toggleOpen(true)}>
+      <button type="button" className={css.fab} onClick={() => toggleModal(!modalOpen)}>
         Your Challenges
       </button>
     </>
