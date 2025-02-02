@@ -20,3 +20,16 @@
     padding-inline: var(--sct-horiz-margin);
   }
 }
+
+.heroBtns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: var(--md);
+  gap: var(--sm);
+}
+
+.userStatBar {
+  margin-top: var(--sm);
+  width: 100%;
+}

@@ -1,96 +1,113 @@
 import Hero from '@/components/layouts/Hero';
 import css from './Clubhouse.module.scss';
 import SponsorsSection from '@/components/layouts/SponsorsSection';
-import TopPlayers from '@/components/layouts/TopPlayers';
 import CTA from '@/components/navigation/CTA';
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import YourChallengeFAB from '@/components/navigation/YourChallengeFAB';
 import NextChallengeSection from '@/components/layouts/NextChallengesSection';
+import { dummyLeaderboard } from '@/constants/DummyData';
+import { Podium } from '@/components/layouts/Leaderboard';
+import Button from '@/components/navigation/Button';
+import { StatBar } from './profile';
+
+const sponsors: Sponsor[] = [
+  {
+    name: 'Extracurricular',
+    img: '/layouts/clubhouse/sponsors/sponsor_excr.png',
+    runningChallenge: 2,
+    url: '/lobby', // TBD
+  },
+  {
+    name: 'Coca Cola',
+    img: '/layouts/clubhouse/sponsors/sponsor_coca.png',
+    runningChallenge: 4,
+    url: '/lobby', // TBD
+  },
+  {
+    name: 'TaylorMade',
+    img: '/layouts/clubhouse/sponsors/sponsor_taylormade.png',
+    runningChallenge: 0,
+    url: '/lobby', // TBD
+  },
+  {
+    name: '4Aces',
+    img: '/layouts/clubhouse/sponsors/sponsor_4aces.png',
+    runningChallenge: 2,
+    url: '/lobby', // TBD
+  },
+  {
+    name: 'Bridgestone',
+    img: '/layouts/clubhouse/sponsors/sponsor_bridgestone.png',
+    runningChallenge: 2,
+    url: '/lobby', // TBD
+  },
+];
 
 export default function Clubhouse() {
-  const sponsors: Sponsor[] = [
-    {
-      name: 'Extracurricular',
-      img: '/layouts/clubhouse/sponsors/sponsor_excr.png',
-      runningChallenge: 2,
-      url: '/lobby', // TBD
-    },
-    {
-      name: 'Coca Cola',
-      img: '/layouts/clubhouse/sponsors/sponsor_coca.png',
-      runningChallenge: 4,
-      url: '/lobby', // TBD
-    },
-    {
-      name: 'TaylorMade',
-      img: '/layouts/clubhouse/sponsors/sponsor_taylormade.png',
-      runningChallenge: 0,
-      url: '/lobby', // TBD
-    },
-    {
-      name: '4Aces',
-      img: '/layouts/clubhouse/sponsors/sponsor_4aces.png',
-      runningChallenge: 2,
-      url: '/lobby', // TBD
-    },
-    {
-      name: 'Bridgestone',
-      img: '/layouts/clubhouse/sponsors/sponsor_bridgestone.png',
-      runningChallenge: 2,
-      url: '/lobby', // TBD
-    },
-  ];
-
-  const topPlayers: Player[] = [
-    {
-      name: 'J. Jaeggi',
-      flag: '🇨🇭',
-      pointsScored: 245,
-      challengesWon: 3,
-      moneyWon: 324,
-      img: 'https://images.unsplash.com/photo-1494249120761-ea1225b46c05?q=80&w=1313&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    },
-    {
-      name: 'A. Frischknecht',
-      flag: '🇮🇸',
-      pointsScored: 239,
-      challengesWon: 1,
-      moneyWon: 243,
-      img: 'https://images.unsplash.com/photo-1671081904436-56b1b5c87f62?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    },
-    {
-      name: 'B. Anders',
-      flag: '🇸🇪',
-      pointsScored: 123,
-      challengesWon: 2,
-      moneyWon: 67,
-      img: 'https://images.unsplash.com/photo-1593282153762-a41e3cceb06c?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    },
-  ];
+  // DEV
+  const [logged, setLogged] = useState<boolean>(true);
+  const [yourChallengeModal, setModal] = useState<boolean>(false);
 
   return (
     <>
       <ChangeBackgroundColor color="#002F18" />
-      <Hero
-        title={'Playing golf physically while competing digitally'}
-        source={'/layouts/clubhouse/clubhouse_hero.jpg'}
-        btns={[
-          { text: 'Login', href: '/profile/login', plain: true },
-          { text: 'Create an account', href: '/profile/create' },
-          { text: 'How to play', href: '/support' },
-        ]}
-      >
-        <p>Welcome to your favorite golf platform!</p>
-        <p>What do you want to do today ?</p>
-      </Hero>
+      {logged ? (
+        <Hero title={'Hello, Jonas Jaeggi'}>
+          <p>Welcome to your favorite golf platform!</p>
+          <p>What do you want to do today ?</p>
+          <div className={css.heroBtns}>
+            <Button href={'/challenges'} darkBg>
+              Join a Challenge
+            </Button>
+            {/* Opens "Your Challenges Modal" */}
+            <Button onClick={() => setModal(!yourChallengeModal)} outline darkBg>
+              Enter a score
+            </Button>
+            <Button href={'/profile'} outline darkBg>
+              Your profile
+            </Button>
+            <StatBar
+              elements={[
+                { name: 'Joined Challenges', value: 2 },
+                { name: 'Ongoing Challenges', value: 13 },
+                { name: 'Monthly rank', value: '#4' },
+              ]}
+              className={css.userStatBar}
+            />
+          </div>
+        </Hero>
+      ) : (
+        <Hero title={'Playing golf physically while competing digitally'}>
+          <p>Welcome to your favorite golf platform!</p>
+          <p>What do you want to do today ?</p>
+          <div className={css.heroBtns}>
+            <Button href={'/profile/login'} darkBg>
+              Login
+            </Button>
+            <Button href={'/profile/create'} outline darkBg>
+              Create an account
+            </Button>
+            <Button href={'/support'} outline darkBg>
+              How to play
+            </Button>
+          </div>
+        </Hero>
+      )}
+
       <main className={css.clubhouse}>
         <SponsorsSection sponsors={sponsors} />
-
         <NextChallengeSection />
       </main>
 
-      <TopPlayers first={topPlayers[0]} second={topPlayers[1]} third={topPlayers[2]} />
+      <Podium
+        title="Players of the month"
+        description="Placement resets on the 1st day of each month."
+        first={dummyLeaderboard[0]}
+        second={dummyLeaderboard[1]}
+        third={dummyLeaderboard[2]}
+        btn={{ link: '/leaderboards', label: 'All leaderboards' }}
+      />
 
       <section className={css.ctaSct}>
         <CTA
@@ -115,7 +132,10 @@ export default function Clubhouse() {
         <Image src="/logos/wgc-text.svg" alt="" fill />
       </section>
 
-      <YourChallengeFAB />
+      <YourChallengeFAB
+        toggleModal={() => setModal(!yourChallengeModal)}
+        modalOpen={yourChallengeModal}
+      />
     </>
   );
 }
