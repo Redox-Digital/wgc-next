@@ -1,0 +1,75 @@
+.challengesPage {
+  gap: var(--md);
+  padding-inline: 0 !important;
+  padding-top: var(--navbar-height) !important;
+  overflow: hidden;
+  width: 100%;
+  min-height: var(--fullscreen-height);
+  position: relative;
+
+  section {
+    gap: var(--lg);
+    padding-inline: var(--sct-horiz-margin);
+    // navbar height + toggle height + gap
+    top: calc(var(--navbar-height) + var(--lg) + var(--lg));
+
+    transition: transform 0.3s ease-in-out;
+    position: absolute;
+
+    &.challenges {
+      transform: translateX(-100vw);
+    }
+
+    &.private {
+      transform: translateX(100vw);
+    }
+
+    &.show {
+      top: 0;
+      transition: transform 0.3s ease-in-out;
+      position: relative;
+      transform: translateX(0);
+    }
+  }
+
+  .challengesList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
+  }
+}
+
+.toggleBtns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--true-white);
+  margin-top: calc(var(--md) * -1);
+
+  > label {
+    width: 50%;
+
+    > input {
+      display: none;
+    }
+
+    > span {
+      width: 100%;
+      display: flex;
+      height: calc(var(--lg) + var(--md));
+      padding-top: var(--md);
+      align-items: center;
+      justify-content: center;
+      color: rgba(var(--black-rgb), 0.7);
+      transition: all 0.3s ease-in-out;
+
+      font-size: var(--fs-sm);
+    }
+
+    > input:checked + span {
+      background: var(--accent);
+      color: var(--black);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
