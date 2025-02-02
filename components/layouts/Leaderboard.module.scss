@@ -1,4 +1,92 @@
-.topPlayers {
+.leaderboard {
+  background-color: var(--primary);
+  color: var(--white);
+  margin-inline: calc(var(--sct-horiz-margin) * -1);
+  border-bottom-right-radius: var(--md);
+  border-bottom-left-radius: var(--md);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--md);
+}
+
+.rankingsSct {
+  padding: var(--sct-def-margins);
+  padding-top: 0;
+
+  .rankings {
+    width: 100%;
+    border-collapse: collapse;
+
+    > thead {
+      color: var(--white);
+      font-size: var(--fs-xs);
+      text-transform: capitalize;
+      display: flex;
+
+      > tr {
+        width: 100%;
+
+        th {
+          font-weight: 400;
+        }
+      }
+
+      .name {
+        width: 100%;
+        text-align: left;
+        padding-left: calc(20px + 50px); // PP width + gap
+      }
+    }
+
+    > tbody {
+      display: flex;
+      flex-direction: column;
+      gap: var(--xs);
+
+      > tr {
+        background-color: var(--black);
+        color: var(--white);
+        font-size: var(--fs-sm);
+        border: solid 3px var(--black);
+        border-radius: var(--sm);
+        overflow: hidden;
+
+        padding-right: var(--sm);
+
+        > img {
+          border-radius: var(--sm);
+        }
+
+        > td {
+          &.pos {
+            color: var(--accent);
+          }
+          &.name {
+            width: 100%;
+          }
+          &.hcp {
+            min-width: 36px;
+            text-align: right;
+          }
+          &.score {
+            min-width: 36px;
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    tr {
+      display: flex;
+      flex-direction: row;
+      gap: var(--sm);
+      align-items: center;
+    }
+  }
+}
+
+.podiumSection {
   display: flex;
   flex-direction: column;
   text-align: center;
