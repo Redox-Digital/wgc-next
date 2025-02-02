@@ -12,12 +12,4 @@
   justify-content: center;
 
   background-color: var(--primary);
-
-  .btns {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: var(--sm);
-    gap: var(--sm);
-  }
 }
