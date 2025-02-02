@@ -37,6 +37,16 @@
 
 .main {
   padding-top: 0 !important;
+  padding-inline: 0 !important;
+
+  > section {
+    padding-inline: var(--sct-horiz-margin);
+  }
+
+  .leaderboard {
+    margin-inline: 0;
+    border-radius: var(--md);
+  }
 }
 
 .rules {
@@ -76,4 +86,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.scoreModal {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lg);
+
+    .btns {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: var(--sm);
+      justify-content: space-between;
+    }
+  }
 }

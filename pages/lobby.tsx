@@ -2,12 +2,15 @@ import css from './Lobby.module.scss';
 import Hero from '@/components/layouts/Hero';
 import PricePool from '@/components/layouts/PricePool';
 import Image from 'next/image';
-import Button, { GearButton, ReturnButton } from '@/components/navigation/Button';
+import Button, { ReturnButton } from '@/components/navigation/Button';
 import Link from 'next/link';
-import Rankings from '@/components/layouts/Rankings';
-import Head from 'next/head';
 import CTA from '@/components/navigation/CTA';
 import CopyLink from '@/components/inputs/CopyLink';
+import { useState } from 'react';
+import Modal from '@/components/layouts/Modal';
+import { TextInput } from '@/components/inputs/Inputs';
+import Leaderboard from '@/components/layouts/Leaderboard';
+import { dummyLeaderboard } from '@/constants/DummyData';
 
 export default function Lobby() {
   const rules: { label: string; value: string | React.ReactNode }[] = [
@@ -32,8 +35,30 @@ export default function Lobby() {
     { label: 'Player count min.', value: '0' },
     { label: 'Player count max.', value: '-' },
   ];
+
+  const [enterScore, showScoreModal] = useState<boolean>(false);
+
   return (
     <>
+      <Modal
+        open={enterScore}
+        title={<>Enter your score Net&nbsp;Stableford</>}
+        closeModal={() => showScoreModal(false)}
+        className={css.scoreModal}
+      >
+        <>
+          <form>
+            <TextInput id={'score'} label={'Score'} type={'number'} dark />
+
+            <div className={css.btns}>
+              <Button outline darkBg onClick={() => showScoreModal(false)}>
+                Cancel
+              </Button>
+              <Button onClick={() => showScoreModal(false)}>Confirm</Button>
+            </div>
+          </form>
+        </>
+      </Modal>
       <header className={css.header}>
         <div className={css.topBtns}>
           <ReturnButton />
@@ -50,11 +75,11 @@ export default function Lobby() {
         </div>
         <CopyLink text={'https://wgc.gg/extracurricular/lobby/7874'} />
 
-        <PricePool moneyPool alt />
+        <PricePool moneyPool />
 
         <div className={css.btns}>
           <Button href="/lobby">Join Challenge</Button>
-          <Button onClick={() => console.log('hello')}>Enter score</Button>
+          <Button onClick={() => showScoreModal(true)}>Enter score</Button>
           <Button href="/" outline>
             Unregister
           </Button>
@@ -79,23 +104,25 @@ export default function Lobby() {
           ))}
         </section>
 
-        <section>
-          <Rankings />
-        </section>
+        <Leaderboard players={dummyLeaderboard} title={'Leaderboard'} className={css.leaderboard} />
 
-        <CTA
-          title={'Do you want more ?'}
-          description={
-            <p>
-              More Free and Buy-in Challenges available on wgc.gg & your own Challenges with
-              friends, clients, club members to create!
-            </p>
-          }
-          btnLabel={'Visit wgc.gg'}
-          btnBlank
-          href={'https://wgc.gg'}
-          img={'/layouts/clubhouse/lobby-cta.jpg'}
-        />
+        <PricePool />
+
+        <section>
+          <CTA
+            title={'Do you want more ?'}
+            description={
+              <p>
+                More Free and Buy-in Challenges available on wgc.gg & your own Challenges with
+                friends, clients, club members to create!
+              </p>
+            }
+            btnLabel={'Visit wgc.gg'}
+            btnBlank
+            href={'https://wgc.gg'}
+            img={'/layouts/clubhouse/lobby-cta.jpg'}
+          />
+        </section>
       </main>
     </>
   );
