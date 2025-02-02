@@ -1,47 +1,100 @@
-import css from './Rankings.module.scss';
-import Hero from '@/components/layouts/Hero';
-import CardsSection from '@/components/layouts/CardsSection';
+import css from '@/pages/LeaderboardPage.module.scss';
 import Head from 'next/head';
-import Button from '@/components/navigation/Button';
 import CTA from '@/components/navigation/CTA';
+import { useState } from 'react';
+import PageTitle from '@/components/content/PageTitle';
+import Leaderboard from '@/components/layouts/Leaderboard';
+import { dummyLeaderboard } from '@/constants/DummyData';
+import PricePool from '@/components/layouts/PricePool';
 export default function Rankings() {
+  const [hcpRadio, setHcpRadio] = useState<'single' | 'up to 18' | 'up to 54'>('single');
+
   return (
     <>
+      <style jsx global>
+        {`
+          * {
+            /* Overwriting Color Variables to fit the Sponsor's Identity */
+            --black: #0d1720;
+            --primary: #252c32;
+            --accent: #d9e3f2;
+          }
+        `}
+      </style>
       <Head>
         <title>Rankings | EXTRACURRICULAR x WGC</title>
       </Head>
-      <Hero title={'And the winner is...'}></Hero>
-      <main>
-        <section className={css.results}>
-          <div className={css.titles}>
-            <h2>The results</h2>
-            <p>Congratulations for playing!</p>
+
+      <header className={css.header}>
+        <PageTitle title={'Leaderboards'} returnBtn className={css.title}>
+          <p>Play well, play more, and climb up the EXTRACURRICULAR Challenges!</p>
+        </PageTitle>
+
+        <div className={css.toggles}>
+          <div className={css.hcpRadio}>
+            <label htmlFor="hcpSingle">
+              <input
+                type="radio"
+                name="hcpRadio"
+                id="hcpSingle"
+                onClick={() => setHcpRadio('single')}
+                checked={hcpRadio === 'single'}
+              />
+              <span>HCP single</span>
+            </label>
+            <label htmlFor="hcp18">
+              <input
+                type="radio"
+                name="hcpRadio"
+                id="hcp18"
+                onClick={() => setHcpRadio('up to 18')}
+                checked={hcpRadio === 'up to 18'}
+              />
+              <span>HCP up to 18</span>
+            </label>
+            <label htmlFor="hcp54">
+              <input
+                type="radio"
+                name="hcpRadio"
+                id="hcp54"
+                onClick={() => setHcpRadio('up to 54')}
+                checked={hcpRadio === 'up to 54'}
+              />
+              <span>HCP up to 54</span>
+            </label>
           </div>
-          <div className={css.tables}></div>
-        </section>
-        <CardsSection
-          title={'Redeem your prize'}
-          desc={''}
-          cards={[
-            {
-              icon: '/pictograms/golf-white.svg',
-              title: 'Net Stableford, 18 holes',
-              desc: 'Pick any course in the world & adjust your strokes. Only Net Stableford counts.',
-            },
-            {
-              icon: '/pictograms/genders.svg',
-              title: 'Only HCP matters',
-              desc: 'Gender and age mixed into 3 different categories : Single / HCP 10 to 18 / HCP +18',
-            },
-            {
-              icon: '/pictograms/gift.svg',
-              title: 'A. lot. of. prizes.',
-              desc: 'Extracurricular Prices to reward you - we will get in touch!',
-            },
-          ]}
-        />
+        </div>
+      </header>
+
+      <main className={css.main}>
+        {hcpRadio === 'single' && (
+          <Leaderboard
+            players={dummyLeaderboard}
+            title="Spring Challenge - EXTRACURRICULAR"
+            description="HCP single"
+          />
+        )}
+
+        {hcpRadio === 'up to 18' && (
+          <Leaderboard
+            players={dummyLeaderboard}
+            title="Spring Challenge - EXTRACURRICULAR"
+            description="HCP up to 18"
+          />
+        )}
+
+        {hcpRadio === 'up to 54' && (
+          <Leaderboard
+            players={dummyLeaderboard}
+            title="Spring Challenge - EXTRACURRICULAR"
+            description="HCP up to 54"
+          />
+        )}
+
+        <PricePool />
+
         <CTA
-          title={'Do you want more&nbsp;?'}
+          title={'Do you want more ?'}
           description={
             <p>
               More Free and Buy-in Challenges available on wgc.gg & your own Challenges with
@@ -51,7 +104,7 @@ export default function Rankings() {
           btnLabel={'Visit wgc.gg'}
           btnBlank
           href={'https://wgc.gg'}
-          img={'/layouts/contact-cta.webp'}
+          img={'/layouts/clubhouse/lobby-cta.jpg'}
         />
       </main>
     </>

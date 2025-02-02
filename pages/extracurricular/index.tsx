@@ -1,88 +1,74 @@
-import css from './Home.module.scss';
+import css from './SponsoredPages.module.scss';
 import Head from 'next/head';
 import Hero from '@/components/layouts/Hero';
-import Button from '@/components/navigation/Button';
-import Link from 'next/link';
-import Image from 'next/image';
 import PricePool from '@/components/layouts/PricePool';
-import Challenge from '@/components/content/Challenge';
-import CardsSection from '@/components/layouts/CardsSection';
-import YourChallengeCTA from '@/components/navigation/YourChallengeFAB';
-import HowToPlaySection from '@/components/layouts/HowToPlaySection';
 import CTA from '@/components/navigation/CTA';
+import SectionTitle from '@/components/layouts/SectionTitle';
+import ChallengePreview from '@/components/content/ChallengePreview';
+import { ChangeBackgroundColor } from '..';
 
-type ChallengeType = {
-  url: string;
-  img: string;
-  title: string;
-  dates: string;
-  gameType: string;
-  hcp: string;
-  price?: number;
-  currentPlayers: number;
-};
-
-export default function Home() {
-  const challenges: ChallengeType[] = [
+export default function SponsoredClubhouse() {
+  const challenges: ChallengePreview[] = [
     {
-      url: 'https://worldgolfchallenge-test.azurewebsites.net/lobby/3384',
+      url: '/extracurricular/lobby',
       img: '/logos/logo_excr.svg',
-      title: 'EXTRACURRICULAR',
+      name: 'Spring Challenge - EXTRACURRICULAR',
       dates: 'Mar. 14th to Mar. 18th',
       gameType: 'Net Strableford',
       hcp: 'single',
-      currentPlayers: 11,
+      players: 11,
+      id: 0,
+      pool: 0,
+      fee: 0,
     },
     {
-      url: 'https://worldgolfchallenge-test.azurewebsites.net/lobby/3384',
+      url: '/extracurricular/lobby',
       img: '/logos/logo_excr.svg',
-      title: 'EXTRACURRICULAR',
+      name: 'Spring Challenge - EXTRACURRICULAR',
       dates: 'Mar. 14th to Mar. 18th',
       gameType: 'Net Strableford',
       hcp: 'up to 18',
-      currentPlayers: 8,
+      players: 8,
+      id: 1,
+      pool: 0,
+      fee: 0,
     },
     {
-      url: 'https://worldgolfchallenge-test.azurewebsites.net/lobby/3384',
+      url: '/extracurricular/lobby',
       img: '/logos/logo_excr.svg',
-      title: 'EXTRACURRICULAR',
+      name: 'Spring Challenge - EXTRACURRICULAR',
       dates: 'Mar. 14th to Mar. 18th',
       gameType: 'Net Strableford',
       hcp: 'up to 54',
-      currentPlayers: 0,
+      players: 0,
+      id: 2,
+      pool: 0,
+      fee: 0,
     },
   ];
 
   return (
     <>
+      <style jsx global>
+        {`
+          * {
+            /* Overwriting Color Variables to fit the Sponsor's Identity */
+            --black: #0d1720;
+            --black-rgb: 13, 23, 32;
+
+            --primary: #252c32;
+            --black-rgb: 27, 44, 50;
+
+            --accent: #d9e3f2;
+            --accent-rgb: 217, 227, 242;
+          }
+        `}
+      </style>
       <Head>
         <title>EXTRACURRICULAR x WGC | Welcome</title>
-        <meta
-          name="keywords"
-          content="golf, challenge, golf course, golf challenge, extracurricular"
-        />
-        <meta
-          name="description"
-          content="Playing golf physically while competing digitally, Extracurricular Prices to reward you!"
-        />
-        <meta name="author" content="Redox Digital" />
-        <meta property="og:title" content="EXTRACURRICULAR x World Golf Challenge" />
-        <meta
-          property="og:description"
-          content="Playing golf physically while competing digitally, Extracurricular Prices to reward you!"
-        />
-        <meta property="og:image" content={`https://wgc.rdox.ch/socials/social_thumbnail.jpg`} />
-        {/*<!-- Update domain -->*/}
-        <meta property="og:url" content="https://wgc.rdox.ch" /> {/*<!-- Update domain -->*/}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="EXTRACURRICULAR x World Golf Challenge" />
-        <meta
-          name="twitter:description"
-          content="Playing golf physically while competing digitally, Extracurricular Prices to reward you!"
-        />
-        <meta name="twitter:image" content={`https://wgc.rdox.ch/socials/social_thumbnail.jpg`} />
-        {/*<!-- Update domain -->*/}
+        <link type="image/svg+xml" href="/logos/favicon_excr.svg" />
       </Head>
+      <ChangeBackgroundColor color="#252c32" />
 
       <Hero
         title={
@@ -92,69 +78,53 @@ export default function Home() {
             while competing digitally
           </span>
         }
+        gradient
       >
         <p>
           Play in the club of your choice in real life while measuring yourself & your score,
           virtually against any other player in the world!
         </p>
       </Hero>
-      <main className={css.home}>
-        <section className={css.ourChallenges}>
-          <div className={css.titles}>
-            <h2>Our Challenges</h2>
-            <p>
-              Choose the category that suits you the most and join players from all around the
-              world.
-            </p>
-          </div>
-          <div className={css.challenges}>
-            {challenges.map((challenge, key) => (
-              <Challenge key={key} {...challenge} />
-            ))}
-          </div>
-        </section>
+
+      <main className={css.clubhouse}>
+        <SectionTitle title={'Our Challenges'}>
+          <p>
+            Choose the category that suits you the most and join players from all around the world.
+          </p>
+        </SectionTitle>
+        <div className={css.challenges}>
+          {challenges.map((c, key) => (
+            <ChallengePreview key={key} {...c} />
+          ))}
+        </div>
 
         <PricePool />
+      </main>
 
-        <CardsSection
-          title={'The concept'}
-          desc={
-            'World Golf Challenge is the first digital golf platform enabling all levels of amateur players worldwide to compete in virtual Challenges online while playing on real courses.'
-          }
-          cards={[
-            {
-              icon: '/pictograms/clipboard.svg',
-              title: 'Join a Challenge',
-              desc: 'Any day, choose a Challenge on the screen',
-            },
-            {
-              icon: '/pictograms/golf-white.svg',
-              title: 'Go out, play golf',
-              desc: 'Real action on the greens',
-            },
-            {
-              icon: '/pictograms/pen.svg',
-              title: 'Enter your score & win',
-              desc: 'Lots of fun and great prizes',
-            },
-          ]}
+      <section className={css.homeCTAs}>
+        <CTA
+          title={'How to play'}
+          description={<p>Playing golf physically while competing digitally.</p>}
+          btnLabel={'Learn how to play'}
+          href={'/support'}
+          img={'/layouts/clubhouse/wgc-how-to.jpg'}
+          opacity={0.15}
         />
-
-        <HowToPlaySection />
         <CTA
           title={'Look fresh on the greens'}
           description={
-            <>
+            <p>
               Elevate your wardrobe by visiting our sponsor&apos;s e-shop, <b>Extracurricular</b>,
               and discover men&apos;s premium golf apparel including polos, hats, shorts, and pants.
-            </>
+            </p>
           }
           btnLabel={'The shop'}
           href={'https://ex-cr.com/?utm_source=wgc'}
           btnBlank
-          img={'/layouts/home_excr-cta.jpg'}
-        ></CTA>
-      </main>
+          img={'/layouts/excr/home_cta.webp'}
+          opacity={0.4}
+        />
+      </section>
     </>
   );
 }

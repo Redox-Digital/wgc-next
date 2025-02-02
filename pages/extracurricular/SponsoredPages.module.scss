@@ -1,0 +1,18 @@
+.clubhouse {
+  padding-top: var(--sct-vert-margin) !important;
+  background-color: var(--white);
+  border-radius: var(--md);
+
+  .challenges {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
+  }
+}
+
+.homeCTAs {
+  padding: var(--sct-def-margins);
+  display: flex;
+  flex-direction: column;
+  gap: var(--md);
+}

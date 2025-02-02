@@ -16,31 +16,31 @@ const sponsors: Sponsor[] = [
     name: 'Extracurricular',
     img: '/layouts/clubhouse/sponsors/sponsor_excr.png',
     runningChallenge: 2,
-    url: '/lobby', // TBD
+    url: '/extracurricular',
   },
   {
     name: 'Coca Cola',
     img: '/layouts/clubhouse/sponsors/sponsor_coca.png',
     runningChallenge: 4,
-    url: '/lobby', // TBD
+    url: '/extracurricular',
   },
   {
     name: 'TaylorMade',
     img: '/layouts/clubhouse/sponsors/sponsor_taylormade.png',
     runningChallenge: 0,
-    url: '/lobby', // TBD
+    url: '/extracurricular',
   },
   {
     name: '4Aces',
     img: '/layouts/clubhouse/sponsors/sponsor_4aces.png',
     runningChallenge: 2,
-    url: '/lobby', // TBD
+    url: '/extracurricular',
   },
   {
     name: 'Bridgestone',
     img: '/layouts/clubhouse/sponsors/sponsor_bridgestone.png',
     runningChallenge: 2,
-    url: '/lobby', // TBD
+    url: '/extracurricular',
   },
 ];
 
@@ -53,7 +53,7 @@ export default function Clubhouse() {
     <>
       <ChangeBackgroundColor color="#002F18" />
       {logged ? (
-        <Hero title={'Hello, Jonas Jaeggi'}>
+        <Hero title={'Hello, Jonas Jaeggi'} gradient>
           <p>Welcome to your favorite golf platform!</p>
           <p>What do you want to do today ?</p>
           <div className={css.heroBtns}>
@@ -78,7 +78,7 @@ export default function Clubhouse() {
           </div>
         </Hero>
       ) : (
-        <Hero title={'Playing golf physically while competing digitally'}>
+        <Hero title={'Playing golf physically while competing digitally'} gradient>
           <p>Welcome to your favorite golf platform!</p>
           <p>What do you want to do today ?</p>
           <div className={css.heroBtns}>
@@ -112,7 +112,7 @@ export default function Clubhouse() {
       <section className={css.ctaSct}>
         <CTA
           title={'Challenge your friends!'}
-          description={'Create one and invite your friends to start playing!'}
+          description={<p>Create one and invite your friends to start playing!</p>}
           btnLabel={'Create Private Challenge'}
           href={'/private/create'}
           img={'/layouts/clubhouse/private-cta.webp'}
@@ -120,7 +120,7 @@ export default function Clubhouse() {
         />
         <CTA
           title={'How to play'}
-          description={'Playing golf physically while competing digitally.'}
+          description={<p>Playing golf physically while competing digitally.</p>}
           btnLabel={'Learn how to play'}
           href={'/support'}
           img={'/layouts/clubhouse/wgc-how-to.jpg'}
