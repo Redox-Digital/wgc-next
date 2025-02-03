@@ -24,6 +24,15 @@
       font-family: var(--fontfamily-titles);
       font-weight: 600;
       line-height: normal;
+
+      &:hover {
+        color: var(--accent);
+        filter: saturate(0.75);
+      }
+
+      &:active {
+        color: rgba(var(--accent-rgb), 0.5);
+      }
     }
 
     h4 {

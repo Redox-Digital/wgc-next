@@ -63,6 +63,17 @@
         font-family: var(--fontfamily-titles);
         font-weight: 600;
         line-height: 1.25em;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: var(--accent);
+          filter: saturate(0.75);
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:active {
+          color: rgba(var(--accent-rgb), 0.5);
+        }
       }
     }
   }
@@ -97,5 +108,6 @@
     color: var(--black);
     padding: 2px var(--sm);
     border-radius: 1000px;
+    cursor: pointer;
   }
 }
