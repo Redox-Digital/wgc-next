@@ -30,9 +30,14 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      cursor: pointer;
 
       &::marker {
         content: '';
+      }
+
+      &::-webkit-details-marker {
+        display: none;
       }
 
       > .sign {

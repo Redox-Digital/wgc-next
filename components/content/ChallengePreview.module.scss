@@ -107,8 +107,15 @@
     align-items: center;
     gap: var(--sm);
     list-style-type: none;
-
     position: relative;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::marker {
+      content: '';
+    }
 
     > .img {
       display: flex;
@@ -148,6 +155,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
+        gap: 3px;
       }
 
       > .topLine {

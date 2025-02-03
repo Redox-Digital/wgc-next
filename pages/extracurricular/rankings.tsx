@@ -16,8 +16,13 @@ export default function Rankings() {
           * {
             /* Overwriting Color Variables to fit the Sponsor's Identity */
             --black: #0d1720;
+            --black-rgb: 13, 23, 32;
+
             --primary: #252c32;
+            --black-rgb: 27, 44, 50;
+
             --accent: #d9e3f2;
+            --accent-rgb: 217, 227, 242;
           }
         `}
       </style>

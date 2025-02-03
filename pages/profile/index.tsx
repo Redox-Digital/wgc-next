@@ -39,7 +39,7 @@ export default function Profile() {
         <label htmlFor="profilePicture" title="Change profile picture">
           <Image
             src={'https://wgc.gg/images/profile-picture.png'}
-            alt={'Mikael Ruffieux'}
+            alt={'Jonas Jaeggi'}
             width={80}
             height={80}
           />
@@ -49,7 +49,7 @@ export default function Profile() {
           <input type="image" name="profilePicture" id="profilePicture" />
         </label>
 
-        <h2>Mikael Ruffieux 🏳️</h2>
+        <h2>Jonas Jaeggi 🏳️</h2>
         <small>
           HCP: 16.0 |{' '}
           <span>

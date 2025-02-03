@@ -1,7 +1,6 @@
 import SectionTitle from '@/components/layouts/SectionTitle';
 import css from './PrivateChallenges.module.scss';
 import btnCss from '@/components/navigation/Button.module.scss';
-import Button from '@/components/navigation/Button';
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';

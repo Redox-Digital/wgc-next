@@ -116,6 +116,101 @@ const randomImgs = [
   'https://picsum.photos/48',
 ];
 
+export const dummyLeaderboard: Player[] = [
+  {
+    name: 'Jonas Jaeggi',
+    flag: '🇨🇭',
+    pointsScored: 521,
+    challengesWon: 4,
+    moneyWon: 269,
+    img: 'https://picsum.photos/52',
+    hcp: 6,
+  },
+  {
+    name: 'Guadalupe Bullock',
+    flag: '🇸🇪',
+    pointsScored: 205,
+    challengesWon: 8,
+    moneyWon: 66,
+    img: 'https://picsum.photos/49',
+    hcp: 0,
+  },
+  {
+    name: 'Deena Roth',
+    flag: '🇨🇭',
+    pointsScored: 118,
+    challengesWon: 5,
+    moneyWon: 158,
+    img: 'https://picsum.photos/50',
+    hcp: 33,
+  },
+  {
+    name: 'Malik Murphy',
+    flag: '🇸🇪',
+    pointsScored: 288,
+    challengesWon: 5,
+    moneyWon: 239,
+    img: 'https://picsum.photos/52',
+    hcp: 26,
+  },
+  {
+    name: 'Eric Bolton',
+    flag: '🏳️',
+    pointsScored: 154,
+    challengesWon: 7,
+    moneyWon: 219,
+    img: 'https://picsum.photos/50',
+    hcp: 11,
+  },
+  {
+    name: 'Bernard Mercado',
+    flag: '🇨🇭',
+    pointsScored: 282,
+    challengesWon: 4,
+    moneyWon: 118,
+    img: 'https://picsum.photos/51',
+    hcp: 0,
+  },
+  {
+    name: 'Shannon Meyers',
+    flag: '🇺🇸',
+    pointsScored: 4,
+    challengesWon: 6,
+    moneyWon: 62,
+    img: 'https://picsum.photos/49',
+    hcp: 25,
+  },
+  {
+    name: 'Osvaldo Wise',
+    flag: '🇺🇸',
+    pointsScored: 199,
+    challengesWon: 7,
+    moneyWon: 87,
+    img: 'https://picsum.photos/52',
+    hcp: 0,
+  },
+  {
+    name: 'Bernadine Schwartz',
+    flag: '🇸🇪',
+    pointsScored: 194,
+    challengesWon: 2,
+    moneyWon: 134,
+    img: 'https://picsum.photos/49',
+    hcp: 20,
+  },
+  {
+    name: 'Laura Walton',
+    flag: '🏳️',
+    pointsScored: 128,
+    challengesWon: 3,
+    moneyWon: 224,
+    img: 'https://picsum.photos/52',
+    hcp: 34,
+  },
+];
+
+/* Dummy Data with randomly generated numbers 
+
 export const dummyLeaderboard: Player[] = randomNames.map((p) => ({
   name: p,
   flag: randomFlags[getRandInt(0, randomFlags.length - 1)],
@@ -125,3 +220,4 @@ export const dummyLeaderboard: Player[] = randomNames.map((p) => ({
   img: randomImgs[getRandInt(0, randomImgs.length - 1)],
   hcp: getRandInt(0, 54),
 }));
+*/
