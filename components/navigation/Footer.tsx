@@ -71,7 +71,7 @@ export default function Footer({ sponsored }: Props) {
               World Golf Challenge
             </Link>
           </span>
-          <Image src={'/logos/logo-wgc.svg'} alt={''} width={50} height={50} />
+          <Image src={'/logos/logo-wgc-icon-gradient.svg'} alt={''} width={80} height={80} />
         </div>
       </div>
     </footer>

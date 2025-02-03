@@ -16,6 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
           :root {
             --fontfamily-body: ${inter.style.fontFamily};
             --fontfamily-titles: ${lexend.style.fontFamily};
+            --fontfamily-special: ${syne.style.fontFamily};
           }
         `}
       </style>
