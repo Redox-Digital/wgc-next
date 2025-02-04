@@ -1,7 +1,7 @@
 .section {
   background-color: var(--white);
   justify-content: center;
-  gap: var(--sm);
+  gap: var(--md);
 
   > ul {
     margin: 0;
@@ -13,8 +13,14 @@
     gap: var(--sm);
     list-style-type: none;
 
+    @media screen and (min-width: 900px) {
+      justify-content: flex-start;
+      gap: var(--md) var(--sm);
+    }
+
     > li {
       width: calc((100% - var(--sm)) / 2);
+      max-width: 250px;
 
       > a {
         display: flex;
@@ -38,8 +44,9 @@
         img {
           width: 100%;
           height: auto;
-          max-height: 120px; // DEV : TBC
+          // max-height: 120px; // DEV : TBC
           object-fit: cover;
+          aspect-ratio: 2;
         }
 
         > .texts {

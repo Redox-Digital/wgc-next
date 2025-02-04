@@ -70,7 +70,7 @@ export default function ChallengesPage() {
         <CTA
           title={'Challenge your friends!'}
           description={'Create one and invite your friends to start playing!'}
-          btnLabel={'Create Private Challenge'}
+          btnLabel={'Create private Challenge'}
           href={'/private/create'}
           img={'/layouts/clubhouse/private-cta.webp'}
           opacity={0.3}

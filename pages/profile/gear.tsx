@@ -32,19 +32,19 @@ export default function EditGear() {
 
   return (
     <main className={css.editGearPage}>
-      <PageTitle title="Edit Gear" returnBtn />
+      <PageTitle title="Edit bag" returnBtn />
 
       <Modal
         open={modal}
-        title={`${gear ? 'Edit' : 'Add'} Gear`}
+        title={`${gear ? 'Edit' : 'Add'} equipment`}
         closeModal={() => setModal(false)}
         className={css.modal}
       >
         <form>
           <SelectInput
             dark
-            id={'typeOfGear'}
-            label={'Type of gear'}
+            id={'clubs'}
+            label={'Clubs'}
             options={GearOptions}
             value={gear ? gear.gear : ''}
           />
@@ -83,9 +83,9 @@ export default function EditGear() {
           <GearButton key={gear.id} gear={gear} onClick={() => editGear(gear)} />
         ))}
         <SettingButton picto="/pictograms/plus-accent.svg" onClick={() => setModal(true)}>
-          Add Item
+          Add equipment
         </SettingButton>
-        <small style={{ opacity: 0.7 }}>Tap on your gear to edit / delete it.</small>
+        <small style={{ opacity: 0.7 }}>Tap on your equipment to edit / delete it.</small>
       </section>
     </main>
   );

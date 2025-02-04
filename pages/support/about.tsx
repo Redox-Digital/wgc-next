@@ -6,8 +6,14 @@ import Button from '@/components/navigation/Button';
 export default function About() {
   return (
     <main className={css.supportPage}>
-      <PageTitle title="About World Golf Challenge" returnBtn>
-        <Image src="https://picsum.photos/360/180" width={360} height={180} alt="" />
+      <PageTitle title="About World Golf Challenge" returnBtn className={css.pageTitle}>
+        <Image
+          src="/layouts/wgc-support-about.jpg"
+          width={720}
+          height={180}
+          alt=""
+          style={{ objectPosition: '50% 25%' }}
+        />
       </PageTitle>
       <section>
         <p>

@@ -38,8 +38,14 @@ export default function NetStableford() {
   ];
   return (
     <main className={css.supportPage}>
-      <PageTitle title="Net Stableford" returnBtn>
-        <Image src="https://picsum.photos/360/180" width={360} height={180} alt="" />
+      <PageTitle title="Net Stableford" returnBtn className={css.pageTitle}>
+        <Image
+          src="/layouts/wgc-support-netstableford.jpg"
+          width={720}
+          height={240}
+          alt=""
+          style={{ objectPosition: '50% 50%' }}
+        />
       </PageTitle>
       <section>
         <p>

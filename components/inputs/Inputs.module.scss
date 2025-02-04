@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: var(--xs);
   width: 100%;
+  position: relative;
 
   &.w50 {
     width: calc((100% - var(--sm)) / 2);
@@ -14,6 +15,12 @@
 
   &.w66 {
     width: calc((100% - var(--sm)) / 3 * 2);
+  }
+
+  @media screen and (min-width: 900px) {
+    &.wt50 {
+      width: calc((100% - var(--sm)) / 2);
+    }
   }
 
   &.dark {
@@ -48,6 +55,12 @@
     &:focus {
       outline-color: var(--accent);
     }
+  }
+
+  > input[type='file'] + img {
+    position: absolute;
+    right: var(--sm);
+    bottom: var(--sm);
   }
 
   > textarea {

@@ -23,7 +23,7 @@ export default function Support() {
 
   return (
     <main className={css.supportPage}>
-      <PageTitle title="Support" returnBtn>
+      <PageTitle title="Support" returnBtn className={css.pageTitle}>
         <p>What can we help you with ?</p>
       </PageTitle>
       <div className={css.navBtns}>
@@ -39,13 +39,20 @@ export default function Support() {
         <Faq />
       </section>
 
-      <div>
+      <div className={css.ctas}>
         <CTA
           title={'We are here for you'}
           description={'If you have any question, or need further assistance, we are here for you.'}
           btnLabel={'hello@wgc.gg'}
           href={'mailto:hello@wgc.gg'}
-          img={'https://picsum.photos/300/300'}
+          img={'/layouts/clubhouse/wgc-contact-cta.jpg'}
+        />
+        <CTA
+          title={'How to play'}
+          description={'Learn how to play in 4 simple steps'}
+          btnLabel={'How to play'}
+          href={'/support/challenges'}
+          img={'/layouts/clubhouse/wgc-how-to.jpg'}
         />
       </div>
     </main>

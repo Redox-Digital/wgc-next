@@ -2,10 +2,16 @@
   min-height: var(--fullscreen-height);
   justify-content: space-between;
 
-  .btns {
+  form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: var(--sm);
+    align-items: center;
+
+    max-width: var(--max-block-width);
+    width: 100%;
+    margin-inline: auto;
   }
 }
 
@@ -15,6 +21,10 @@
     justify-content: space-between;
     display: flex;
     flex-direction: column;
+
+    max-width: var(--max-block-width);
+    width: 100%;
+    margin-inline: auto;
   }
 }
 
@@ -51,6 +61,16 @@
     transition: all 0.3s ease-in-out;
     min-height: var(--fullscreen-height);
 
+    .titles {
+      max-width: var(--max-paragraph-width);
+      margin-inline: auto;
+
+      @media screen and (min-width: 900px) {
+        text-align: center;
+        justify-content: center;
+      }
+    }
+
     &.hide {
       left: -100vw;
       transition: all 0.3s ease-in-out;
@@ -71,4 +91,54 @@
     transform: translateX(0);
     transition: transform 0.3s ease-in-out;
   }
+}
+
+.profilePicture {
+  width: 240px;
+  aspect-ratio: 1;
+  background-color: var(--true-white);
+  margin-inline: auto;
+  border: solid 1px var(--grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1000px;
+
+  > input {
+    display: none;
+  }
+}
+
+.deleteTextLink {
+  cursor: pointer;
+  display: block;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: var(--danger) !important;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  width: fit-content;
+  font-size: var(--fs-sm);
+}
+
+.gearModal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sm);
+
+  .btns {
+    display: flex;
+    flex-direction: row;
+    gap: var(--sm);
+    justify-content: flex-end;
+  }
+}
+
+.bag {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sm);
+  width: 100%;
 }

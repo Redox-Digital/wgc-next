@@ -5,27 +5,100 @@
   flex-direction: column;
   gap: var(--sm);
 
-  .topBtns {
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > img {
+      order: 1;
+      width: calc((100% - var(--sm)) / 2);
+    }
+
+    > .introInfos {
+      order: 3;
+      flex-direction: row !important;
+      flex-wrap: nowrap;
+
+      > * {
+        width: calc((100% - var(--sm)) / 2);
+      }
+    }
+
+    > .pool {
+      order: 2;
+      width: calc((100% - var(--sm)) / 2);
+    }
+
+    > .btns {
+      order: 4;
+    }
+  }
+
+  .top {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: var(--sm);
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 900px) {
+      margin-bottom: var(--md);
+    }
+
+    > button,
+    > a {
+      aspect-ratio: 1;
+    }
+
+    > button {
+      order: 0;
+    }
+
+    // Edit challenge
+    > .editBtn {
+      order: 1;
+    }
+
+    > h1 {
+      order: 2;
+      width: 100%;
+    }
+
+    @media screen and (min-width: 900px) {
+      flex-wrap: nowrap;
+      > .editBtn {
+        order: 2;
+      }
+
+      > h1 {
+        order: 1;
+      }
+    }
   }
 
   > img {
     max-width: 100%;
-    object-fit: contain;
-    border-radius: var(--xs);
+    object-fit: cover;
+    border-radius: var(--sm);
     height: auto;
     aspect-ratio: 2;
   }
 
-  .timer {
+  .introInfos {
     display: flex;
-    flex-direction: row;
-    border: 1px solid var(--grey);
-    padding: var(--sm);
-    border-radius: var(--sm);
-    justify-content: space-between;
+    flex-direction: column;
+    gap: var(--sm);
+    width: 100%;
+
+    .timer {
+      display: flex;
+      flex-direction: row;
+      border: 1px solid var(--grey);
+      padding: var(--sm);
+      border-radius: var(--sm);
+      justify-content: space-between;
+    }
   }
 
   .btns {
@@ -56,6 +129,10 @@
   flex-direction: row !important;
   flex-wrap: wrap;
   gap: var(--sm);
+
+  width: 100%;
+  max-width: var(--max-paragraph-width);
+  margin-inline: auto;
 
   > h3,
   > p {
@@ -103,5 +180,15 @@
       gap: var(--sm);
       justify-content: space-between;
     }
+  }
+}
+
+.ctaSct {
+  gap: var(--md);
+  padding: var(--sct-def-margins);
+
+  @media screen and (min-width: 900px) {
+    display: flex;
+    flex-direction: row !important;
   }
 }

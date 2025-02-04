@@ -1,4 +1,5 @@
 import css from './Inputs.module.scss';
+import Image from 'next/image';
 
 type TextInputType = {
   id: string;
@@ -7,16 +8,19 @@ type TextInputType = {
   placeholder?: string;
   className?: string;
   dark?: boolean;
-  width?: '50' | '33' | '66';
-  type: 'text' | 'number' | 'date' | 'textarea' | 'image' | 'password' | 'email';
+  width?: '50' | '33' | '66' | '50t';
+  type: 'text' | 'number' | 'date' | 'textarea' | 'file' | 'password' | 'email';
 };
 
-function getInputWidth(width?: '50' | '33' | '66') {
+function getInputWidth(width?: '50' | '33' | '66' | '50t') {
   if (!width) return '';
 
   switch (width) {
     case '50':
       return css.w50;
+
+    case '50t':
+      return css.wt50;
 
     case '33':
       return css.w33;
@@ -56,6 +60,7 @@ export function TextInput({
     >
       <span>{label}</span>
       <input type={type} id={id} name={id} placeholder={placeholder} value={value}></input>
+      {type === 'file' && <Image src="/pictograms/photo-dark.svg" alt="" width={20} height={20} />}
     </label>
   );
 }
@@ -65,7 +70,7 @@ type SelectInputType = {
   label: string;
   value?: string;
   className?: string;
-  width?: '50' | '33' | '66';
+  width?: '50' | '33' | '66' | '50t';
   dark?: boolean;
   options: { value: string; label: string }[];
 };

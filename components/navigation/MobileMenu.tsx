@@ -34,8 +34,12 @@ export default function MobileMenu({ open, toggleMenu, toggleLogged, logged }: P
             </>
           ) : (
             <>
-              <Button href={'/profile/login'}>Login</Button>
-              <Button href={'/profile/create'} outline darkBg>
+              <Image src="/logos/wgc-text.svg" alt="" width={300} height={80} />
+
+              <Button href={'/profile/login'} onClick={toggleMenu}>
+                Login
+              </Button>
+              <Button href={'/profile/create'} outline darkBg onClick={toggleMenu}>
                 Register
               </Button>
             </>
@@ -69,8 +73,12 @@ export default function MobileMenu({ open, toggleMenu, toggleLogged, logged }: P
               </>
             ) : (
               <>
-                <Link href="/profile/login">Login</Link>
-                <Link href="/profile/create">Register</Link>
+                <Link href="/profile/login" onClick={toggleMenu}>
+                  Login
+                </Link>
+                <Link href="/profile/create" onClick={toggleMenu}>
+                  Register
+                </Link>
               </>
             )}
           </div>

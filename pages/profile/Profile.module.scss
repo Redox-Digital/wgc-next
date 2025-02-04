@@ -1,6 +1,10 @@
 .profilePage {
   gap: var(--md);
 
+  width: 100%;
+  max-width: var(--max-paragraph-width);
+  margin-inline: auto;
+
   section {
     gap: var(--xs);
 
@@ -56,6 +60,10 @@
         display: none;
       }
     }
+  }
+
+  .danger {
+    color: var(--danger) !important;
   }
 }
 
@@ -118,6 +126,10 @@
 }
 
 .editProfilePage {
+  width: 100%;
+  max-width: var(--max-paragraph-width);
+  margin-inline: auto;
+
   form {
     display: flex;
     flex-direction: row;
@@ -135,7 +147,11 @@
 }
 
 .editGearPage {
-  min-height: 600px;
+  width: 100%;
+  max-width: var(--max-paragraph-width);
+  margin-inline: auto;
+  min-height: var(--fullscreen-height);
+
   .bag {
     display: flex;
     flex-direction: column;

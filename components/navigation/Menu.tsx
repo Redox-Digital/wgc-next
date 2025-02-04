@@ -42,7 +42,7 @@ export default function Menu({ logo, logoUrl, links, sponsored, logged, setLogge
             </Link>
 
             {logged ? (
-              <Link href="/profile" className={css.profile}>
+              <Link href="/profile" className={css.profile} onClick={toggleMenu}>
                 <Image
                   src="https://wgc.gg/images/profile-picture.png"
                   width={40}
@@ -52,7 +52,11 @@ export default function Menu({ logo, logoUrl, links, sponsored, logged, setLogge
               </Link>
             ) : (
               <>
-                <Link href="/join" className={`${css.profile} ${css.notLogged}`}>
+                <Link
+                  href="/join"
+                  className={`${css.profile} ${css.notLogged}`}
+                  onClick={toggleMenu}
+                >
                   <Image src="/pictograms/user.svg" width={20} height={20} alt="Username" />
                 </Link>
               </>

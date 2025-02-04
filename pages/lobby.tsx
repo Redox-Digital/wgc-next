@@ -1,5 +1,4 @@
 import css from './Lobby.module.scss';
-import Hero from '@/components/layouts/Hero';
 import PricePool from '@/components/layouts/PricePool';
 import Image from 'next/image';
 import Button, { ReturnButton } from '@/components/navigation/Button';
@@ -60,24 +59,27 @@ export default function Lobby() {
         </>
       </Modal>
       <header className={css.header}>
-        <div className={css.topBtns}>
+        <div className={css.top}>
           <ReturnButton />
+          <h1>Challenge #7607 - HCP Single</h1>
           <Link href="/private/edit" title="Edit Challenge" className={css.editBtn}>
             <Image src="/pictograms/settings-white.svg" alt="" width={24} height={24} />
           </Link>
         </div>
 
         <Image src="/layouts/clubhouse/clubhouse_hero.jpg" alt="" width={400} height={180} />
-        <h1>Challenge #7607 - HCP Single</h1>
-        <div className={css.timer}>
-          <small>
-            <b>Ongoing</b> – Ends in :
-          </small>
-          <small>1 Day 10:30:02</small>
-        </div>
-        <CopyLink text={'https://wgc.gg/extracurricular/lobby/7874'} />
 
-        <PricePool moneyPool />
+        <div className={css.introInfos}>
+          <div className={css.timer}>
+            <small>
+              <b>Ongoing</b> – Ends in :
+            </small>
+            <small>1 Day 10:30:02</small>
+          </div>
+          <CopyLink text={'https://wgc.gg/extracurricular/lobby/7874'} />
+        </div>
+
+        <PricePool moneyPool className={css.pool} />
 
         <div className={css.btns}>
           <Button href="/lobby">Join Challenge</Button>
@@ -110,19 +112,22 @@ export default function Lobby() {
 
         <PricePool />
 
-        <section>
+        <section className={css.ctaSct}>
           <CTA
-            title={'Do you want more ?'}
-            description={
-              <p>
-                More Free and Buy-in Challenges available on wgc.gg & your own Challenges with
-                friends, clients, club members to create!
-              </p>
-            }
-            btnLabel={'Visit wgc.gg'}
-            btnBlank
-            href={'https://wgc.gg'}
-            img={'/layouts/clubhouse/lobby-cta.jpg'}
+            title={'Challenge your friends!'}
+            description={<p>Create one and invite your friends to start playing!</p>}
+            btnLabel={'Create private Challenge'}
+            href={'/private/create'}
+            img={'/layouts/clubhouse/private-cta.webp'}
+            opacity={0.3}
+          />
+          <CTA
+            title={'How to play'}
+            description={<p>Playing golf physically while competing digitally.</p>}
+            btnLabel={'Learn how to play'}
+            href={'/support'}
+            img={'/layouts/clubhouse/wgc-how-to.jpg'}
+            opacity={0.15}
           />
         </section>
       </main>

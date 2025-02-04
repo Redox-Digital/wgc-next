@@ -13,6 +13,14 @@
 
   background-color: var(--primary);
 
+  > h1 > br {
+    display: inline;
+
+    @media screen and (min-width: 600px) {
+      display: none;
+    }
+  }
+
   &.gradientBg {
     background: radial-gradient(
       243.18% 192.81% at -59.25% 111.85%,
@@ -23,5 +31,23 @@
     // Avoid cutting the gradient with the next section
     margin-bottom: calc(-1 * var(--lg)) !important;
     padding-bottom: calc(var(--lg) * 2);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--md);
+
+    > p {
+      width: 100%;
+      line-height: 2em;
+    }
+
+    @media screen and (min-width: 900px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 }

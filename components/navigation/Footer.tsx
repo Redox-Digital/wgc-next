@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import css from './Footer.module.scss';
-import { LegalLinks, MainNavLinks, UserLinks } from '@/constants/Navigation';
+import { LegalLinks, MainNavLinks, socialLinks, UserLinks } from '@/constants/Navigation';
 import Image from 'next/image';
 
 type Props = {
@@ -37,21 +37,18 @@ export default function Footer({ sponsored }: Props) {
             ))}
           </div>
 
-          <div className={css.col}>
+          <div className={`${css.col} ${css.mobile}`}>
             <h4>Socials</h4>
             <div className={css.socials}>
-              <Link href={'#'}>
-                <Image width={16} height={16} src={'/pictograms/instagram.svg'} alt={'Instagram'} />
-              </Link>
-              <Link href={'#'}>
-                <Image width={16} height={16} src={'/pictograms/facebook.svg'} alt={'Facebook'} />
-              </Link>
-              <Link href={'#'}>
-                <Image width={16} height={16} src={'/pictograms/linkedin.svg'} alt={'LinkedIn'} />
-              </Link>
-              <Link href={'#'}>
-                <Image width={16} height={16} src={'/pictograms/envelope.svg'} alt={'Newsletter'} />
-              </Link>
+              {socialLinks.map((link) => (
+                <Link href={link.url} key={link.url} target="_blank">
+                  {link.icon ? (
+                    <Image width={16} height={16} src={link.icon} alt={link.label} />
+                  ) : (
+                    link.label
+                  )}
+                </Link>
+              ))}
 
               <small className={css.regionSelect}>
                 Region :{' '}
@@ -71,6 +68,27 @@ export default function Footer({ sponsored }: Props) {
               World Golf Challenge
             </Link>
           </span>
+
+          <div className={css.socials}>
+            {socialLinks.map((link) => (
+              <Link href={link.url} key={link.url} target="_blank">
+                {link.icon ? (
+                  <Image width={16} height={16} src={link.icon} alt={link.label} />
+                ) : (
+                  link.label
+                )}
+              </Link>
+            ))}
+
+            <small className={css.regionSelect}>
+              Region :{' '}
+              <select name="region" id="region">
+                <option value="eu">Europe</option>
+                <option value="am">Americas</option>
+                <option value="as">Asia</option>
+              </select>
+            </small>
+          </div>
           <Image src={'/logos/logo-wgc-icon-gradient.svg'} alt={''} width={80} height={80} />
         </div>
       </div>

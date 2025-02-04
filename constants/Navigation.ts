@@ -10,6 +10,10 @@ export const MainNavLinks: NavLink[] = [
     label: 'Clubhouse',
   },
   {
+    url: '/challenges',
+    label: 'All Challenges',
+  },
+  {
     url: '/leaderboards',
     label: 'Leaderboards',
   },
@@ -43,5 +47,28 @@ export const LegalLinks: NavLink[] = [
   {
     url: '/terms',
     label: 'Terms of agreement',
+  },
+];
+
+export const socialLinks: NavLink[] = [
+  {
+    url: '#',
+    label: 'Instagram',
+    icon: '/pictograms/instagram.svg',
+  },
+  {
+    url: '#',
+    label: 'Facebook',
+    icon: '/pictograms/facebook.svg',
+  },
+  {
+    url: '#',
+    label: 'Linked In',
+    icon: '/pictograms/linkedin.svg',
+  },
+  {
+    url: '#',
+    label: 'E-mail',
+    icon: '/pictograms/envelope.svg',
   },
 ];

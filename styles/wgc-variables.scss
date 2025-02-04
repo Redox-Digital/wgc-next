@@ -45,21 +45,28 @@
   --fs-sm: 12px;
   --fs-xs: 10px;
 
+  @media screen and (min-width: 900px) {
+  }
+
   // Testing new spacing system
   --xs: 6px;
-  --sm: 12px;
-  --md: 24px;
-  --lg: 48px;
-  --xl: 96px;
+  --sm: calc(var(--xs) * 2);
+  --md: calc(var(--sm) * 2);
+  --lg: calc(var(--md) * 2);
+  --xl: calc(var(--lg) * 2);
 
-  // --margin: 20px;
-  // --padding: 10px;
-  // --gap: 50px;
+  @media screen and (min-width: 900px) {
+    // --md: 36px;
+  }
 
   --sct-vert-margin: var(--lg);
   --subsct-vert-margin: var(--md);
   --sct-horiz-margin: var(--sm);
   --sct-def-margins: var(--sct-vert-margin) var(--sct-horiz-margin);
+
+  @media screen and (min-width: 900px) {
+    --sct-horiz-margin: var(--md);
+  }
 
   --navbar-height: 70px;
 
@@ -68,6 +75,7 @@
   --max-large-container-width: 1600px;
   --max-container-width: 1200px;
   --max-block-width: 600px;
+  --max-paragraph-width: 720px;
   --max-card-width: 400px;
 }
 

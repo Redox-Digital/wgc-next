@@ -1,130 +1,22 @@
-.private {
-  margin-top: var(--wgc-navbar-height);
-
-  padding: 100px var(--wgc-sct-horiz-margin);
+.createForm {
   width: 100%;
-  max-width: var(--wgc-max-container-width);
+  max-width: var(--max-paragraph-width);
   margin-inline: auto;
 
-  color: var(--wgc-black);
-
-  form {
+  > form {
     display: flex;
     flex-direction: column;
-    gap: var(--wgc-sct-vert-margin);
-    margin-top: var(--wgc-gap);
-
-    > fieldset {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: var(--wgc-margin);
-      border: none;
-      margin: 0;
-      padding: 0;
-
-      > legend {
-        margin-bottom: var(--wgc-margin);
-      }
-
-      > label {
-      }
-    }
-  }
-
-  .dates {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: var(--wgc-padding);
-    padding: 0;
-    margin: 0;
-
-    --del-width: 40px;
-
-    @media screen and (min-width: 900px) {
-      --del-width: 53px;
-    }
-
-    .dateLine {
-      list-style: none;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-
-      gap: var(--wgc-padding);
-      align-items: flex-end;
-      padding-bottom: var(--wgc-margin);
-
-      border-bottom: solid var(--wgc-secondary) 1px;
-
-      &:last-of-type {
-        border-bottom: none;
-      }
-
-      @media screen and (min-width: 900px) {
-        flex-wrap: nowrap;
-        border: none;
-      }
-
-      > .delBtn {
-        background: var(--wgc-danger);
-        width: var(--del-width);
-        height: var(--del-width);
-        padding: 10px;
-        aspect-ratio: 1;
-      }
-
-      > .date {
-        width: calc(100% - var(--wgc-padding) - var(--del-width));
-
-        @media screen and (min-width: 900px) {
-          width: calc((100% - 2 * var(--wgc-padding) - var(--del-width)) / 2);
-        }
-      }
-    }
-  }
-}
-
-.textLink {
-  display: block;
-  text-decoration: underline !important;
-  margin-top: var(--wgc-margin);
-}
-
-.editPrivatePage {
-  form {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: var(--sm);
-  }
-
-  .btns {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: var(--sm);
     justify-content: space-between;
-  }
-
-  .deleteTextLink {
-    cursor: pointer;
-    display: block;
-    background: none;
-    border: none;
-    text-decoration: underline;
-    color: var(--danger);
-    padding: 0;
-    margin: 0;
-    text-align: left;
-    width: fit-content;
-    font-size: var(--fs-sm);
+    // Fullscreen - top padding - bottom - padding
+    min-height: var(--fullscreen-height);
   }
 }
 
 .successPage {
-  min-height: 800px;
+  width: 100%;
+  max-width: var(--max-paragraph-width);
+  margin-inline: auto;
+  min-height: var(--fullscreen-height);
   justify-content: center;
   align-items: center;
 
@@ -133,20 +25,43 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: var(--sm);
-    width: 100%;
-
-    > a {
-      width: 100%;
-    }
+    justify-content: center;
   }
 }
 
-.createForm {
+.editPrivatePage {
+  min-height: var(--fullscreen-height);
+
   > form {
+    max-width: var(--max-paragraph-width);
+    margin-inline: auto;
+    width: 100%;
+    gap: var(--sm);
+
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    // Fullscreen - top padding - bottom - padding
-    min-height: var(--fullscreen-height);
+    flex-direction: row;
+    flex-wrap: wrap;
   }
+
+  .btns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--sm);
+    justify-content: space-between;
+  }
+}
+
+.deleteTextLink {
+  cursor: pointer;
+  display: block;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: var(--danger) !important;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  width: fit-content;
+  font-size: var(--fs-sm);
 }

@@ -1,3 +1,9 @@
+.walletPage {
+  width: 100%;
+  max-width: var(--max-paragraph-width);
+  margin-inline: auto;
+}
+
 .walletSct {
   display: flex;
   flex-direction: column;

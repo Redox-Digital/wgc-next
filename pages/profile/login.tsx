@@ -12,14 +12,13 @@ export default function Login() {
       <form>
         <TextInput id={'mail'} label={'E-Mail'} type={'text'} />
         <TextInput id={'password'} label={'Password'} type={'password'} />
-      </form>
-
-      <div className={css.btns}>
         <Button href="/">Sign in</Button>
-        <Link className="textLink" href="/create">
+        <Link className="textLink" href="/profile/create">
           I don&apos;t have an account
         </Link>
-      </div>
+      </form>
+
+      <div>{/* Spacer */}</div>
     </main>
   );
 }

@@ -27,6 +27,7 @@
     color: var(--white);
 
     width: calc(100% - var(--md));
+    max-width: var(--max-block-width);
 
     padding: var(--md);
     border-radius: var(--md);

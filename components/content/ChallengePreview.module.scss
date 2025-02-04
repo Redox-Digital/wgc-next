@@ -74,6 +74,8 @@
   border-radius: var(--sm);
   // overflow: hidden;
   color: var(--white);
+  width: 100%;
+  max-width: var(--max-block-width);
 
   transition: all 0.3s ease-in-out;
 

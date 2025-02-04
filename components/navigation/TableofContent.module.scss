@@ -5,6 +5,10 @@
   padding-inline: var(--md) var(--sm);
   background-color: var(--white);
 
+  width: 100%;
+  max-width: var(--max-paragraph-width);
+  margin-inline: auto;
+
   > details {
     &[open] {
       transition: all 0.3s ease-in-out;

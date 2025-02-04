@@ -4,9 +4,10 @@ import SectionTitle from './SectionTitle';
 
 type Props = {
   moneyPool?: boolean;
+  className?: string;
 };
 
-export default function PricePool({ moneyPool }: Props) {
+export default function PricePool({ moneyPool, className }: Props) {
   const prices = [
     {
       img: '/layouts/excr/WGC-EXCR_price_1000.png',
@@ -32,14 +33,14 @@ export default function PricePool({ moneyPool }: Props) {
 
   return moneyPool ? (
     <>
-      <div className={css.moneyPool}>
+      <div className={`${css.moneyPool} ${className}`}>
         <small>Price Pool</small>
         <h3>$ 102.00</h3>
       </div>
-      <small>The price will be attributed at the end of the Challenge.</small>
+      {/* <small>The price will be attributed at the end of the Challenge.</small> */}
     </>
   ) : (
-    <section className={css.pricePool} id="pricepool">
+    <section className={`${css.pricePool} ${className}`} id="pricepool">
       <SectionTitle title={'Prize Pool break-down'}>
         <p>
           <small>The price will be attributed at the end of the Challenge.</small>

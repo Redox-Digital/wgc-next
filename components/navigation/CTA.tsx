@@ -13,11 +13,19 @@ type Props = {
   opacity?: number;
 };
 
-export default function CTA({ title, description, btnLabel, href, img, opacity, btnBlank }: Props) {
+export default function CTA({
+  title,
+  description,
+  btnLabel,
+  href,
+  img,
+  opacity = 0.45,
+  btnBlank,
+}: Props) {
   return (
     <div className={css.cta}>
       <Image src={img} alt="" fill />
-      <div className={css.overlay} style={{ opacity: opacity || 0.3 }} />
+      <div className={css.overlay} style={{ opacity: opacity }} />
 
       <div className={css.texts}>
         <h2>{title}</h2>

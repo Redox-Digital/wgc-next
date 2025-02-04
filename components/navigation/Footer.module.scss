@@ -9,6 +9,13 @@
   border-top-left-radius: var(--md);
   border-top-right-radius: var(--md);
 
+  @media screen and (min-width: 900px) {
+    max-width: calc(100% - 2 * var(--sct-horiz-margin));
+    margin-inline: auto;
+    margin-bottom: var(--sct-horiz-margin);
+    border-radius: var(--md);
+  }
+
   .container {
     width: 100%;
     max-width: var(--max-container-width);
@@ -46,6 +53,11 @@
       flex-wrap: wrap;
       gap: var(--lg);
 
+      @media screen and (min-width: 600px) {
+        justify-content: center;
+        gap: var(--md);
+      }
+
       @media screen and (min-width: 900px) {
         flex-wrap: nowrap;
         justify-content: space-between;
@@ -60,24 +72,13 @@
 
         @media screen and (min-width: 900px) {
           width: 100%;
-          max-width: 200px;
-        }
-      }
-
-      .socials {
-        display: flex;
-        flex-direction: row;
-        gap: var(--sm);
-        flex-wrap: wrap;
-
-        > a {
-          width: 24px;
-          height: 24px;
-          text-align: center;
+          max-width: 300px;
         }
 
-        img {
-          filter: invert(1);
+        &.mobile {
+          @media screen and (min-width: 900px) {
+            display: none;
+          }
         }
       }
     }
@@ -102,6 +103,23 @@
         }
       }
     }
+  }
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  gap: var(--sm);
+  flex-wrap: wrap;
+
+  > a {
+    width: 24px;
+    height: 24px;
+    text-align: center;
+  }
+
+  img {
+    filter: invert(1);
   }
 }
 

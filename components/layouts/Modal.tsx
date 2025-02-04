@@ -19,7 +19,7 @@ export default function Modal({ title, open, children, className, closeModal }: 
       <div className={`${css.box} ${className}`}>
         <div className={css.head}>
           <h2>{title}</h2>
-          <button onClick={closeModal}>
+          <button onClick={closeModal} type="button">
             <span />
             <span />
           </button>

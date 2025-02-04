@@ -5,9 +5,11 @@
   gap: var(--sm);
   align-items: center;
   text-align: left;
+  width: 100%;
 
   &.center {
     text-align: center;
+    justify-content: center;
   }
 
   > p {

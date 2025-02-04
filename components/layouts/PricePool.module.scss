@@ -49,10 +49,14 @@
       outline: solid 1px var(--grey);
       overflow: hidden;
 
+      @media screen and (min-width: 900px) {
+        max-width: calc((100% - var(--sm) * 3) / 4);
+      }
+
       > img {
         width: 100%;
         height: auto;
-        aspect-ratio: 5/4;
+        aspect-ratio: 4/3; // Idem to Sponsor Preview
         object-fit: cover;
       }
 

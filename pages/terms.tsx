@@ -15,7 +15,7 @@ export default function Terms() {
       <ChangeBackgroundColor color="#fff" />
 
       <main className={css.supportPage}>
-        <PageTitle title="Terms of agreement" returnBtn></PageTitle>
+        <PageTitle title="Terms of agreement" returnBtn className={css.pageTitle}></PageTitle>
         <TableofContent title="Table of content">
           <ul>
             {anchors.map((anchor) => (
@@ -52,8 +52,6 @@ export default function Terms() {
             your copyright, you should consider first contacting an attorney.
           </p>
         </section>
-
-        <Button>Back</Button>
       </main>
     </>
   );

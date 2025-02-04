@@ -19,7 +19,7 @@ export default function NextChallengeSection() {
       <div className={css.btns}>
         <Button href="/challenges">All Challenges</Button>
         <Button href="/challenges#private" outline>
-          Your Private Challenges
+          Your private Challenges
         </Button>
       </div>
     </section>

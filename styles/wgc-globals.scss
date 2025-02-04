@@ -103,7 +103,8 @@
     color: var(--black);
 
     &.textLink {
-      color: var(--primary);
+      color: var(--black);
+      opacity: 0.7;
       text-decoration: underline;
     }
   }

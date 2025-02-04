@@ -17,12 +17,16 @@
   .rankings {
     width: 100%;
     border-collapse: collapse;
+    max-width: var(--max-block-width);
+    margin-inline: auto;
 
     > thead {
       color: var(--white);
       font-size: var(--fs-xs);
       text-transform: capitalize;
       display: flex;
+      // Left : border + img width + gap
+      padding-inline: calc(3px + 40px + var(--sm)) calc(3px + var(--sm));
 
       > tr {
         width: 100%;
@@ -106,6 +110,7 @@
     gap: var(--sm);
     width: 100%;
     align-items: flex-end;
+    max-width: var(--max-block-width);
 
     &Step {
       width: 100%;

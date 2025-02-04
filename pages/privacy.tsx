@@ -16,7 +16,7 @@ export default function Privacy() {
     <>
       <ChangeBackgroundColor color="#fff" />
       <main className={css.supportPage}>
-        <PageTitle title="Privacy Policy" returnBtn></PageTitle>
+        <PageTitle title="Privacy Policy" returnBtn className={css.pageTitle}></PageTitle>
         <TableofContent title="Table of content">
           <ul>
             {anchors.map((anchor) => (
@@ -49,8 +49,6 @@ export default function Privacy() {
             and deletion.
           </p>
         </section>
-
-        <Button>Back</Button>
       </main>
     </>
   );

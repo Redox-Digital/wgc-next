@@ -53,9 +53,21 @@ export default function Clubhouse() {
     <>
       <ChangeBackgroundColor color="#002F18" />
       {logged ? (
-        <Hero title={'Hello, Jonas Jaeggi'} gradient>
-          <p>Welcome to your favorite golf platform!</p>
-          <p>What do you want to do today ?</p>
+        <Hero
+          title={
+            <>
+              Welcome back,&nbsp;
+              <br />
+              Jonas Jaeggi
+            </>
+          }
+          gradient
+        >
+          <p>
+            Nice to see you on your favorite golf platform!
+            <br />
+            What do you want to do today ?
+          </p>
           <div className={css.heroBtns}>
             <Button href={'/challenges'} darkBg>
               Join a Challenge
@@ -65,22 +77,25 @@ export default function Clubhouse() {
               Enter a score
             </Button>
             <Button href={'/profile'} outline darkBg>
-              Your profile
+              Check your profile
             </Button>
-            <StatBar
-              elements={[
-                { name: 'Joined Challenges', value: 2 },
-                { name: 'Ongoing Challenges', value: 13 },
-                { name: 'Monthly rank', value: '#4' },
-              ]}
-              className={css.userStatBar}
-            />
           </div>
+          <StatBar
+            elements={[
+              { name: 'Joined Challenges', value: 2 },
+              { name: 'Ongoing Challenges', value: 13 },
+              { name: 'Monthly rank', value: '#4' },
+            ]}
+            className={css.userStatBar}
+          />
         </Hero>
       ) : (
-        <Hero title={'Playing golf physically while competing digitally'} gradient>
-          <p>Welcome to your favorite golf platform!</p>
-          <p>What do you want to do today ?</p>
+        <Hero title={<>Playing golf physically while competing digitally</>} gradient>
+          <p>
+            Welcome to your favorite golf platform!
+            <br />
+            What do you want to do today ?
+          </p>
           <div className={css.heroBtns}>
             <Button href={'/profile/login'} darkBg>
               Login
@@ -113,7 +128,7 @@ export default function Clubhouse() {
         <CTA
           title={'Challenge your friends!'}
           description={<p>Create one and invite your friends to start playing!</p>}
-          btnLabel={'Create Private Challenge'}
+          btnLabel={'Create private Challenge'}
           href={'/private/create'}
           img={'/layouts/clubhouse/private-cta.webp'}
           opacity={0.3}

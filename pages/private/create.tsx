@@ -6,14 +6,14 @@ import FormBuilder from '@/components/layouts/FormBuilder';
 export default function CreatePrivateChallenge() {
   const formSteps: FormStep[] = [
     {
-      title: 'Create your Private Challenge',
+      title: 'Create your private Challenge',
       description: 'Play with your friends.',
       body: (
         <>
           <TextInput id={'name'} label={'Challenge Name'} type={'text'} />
           <TextInput id={'description'} label={'Description (optional)'} type={'textarea'} />
-          <TextInput id={'banner'} label={'Banner'} type={'image'} />
-          <TextInput id={'prizes'} label={'Leaderboard Prizes'} type={'image'} />
+          <TextInput id={'banner'} label={'Banner'} type={'file'} />
+          <TextInput id={'prizes'} label={'Leaderboard Prizes'} type={'file'} />
         </>
       ),
       id: 0,
@@ -39,30 +39,7 @@ export default function CreatePrivateChallenge() {
             id={'challengeNb'}
             label={'Challenge counted for Leaderboard'}
             type={'number'}
-          />
-          <SelectInput
-            id={'status'}
-            label={'Status'}
-            options={[
-              {
-                value: 'amateur',
-                label: 'Amateur',
-              },
-              {
-                value: 'pro',
-                label: 'Pro',
-              },
-            ]}
-          />
-          <SelectInput
-            id={'game'}
-            label={'Game Type'}
-            options={[
-              {
-                value: 'netsf',
-                label: 'Net Stableford',
-              },
-            ]}
+            placeholder="1"
           />
           <SelectInput
             id={'fee'}
@@ -76,6 +53,32 @@ export default function CreatePrivateChallenge() {
             width="50"
           />
           <TextInput id={'cost'} label={'Cost to join (USD)'} type={'number'} width="50" />
+          <SelectInput
+            id={'status'}
+            label={'Status'}
+            options={[
+              {
+                value: 'amateur',
+                label: 'Amateur',
+              },
+              {
+                value: 'pro',
+                label: 'Pro',
+              },
+            ]}
+            width="50t"
+          />
+          <SelectInput
+            id={'game'}
+            label={'Game Type'}
+            options={[
+              {
+                value: 'netsf',
+                label: 'Net Stableford',
+              },
+            ]}
+            width="50t"
+          />
         </>
       ),
       id: 2,

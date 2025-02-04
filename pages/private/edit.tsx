@@ -13,38 +13,14 @@ export default function EditPrivateChallenge() {
         {/* Address */}
         <TextInput id={'name'} label={'Challenge Name'} type={'text'} />
         <TextInput id={'description'} label={'Description (optional)'} type={'textarea'} />
-        <TextInput id={'banner'} label={'Banner'} type={'image'} />
-        <TextInput id={'prizes'} label={'Leaderboard Prizes'} type={'image'} />
+        <TextInput id={'banner'} label={'Banner'} type={'file'} />
+        <TextInput id={'prizes'} label={'Leaderboard Prizes'} type={'file'} />
 
         <TextInput id={'startDate'} label={'Start Date'} type={'date'} width="50" />
         <TextInput id={'endDate'} label={'End Date'} type={'date'} width="50" />
         <Button onClick={() => null}>Add Challenge</Button>
 
         <TextInput id={'challengeNb'} label={'Challenge counted for Leaderboard'} type={'number'} />
-        <SelectInput
-          id={'status'}
-          label={'Status'}
-          options={[
-            {
-              value: 'amateur',
-              label: 'Amateur',
-            },
-            {
-              value: 'pro',
-              label: 'Pro',
-            },
-          ]}
-        />
-        <SelectInput
-          id={'game'}
-          label={'Game Type'}
-          options={[
-            {
-              value: 'netsf',
-              label: 'Net Stableford',
-            },
-          ]}
-        />
 
         <SelectInput
           id={'fee'}
@@ -58,6 +34,33 @@ export default function EditPrivateChallenge() {
           width="50"
         />
         <TextInput id={'cost'} label={'Cost to join (USD)'} type={'number'} width="50" />
+
+        <SelectInput
+          id={'status'}
+          label={'Status'}
+          options={[
+            {
+              value: 'amateur',
+              label: 'Amateur',
+            },
+            {
+              value: 'pro',
+              label: 'Pro',
+            },
+          ]}
+          width="50t"
+        />
+        <SelectInput
+          id={'game'}
+          label={'Game Type'}
+          options={[
+            {
+              value: 'netsf',
+              label: 'Net Stableford',
+            },
+          ]}
+          width="50t"
+        />
       </form>
 
       <button className={css.deleteTextLink} onClick={() => history.back()}>

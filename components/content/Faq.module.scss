@@ -3,6 +3,10 @@
   flex-direction: column;
   gap: var(--xs);
 
+  width: 100%;
+  // max-width: var(--max-block-width);
+  margin-inline: auto;
+
   > details {
     border: solid 1px var(--grey);
     border-radius: var(--md);

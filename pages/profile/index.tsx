@@ -62,17 +62,17 @@ export default function Profile() {
       <section>
         <StatBar title="Bag" elements={bag} className={css.bag} />
         <SettingButton picto="/pictograms/user.svg" href="/profile/gear">
-          Edit Gear
+          Edit bag
         </SettingButton>
       </section>
 
       <section>
         <h6>Profile</h6>
         <SettingButton href="/profile/history" picto="/pictograms/user.svg">
-          Challenge History
+          Challenge history
         </SettingButton>
         <SettingButton picto="/pictograms/user.svg" href="/profile/edit">
-          Edit Profile
+          Edit profile
         </SettingButton>
         <SettingButton picto="/pictograms/user.svg" href="/profile/wallet">
           Wallet
