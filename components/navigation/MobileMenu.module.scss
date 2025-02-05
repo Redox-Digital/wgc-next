@@ -9,8 +9,8 @@
       rgba(var(--black-rgb), 0.15) 85%
     ),
     var(--black);
-  height: calc(100vh);
-  height: calc(100svh);
+  height: 100vh;
+  height: 100svh;
   position: fixed;
   top: 0;
   scrollbar-width: none;

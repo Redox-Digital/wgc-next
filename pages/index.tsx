@@ -14,31 +14,37 @@ import { StatBar } from './profile';
 const sponsors: Sponsor[] = [
   {
     name: 'Extracurricular',
-    img: '/layouts/clubhouse/sponsors/sponsor_excr.png',
+    img: '/sponsors/sponsor_excr.png',
     runningChallenge: 2,
     url: '/extracurricular',
   },
   {
     name: 'Coca Cola',
-    img: '/layouts/clubhouse/sponsors/sponsor_coca.png',
+    img: '/sponsors/sponsor_coca.png',
     runningChallenge: 4,
     url: '/extracurricular',
   },
   {
     name: 'TaylorMade',
-    img: '/layouts/clubhouse/sponsors/sponsor_taylormade.png',
+    img: '/sponsors/sponsor_bridgestone.png',
     runningChallenge: 0,
     url: '/extracurricular',
   },
   {
     name: '4Aces',
-    img: '/layouts/clubhouse/sponsors/sponsor_4aces.png',
+    img: '/sponsors/sponsor_excr.png',
     runningChallenge: 2,
     url: '/extracurricular',
   },
   {
     name: 'Bridgestone',
-    img: '/layouts/clubhouse/sponsors/sponsor_bridgestone.png',
+    img: '/sponsors/sponsor_bridgestone.png',
+    runningChallenge: 2,
+    url: '/extracurricular',
+  },
+  {
+    name: 'Extracurricular',
+    img: '/sponsors/sponsor_excr.png',
     runningChallenge: 2,
     url: '/extracurricular',
   },
@@ -82,8 +88,8 @@ export default function Clubhouse() {
           </div>
           <StatBar
             elements={[
-              { name: 'Joined Challenges', value: 2 },
-              { name: 'Ongoing Challenges', value: 13 },
+              { name: 'HCP', value: '16.0' },
+              { name: 'Ongoing Challenges', value: 13 }, // Active Challenge in total
               { name: 'Monthly rank', value: '#4' },
             ]}
             className={css.userStatBar}
