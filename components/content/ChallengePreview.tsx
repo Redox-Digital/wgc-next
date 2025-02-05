@@ -58,11 +58,12 @@ export default function ChallengePreview({
               <span className={css.pool}>{pool}$</span>
             </div>
             <div className={css.bottomLine}>
+              <span className={css.hcp}>HCP {hcp}</span>
               <span className={css.players}>
                 {players}{' '}
-                <Image src={'/pictograms/user-white.svg'} alt={''} width={15} height={15} />
+                <Image src={'/pictograms/user-white.svg'} alt={''} width={12} height={12} />
               </span>
-              <span className={css.timer}>Starting in : 10h39m04s</span>
+              <span className={css.timer}>Starts in: 2d 10h 39m 04s</span>
             </div>
           </div>
 
@@ -87,11 +88,6 @@ export default function ChallengePreview({
               Game type
               <br />
               <b>{gameType}</b>
-            </span>
-            <span>
-              HCP
-              <br />
-              <b>{hcp}</b>
             </span>
           </div>
 
