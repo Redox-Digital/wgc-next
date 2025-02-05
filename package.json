@@ -14,6 +14,7 @@
     "@types/react-dom": "18.2.7",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.1.4",
+    "lottie-react": "^2.4.1",
     "next": "^14.1.4",
     "npm": "^10.5.0",
     "react": "18.2.0",
