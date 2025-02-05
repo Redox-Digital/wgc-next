@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import css from './Menu.module.scss';
 import burgerStyle from './Burger.module.scss';
-import { NavLink, MainNavLinks, UserLinks } from '@/constants/Navigation';
+import { NavLink, MainNavLinks, UserLinks, LegalLinks, socialLinks } from '@/constants/Navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import MobileMenu from './MobileMenu';
 import Button from './Button';
+import { StatBar } from '@/pages/profile';
 
 type MenuProps = {
   logo: string;
@@ -25,7 +26,7 @@ export default function Menu({ logo, logoUrl, links, sponsored, logged, setLogge
 
   return (
     <>
-      <nav className={`${css.menu} ${menuOpen ? css.open : ''}`}>
+      <nav className={`${css.topMenu} ${menuOpen ? css.open : ''}`}>
         <div className={css.mainMenu}>
           <div className={css.mainMenu__container}>
             <button
@@ -37,12 +38,16 @@ export default function Menu({ logo, logoUrl, links, sponsored, logged, setLogge
               <span></span>
             </button>
 
-            <Link href="/" className={css.logo}>
-              <h4>{menuOpen ? 'Menu' : 'World Golf Challenge'}</h4>
-            </Link>
+            {menuOpen ? (
+              <h4 className={css.logo}>Menu</h4>
+            ) : (
+              <Link href="/" className={css.logo}>
+                <Image src="/logos/logo-wgc-full-white.svg" alt="" width={250} height={70} />
+              </Link>
+            )}
 
             {logged ? (
-              <Link href="/profile" className={css.profile} onClick={toggleMenu}>
+              <Link href="/profile" className={css.profile} onClick={() => setMenuOpen(false)}>
                 <Image
                   src="https://wgc.gg/images/profile-picture.png"
                   width={40}
@@ -53,17 +58,20 @@ export default function Menu({ logo, logoUrl, links, sponsored, logged, setLogge
             ) : (
               <>
                 <Link
-                  href="/join"
+                  href="/profile/login"
                   className={`${css.profile} ${css.notLogged}`}
-                  onClick={toggleMenu}
+                  onClick={() => setMenuOpen(false)}
                 >
-                  <Image src="/pictograms/user.svg" width={20} height={20} alt="Username" />
+                  <Image src="/pictograms/user-white.svg" width={16} height={16} alt="" />
                 </Link>
               </>
             )}
           </div>
         </div>
       </nav>
+
+      <SideMenu toggleLogged={toggleLog} />
+
       <MobileMenu
         open={menuOpen}
         toggleMenu={toggleMenu}
@@ -99,5 +107,69 @@ export function UserMenu({ name, img, hcp, className, flag = '🏳️', onClick 
         See your profile
       </Button>
     </div>
+  );
+}
+
+type SideMenuProps = {
+  toggleLogged: () => void;
+};
+
+export function SideMenu({ toggleLogged }: SideMenuProps) {
+  return (
+    <nav className={`${css.sideMenu}`}>
+      <UserMenu
+        name={'Jonas Jaeggi'}
+        hcp={'16.0'}
+        img={'https://wgc.gg/images/profile-picture.png'}
+      />
+
+      <div className={css.navigation}>
+        <h4>Navigation</h4>
+        {MainNavLinks.map((l) => (
+          <Link key={l.url} href={l.url} className={css.link}>
+            {l.icon && <Image src={l.icon} alt={''} width={20} height={20} />}
+            {l.label}
+          </Link>
+        ))}
+      </div>
+
+      <StatBar
+        elements={[
+          {
+            name: 'Ongoing Challenges',
+            value: 13,
+            picto: '',
+          },
+          {
+            name: 'Monthly rank',
+            value: '#4',
+            picto: '',
+          },
+        ]}
+        className={css.stats}
+      />
+
+      <Button outline darkBg small onClick={toggleLogged} className={css.signOutBtn}>
+        Sign out
+      </Button>
+
+      <div className={css.socials}>
+        {socialLinks.map((link) => (
+          <Link key={link.url} href={link.url} title={link.label}>
+            <Image src={link.icon || ''} alt={link.label} height={18} width={18} />
+          </Link>
+        ))}
+      </div>
+
+      <div className={css.legal}>
+        {LegalLinks.map((link) => (
+          <Link key={link.url} href={link.url}>
+            {link.label}
+          </Link>
+        ))}
+      </div>
+
+      <Image src="/logos/wgc-text.svg" alt="" width={300} height={80} />
+    </nav>
   );
 }

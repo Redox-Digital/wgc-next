@@ -34,6 +34,10 @@
   --shadow-card: 0px 12px 16px -20px rgba(62, 85, 65, 0.15);
   --shadow-card-sm: 0px 4px 12px 0px rgba(51, 67, 54, 0.1);
 
+  --fs-p: 16px;
+  --fs-sm: 12px;
+  --fs-xs: 10px;
+
   --fs-h1: 28px;
   --fs-h2: 24px;
   --fs-h3: 20px;
@@ -41,11 +45,17 @@
   --fs-h5: 18px;
   --fs-h6: var(--fs-xs);
 
-  --fs-p: 16px;
-  --fs-sm: 12px;
-  --fs-xs: 10px;
+  @media screen and (min-width: 1200px) {
+    --fs-p: 18px;
+    --fs-sm: 15px;
+    --fs-xs: 12px;
 
-  @media screen and (min-width: 900px) {
+    --fs-h1: 42px;
+    --fs-h2: 28px;
+    --fs-h3: 22px;
+    --fs-h4: 15px;
+    --fs-h5: 18px;
+    --fs-h6: var(--fs-xs);
   }
 
   // Testing new spacing system
@@ -69,14 +79,25 @@
   }
 
   --navbar-height: 70px;
+  --side-menu-width: 0px;
 
   --fullscreen-height: calc(100vh - var(--navbar-height) - var(--lg) - var(--lg));
+  --fullscreen-height: calc(100svh - var(--navbar-height) - var(--lg) - var(--lg));
 
   --max-large-container-width: 1600px;
   --max-container-width: 1200px;
   --max-block-width: 600px;
   --max-paragraph-width: 720px;
   --max-card-width: 400px;
+
+  @media screen and (min-width: 1200px) {
+    --navbar-height: 0px;
+    --side-menu-width: 250px;
+  }
+
+  @media screen and (min-width: 1400px) {
+    --side-menu-width: 300px;
+  }
 }
 
 /*
