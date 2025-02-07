@@ -16,6 +16,10 @@
     border-radius: var(--md);
   }
 
+  @media screen and (min-width: 1200px) {
+    max-width: var(--max-container-width);
+  }
+
   .container {
     width: 100%;
     max-width: var(--max-container-width);
@@ -136,5 +140,20 @@
     color: var(--black);
     padding: 2px var(--sm);
     border-radius: 1000px;
+  }
+}
+
+.mobileImg {
+  display: block;
+
+  @media screen and (min-width: 1200px) {
+    display: none;
+  }
+}
+
+.deskImg {
+  display: none;
+  @media screen and (min-width: 1200px) {
+    display: block;
   }
 }

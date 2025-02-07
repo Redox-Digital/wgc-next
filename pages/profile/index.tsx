@@ -11,12 +11,12 @@ type StatProps = {
 export default function Profile() {
   const bag = [
     {
-      name: 'Irons',
-      picto: '/brands/br.png',
-    },
-    {
       name: 'Driver',
       picto: '/brands/wi.png',
+    },
+    {
+      name: 'Irons',
+      picto: '/brands/br.png',
     },
     {
       name: 'Putter',
@@ -61,23 +61,23 @@ export default function Profile() {
       <StatBar elements={stats} />
       <section>
         <StatBar title="Bag" elements={bag} className={css.bag} />
-        <SettingButton picto="/pictograms/user.svg" href="/profile/gear">
+        <SettingButton picto="/pictograms/edit-dark.svg" href="/profile/gear">
           Edit bag
         </SettingButton>
       </section>
 
       <section>
         <h6>Profile</h6>
-        <SettingButton href="/profile/history" picto="/pictograms/user.svg">
+        <SettingButton picto="/pictograms/list-dark.svg" href="/profile/history">
           Challenge history
         </SettingButton>
-        <SettingButton picto="/pictograms/user.svg" href="/profile/edit">
+        <SettingButton picto="/pictograms/gear-dark.svg" href="/profile/edit">
           Edit profile
         </SettingButton>
-        <SettingButton picto="/pictograms/user.svg" href="/profile/wallet">
+        <SettingButton picto="/pictograms/wallet-dark.svg" href="/profile/wallet">
           Wallet
         </SettingButton>
-        <SettingButton picto="/pictograms/user.svg" className={css.danger}>
+        <SettingButton picto="/pictograms/logout-danger.svg" className={css.danger}>
           Logout
         </SettingButton>
       </section>

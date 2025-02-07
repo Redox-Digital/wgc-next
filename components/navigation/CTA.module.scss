@@ -11,6 +11,11 @@
   justify-content: space-between;
   width: 100%;
 
+  @media screen and (min-width: 1200px) {
+    height: 360px;
+    max-width: var(--max-block-width);
+  }
+
   > img {
     z-index: 0;
     object-fit: cover;
@@ -49,6 +54,10 @@
     p {
       max-width: 320px;
       opacity: 1;
+
+      @media screen and (min-width: 900px) {
+        max-width: 420px;
+      }
     }
   }
 }

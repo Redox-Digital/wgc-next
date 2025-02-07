@@ -7,6 +7,9 @@
   min-height: var(--fullscreen-height);
   position: relative;
 
+  max-width: var(--max-container-width);
+  margin-inline: auto;
+
   section {
     gap: var(--lg);
     padding-inline: var(--sct-horiz-margin);
@@ -37,6 +40,11 @@
     flex-direction: column;
     gap: var(--sm);
     align-items: center;
+
+    @media screen and (min-width: 1200px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   }
 }
 

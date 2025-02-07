@@ -37,6 +37,14 @@ export default function Footer({ sponsored }: Props) {
             ))}
           </div>
 
+          <Image
+            className={css.deskImg}
+            src={'/logos/logo-wgc-icon-gradient.svg'}
+            alt={''}
+            width={80}
+            height={80}
+          />
+
           <div className={`${css.col} ${css.mobile}`}>
             <h4>Socials</h4>
             <div className={css.socials}>
@@ -89,7 +97,13 @@ export default function Footer({ sponsored }: Props) {
               </select>
             </small>
           </div>
-          <Image src={'/logos/logo-wgc-icon-gradient.svg'} alt={''} width={80} height={80} />
+          <Image
+            className={css.mobileImg}
+            src={'/logos/logo-wgc-icon-gradient.svg'}
+            alt={''}
+            width={80}
+            height={80}
+          />
         </div>
       </div>
     </footer>

@@ -9,6 +9,11 @@ export default function LeaderboardPage() {
   const [timeRadio, setTimeRadio] = useState<'month' | 'all-time'>('month');
   const [hcpRadio, setHcpRadio] = useState<'single' | 'up to 18' | 'up to 54'>('single');
 
+  const setBothRadios = (time?: 'month' | 'all-time', hcp?: 'single' | 'up to 18' | 'up to 54') => {
+    time && setTimeRadio(time);
+    hcp && setHcpRadio(hcp);
+  };
+
   return (
     <>
       <header className={css.header}>
@@ -16,7 +21,70 @@ export default function LeaderboardPage() {
           <p>Play well, play more, and climb up the monthly and all-time leaderboards!</p>
         </PageTitle>
 
-        <div className={css.toggles}>
+        <div className={`${css.toggles} ${css.desktop}`}>
+          <label htmlFor="m-single">
+            <input
+              type="radio"
+              name="toggleDesktop"
+              id="m-single"
+              onClick={() => setBothRadios('month', 'single')}
+              checked={timeRadio === 'month' && hcpRadio === 'single'}
+            />
+            <span>Monthly – HCP Single</span>
+          </label>
+          <label htmlFor="m-18">
+            <input
+              type="radio"
+              name="toggleDesktop"
+              id="m-18"
+              onClick={() => setBothRadios('month', 'up to 18')}
+              checked={timeRadio === 'month' && hcpRadio === 'up to 18'}
+            />
+            <span>Monthly – HCP up to 18</span>
+          </label>
+          <label htmlFor="m-54">
+            <input
+              type="radio"
+              name="toggleDesktop"
+              id="m-54"
+              onClick={() => setBothRadios('month', 'up to 54')}
+              checked={timeRadio === 'month' && hcpRadio === 'up to 54'}
+            />
+            <span>Monthly – HCP up to 54</span>
+          </label>
+          <label htmlFor="a-single">
+            <input
+              type="radio"
+              name="toggleDesktop"
+              id="a-single"
+              onClick={() => setBothRadios('all-time', 'single')}
+              checked={timeRadio === 'all-time' && hcpRadio === 'single'}
+            />
+            <span>All-Time – HCP Single</span>
+          </label>
+          <label htmlFor="a-18">
+            <input
+              type="radio"
+              name="toggleDesktop"
+              id="a-18"
+              onClick={() => setBothRadios('all-time', 'up to 18')}
+              checked={timeRadio === 'all-time' && hcpRadio === 'up to 18'}
+            />
+            <span>All-Time – HCP up to 18</span>
+          </label>
+          <label htmlFor="a-54">
+            <input
+              type="radio"
+              name="toggleDesktop"
+              id="a-54"
+              onClick={() => setBothRadios('all-time', 'up to 54')}
+              checked={timeRadio === 'all-time' && hcpRadio === 'up to 54'}
+            />
+            <span>All-Time – HCP up to 54</span>
+          </label>
+        </div>
+
+        <div className={`${css.toggles} ${css.mobile}`}>
           <div className={css.timeRadio}>
             <label htmlFor="monthly">
               <input

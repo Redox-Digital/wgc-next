@@ -1,6 +1,8 @@
 .ctaSct {
   gap: var(--md);
   padding: var(--sct-def-margins);
+  max-width: var(--max-container-width);
+  margin-inline: auto;
 
   @media screen and (min-width: 900px) {
     display: flex;
@@ -12,6 +14,11 @@
   background-color: var(--white);
   border-radius: var(--md);
   padding: var(--sct-def-margins) !important;
+
+  @media screen and (min-width: 1200px) {
+    max-width: var(--max-container-width);
+    margin-inline: auto;
+  }
 }
 
 .logoSct {
@@ -36,4 +43,8 @@
 .userStatBar {
   width: 100%;
   max-width: 400px;
+
+  @media screen and (min-width: 1200px) {
+    display: none;
+  }
 }

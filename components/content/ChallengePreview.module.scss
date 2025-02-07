@@ -1,68 +1,120 @@
 .challengeDesktop {
   display: none;
-  border-radius: 20px;
-  background-color: var(--white);
+  flex-direction: column;
+  gap: var(--sm);
+  color: var(--white);
+  background-color: var(--primary);
+  background: var(--gradient-challenge);
+
   width: 100%;
-  grid-template-columns: var(--grid-template);
-  grid-template-rows: 1fr;
-  grid-column-gap: var(--padding);
-  align-items: center;
-  padding: 10px var(--padding);
+  max-width: calc((100% - var(--sm)) / 2);
+  padding: var(--md);
+  border-radius: var(--md);
 
   @media screen and (min-width: 1200px) {
-    display: grid;
+    display: flex;
   }
 
-  &.dark {
+  &.yourChallenges {
+    width: 100%;
   }
 
-  .id {
-    width: 50px;
+  .head,
+  .body,
+  .foot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  .id,
-  .hcp,
-  .pool {
-    font-weight: 900;
-    font-size: var(--fs-sm);
-    font-family: var(--montserrat-font);
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
+  .head {
+    align-items: center;
+    gap: var(--sm);
+
+    .img {
+      width: 100%;
+      max-width: 60px;
+      height: 45px;
+      background-color: var(--white);
+      border-radius: var(--xs);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 6px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    > h3 {
+      width: 100%;
+      color: var(--accent);
+    }
+
+    .players {
+      display: flex;
+      flex-direction: row;
+
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      height: fit-content;
+
+      > li {
+        position: relative;
+
+        outline: var(--primary) 3px solid;
+        border-radius: 1000px;
+        overflow: hidden;
+
+        width: 32px;
+        height: 32px;
+
+        margin-left: calc(var(--sm) * -1);
+
+        > span {
+          position: absolute;
+          inset: 0;
+          line-height: 1em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          background-color: rgba(var(--primary-rgb), 0.5);
+        }
+      }
+    }
   }
 
-  .name {
-    width: auto;
-    min-width: 150px;
+  .body {
+    background-color: var(--black);
+    padding: var(--sm);
+    border-radius: var(--sm);
+
+    font-size: var(--sm);
+    line-height: 1.2em;
+
+    b {
+      color: var(--accent);
+    }
   }
 
-  .hcp {
-    font-weight: 700;
-    width: fit-content;
-  }
-
-  .img {
-    padding: 0;
-  }
-
-  .pool {
-    padding: 5px 10px;
-    background: var(--gold);
-    border-radius: 10px;
+  .foot > .fee {
+    padding: 8px 24px;
+    outline: var(--white) solid 1px;
+    border-radius: 1000px;
     text-align: center;
-    width: fit-content;
-  }
 
-  .players {
-    text-align: center;
-  }
-
-  .dates,
-  .gameType {
     font-size: var(--fs-sm);
-  }
+    line-height: 1em;
 
-  .btn {
-    justify-self: end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
