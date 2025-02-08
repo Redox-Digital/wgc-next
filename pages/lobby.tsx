@@ -67,7 +67,7 @@ export default function Lobby() {
           </Link>
         </div>
 
-        <Image src="/layouts/clubhouse/clubhouse_hero.jpg" alt="" width={400} height={180} />
+        <Image src="/layouts/clubhouse/clubhouse_hero.jpg" alt="" width={700} height={466} />
 
         <div className={css.introInfos}>
           <div className={css.timer}>
@@ -95,17 +95,22 @@ export default function Lobby() {
       </header>
       <main className={css.main}>
         <section className={css.rules}>
-          <h3>Game Rules</h3>
-          <p>
-            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.{' '}
-          </p>
-          {rules.map((rule, key) => (
-            <div key={key} className={css.rule}>
-              <label className="xs">{rule.label}</label>
-              <small>{rule.value}</small>
-            </div>
-          ))}
+          <div className={css.title}>
+            <h3>Game Rules</h3>
+            <p>
+              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+
+          <div className={css.boxes}>
+            {rules.map((rule, key) => (
+              <div key={key} className={css.rule}>
+                <label className="xs">{rule.label}</label>
+                <small>{rule.value}</small>
+              </div>
+            ))}
+          </div>
         </section>
 
         <Leaderboard players={dummyLeaderboard} title={'Leaderboard'} className={css.leaderboard} />

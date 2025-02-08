@@ -6,6 +6,7 @@ import CTA from '@/components/navigation/CTA';
 import SectionTitle from '@/components/layouts/SectionTitle';
 import ChallengePreview from '@/components/content/ChallengePreview';
 import { ChangeBackgroundColor } from '..';
+import Button from '@/components/navigation/Button';
 
 export default function SponsoredClubhouse() {
   const challenges: ChallengePreview[] = [
@@ -98,7 +99,10 @@ export default function SponsoredClubhouse() {
           ))}
         </div>
 
-        <PricePool />
+        <PricePool className={css.clubhousePricePool} />
+        <Button href="/extracurricular/rankings" className={css.homeBtn}>
+          All leaderboards
+        </Button>
       </main>
 
       <section className={css.homeCTAs}>

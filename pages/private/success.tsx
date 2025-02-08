@@ -9,7 +9,7 @@ import AnimationLottie from '@/components/content/AnimationLottie';
 export default function CreatePrivateSuccess() {
   return (
     <main className={css.successPage}>
-      <AnimationLottie animationPath={SuccessAnimation} className={css.animation} loop={true} />
+      <AnimationLottie animationPath={SuccessAnimation} className={css.animation} loop={false} />
 
       <PageTitle title={'Your Challenge was created successfuly'} className={css.titles} center>
         <p>Invite your friends and don&apos;t forget to join!</p>

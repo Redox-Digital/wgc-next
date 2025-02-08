@@ -21,7 +21,9 @@ export default function ProfileSuccess() {
         <AnimationLottie animationPath={SuccessAnimation} className={css.animation} loop={false} />
         <PageTitle title="Your account was created successfully!" className={css.titles}>
           <p>
-            You will recieve an e-mail confirmation soon. In the meantime, let us show you around.
+            You will recieve an e-mail confirmation soon.
+            <br />
+            In the meantime, let us show you around.
             <br />
             <br />
             <small>

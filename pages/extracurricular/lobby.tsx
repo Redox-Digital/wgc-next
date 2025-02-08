@@ -1,5 +1,4 @@
 import css from '@/pages/Lobby.module.scss'; // Using the main Lobby's CSS file
-import Hero from '@/components/layouts/Hero';
 import PricePool from '@/components/layouts/PricePool';
 import Image from 'next/image';
 import Button, { ReturnButton } from '@/components/navigation/Button';
@@ -81,19 +80,22 @@ export default function SponsoredLobby() {
       </Modal>
 
       <header className={css.header}>
-        <div className={css.topBtns}>
+        <div className={css.top}>
           <ReturnButton />
+          <h1>Spring Challenge - EXTRACURRICULAR</h1>
         </div>
 
-        <Image src="/layouts/excr/lobby_banner.png" alt="" width={400} height={180} />
-        <h1>Spring Challenge - EXTRACURRICULAR</h1>
-        <div className={css.timer}>
-          <small>
-            <b>Ongoing</b> – Ends in :
-          </small>
-          <small>1 Day 10:30:02</small>
+        <Image src="/layouts/excr/lobby_banner.png" alt="" width={700} height={466} />
+
+        <div className={css.introInfos}>
+          <div className={css.timer}>
+            <small>
+              <b>Ongoing</b> – Ends in :
+            </small>
+            <small>1 Day 10:30:02</small>
+          </div>
+          <CopyLink text={'https://wgc.gg/extracurricular/lobby/7874'} />
         </div>
-        <CopyLink text={'https://wgc.gg/extracurricular/lobby/7874'} />
 
         {/* <PricePool moneyPool /> */}
 
@@ -111,17 +113,22 @@ export default function SponsoredLobby() {
       </header>
       <main className={css.main}>
         <section className={css.rules}>
-          <h3>Game Rules</h3>
-          <p>
-            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.{' '}
-          </p>
-          {rules.map((rule, key) => (
-            <div key={key} className={css.rule}>
-              <label className="xs">{rule.label}</label>
-              <small>{rule.value}</small>
-            </div>
-          ))}
+          <div className={css.title}>
+            <h3>Game Rules</h3>
+            <p>
+              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+
+          <div className={css.boxes}>
+            {rules.map((rule, key) => (
+              <div key={key} className={css.rule}>
+                <label className="xs">{rule.label}</label>
+                <small>{rule.value}</small>
+              </div>
+            ))}
+          </div>
         </section>
 
         <Leaderboard players={dummyLeaderboard} title={'Leaderboard'} className={css.leaderboard} />

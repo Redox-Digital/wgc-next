@@ -54,6 +54,11 @@
 
   @media screen and (min-width: 1200px) {
     display: flex;
+    padding: var(--lg) var(--sm);
+  }
+
+  @media screen and (min-width: 1400px) {
+    padding-inline: var(--md);
   }
 
   flex-direction: column;
@@ -61,11 +66,16 @@
   gap: var(--md);
   justify-content: space-between;
 
-  padding: var(--lg) var(--md);
-
-  > img {
+  > a > img {
     width: 100%;
     max-width: 200px;
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--sm);
   }
 
   .navigation {

@@ -20,6 +20,10 @@
 
   border-radius: 1000px;
 
+  @media screen and (min-width: 1200px) {
+    min-width: 120px; // DEV : TBC
+  }
+
   &:hover {
     cursor: pointer;
     transition: all 0.3s ease-in-out;

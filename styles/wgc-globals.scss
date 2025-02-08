@@ -16,6 +16,11 @@ body {
 
   @media screen and (min-width: 1200px) {
     margin-left: var(--side-menu-width);
+    padding-inline: var(--md);
+  }
+
+  @media screen and (min-width: 1600px) {
+    padding-inline: var(--lg);
   }
 
   * {

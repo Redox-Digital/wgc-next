@@ -1,3 +1,9 @@
+.header,
+.main {
+  max-width: var(--max-container-width);
+  margin-inline: auto;
+}
+
 .header {
   padding: var(--sct-def-margins);
   padding-top: calc(var(--navbar-height) + var(--lg));
@@ -27,6 +33,9 @@
     > .pool {
       order: 2;
       width: calc((100% - var(--sm)) / 2);
+      @media screen and (min-width: 900px) {
+        height: 180px;
+      }
     }
 
     > .btns {
@@ -79,10 +88,16 @@
 
   > img {
     max-width: 100%;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: var(--sm);
     height: auto;
     aspect-ratio: 3/2;
+    max-height: 180px;
+    outline: solid 1px var(--grey);
+
+    @media screen and (min-width: 756px) {
+      aspect-ratio: 2;
+    }
   }
 
   .introInfos {
@@ -126,8 +141,7 @@
 
 .rules {
   display: flex;
-  flex-direction: row !important;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: var(--sm);
 
   width: 100%;
@@ -137,6 +151,19 @@
   > h3,
   > p {
     width: 100%;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
+  }
+
+  .boxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--sm);
   }
 
   .rule {
@@ -152,6 +179,21 @@
 
     label {
       color: var(--accent);
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    flex-direction: row;
+    max-width: 100%;
+    gap: var(--lg);
+
+    .title {
+      max-width: 400px;
+    }
+
+    .rule {
+      width: calc((100% - var(--sm) * 2) / 3);
+      height: fit-content;
     }
   }
 }
@@ -186,6 +228,7 @@
 .ctaSct {
   gap: var(--md);
   padding: var(--sct-def-margins);
+  justify-content: center;
 
   @media screen and (min-width: 900px) {
     display: flex;

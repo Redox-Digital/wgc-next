@@ -70,7 +70,7 @@ export default function Menu({ logo, logoUrl, links, sponsored, logged, setLogge
         </div>
       </nav>
 
-      <SideMenu toggleLogged={toggleLog} />
+      <SideMenu toggleLogged={toggleLog} logged={logged} />
 
       <MobileMenu
         open={menuOpen}
@@ -111,17 +111,33 @@ export function UserMenu({ name, img, hcp, className, flag = '🏳️', onClick 
 }
 
 type SideMenuProps = {
+  logged?: boolean;
   toggleLogged: () => void;
 };
 
-export function SideMenu({ toggleLogged }: SideMenuProps) {
+export function SideMenu({ logged, toggleLogged }: SideMenuProps) {
   return (
     <nav className={`${css.sideMenu}`}>
-      <UserMenu
-        name={'Jonas Jaeggi'}
-        hcp={'16.0'}
-        img={'https://wgc.gg/images/profile-picture.png'}
-      />
+      {logged ? (
+        <UserMenu
+          name={'Jonas Jaeggi'}
+          hcp={'16.0'}
+          img={'https://wgc.gg/images/profile-picture.png'}
+        />
+      ) : (
+        <>
+          <Link href="/">
+            <Image src="/logos/wgc-text.svg" alt="" width={300} height={80} />
+          </Link>
+
+          <div className={css.btns}>
+            <Button href={'/profile/login'}>Login</Button>
+            <Button href={'/profile/create'} outline darkBg>
+              Register
+            </Button>
+          </div>
+        </>
+      )}
 
       <div className={css.navigation}>
         <h4>Navigation</h4>
@@ -133,25 +149,29 @@ export function SideMenu({ toggleLogged }: SideMenuProps) {
         ))}
       </div>
 
-      <StatBar
-        elements={[
-          {
-            name: 'Ongoing Challenges',
-            value: 13,
-            picto: '',
-          },
-          {
-            name: 'Monthly rank',
-            value: '#4',
-            picto: '',
-          },
-        ]}
-        className={css.stats}
-      />
+      {logged && (
+        <>
+          <StatBar
+            elements={[
+              {
+                name: 'Ongoing Challenges',
+                value: 13,
+                picto: '',
+              },
+              {
+                name: 'Monthly rank',
+                value: '#4',
+                picto: '',
+              },
+            ]}
+            className={css.stats}
+          />
 
-      <Button outline darkBg small onClick={toggleLogged} className={css.signOutBtn}>
-        Sign out
-      </Button>
+          <Button outline darkBg small onClick={toggleLogged} className={css.signOutBtn}>
+            Sign out
+          </Button>
+        </>
+      )}
 
       <div className={css.socials}>
         {socialLinks.map((link) => (
@@ -169,7 +189,11 @@ export function SideMenu({ toggleLogged }: SideMenuProps) {
         ))}
       </div>
 
-      <Image src="/logos/wgc-text.svg" alt="" width={300} height={80} />
+      {logged && (
+        <Link href="/">
+          <Image src="/logos/wgc-text.svg" alt="" width={300} height={80} />
+        </Link>
+      )}
     </nav>
   );
 }

@@ -35,6 +35,11 @@
     top: calc((var(--fs-sm) + var(--sm)) * -1);
     opacity: 0;
 
+    @media screen and (min-width: 900px) {
+      top: inherit;
+      bottom: calc((var(--fs-sm) + var(--sm)) * -1);
+    }
+
     &.show {
       opacity: 0.5;
       animation: fadeInAndOut 2s normal forwards;

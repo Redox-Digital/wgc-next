@@ -34,7 +34,10 @@ export default function YourChallengeFAB({ modalOpen, toggleModal }: Props) {
       </Modal>
 
       <button type="button" className={css.fab} onClick={() => toggleModal(!modalOpen)}>
-        Your Challenges
+        <span>
+          <b>{yourChallenges.length}</b> active Challenges
+        </span>
+        <span className={css.pulse}></span>
       </button>
     </>
   );

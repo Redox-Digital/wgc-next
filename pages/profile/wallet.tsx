@@ -29,9 +29,7 @@ export default function Wallet() {
           <TextInput id={'amount'} label={'Amount'} type={'number'} dark />
           <TextInput id={'mail'} label={'PayPal E-Mail'} type={'text'} dark />
         </form>
-        <Button onClick={() => setModal(undefined)} small>
-          Request widthdrawal
-        </Button>
+        <Button onClick={() => setModal(undefined)}>Request widthdrawal</Button>
       </Modal>
 
       <Modal
@@ -53,7 +51,7 @@ export default function Wallet() {
           <Checkbox id={'adult'}>I am over 18 years of age.</Checkbox>
         </form>
 
-        <Button onClick={() => setModal(undefined)} small>
+        <Button onClick={() => setModal(undefined)}>
           Pay with PayPal <Image src="/pictograms/paypal-dark.svg" alt="" width={12} height={20} />
         </Button>
       </Modal>
@@ -71,10 +69,10 @@ export default function Wallet() {
         </div>
 
         <div className={css.btns}>
+          <Button onClick={() => setModal('deposit')}>Deposit</Button>
           <Button outline onClick={() => setModal('withdraw')}>
             Withdraw
           </Button>
-          <Button onClick={() => setModal('deposit')}>Deposit</Button>
         </div>
       </section>
 

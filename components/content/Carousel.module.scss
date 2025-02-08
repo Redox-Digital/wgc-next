@@ -46,6 +46,12 @@
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @media screen and (min-width: 1200px) {
+    overflow: visible;
+    flex-wrap: wrap;
+    padding: 0;
+  }
 }
 
 .slide {
@@ -63,7 +69,11 @@
   border-radius: var(--sm);
   box-shadow: 0px 4px 16px 0px rgba(0, 47, 24, 0.25);
 
-  scroll-snap-align: start;
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - var(--sm)) / 2);
+    transform: translateX(0);
+    box-shadow: none;
+  }
 
   img {
     border-radius: var(--sm);
@@ -95,6 +105,11 @@
 
     > h2 {
       color: var(--accent);
+      margin-bottom: var(--sm);
+    }
+
+    > p {
+      opacity: 1;
     }
   }
 }

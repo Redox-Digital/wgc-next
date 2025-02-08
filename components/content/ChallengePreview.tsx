@@ -78,6 +78,11 @@ export default function ChallengePreview({
             <br />
             <b>{gameType}</b>
           </span>
+          <span>
+            Price pool
+            <br />
+            <b>${pool.toFixed(2)}</b>
+          </span>
         </div>
         <div className={css.foot}>
           <span className={css.fee}>{fee ? `Buy-in $${fee}` : 'Free'}</span>

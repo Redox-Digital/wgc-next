@@ -43,6 +43,13 @@
       justify-content: space-between;
       margin-bottom: var(--md);
 
+      @media screen and (min-width: 1200px) {
+        margin-bottom: 0;
+        height: 100%;
+        min-height: var(--lg);
+        max-height: var(--lg);
+      }
+
       button {
         width: 32px;
         height: 32px;
