@@ -11,6 +11,14 @@ export default function Footer({ sponsored }: Props) {
   return (
     <footer className={css.footer}>
       <div className={css.container}>
+        <small className={`${css.regionSelect} ${css.mobile}`}>
+          Region :{' '}
+          <select name="region" id="region">
+            <option value="eu">Europe</option>
+            <option value="am">Americas</option>
+            <option value="as">Asia</option>
+          </select>
+        </small>
         <div className={css.body}>
           <div className={css.col}>
             <h4>Navigation</h4>
@@ -38,7 +46,7 @@ export default function Footer({ sponsored }: Props) {
           </div>
 
           <Image
-            className={css.deskImg}
+            className={css.desktop}
             src={'/logos/logo-wgc-icon-gradient.svg'}
             alt={''}
             width={80}
@@ -57,15 +65,6 @@ export default function Footer({ sponsored }: Props) {
                   )}
                 </Link>
               ))}
-
-              <small className={css.regionSelect}>
-                Region :{' '}
-                <select name="region" id="region">
-                  <option value="eu">Europe</option>
-                  <option value="am">Americas</option>
-                  <option value="as">Asia</option>
-                </select>
-              </small>
             </div>
           </div>
         </div>
@@ -77,7 +76,16 @@ export default function Footer({ sponsored }: Props) {
             </Link>
           </span>
 
-          <div className={css.socials}>
+          <small className={`${css.regionSelect} ${css.desktop}`}>
+            Region :{' '}
+            <select name="region" id="region">
+              <option value="eu">Europe</option>
+              <option value="am">Americas</option>
+              <option value="as">Asia</option>
+            </select>
+          </small>
+
+          <div className={`${css.socials} ${css.desktop}`}>
             {socialLinks.map((link) => (
               <Link href={link.url} key={link.url} target="_blank">
                 {link.icon ? (
@@ -87,18 +95,9 @@ export default function Footer({ sponsored }: Props) {
                 )}
               </Link>
             ))}
-
-            <small className={css.regionSelect}>
-              Region :{' '}
-              <select name="region" id="region">
-                <option value="eu">Europe</option>
-                <option value="am">Americas</option>
-                <option value="as">Asia</option>
-              </select>
-            </small>
           </div>
           <Image
-            className={css.mobileImg}
+            className={css.mobile}
             src={'/logos/logo-wgc-icon-gradient.svg'}
             alt={''}
             width={80}

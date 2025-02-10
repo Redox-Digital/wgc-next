@@ -199,7 +199,7 @@ export default function LeaderboardPage() {
           ''
         )}
 
-        <CTA
+        {/* <CTA
           title={'Do you want more ?'}
           description={
             <p>
@@ -211,7 +211,7 @@ export default function LeaderboardPage() {
           btnBlank
           href={'https://wgc.gg'}
           img={'/layouts/clubhouse/lobby-cta.jpg'}
-        />
+        /> */}
       </main>
     </>
   );

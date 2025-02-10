@@ -33,13 +33,17 @@
 
         th {
           font-weight: 400;
+
+          &:last-of-type {
+            min-width: 36px;
+            text-align: right;
+          }
         }
       }
 
       .name {
         width: 100%;
         text-align: left;
-        padding-left: calc(20px + 50px); // PP width + gap
       }
     }
 

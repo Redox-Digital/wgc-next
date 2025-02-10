@@ -1,5 +1,5 @@
 import css from './Lobby.module.scss';
-import PricePool from '@/components/layouts/PricePool';
+import PricePool, { MoneyPool } from '@/components/layouts/PricePool';
 import Image from 'next/image';
 import Button, { ReturnButton } from '@/components/navigation/Button';
 import Link from 'next/link';
@@ -12,6 +12,8 @@ import Leaderboard from '@/components/layouts/Leaderboard';
 import { dummyLeaderboard } from '@/constants/DummyData';
 
 export default function Lobby() {
+  const prizes: PriceType[] = [];
+
   const rules: { label: string; value: string | React.ReactNode }[] = [
     {
       label: 'Game type',
@@ -67,7 +69,7 @@ export default function Lobby() {
           </Link>
         </div>
 
-        <Image src="/layouts/clubhouse/clubhouse_hero.jpg" alt="" width={700} height={466} />
+        <Image src="/sponsors/sponsor_excr.png" alt="" width={700} height={466} />
 
         <div className={css.introInfos}>
           <div className={css.timer}>
@@ -79,7 +81,12 @@ export default function Lobby() {
           <CopyLink text={'https://wgc.gg/extracurricular/lobby/7874'} />
         </div>
 
-        <PricePool moneyPool className={css.pool} />
+        {/* If cash price, show MoneyPool */}
+        {prizes.length ? (
+          <PricePool className={css.poolPreview} prizes={prizes} preview />
+        ) : (
+          <MoneyPool className={css.poolPreview} amount={102} />
+        )}
 
         <div className={css.btns}>
           <Button href="/lobby">Join Challenge</Button>
@@ -87,10 +94,6 @@ export default function Lobby() {
           <Button href="/" outline>
             Unregister
           </Button>
-          {/* Show if it's a "goodies" Price Pool */}
-          {/*<Button href="#pricepool" outline>
-            See Price Pool
-          </Button>*/}
         </div>
       </header>
       <main className={css.main}>
@@ -115,7 +118,7 @@ export default function Lobby() {
 
         <Leaderboard players={dummyLeaderboard} title={'Leaderboard'} className={css.leaderboard} />
 
-        <PricePool />
+        <PricePool prizes={prizes} />
 
         <section className={css.ctaSct}>
           <CTA

@@ -9,6 +9,7 @@ export const challenges: ChallengePreview[] = [
     dates: '18.11 - 22.11.25',
     fee: 10,
     img: 'https://www.bridgestoneamericas.com/content/dam/corpcomm/americas/assets/media-center/logos/bridgestone-logos/bridgestone-b-mark-logos/album-cover.png',
+    url: '/lobby',
   },
   {
     id: 1235,
@@ -20,6 +21,7 @@ export const challenges: ChallengePreview[] = [
     dates: '18.11 - 22.11.25',
     fee: 0,
     img: '/logos/logo_excr_small.svg',
+    url: '/lobby',
   },
   {
     id: 1236,
@@ -31,6 +33,7 @@ export const challenges: ChallengePreview[] = [
     dates: '18.11 - 22.11.25',
     fee: 10,
     img: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Coca-Cola_logo.svg',
+    url: '/lobby',
   },
   {
     id: 1237,
@@ -42,6 +45,7 @@ export const challenges: ChallengePreview[] = [
     dates: '18.11 - 22.11.25',
     fee: 10,
     img: 'https://www.bridgestoneamericas.com/content/dam/corpcomm/americas/assets/media-center/logos/bridgestone-logos/bridgestone-b-mark-logos/album-cover.png',
+    url: '/lobby',
   },
   {
     id: 1238,
@@ -53,6 +57,7 @@ export const challenges: ChallengePreview[] = [
     dates: '18.11 - 22.11.25',
     fee: 10,
     img: 'https://www.bridgestoneamericas.com/content/dam/corpcomm/americas/assets/media-center/logos/bridgestone-logos/bridgestone-b-mark-logos/album-cover.png',
+    url: '/lobby',
   },
   {
     id: 1239,
@@ -64,6 +69,7 @@ export const challenges: ChallengePreview[] = [
     dates: '18.11 - 22.11.25',
     fee: 10,
     img: 'https://www.bridgestoneamericas.com/content/dam/corpcomm/americas/assets/media-center/logos/bridgestone-logos/bridgestone-b-mark-logos/album-cover.png',
+    url: '/lobby',
   },
 ];
 

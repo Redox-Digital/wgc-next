@@ -22,10 +22,14 @@
       width: calc((100% - var(--sm)) / 2);
       max-width: 250px;
 
+      @media screen and (min-width: 1200px) {
+        width: calc((100% - var(--sm) * 3) / 4);
+      }
+
       > a {
         display: flex;
         flex-direction: column;
-        background-color: var(--black);
+        background-color: var(--white);
         border-radius: var(--sm);
         overflow: hidden;
         color: var(--white);
@@ -35,9 +39,18 @@
           color: var(--primary);
           background-color: var(--white);
 
-          > .texts h4 {
-            color: var(--black);
-            transition: color 0.3s ease-in-out;
+          img {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+          }
+
+          > .texts {
+            background-color: var(--white);
+
+            h4 {
+              color: var(--black);
+              transition: all 0.3s ease-in-out;
+            }
           }
         }
 
@@ -45,8 +58,11 @@
           width: 100%;
           height: auto;
           // max-height: 120px; // DEV : TBC
-          object-fit: cover;
+          object-fit: contain;
           aspect-ratio: 3/2;
+          transition: transform 0.3s ease-in-out;
+
+          overflow: hidden;
         }
 
         > .texts {
@@ -54,6 +70,10 @@
           display: flex;
           flex-direction: column;
           gap: 2px;
+          border-top: solid 1px var(--black);
+          z-index: 1;
+          background-color: var(--black);
+          transition: background-color 0.3s ease-in-out;
 
           h4 {
             color: var(--accent);
