@@ -25,6 +25,65 @@
   }
 }
 
+.pricesPreview {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: var(--sm);
+  border-radius: var(--sm);
+  padding: var(--sm);
+  background-color: var(--black);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  padding-top: calc(var(--fs-sm) + var(--sm) * 2);
+
+  @media screen and (min-width: 900px) {
+    gap: var(--md);
+  }
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    transition: all 0.3s ease-in-out;
+  }
+
+  > small {
+    position: absolute;
+    color: var(--accent);
+    top: var(--sm);
+  }
+
+  .price {
+    max-width: calc((100% - var(--sm) * 2) / 3);
+    color: var(--accent);
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    gap: var(--sm);
+    align-items: center;
+
+    img {
+      height: 50px;
+      width: auto;
+      aspect-ratio: 1;
+      object-fit: contain;
+
+      @media screen and (min-width: 900px) {
+        height: 72px;
+      }
+    }
+
+    small {
+      color: var(--white);
+    }
+  }
+}
+
 .pricePool {
   justify-content: center;
   text-align: center;
