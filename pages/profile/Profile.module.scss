@@ -67,65 +67,6 @@
   }
 }
 
-.statBar {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: var(--xs);
-
-  > h6 {
-    width: calc(100% - var(--md));
-  }
-  > ul {
-    width: 100%;
-    display: flex;
-    gap: var(--sm);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background-color: var(--black);
-    color: var(--white);
-    padding: var(--sm);
-
-    border-radius: var(--sm);
-    justify-content: space-between;
-
-    text-align: center;
-
-    > li {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--xs);
-      width: 100%;
-      justify-content: flex-end;
-
-      > img {
-        border-radius: 3px;
-        object-fit: contain;
-      }
-
-      > small {
-        font-size: var(--fs-xs);
-        color: var(--accent);
-      }
-
-      > span {
-        font-family: var(--fontfamily-titles);
-        margin: 0;
-        font-weight: 700;
-        font-size: var(--fs-h3);
-      }
-    }
-  }
-
-  &.bag {
-    img {
-      background: var(--white);
-    }
-  }
-}
-
 .editProfilePage {
   width: 100%;
   max-width: var(--max-paragraph-width);
@@ -188,4 +129,11 @@
       font-size: var(--fs-sm);
     }
   }
+}
+
+.historyPage {
+  width: 100%;
+  max-width: var(--max-paragraph-width);
+  margin-inline: auto;
+  min-height: var(--fullscreen-height);
 }

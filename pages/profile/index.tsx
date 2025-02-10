@@ -1,12 +1,7 @@
 import css from './Profile.module.scss';
 import Image from 'next/image';
 import { SettingButton } from '@/components/navigation/Button';
-
-type StatProps = {
-  title?: string;
-  className?: string;
-  elements: { name: string; value?: string | number; picto?: string }[];
-};
+import StatBar from '@/components/content/StatBar';
 
 export default function Profile() {
   const bag = [
@@ -82,22 +77,5 @@ export default function Profile() {
         </SettingButton>
       </section>
     </main>
-  );
-}
-
-export function StatBar({ title, elements, className }: StatProps) {
-  return (
-    <div className={`${css.statBar} ${className}`}>
-      {title && <h6>{title}</h6>}
-      <ul>
-        {elements.map((item, key) => (
-          <li key={key}>
-            {item.picto && <Image src={item.picto} alt={item.name} width={24} height={24} />}
-            <small>{item.name}</small>
-            {item.value && <span>{item.value}</span>}
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }

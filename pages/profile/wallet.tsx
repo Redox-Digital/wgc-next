@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Modal from '@/components/layouts/Modal';
 import Image from 'next/image';
 import { Checkbox, TextInput } from '@/components/inputs/Inputs';
+import HistoryTable, { WalletTable } from '@/components/layouts/HistoryTable';
 
 export default function Wallet() {
   const transactions = [
@@ -76,23 +77,7 @@ export default function Wallet() {
         </div>
       </section>
 
-      <div className={css.transactions}>
-        <div className={css.head}>
-          <small>Transaction History</small>
-          <small>Amount</small>
-        </div>
-        <ul className={css.body}>
-          {transactions.map((elt, key) => (
-            <li key={key} className={elt.amount > 0 ? css.gain : css.loss}>
-              <span className={css.identifier}>
-                {elt.type}
-                <small className="xs">{elt.date}</small>
-              </span>
-              <span className={css.amount}>$ {elt.amount.toFixed(2)}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <WalletTable headers={['Transaction History', 'Amount']} body={transactions} />
     </main>
   );
 }
