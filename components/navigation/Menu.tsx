@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import MobileMenu from './MobileMenu';
 import Button from './Button';
-import { StatBar } from '@/pages/profile';
+import StatBar from '../content/StatBar';
 
 type MenuProps = {
   logo: string;

@@ -9,7 +9,7 @@ import NextChallengeSection from '@/components/layouts/NextChallengesSection';
 import { dummyLeaderboard } from '@/constants/DummyData';
 import { Podium } from '@/components/layouts/Leaderboard';
 import Button from '@/components/navigation/Button';
-import { StatBar } from './profile';
+import StatBar from '@/components/content/StatBar';
 
 const sponsors: Sponsor[] = [
   {

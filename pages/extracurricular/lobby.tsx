@@ -1,5 +1,5 @@
 import css from '@/pages/Lobby.module.scss'; // Using the main Lobby's CSS file
-import PricePool from '@/components/layouts/PricePool';
+import PricePool, { MoneyPool } from '@/components/layouts/PricePool';
 import Image from 'next/image';
 import Button, { ReturnButton } from '@/components/navigation/Button';
 import Link from 'next/link';
@@ -34,6 +34,29 @@ export default function SponsoredLobby() {
     { label: 'Player HCP', value: 'Up to 18' },
     { label: 'Player count min.', value: '0' },
     { label: 'Player count max.', value: '-' },
+  ];
+
+  const prizes = [
+    {
+      img: '/layouts/excr/WGC-EXCR_price_1000.png',
+      title: '1,000 $ GIFT CARD',
+      desc: 'Price Description',
+    },
+    {
+      img: '/layouts/excr/WGC-EXCR_price_500.png',
+      title: '500 $ GIFT CARD',
+      desc: 'Price Description',
+    },
+    {
+      img: '/layouts/excr/WGC-EXCR_price_250.png',
+      title: '250 $ GIFT CARD',
+      desc: 'Price Description',
+    },
+    {
+      img: '/layouts/excr/WGC-EXCR_price_50percents.png',
+      title: '50% OFF GIFT CARD',
+      desc: 'For every participant!',
+    },
   ];
 
   const [enterScore, showScoreModal] = useState<boolean>(false);
@@ -97,7 +120,12 @@ export default function SponsoredLobby() {
           <CopyLink text={'https://wgc.gg/extracurricular/lobby/7874'} />
         </div>
 
-        {/* <PricePool moneyPool /> */}
+        {/* If cash price, show MoneyPool */}
+        {prizes.length ? (
+          <PricePool className={css.poolPreview} prizes={prizes} preview />
+        ) : (
+          <MoneyPool className={css.poolPreview} amount={102} />
+        )}
 
         <div className={css.btns}>
           {/* <Button href="/lobby">Join Challenge</Button> */}
@@ -133,7 +161,7 @@ export default function SponsoredLobby() {
 
         <Leaderboard players={dummyLeaderboard} title={'Leaderboard'} className={css.leaderboard} />
 
-        <PricePool />
+        {prizes.length && <PricePool prizes={prizes} />}
 
         <section>
           <CTA
