@@ -118,26 +118,9 @@ type SideMenuProps = {
 export function SideMenu({ logged, toggleLogged }: SideMenuProps) {
   return (
     <nav className={`${css.sideMenu}`}>
-      {logged ? (
-        <UserMenu
-          name={'Jonas Jaeggi'}
-          hcp={'16.0'}
-          img={'https://wgc.gg/images/profile-picture.png'}
-        />
-      ) : (
-        <>
-          <Link href="/">
-            <Image src="/logos/wgc-text.svg" alt="" width={300} height={80} />
-          </Link>
-
-          <div className={css.btns}>
-            <Button href={'/profile/login'}>Login</Button>
-            <Button href={'/profile/create'} outline darkBg>
-              Register
-            </Button>
-          </div>
-        </>
-      )}
+      <Link href="/">
+        <Image src="/logos/wgc-text.svg" alt="" width={300} height={80} />
+      </Link>
 
       <div className={css.navigation}>
         <h4>Navigation</h4>
@@ -148,6 +131,23 @@ export function SideMenu({ logged, toggleLogged }: SideMenuProps) {
           </Link>
         ))}
       </div>
+
+      {logged ? (
+        <UserMenu
+          name={'Jonas Jaeggi'}
+          hcp={'16.0'}
+          img={'https://wgc.gg/images/profile-picture.png'}
+        />
+      ) : (
+        <>
+          <div className={css.btns}>
+            <Button href={'/profile/login'}>Login</Button>
+            <Button href={'/profile/create'} outline darkBg>
+              Register
+            </Button>
+          </div>
+        </>
+      )}
 
       {logged && (
         <>
@@ -172,7 +172,7 @@ export function SideMenu({ logged, toggleLogged }: SideMenuProps) {
           </Button>
         </>
       )}
-
+      {/* 
       <div className={css.socials}>
         {socialLinks.map((link) => (
           <Link key={link.url} href={link.url} title={link.label}>
@@ -181,19 +181,14 @@ export function SideMenu({ logged, toggleLogged }: SideMenuProps) {
         ))}
       </div>
 
+
       <div className={css.legal}>
         {LegalLinks.map((link) => (
           <Link key={link.url} href={link.url}>
             {link.label}
           </Link>
         ))}
-      </div>
-
-      {logged && (
-        <Link href="/">
-          <Image src="/logos/wgc-text.svg" alt="" width={300} height={80} />
-        </Link>
-      )}
+      </div> */}
     </nav>
   );
 }
