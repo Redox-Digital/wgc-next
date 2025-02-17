@@ -6,8 +6,8 @@
   background-color: var(--primary);
   background: var(--gradient-challenge);
 
-  width: 100%;
-  max-width: calc((100% - var(--sm)) / 2);
+  min-width: 420px;
+  width: calc((100% - var(--sm) * 2) / 3);
   padding: var(--md);
   border-radius: var(--md);
 
@@ -28,7 +28,7 @@
   }
 
   .head {
-    align-items: center;
+    align-items: flex-start;
     gap: var(--sm);
 
     .img {
@@ -42,6 +42,7 @@
       justify-content: center;
 
       padding: 6px;
+      color: var(--black);
 
       img {
         width: 100%;
@@ -58,36 +59,25 @@
     .players {
       display: flex;
       flex-direction: row;
+      align-items: center;
+      gap: 3px;
+    }
+  }
 
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      height: fit-content;
+  .subhead {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
-      > li {
-        position: relative;
-
-        outline: var(--black) 3px solid;
-        border-radius: 1000px;
-        overflow: hidden;
-
-        width: 32px;
-        height: 32px;
-
-        margin-left: calc(var(--sm) * -1);
-
-        > span {
-          position: absolute;
-          inset: 0;
-          line-height: 1em;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: var(--fs-sm);
-
-          background-color: rgba(var(--primary-rgb), 0.5);
-        }
-      }
+    .hcp {
+      padding: 6px 8px;
+      outline: solid 1px var(--white);
+      border-radius: 1000px;
+      font-size: var(--fs-xs);
+      flex-shrink: 0;
+      line-height: 1em;
+      background-color: var(--primary);
     }
   }
 
@@ -104,18 +94,23 @@
     }
   }
 
-  .foot > .fee {
-    padding: 8px 24px;
-    outline: var(--white) solid 1px;
-    border-radius: 1000px;
-    text-align: center;
+  .foot {
+    align-items: flex-end;
 
-    font-size: var(--fs-sm);
-    line-height: 1em;
+    > .fee {
+      padding: 8px 24px;
+      outline: var(--grey) solid 1px;
+      border-radius: 1000px;
+      text-align: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+      font-size: var(--fs-sm);
+      line-height: 1em;
+      height: fit-content;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
 
@@ -191,6 +186,7 @@
         width: 100%;
         font-size: 12px;
         text-align: center;
+        color: var(--black);
       }
 
       img {

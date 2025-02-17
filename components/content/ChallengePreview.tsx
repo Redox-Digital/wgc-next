@@ -8,33 +8,6 @@ interface Props extends ChallengePreview {
   yourChallenges?: boolean; // When used in the "Challenges" Modal
 }
 
-// DEV : Tweak it as needed, so it uses the real users PP
-function getPlayerPictures(n: number) {
-  // Displays max 3 images, then +
-  let userImages = [];
-
-  if (n > 3) {
-    for (let index = 0; index < 3; index++) {
-      userImages.push(
-        <li>
-          <Image src="https://picsum.photos/32" alt="" width={32} height={32} />
-          {index === 2 ? <span>{`+${n - 2}`}</span> : '' /* Only displayed on last element */}
-        </li>
-      );
-    }
-  } else {
-    for (let index = 0; index < n; index++) {
-      userImages.push(
-        <li>
-          <Image src="https://picsum.photos/32" alt="" width={32} height={32} />
-        </li>
-      );
-    }
-  }
-
-  return userImages;
-}
-
 export default function ChallengePreview({
   id,
   img,
@@ -57,10 +30,16 @@ export default function ChallengePreview({
             {img ? <Image src={img} alt={''} width={60} height={40} /> : <h5>#{id}</h5>}
           </div>
           <h3>{name}</h3>
-          <ul className={css.players}>{getPlayerPictures(players)}</ul>
+          <span className={css.players}>
+            <small>{players}</small>{' '}
+            <Image src={'/pictograms/user-white.svg'} alt={''} width={16} height={16} />
+          </span>
         </div>
 
-        <small className={css.timer}>Starts in: 2d 10h 39m 04s</small>
+        <div className={css.subhead}>
+          <small className={css.timer}>Starts in: 2d 10h 39m 04s</small>
+          <span className={css.hcp}>HCP {hcp}</span>
+        </div>
 
         <div className={css.body}>
           <span>
@@ -92,8 +71,8 @@ export default function ChallengePreview({
         </div>
       </div>
       {/* .Destkop */}
-      {/* Mobile */}
 
+      {/* Mobile */}
       <details className={`${css.challengeMobile} ${yourChallenges && css.yourChallenges}`}>
         <summary>
           {notification && <div className={css.badge} />}
