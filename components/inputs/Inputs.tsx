@@ -47,11 +47,12 @@ export function TextInput({
 }: TextInputType) {
   if (type === 'textarea') {
     return (
-      <label htmlFor={id} className={`${css.input} ${className}`}>
+      <label htmlFor={id} className={`${css.input} ${className} ${errorMsg ? css.errorInput : ''}`}>
         <span>{label}</span>
         <textarea id={id} name={id} placeholder={placeholder} defaultChecked>
           {value}
         </textarea>
+        {errorMsg ? <span className={css.errorMsg}>{errorMsg}</span> : ''}
       </label>
     );
   }

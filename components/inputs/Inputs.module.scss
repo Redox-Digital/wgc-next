@@ -68,7 +68,8 @@
   }
 
   &.errorInput {
-    > input {
+    > input,
+    > textarea {
       outline-color: var(--danger);
     }
 
