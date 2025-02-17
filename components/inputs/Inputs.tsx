@@ -10,6 +10,7 @@ type TextInputType = {
   dark?: boolean;
   width?: '50' | '33' | '66' | '50t';
   type: 'text' | 'number' | 'date' | 'textarea' | 'file' | 'password' | 'email';
+  errorMsg?: string;
 };
 
 function getInputWidth(width?: '50' | '33' | '66' | '50t') {
@@ -42,6 +43,7 @@ export function TextInput({
   type,
   dark,
   value,
+  errorMsg,
 }: TextInputType) {
   if (type === 'textarea') {
     return (
@@ -56,11 +58,14 @@ export function TextInput({
   return (
     <label
       htmlFor={id}
-      className={`${css.input} ${dark && css.dark} ${className} ${getInputWidth(width)}`}
+      className={`${css.input} ${dark && css.dark} ${className} ${getInputWidth(width)} ${
+        errorMsg ? css.errorInput : ''
+      }`}
     >
       <span>{label}</span>
       <input type={type} id={id} name={id} placeholder={placeholder} value={value}></input>
       {type === 'file' && <Image src="/pictograms/photo-dark.svg" alt="" width={20} height={20} />}
+      {errorMsg ? <span className={css.errorMsg}>{errorMsg}</span> : ''}
     </label>
   );
 }

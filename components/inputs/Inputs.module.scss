@@ -66,6 +66,24 @@
   > textarea {
     min-height: 150px;
   }
+
+  &.errorInput {
+    > input {
+      outline-color: var(--danger);
+    }
+
+    > span {
+      color: var(--danger);
+    }
+  }
+
+  .errorMsg {
+    position: absolute;
+    bottom: calc(var(--fs-sm) * -1);
+    right: var(--sm);
+    text-align: right;
+    font-style: italic;
+  }
 }
 
 .checkbox {
