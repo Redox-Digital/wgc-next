@@ -7,6 +7,7 @@ import SectionTitle from '@/components/layouts/SectionTitle';
 import ChallengePreview from '@/components/content/ChallengePreview';
 import { ChangeBackgroundColor } from '..';
 import Button from '@/components/navigation/Button';
+import SponsoredPricesPreview from '@/components/content/SponsoredPricesPreview';
 
 export default function SponsoredClubhouse() {
   const challenges: ChallengePreview[] = [
@@ -46,6 +47,15 @@ export default function SponsoredClubhouse() {
       pool: 0,
       fee: 0,
     },
+  ];
+
+  const prices: { title: string; url: string }[] = [
+    { title: 'Extracurricular Cap', url: '/layouts/excr/prices/hat.webp' },
+    { title: '50%-Off Gift Card', url: '/layouts/excr/prices/WGC-EXCR_price_50percents.png' },
+
+    { title: 'Extracurricular Polo Shirt', url: '/layouts/excr/prices/polo1.webp' },
+    { title: '1000$ Gift Card', url: '/layouts/excr/prices/WGC-EXCR_price_1000.png' },
+    { title: 'Extracurricular Polo Shirt', url: '/layouts/excr/prices/polo2.webp' },
   ];
 
   return (
@@ -99,10 +109,7 @@ export default function SponsoredClubhouse() {
           ))}
         </div>
 
-        <PricePool className={css.clubhousePricePool} />
-        <Button href="/extracurricular/rankings" className={css.homeBtn}>
-          All leaderboards
-        </Button>
+        <SponsoredPricesPreview prices={prices} />
       </main>
 
       <section className={css.homeCTAs}>
