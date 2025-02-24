@@ -3,10 +3,15 @@ import css from './LandingPage.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import SweetAlert from '@/components/content/SweetAlert';
+
 import logo from '@/public/logos/logo-wgc-full-accent-white.svg';
 import { useEffect } from 'react';
 
 export default function LandingPage() {
+  // DEV
+  const showPopup = () => SweetAlert();
+
   return (
     <>
       <ChangeBody color="#002F18" />
@@ -22,7 +27,7 @@ export default function LandingPage() {
           />
           <div className={css.content}>
             <div className={css.title}>
-              <Image src={logo} alt="" width={800} height={250} />
+              <Image src={logo} alt="" width={800} height={250} priority />
               <h1>World Golf Challenge</h1>
             </div>
             <p>
@@ -31,6 +36,9 @@ export default function LandingPage() {
             </p>
 
             <div className={css.btns}>
+              {/* Only for dev purpose, the Swal button isn't meant to be used here. */}
+              <Button onClick={showPopup}>Swal</Button>
+
               <Button href="/profile/login/">Login</Button>
               <Button href="/profile/create/" outline darkBg>
                 Register

@@ -1,0 +1,95 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--primary);
+  color: var(--white);
+
+  width: calc(100% - var(--md));
+  max-width: var(--max-block-width);
+
+  padding: var(--md);
+  border-radius: var(--md);
+  border: none;
+
+  gap: var(--md);
+
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.25);
+}
+
+.confirmButton,
+.cancelButton,
+.denyButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px; // TBC
+  width: fit-content;
+  height: fit-content !important;
+  border: none;
+  outline: 1px solid var(--accent);
+  min-width: 120px;
+  gap: var(--xs);
+
+  font-size: var(--fs-p);
+  transition: all 0.3s ease-in-out;
+
+  background: var(--accent);
+  color: var(--black) !important;
+
+  border-radius: 1000px;
+
+  @media screen and (min-width: 1200px) {
+    min-width: 120px; // DEV : TBC
+  }
+
+  &:hover {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  &:active {
+    outline-color: var(--black);
+    box-shadow: inset var(--shadow-clicked);
+    transition: all 0s;
+  }
+}
+
+.cancelButton {
+  background: none;
+  color: var(--white) !important;
+}
+
+.closeButton {
+  width: 32px;
+  height: 32px;
+  aspect-ratio: 1;
+  background-color: var(--accent);
+  border: none;
+  border-radius: 1000px;
+  color: var(--black);
+  display: flex !important;
+  line-height: normal;
+  padding-bottom: 3px; // centering the X
+
+  &:hover {
+    background-color: var(--white);
+    color: var(--primary);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.backdrop {
+}
+
+.input {
+}
+
+.title {
+}
+
+.text {
+}
