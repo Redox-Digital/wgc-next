@@ -13,6 +13,13 @@ export default function LandingPage() {
 
       <main className={css.landingPage}>
         <div className={css.container}>
+          <Image
+            src="/logos/logo-wgc-icon-dark.svg"
+            alt=""
+            width={1000}
+            height={1630}
+            className={css.backgroundDeco}
+          />
           <div className={css.content}>
             <div className={css.title}>
               <Image src={logo} alt="" width={800} height={250} />
@@ -24,7 +31,7 @@ export default function LandingPage() {
             </p>
 
             <div className={css.btns}>
-              <Button href="/login">Login</Button>
+              <Button href="/profile/login/">Login</Button>
               <Button href="/profile/create/" outline darkBg>
                 Register
               </Button>
@@ -59,9 +66,11 @@ export function ChangeBody({ color }: ColorProps) {
     document.body.style.padding = '0px';
     document.body.style.margin = '0px';
 
-    // Cleanup function to reset the background color when the component is unmounted
+    // Cleanup function to reset the inline CSS when the component is unmounted
     return () => {
       document.body.style.backgroundColor = '';
+      document.body.style.padding = '';
+      document.body.style.margin = '';
     };
   }, [color]);
 
