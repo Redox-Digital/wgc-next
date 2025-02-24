@@ -12,7 +12,7 @@ export default function Login() {
       <form>
         <TextInput id={'mail'} label={'E-Mail'} type={'text'} />
         <TextInput id={'password'} label={'Password'} type={'password'} />
-        <Button href="/">Sign in</Button>
+        <Button href="/clubhouse">Sign in</Button>
         <Link className="textLink" href="/profile/create">
           I don&apos;t have an account
         </Link>

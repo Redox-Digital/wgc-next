@@ -41,7 +41,7 @@ export default function Menu({ logo, logoUrl, links, sponsored, logged, setLogge
             {menuOpen ? (
               <h4 className={css.logo}>Menu</h4>
             ) : (
-              <Link href="/" className={css.logo}>
+              <Link href={logoUrl} className={css.logo}>
                 <Image src="/logos/logo-wgc-full-white.svg" alt="" width={250} height={70} />
               </Link>
             )}
@@ -118,7 +118,7 @@ type SideMenuProps = {
 export function SideMenu({ logged, toggleLogged }: SideMenuProps) {
   return (
     <nav className={`${css.sideMenu}`}>
-      <Link href="/">
+      <Link href="/clubhouse">
         <Image src="/logos/wgc-text.svg" alt="" width={300} height={80} />
       </Link>
 

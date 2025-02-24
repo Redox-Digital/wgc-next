@@ -1,3 +1,4 @@
+import { usePathname } from 'next/navigation';
 import Footer from './navigation/Footer';
 import Menu from './navigation/Menu';
 import { MainNavLinks } from '@/constants/Navigation';
@@ -11,17 +12,21 @@ export default function Layout({ children }: Props) {
   // DEV
   const [logged, setLogged] = useState<boolean>(true);
 
+  const path = usePathname();
+
   return (
     <>
-      <Menu
-        logo={'/logos/logo-wgc.svg'}
-        logoUrl={'/'}
-        links={MainNavLinks}
-        logged={logged}
-        setLogged={setLogged}
-      />
+      {path === '/' || (
+        <Menu
+          logo={'/logos/logo-wgc.svg'}
+          logoUrl={'/clubhouse'}
+          links={MainNavLinks}
+          logged={logged}
+          setLogged={setLogged}
+        />
+      )}
       {children}
-      <Footer />
+      {path === '/' || <Footer />}
     </>
   );
 }

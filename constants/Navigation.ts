@@ -6,7 +6,7 @@ export type NavLink = {
 
 export const MainNavLinks: NavLink[] = [
   {
-    url: '/',
+    url: '/clubhouse',
     label: 'Clubhouse',
   },
   {
@@ -52,22 +52,17 @@ export const LegalLinks: NavLink[] = [
 
 export const socialLinks: NavLink[] = [
   {
-    url: '#',
+    url: 'https://www.instagram.com/worldgolfchallenge/',
     label: 'Instagram',
     icon: '/pictograms/instagram.svg',
   },
   {
-    url: '#',
+    url: 'https://www.facebook.com/worldgolfchallenge',
     label: 'Facebook',
     icon: '/pictograms/facebook.svg',
   },
   {
-    url: '#',
-    label: 'Linked In',
-    icon: '/pictograms/linkedin.svg',
-  },
-  {
-    url: '#',
+    url: 'mailto:hello@wgc.gg',
     label: 'E-mail',
     icon: '/pictograms/envelope.svg',
   },

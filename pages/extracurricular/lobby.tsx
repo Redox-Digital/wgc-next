@@ -130,7 +130,7 @@ export default function SponsoredLobby() {
         <div className={css.btns}>
           {/* <Button href="/lobby">Join Challenge</Button> */}
           <Button onClick={() => showScoreModal(true)}>Enter score</Button>
-          <Button href="/" outline>
+          <Button href="/clubhouse" outline>
             Unregister
           </Button>
           {/* Show if it's a "goodies" Price Pool */}

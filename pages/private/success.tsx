@@ -17,7 +17,7 @@ export default function CreatePrivateSuccess() {
       <div className={css.btns}>
         <CopyLink text={'https://wgc.gg/extracurricular/lobby/7874'} />
         <Button href="/lobby">To the Challenge&apos;s Lobby</Button>
-        <Button href="/" outline>
+        <Button href="/clubhouse" outline>
           Back to Clubhouse
         </Button>
       </div>

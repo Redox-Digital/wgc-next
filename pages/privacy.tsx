@@ -3,7 +3,7 @@ import css from '@/pages/support/SupportPages.module.scss';
 import Image from 'next/image';
 import Button from '@/components/navigation/Button';
 import TableofContent from '@/components/navigation/TableofContent';
-import { ChangeBackgroundColor } from '.';
+import { ChangeBackgroundColor } from './clubhouse';
 
 export default function Privacy() {
   const anchors = [

@@ -91,7 +91,7 @@ export default function Lobby() {
         <div className={css.btns}>
           <Button href="/lobby">Join Challenge</Button>
           <Button onClick={() => showScoreModal(true)}>Enter score</Button>
-          <Button href="/" outline>
+          <Button href="/clubhouse" outline>
             Unregister
           </Button>
         </div>
