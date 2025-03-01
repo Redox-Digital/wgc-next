@@ -18,7 +18,11 @@ export default function SponsorsSection({ sponsors }: Props) {
   return (
     <section className={css.section}>
       <SectionTitle title="Available challenges">
-        <p>E-Meet, compete, and connect with golfers around the globe.</p>
+        <p>
+          E-Meet, compete, and connect with golfers around the globe.
+          <br />
+          <b>Scores must be officially recorded by your recognized golf Federation</b>
+        </p>
       </SectionTitle>
       <ul>
         {sponsors.map((s, key) => (
