@@ -1,7 +1,8 @@
 import css from './PrivateChallenges.module.scss';
-import Button from '@/components/navigation/Button';
+import Button, { SettingButton } from '@/components/navigation/Button';
 import { SelectInput, TextInput } from '@/components/inputs/Inputs';
 import FormBuilder from '@/components/layouts/FormBuilder';
+import Image from 'next/image';
 
 export default function CreatePrivateChallenge() {
   const formSteps: FormStep[] = [
@@ -23,8 +24,60 @@ export default function CreatePrivateChallenge() {
       description: 'You can add one or more Challenges to create a Championship',
       body: (
         <>
-          <TextInput id={'startDate'} label={'Start Date'} type={'date'} width="50" />
-          <TextInput id={'endDate'} label={'End Date'} type={'date'} width="50" />
+          <div className={css.formRow}>
+            <TextInput id={'startDate'} label={'Start Date'} type={'date'} width="50" />
+            <TextInput
+              id={'endDate'}
+              label={'End Date'}
+              type={'date'}
+              width="50"
+              errorMsg="Test test test"
+            />
+            <Button className={css.deleteBtn} onClick={() => null}>
+              <Image src="/pictograms/trash.svg" alt="Delete" width={12} height={12} />
+            </Button>
+          </div>
+
+          <div className={css.formRow}>
+            <TextInput
+              id={'startDate'}
+              label={'Start Date'}
+              type={'date'}
+              width="50"
+              errorMsg="Test test test"
+            />
+            <TextInput
+              id={'endDate'}
+              label={'End Date'}
+              type={'date'}
+              width="50"
+              errorMsg="Test test test"
+            />
+            <Button className={css.deleteBtn} onClick={() => null}>
+              <Image src="/pictograms/trash.svg" alt="Delete" width={12} height={12} />
+            </Button>
+          </div>
+
+          <div className={css.formRow}>
+            <TextInput
+              id={'startDate'}
+              label={'Start Date'}
+              type={'date'}
+              width="50"
+              errorMsg="Test test test"
+            />
+            <TextInput
+              id={'endDate'}
+              label={'End Date'}
+              type={'date'}
+              width="50"
+              errorMsg="Test test test"
+            />
+            <Button className={css.deleteBtn} onClick={() => null}>
+              <Image src="/pictograms/trash.svg" alt="Delete" width={12} height={12} />
+            </Button>
+          </div>
+
           <Button onClick={() => null}>Add Challenge</Button>
         </>
       ),

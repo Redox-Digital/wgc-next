@@ -36,10 +36,13 @@
   }
 
   > span {
-    margin-left: var(--sm);
     font-size: var(--fs-xs);
     line-height: 1em;
     color: var(--primary);
+
+    &:first-of-type {
+      margin-left: var(--sm);
+    }
   }
 
   > input,
