@@ -271,15 +271,19 @@
   > .body {
     padding: var(--sm);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
     gap: var(--sm);
     position: relative;
 
-    > a {
+    > a:last-of-type {
       margin-left: auto;
     }
 
     > .stats {
+      width: 100%;
       display: flex;
       flex-direction: row;
       background: var(--black);

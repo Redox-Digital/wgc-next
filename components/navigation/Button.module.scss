@@ -59,8 +59,10 @@
   &.small {
     min-width: auto;
 
-    padding: 8px 24px;
+    padding: 12px 24px;
     font-size: var(--fs-sm);
+
+    line-height: 1em;
   }
 }
 

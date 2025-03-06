@@ -7,7 +7,7 @@ const nextConfig = {
     unoptimized: true,
   },
   env: {
-    domain: 'https://mydomain.com',
+    domain: 'https://wgc.rdox.ch',
     api: 'https://mydomain.com/api',
     phone: '+41 00 000 00 00',
     mail: 'info@mydomain.com',

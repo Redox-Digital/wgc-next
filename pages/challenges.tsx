@@ -54,8 +54,9 @@ export default function ChallengesPage() {
           <p>Here, you can accept invitations from your friends or create a challenge for them.</p>
         </PageTitle>
         <div className={css.challengesList}>
+          {/* Add edit="true" if it's the player's own Challenge */}
           {privateChallenges.map((challenge) => (
-            <ChallengePreview key={challenge.id} {...challenge} />
+            <ChallengePreview key={challenge.id} {...challenge} edit />
           ))}
         </div>
         <div className={css.challengesList}>

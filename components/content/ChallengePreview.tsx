@@ -6,6 +6,7 @@ import Image from 'next/image';
 interface Props extends ChallengePreview {
   notification?: boolean; // Show red badge
   yourChallenges?: boolean; // When used in the "Challenges" Modal
+  edit?: boolean; // When used in the Privage Challenge previews
 }
 
 export default function ChallengePreview({
@@ -21,6 +22,7 @@ export default function ChallengePreview({
   notification,
   yourChallenges,
   url,
+  edit,
 }: Props) {
   return (
     <>
@@ -118,6 +120,13 @@ export default function ChallengePreview({
               <b>{gameType}</b>
             </span>
           </div>
+
+          {edit && (
+            <Button small outline darkBg href="/private/edit">
+              <Image src="/pictograms/settings-white.svg" alt="" width={14} height={14} />
+              <span>Edit Challenge</span>
+            </Button>
+          )}
 
           <Button small href={url || '/lobby'}>
             {fee ? `Buy-in ${fee}$` : 'Join for free'}
