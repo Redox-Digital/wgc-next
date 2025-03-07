@@ -159,7 +159,12 @@ export default function SponsoredLobby() {
           </div>
         </section>
 
-        <Leaderboard players={dummyLeaderboard} title={'Leaderboard'} className={css.leaderboard} />
+        <Leaderboard
+          players={dummyLeaderboard.slice(0, 1)}
+          title={'Leaderboard'}
+          className={css.leaderboard}
+          ongoing={true}
+        />
 
         {prizes.length && <PricePool prizes={prizes} />}
 
