@@ -60,12 +60,15 @@
     }
   }
 
-  > input[type='file'] + img {
-    position: absolute;
-    right: var(--sm);
-    bottom: var(--sm);
-  }
+  > input[type='file'] {
+    padding-right: calc(var(--sm) * 2 + 20px);
 
+    + img {
+      position: absolute;
+      right: var(--sm);
+      top: 32px;
+    }
+  }
   > textarea {
     min-height: 150px;
   }
@@ -96,4 +99,21 @@
   gap: var(--sm);
 
   padding-block: var(--xs);
+}
+
+.imgPreview {
+  display: flex;
+  flex-direction: row;
+  gap: var(--sm);
+
+  align-items: center;
+  justify-content: flex-start;
+
+  > img {
+    border-radius: var(--xs);
+  }
+
+  > small {
+    opacity: 0.7;
+  }
 }
