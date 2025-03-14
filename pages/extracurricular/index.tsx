@@ -136,7 +136,7 @@ export default function SponsoredClubhouse() {
           btnLabel={'The shop'}
           href={'https://ex-cr.com/?utm_source=wgc'}
           btnBlank
-          img={'/layouts/excr/home_cta.webp'}
+          img={'/sponsors/4ACES_Mar2025/4ACES_landing_cta.webp'}
           opacity={0.4}
         />
       </section>

@@ -87,7 +87,7 @@ export default function SponsoredLobby() {
           <h1>Spring Challenge - EXTRACURRICULAR</h1>
         </div>
 
-        <Image src="/layouts/excr/lobby_banner.png" alt="" width={700} height={466} />
+        <Image src="/sponsors/sponsor_excr.png" alt="" width={700} height={466} />
 
         <div className={css.introInfos}>
           <div className={css.timer}>
