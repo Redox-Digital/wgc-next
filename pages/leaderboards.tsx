@@ -1,9 +1,10 @@
 import PageTitle from '@/components/content/PageTitle';
 import css from './LeaderboardPage.module.scss';
 import { useState } from 'react';
-import { dummyLeaderboard } from '@/constants/DummyData';
+import { dummyLeaderboard, dummyPrizes } from '@/constants/DummyData';
 import CTA from '@/components/navigation/CTA';
 import Leaderboard from '@/components/layouts/Leaderboard';
+import PricePool from '@/components/layouts/PricePool';
 
 export default function LeaderboardPage() {
   const [timeRadio, setTimeRadio] = useState<'month' | 'all-time'>('month');
@@ -149,6 +150,7 @@ export default function LeaderboardPage() {
             players={dummyLeaderboard}
             title="Players of the Month"
             description="HCP single"
+            prizes={dummyPrizes}
           />
         ) : (
           ''

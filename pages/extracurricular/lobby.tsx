@@ -10,7 +10,7 @@ import { TextInput } from '@/components/inputs/Inputs';
 import Modal from '@/components/layouts/Modal';
 import CopyLink from '@/components/inputs/CopyLink';
 import Leaderboard from '@/components/layouts/Leaderboard';
-import { dummyLeaderboard } from '@/constants/DummyData';
+import { dummyLeaderboard, dummyPrizes } from '@/constants/DummyData';
 
 export default function SponsoredLobby() {
   const rules: { label: string; value: string | React.ReactNode }[] = [
@@ -36,28 +36,7 @@ export default function SponsoredLobby() {
     { label: 'Player count max.', value: '-' },
   ];
 
-  const prizes = [
-    {
-      img: '/layouts/excr/WGC-EXCR_price_1000.png',
-      title: '1,000 $ GIFT CARD',
-      desc: 'Price Description',
-    },
-    {
-      img: '/layouts/excr/WGC-EXCR_price_500.png',
-      title: '500 $ GIFT CARD',
-      desc: 'Price Description',
-    },
-    {
-      img: '/layouts/excr/WGC-EXCR_price_250.png',
-      title: '250 $ GIFT CARD',
-      desc: 'Price Description',
-    },
-    {
-      img: '/layouts/excr/WGC-EXCR_price_50percents.png',
-      title: '50% OFF GIFT CARD',
-      desc: 'For every participant!',
-    },
-  ];
+  const prizes: PriceType[] = dummyPrizes;
 
   const [enterScore, showScoreModal] = useState<boolean>(false);
 
@@ -124,7 +103,7 @@ export default function SponsoredLobby() {
         {prizes.length ? (
           <PricePool className={css.poolPreview} prizes={prizes} preview />
         ) : (
-          <MoneyPool className={css.poolPreview} amount={102} />
+          <MoneyPool className={css.poolPreview} total={102} />
         )}
 
         <div className={css.btns}>

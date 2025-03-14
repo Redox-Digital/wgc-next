@@ -5,7 +5,6 @@ import Button from '../navigation/Button';
 import Link from 'next/link';
 
 type Props = {
-  amount?: number;
   prizes?: PriceType[];
   preview?: boolean;
   className?: string;
@@ -53,11 +52,37 @@ export default function PricePool({ preview, prizes, className }: Props) {
   );
 }
 
-export function MoneyPool({ amount, className }: Props) {
+type MoneyPoolType = {
+  total: number;
+  breakdown?: {
+    first?: number;
+    second?: number;
+    third?: number;
+  };
+  className?: string;
+};
+
+export function MoneyPool({ total, breakdown, className }: MoneyPoolType) {
   return (
     <div className={`${css.moneyPool} ${className}`}>
-      <small>Price Pool</small>
-      <h3>$ {amount?.toFixed(2)}</h3>
+      <div className={css.total}>
+        <small>Price Pool</small>
+        <h3>$ {total?.toFixed(2)}</h3>
+      </div>
+      {breakdown && (
+        <div className={css.breakdown}>
+          <small>Breakdown</small>
+          <h4>
+            1st : <b>$ {breakdown.first?.toFixed(2)}</b>
+          </h4>
+          <h4>
+            2nd : <b>$ {breakdown.second?.toFixed(2)}</b>
+          </h4>
+          <h4>
+            3rd : <b>$ {breakdown.third?.toFixed(2)}</b>
+          </h4>
+        </div>
+      )}
     </div>
   );
 }

@@ -215,6 +215,29 @@ export const dummyLeaderboard: Player[] = [
   },
 ];
 
+export const dummyPrizes: PriceType[] = [
+  {
+    img: '/layouts/excr/WGC-EXCR_price_1000.png',
+    title: '1,000 $ GIFT CARD',
+    desc: 'Price Description',
+  },
+  {
+    img: '/layouts/excr/WGC-EXCR_price_500.png',
+    title: '500 $ GIFT CARD',
+    desc: 'Price Description',
+  },
+  {
+    img: '/layouts/excr/WGC-EXCR_price_250.png',
+    title: '250 $ GIFT CARD',
+    desc: 'Price Description',
+  },
+  {
+    img: '/layouts/excr/WGC-EXCR_price_50percents.png',
+    title: '50% OFF GIFT CARD',
+    desc: 'For every participant!',
+  },
+];
+
 /* Dummy Data with randomly generated numbers 
 
 export const dummyLeaderboard: Player[] = randomNames.map((p) => ({

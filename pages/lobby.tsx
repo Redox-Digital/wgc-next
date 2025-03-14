@@ -85,7 +85,11 @@ export default function Lobby() {
         {prizes.length ? (
           <PricePool className={css.poolPreview} prizes={prizes} preview />
         ) : (
-          <MoneyPool className={css.poolPreview} amount={102} />
+          <MoneyPool
+            className={css.poolPreview}
+            total={102}
+            breakdown={{ first: 50, second: 30, third: 22 }}
+          />
         )}
 
         <div className={css.btns}>
