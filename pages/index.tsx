@@ -4,13 +4,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import SweetAlert from '@/components/content/SweetAlert';
+import { SweetAlertJoin } from '@/components/content/SweetAlert';
 
 import logo from '@/public/logos/logo-wgc-full-accent-white.svg';
 import { useEffect } from 'react';
 
 export default function LandingPage() {
   // DEV
-  const showPopup = () => SweetAlert();
+  // const showPopup = () => SweetAlert();
+  const showPopup = () => SweetAlertJoin();
 
   return (
     <>
