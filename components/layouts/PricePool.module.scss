@@ -125,12 +125,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: var(--md) var(--sm);
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 
     > .price {
-      width: 100%;
-      max-width: calc((100% - var(--sm)) / 2);
+      width: calc((100% - var(--sm)) / 2);
+      max-width: 250px;
 
       display: flex;
       flex-direction: column;
@@ -145,7 +145,7 @@
       > img {
         width: 100%;
         height: auto;
-        aspect-ratio: 3/2; // Idem to Sponsor Preview
+        aspect-ratio: 5/4; // For a square-ish box
         object-fit: cover;
       }
 
@@ -154,6 +154,12 @@
         flex-direction: column;
         padding: var(--sm);
         align-items: flex-start;
+        text-align: left;
+
+        small a {
+          color: inherit;
+          text-decoration: underline;
+        }
       }
     }
   }
