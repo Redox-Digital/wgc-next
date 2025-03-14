@@ -214,5 +214,18 @@
   align-items: center;
   padding: var(--sct-def-margins);
   padding-bottom: 0;
-  gap: var(--lg);
+  gap: var(--xs);
+}
+
+.pricesPreview {
+  padding-inline: var(--sct-horiz-margin);
+
+  .poolPreview {
+    max-width: var(--max-block-width);
+    margin-inline: auto;
+
+    &:hover {
+      transform: none;
+    }
+  }
 }

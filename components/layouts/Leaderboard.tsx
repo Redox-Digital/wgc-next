@@ -2,6 +2,7 @@ import css from './Leaderboard.module.scss';
 import Image from 'next/image';
 import SectionTitle from './SectionTitle';
 import Button from '../navigation/Button';
+import PricePool from './PricePool';
 
 type LeaderboardProps = {
   players?: Player[];
@@ -10,6 +11,7 @@ type LeaderboardProps = {
   description?: string;
   className?: string;
   ongoing?: boolean;
+  prizes?: PriceType[];
 };
 
 export default function Leaderboard({
@@ -19,17 +21,27 @@ export default function Leaderboard({
   description,
   className,
   ongoing = true,
+  prizes,
 }: LeaderboardProps) {
   // If challenge not ongoing, we don't display the podium.
   // If there are less than 3 players, we don't display the podium.
   return (
     <div className={`${css.leaderboard} ${dark && css.dark} ${className}`}>
+      <SectionTitle title={ongoing ? title : 'Players'} className={css.sctTitles}>
+        {description && <small>{description}</small>}
+      </SectionTitle>
+
+      {prizes && prizes.length > 0 ? (
+        <div className={css.pricesPreview}>
+          <PricePool className={css.poolPreview} prizes={prizes} preview />
+        </div>
+      ) : (
+        ''
+      )}
+
       {(players && players.length < 3 && players.length > 0) ||
       (!ongoing && players?.length !== 0) ? (
         <>
-          <SectionTitle title={ongoing ? title : 'Players'} className={css.sctTitles}>
-            {description && <small>{description}</small>}
-          </SectionTitle>
           {players ? (
             <Rankings players={players} ongoing={ongoing} />
           ) : (
@@ -41,13 +53,7 @@ export default function Leaderboard({
       ) : players && players.length > 3 ? (
         // DEV : design not great yet, if no player is ranked.
         <>
-          <Podium
-            first={players[0]}
-            second={players[1]}
-            third={players[2]}
-            title={title}
-            description={description}
-          />
+          <Podium first={players[0]} second={players[1]} third={players[2]} />
           <Rankings players={players.slice(3)} startRank={4} ongoing={ongoing} />
         </>
       ) : (
@@ -61,15 +67,12 @@ type PodiumProps = {
   first: Player;
   second: Player;
   third: Player;
-  title: string;
-  description?: string;
   btn?: { link: string; label: string };
 };
 
-export function Podium({ first, second, third, title, description, btn }: PodiumProps) {
+export function Podium({ first, second, third, btn }: PodiumProps) {
   return (
     <section className={css.podiumSection}>
-      <SectionTitle title={title}>{description && <small>{description}</small>}</SectionTitle>
       <div className={css.podium}>
         <div className={`${css.podiumStep} ${css.first}`}>
           <Image src={first.img} alt={''} width={40} height={40} />
