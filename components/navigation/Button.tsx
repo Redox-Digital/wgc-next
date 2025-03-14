@@ -7,6 +7,7 @@ type Props = {
   outline?: boolean;
   small?: boolean;
   darkBg?: boolean;
+  title?: string;
   className?: string;
   blank?: boolean;
   onClick?: () => void;
@@ -20,6 +21,7 @@ export default function Button({
   darkBg,
   className,
   blank,
+  title,
   small,
   onClick,
 }: Props) {
@@ -31,6 +33,7 @@ export default function Button({
       } ${className}`}
       target={blank ? '_blank' : ''}
       onClick={onClick}
+      title={title}
     >
       {children}
     </Link>
@@ -41,6 +44,7 @@ export default function Button({
         darkBg && css.darkBg
       } ${className}`}
       onClick={onClick ? onClick : () => history.back()} /* TBC */
+      title={title}
     >
       {children}
     </button>

@@ -57,17 +57,31 @@ export function TextInput({
     );
   }
   return (
-    <label
-      htmlFor={id}
-      className={`${css.input} ${dark && css.dark} ${className} ${getInputWidth(width)} ${
-        errorMsg ? css.errorInput : ''
-      }`}
-    >
-      <span>{label}</span>
-      <input type={type} id={id} name={id} placeholder={placeholder} value={value}></input>
-      {type === 'file' && <Image src="/pictograms/photo-dark.svg" alt="" width={20} height={20} />}
-      {errorMsg ? <span className={css.errorMsg}>{errorMsg}</span> : ''}
-    </label>
+    <>
+      <label
+        htmlFor={id}
+        className={`${css.input} ${dark && css.dark} ${className} ${getInputWidth(width)} ${
+          errorMsg ? css.errorInput : ''
+        }`}
+      >
+        <span>{label}</span>
+        <input type={type} id={id} name={id} placeholder={placeholder} value={value}></input>
+        {type === 'file' && (
+          <Image src="/pictograms/photo-dark.svg" alt="" width={20} height={20} />
+        )}
+        {errorMsg ? <span className={css.errorMsg}>{errorMsg}</span> : ''}
+
+        {/* Only displays if an URL is provided. Dummy values need to be replaced. */}
+        {type === 'file' && (
+          <div className={css.imgPreview}>
+            <Image src="https://picsum.photos/36" alt="" width={36} height={36} />
+            <small>
+              Selected file: <i>name-of-the-file.jpg</i>
+            </small>
+          </div>
+        )}
+      </label>
+    </>
   );
 }
 

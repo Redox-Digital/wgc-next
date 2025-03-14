@@ -19,6 +19,18 @@
     width: 100%;
   }
 
+  .editBtn {
+    width: fit-content;
+    min-width: 0;
+    height: auto !important;
+    aspect-ratio: 1;
+    padding: 8px;
+
+    & + span {
+      margin-right: auto;
+    }
+  }
+
   .head,
   .body,
   .foot {
@@ -96,6 +108,7 @@
 
   .foot {
     align-items: flex-end;
+    gap: var(--sm);
 
     > .fee {
       padding: 8px 24px;

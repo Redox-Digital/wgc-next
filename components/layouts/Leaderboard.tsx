@@ -6,35 +6,39 @@ import Button from '../navigation/Button';
 type LeaderboardProps = {
   players?: Player[];
   dark?: boolean;
-  hidePodium?: boolean;
   title: string;
   description?: string;
   className?: string;
+  ongoing?: boolean;
 };
 
 export default function Leaderboard({
   players,
   dark,
-  hidePodium,
   title,
   description,
   className,
+  ongoing = true,
 }: LeaderboardProps) {
+  // If challenge not ongoing, we don't display the podium.
+  // If there are less than 3 players, we don't display the podium.
   return (
     <div className={`${css.leaderboard} ${dark && css.dark} ${className}`}>
-      {hidePodium ? (
+      {(players && players.length < 3 && players.length > 0) ||
+      (!ongoing && players?.length !== 0) ? (
         <>
-          <h2>{title}</h2>
-          <small>{description}</small>
+          <SectionTitle title={ongoing ? title : 'Players'} className={css.sctTitles}>
+            {description && <small>{description}</small>}
+          </SectionTitle>
           {players ? (
-            <Rankings players={players} />
+            <Rankings players={players} ongoing={ongoing} />
           ) : (
             <p>
               <i>No score registered yet</i>
             </p>
           )}
         </>
-      ) : players && players.length > 0 ? (
+      ) : players && players.length > 3 ? (
         // DEV : design not great yet, if no player is ranked.
         <>
           <Podium
@@ -44,7 +48,7 @@ export default function Leaderboard({
             title={title}
             description={description}
           />
-          <Rankings players={players.slice(3)} startRank={4} />
+          <Rankings players={players.slice(3)} startRank={4} ongoing={ongoing} />
         </>
       ) : (
         ''
@@ -109,9 +113,9 @@ export function Podium({ first, second, third, title, description, btn }: Podium
   );
 }
 
-type RankingsProps = { players: Player[]; startRank?: number };
+type RankingsProps = { players: Player[]; startRank?: number; ongoing?: boolean };
 
-export function Rankings({ players, startRank = 1 }: RankingsProps) {
+export function Rankings({ players, startRank = 1, ongoing = true }: RankingsProps) {
   return (
     <section className={css.rankingsSct}>
       <table className={css.rankings}>
@@ -128,7 +132,7 @@ export function Rankings({ players, startRank = 1 }: RankingsProps) {
           {players.map((p, key) => (
             <tr key={key + startRank}>
               <Image src={p.img} alt={''} width={40} height={40} />
-              <td className={css.pos}>#{key + startRank}</td>
+              <td className={css.pos}>{ongoing ? `#${key + startRank}` : '-'}</td>
               <td className={css.name}>{p.name}</td>
 
               <td className={css.hcp}>{p.hcp.toFixed(1)}</td>

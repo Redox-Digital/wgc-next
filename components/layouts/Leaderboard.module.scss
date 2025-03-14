@@ -69,6 +69,7 @@
         > td {
           &.pos {
             color: var(--accent);
+            min-width: 20px;
           }
           &.name {
             width: 100%;
@@ -204,4 +205,14 @@
       }
     }
   }
+}
+
+.sctTitles {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: var(--sct-def-margins);
+  padding-bottom: 0;
+  gap: var(--lg);
 }

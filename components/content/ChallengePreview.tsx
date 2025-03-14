@@ -66,6 +66,18 @@ export default function ChallengePreview({
           </span>
         </div>
         <div className={css.foot}>
+          {edit && (
+            <Button
+              small
+              outline
+              darkBg
+              className={css.editBtn}
+              href="/private/edit"
+              title="Edit Challenge"
+            >
+              <Image src="/pictograms/settings-white.svg" alt="" width={14} height={14} />
+            </Button>
+          )}
           <span className={css.fee}>{fee ? `Buy-in $${fee}` : 'Free'}</span>
           <Button small href={url || '/lobby'}>
             Join now{' '}
