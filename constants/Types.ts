@@ -45,5 +45,5 @@ type FormStep = {
 type PriceType = {
   img: string;
   title: string;
-  desc: string;
+  desc: string | React.ReactNode;
 };
