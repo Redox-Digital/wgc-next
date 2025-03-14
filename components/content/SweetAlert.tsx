@@ -37,14 +37,14 @@ export default function SweetAlert() {
 export function SweetAlertJoin() {
   return Swal.fire({
     title: 'Welcome to Challenge HCP up to 54',
-    html: `<p class="">18-hole Net Stableford on March 13th</p><p>4ACES</p><small>Be able to prove your score (e.i. signed scorecard or federation HCP record sheet)</small>`,
+    html: `<p class="">18-hole Net Stableford on March 13th</p><small>Be able to prove your score (e.i. signed scorecard or federation HCP record sheet)</small>`,
     showCancelButton: true,
     showCloseButton: true,
 
-    imageUrl: 'https://unsplash.it/400/200',
+    imageUrl: '/sponsors/sponsor_4aces.png',
     imageWidth: 400,
     imageHeight: 200,
-    imageAlt: 'Custom image',
+    imageAlt: '4ACES',
 
     customClass: {
       container: swalCss.swalBackdrop,
@@ -55,6 +55,7 @@ export function SweetAlertJoin() {
       cancelButton: swalCss.cancelButton,
       closeButton: swalCss.closeButton,
       denyButton: swalCss.denyButton,
+      image: swalCss.img,
 
       /*
       header: '...',
