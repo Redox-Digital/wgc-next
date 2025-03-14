@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const challenges: ChallengePreview[] = [
   {
     id: 1234,
@@ -217,24 +219,32 @@ export const dummyLeaderboard: Player[] = [
 
 export const dummyPrizes: PriceType[] = [
   {
-    img: '/layouts/excr/WGC-EXCR_price_1000.png',
-    title: '1,000 $ GIFT CARD',
-    desc: 'Price Description',
+    img: '/sponsors/4ACES_Mar2025/WGC_4ACES_1stPrice.png',
+    title: '1st Price',
+    desc: '$500 EXCR gift card + signed 4Aces Miami basketball jersey',
   },
   {
-    img: '/layouts/excr/WGC-EXCR_price_500.png',
-    title: '500 $ GIFT CARD',
-    desc: 'Price Description',
+    img: '/sponsors/4ACES_Mar2025/WGC_4ACES_2ndPrice.png',
+    title: '2nd Price',
+    desc: '$250 EXCR gift card + 4Aces Miami capsule',
   },
   {
-    img: '/layouts/excr/WGC-EXCR_price_250.png',
-    title: '250 $ GIFT CARD',
-    desc: 'Price Description',
+    img: '/sponsors/4ACES_Mar2025/WGC_4ACES_3rdPrice.png',
+    title: '3rd Price',
+    desc: '$150 EXCR gift card + 4Aces Miami hat',
   },
   {
-    img: '/layouts/excr/WGC-EXCR_price_50percents.png',
-    title: '50% OFF GIFT CARD',
-    desc: 'For every participant!',
+    img: '/sponsors/4ACES_Mar2025/WGC_4ACES_ParticipantPrice.png',
+    title: 'For all participants',
+    desc: (
+      <>
+        All entrants get 25% off 4Aces + Extracurricular gear at{' '}
+        <Link href="https://ex-cr.com" target="_blank">
+          ex-cr.com
+        </Link>{' '}
+        PLUS a free Aces hat on any order over $100
+      </>
+    ),
   },
 ];
 
