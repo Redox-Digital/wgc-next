@@ -64,14 +64,17 @@ export default function SponsoredClubhouse() {
         {`
           * {
             /* Overwriting Color Variables to fit the Sponsor's Identity */
-            --black: #0d1720;
-            --black-rgb: 13, 23, 32;
+            --black: #212529;
+            --black-rgb: 33, 37, 41;
 
-            --primary: #252c32;
-            --black-rgb: 27, 44, 50;
+            --dark: #10312b;
+            --dark-rgb: 16, 49, 43;
 
-            --accent: #d9e3f2;
-            --accent-rgb: 217, 227, 242;
+            --primary: #0d6656;
+            --primary-rgb: 13, 102, 86;
+
+            --accent: #fe5e1b;
+            --accent-rgb: 254, 94, 27;
           }
         `}
       </style>
@@ -79,7 +82,8 @@ export default function SponsoredClubhouse() {
         <title>EXTRACURRICULAR x WGC | Welcome</title>
         <link type="image/svg+xml" href="/logos/favicon_excr.svg" />
       </Head>
-      <ChangeBackgroundColor color="#252c32" />
+      {/* Insert below the hex code of the PRIMARY color */}
+      <ChangeBackgroundColor color="#0d6656" />
 
       <Hero
         title={
