@@ -7,12 +7,16 @@
 
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--md);
+
+  padding-bottom: var(--sct-vert-margin);
 }
 
 .rankingsSct {
   padding: var(--sct-def-margins);
-  padding-top: 0;
+  padding-block: 0;
+  width: 100%;
 
   .rankings {
     width: 100%;
@@ -103,6 +107,7 @@
   padding: var(--sct-def-margins);
   padding-bottom: 0;
   gap: var(--lg);
+  width: 100%;
 
   h2,
   small {
@@ -219,6 +224,7 @@
 
 .pricesPreview {
   padding-inline: var(--sct-horiz-margin);
+  width: 100%;
 
   .poolPreview {
     max-width: var(--max-block-width);

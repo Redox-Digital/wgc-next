@@ -11,7 +11,8 @@ type LeaderboardProps = {
   description?: string;
   className?: string;
   ongoing?: boolean;
-  prizes?: PriceType[];
+  prizes?: PriceType[]; // For future usage.
+  btn?: { link: string; label: string };
 };
 
 export default function Leaderboard({
@@ -22,6 +23,7 @@ export default function Leaderboard({
   className,
   ongoing = true,
   prizes,
+  btn,
 }: LeaderboardProps) {
   // If challenge not ongoing, we don't display the podium.
   // If there are less than 3 players, we don't display the podium.
@@ -50,14 +52,22 @@ export default function Leaderboard({
             </p>
           )}
         </>
-      ) : players && players.length > 3 ? (
+      ) : players && players.length >= 3 ? (
         // DEV : design not great yet, if no player is ranked.
         <>
           <Podium first={players[0]} second={players[1]} third={players[2]} />
-          <Rankings players={players.slice(3)} startRank={4} ongoing={ongoing} />
+          {players.length > 3 && (
+            <Rankings players={players.slice(3)} startRank={4} ongoing={ongoing} />
+          )}
         </>
       ) : (
         ''
+      )}
+
+      {btn && (
+        <Button href={btn.link} outline darkBg>
+          {btn.label}
+        </Button>
       )}
     </div>
   );
@@ -70,7 +80,7 @@ type PodiumProps = {
   btn?: { link: string; label: string };
 };
 
-export function Podium({ first, second, third, btn }: PodiumProps) {
+function Podium({ first, second, third, btn }: PodiumProps) {
   return (
     <section className={css.podiumSection}>
       <div className={css.podium}>
@@ -107,11 +117,6 @@ export function Podium({ first, second, third, btn }: PodiumProps) {
           <p>$ {third.moneyWon} won</p>
         </div>
       </div>
-      {btn && (
-        <Button href={btn.link} outline darkBg>
-          {btn.label}
-        </Button>
-      )}
     </section>
   );
 }
