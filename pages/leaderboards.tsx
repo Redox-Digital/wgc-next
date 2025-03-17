@@ -150,7 +150,7 @@ export default function LeaderboardPage() {
             players={dummyLeaderboard}
             title="Players of the Month"
             description="HCP single"
-            prizes={dummyPrizes}
+            // prizes={dummyPrizes}
           />
         ) : (
           ''
