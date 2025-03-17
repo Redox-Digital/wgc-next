@@ -10,43 +10,43 @@ export const challenges: ChallengePreview[] = [
     players: 4,
     dates: '18.11 - 22.11.25',
     fee: 10,
-    img: 'https://www.bridgestoneamericas.com/content/dam/corpcomm/americas/assets/media-center/logos/bridgestone-logos/bridgestone-b-mark-logos/album-cover.png',
+    img: '/sponsors/WGC/WGC_Mar2025/wgc_challenge_mar2025.svg',
     url: '/lobby',
   },
   {
     id: 1235,
-    name: 'Extraccurricular Spring Challenge',
+    name: '4Aces Extraccurricular Miami',
     pool: 100,
     hcp: 'up to 54',
     gameType: 'Net Stableford',
     players: 10,
     dates: '18.11 - 22.11.25',
     fee: 0,
-    img: '/logos/logo_excr_small.svg',
+    img: '/sponsors/4Aces/4Aces_Mar2025/4aces_challenge_mar2025.svg',
     url: '/lobby',
   },
   {
     id: 1236,
-    name: 'Coca Cola Challenge',
+    name: 'Teabo Challenge',
     hcp: 'up to 54',
     pool: 10,
     gameType: 'Net Stableford',
     players: 4,
     dates: '18.11 - 22.11.25',
     fee: 10,
-    img: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Coca-Cola_logo.svg',
+    img: '/sponsors/Teabo/Teabo_Mar2025/teabo_challenge_mar2025.svg',
     url: '/lobby',
   },
   {
     id: 1237,
-    name: 'Challenge Name',
+    name: 'Théobroma Challenge',
     hcp: 'single',
     pool: 10,
     gameType: 'Net Stableford',
     players: 4,
     dates: '18.11 - 22.11.25',
     fee: 10,
-    img: 'https://www.bridgestoneamericas.com/content/dam/corpcomm/americas/assets/media-center/logos/bridgestone-logos/bridgestone-b-mark-logos/album-cover.png',
+    img: '/sponsors/Theobroma/Theobroma_Mar2025/theobroma_challenge_mar2025.png',
     url: '/lobby',
   },
   {
@@ -58,7 +58,7 @@ export const challenges: ChallengePreview[] = [
     players: 4,
     dates: '18.11 - 22.11.25',
     fee: 10,
-    img: 'https://www.bridgestoneamericas.com/content/dam/corpcomm/americas/assets/media-center/logos/bridgestone-logos/bridgestone-b-mark-logos/album-cover.png',
+    img: '/sponsors/Teabo/Teabo_Mar2025/teabo_challenge_mar2025.svg',
     url: '/lobby',
   },
   {
@@ -70,7 +70,7 @@ export const challenges: ChallengePreview[] = [
     players: 4,
     dates: '18.11 - 22.11.25',
     fee: 10,
-    img: 'https://www.bridgestoneamericas.com/content/dam/corpcomm/americas/assets/media-center/logos/bridgestone-logos/bridgestone-b-mark-logos/album-cover.png',
+    img: '/sponsors/WGC/WGC_Mar2025/wgc_challenge_mar2025.svg',
     url: '/lobby',
   },
 ];
@@ -219,22 +219,22 @@ export const dummyLeaderboard: Player[] = [
 
 export const dummyPrizes: PriceType[] = [
   {
-    img: '/sponsors/4ACES_Mar2025/WGC_4ACES_1stPrice.png',
+    img: '/sponsors/4Aces/4Aces_Mar2025/WGC_4ACES_1stPrice.png',
     title: '1st Price',
     desc: '$500 EXCR gift card + signed 4Aces Miami basketball jersey',
   },
   {
-    img: '/sponsors/4ACES_Mar2025/WGC_4ACES_2ndPrice.png',
+    img: '/sponsors/4Aces/4Aces_Mar2025/WGC_4ACES_2ndPrice.png',
     title: '2nd Price',
     desc: '$250 EXCR gift card + 4Aces Miami capsule',
   },
   {
-    img: '/sponsors/4ACES_Mar2025/WGC_4ACES_3rdPrice.png',
+    img: '/sponsors/4Aces/4Aces_Mar2025/WGC_4ACES_3rdPrice.png',
     title: '3rd Price',
     desc: '$150 EXCR gift card + 4Aces Miami hat',
   },
   {
-    img: '/sponsors/4ACES_Mar2025/WGC_4ACES_ParticipantPrice.png',
+    img: '/sponsors/4Aces/4Aces_Mar2025/WGC_4ACES_ParticipantPrice.png',
     title: 'For all participants',
     desc: (
       <>
@@ -245,6 +245,45 @@ export const dummyPrizes: PriceType[] = [
         PLUS a free Aces hat on any order over $100
       </>
     ),
+  },
+];
+
+export const dummySponsors: Sponsor[] = [
+  {
+    name: 'World Golf Challenge',
+    img: '/sponsors/WGC/wgc_sponsor.png',
+    runningChallenge: 0,
+    url: '/extracurricular',
+  },
+  {
+    name: '4ACES',
+    img: '/sponsors/4Aces/4aces_sponsor.png',
+    runningChallenge: 2,
+    url: '/extracurricular',
+  },
+  {
+    name: 'THÉOBROMA',
+    img: '/sponsors/Theobroma/theobroma_sponsor.png',
+    runningChallenge: 2,
+    url: '/extracurricular',
+  },
+  {
+    name: 'Teabo',
+    img: '/sponsors/Teabo/teabo_sponsor.png',
+    runningChallenge: 2,
+    url: '/extracurricular',
+  },
+  {
+    name: 'Extracurricular',
+    img: '/sponsors/z_MockUps/excr_sponsor.png',
+    runningChallenge: 2,
+    url: '/extracurricular',
+  },
+  {
+    name: 'Coca Cola',
+    img: '/sponsors/z_MockUps/coca_sponsor.png',
+    runningChallenge: 4,
+    url: '/extracurricular',
   },
 ];
 

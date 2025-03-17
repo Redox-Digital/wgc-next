@@ -6,49 +6,12 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import YourChallengeFAB from '@/components/navigation/YourChallengeFAB';
 import NextChallengeSection from '@/components/layouts/NextChallengesSection';
-import { dummyLeaderboard } from '@/constants/DummyData';
-import { Podium } from '@/components/layouts/Leaderboard';
+import { dummyLeaderboard, dummySponsors } from '@/constants/DummyData';
+import Leaderboard from '@/components/layouts/Leaderboard';
 import Button from '@/components/navigation/Button';
 import StatBar from '@/components/content/StatBar';
 
-const sponsors: Sponsor[] = [
-  {
-    name: 'Extracurricular',
-    img: '/sponsors/sponsor_excr.png',
-    runningChallenge: 2,
-    url: '/extracurricular',
-  },
-  {
-    name: 'Coca Cola',
-    img: '/sponsors/sponsor_coca.png',
-    runningChallenge: 4,
-    url: '/extracurricular',
-  },
-  {
-    name: 'World Golf Challenge',
-    img: '/sponsors/sponsor_wgc.png',
-    runningChallenge: 0,
-    url: '/extracurricular',
-  },
-  {
-    name: '4ACES',
-    img: '/sponsors/sponsor_4aces.png',
-    runningChallenge: 2,
-    url: '/extracurricular',
-  },
-  {
-    name: 'THÉOBROMA',
-    img: '/sponsors/sponsor_theobroma.png',
-    runningChallenge: 2,
-    url: '/extracurricular',
-  },
-  {
-    name: 'Teabo',
-    img: '/sponsors/sponsor_teabo.png',
-    runningChallenge: 2,
-    url: '/extracurricular',
-  },
-];
+const sponsors: Sponsor[] = dummySponsors;
 
 export default function Clubhouse() {
   // DEV
@@ -121,13 +84,12 @@ export default function Clubhouse() {
         <NextChallengeSection />
       </main>
 
-      <Podium
-        title="Players of the month"
+      <Leaderboard
+        title={'Players of the month'}
         description="Placement resets on the 1st day of each month."
-        first={dummyLeaderboard[0]}
-        second={dummyLeaderboard[1]}
-        third={dummyLeaderboard[2]}
+        players={dummyLeaderboard.slice(0, 3)}
         btn={{ link: '/leaderboards', label: 'All leaderboards' }}
+        ongoing
       />
 
       <section className={css.ctaSct}>
