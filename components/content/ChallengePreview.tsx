@@ -29,7 +29,7 @@ export default function ChallengePreview({
       <div className={css.challengeDesktop}>
         <div className={css.head}>
           <div className={css.img}>
-            {img ? <Image src={img} alt={''} width={60} height={40} /> : <h5>#{id}</h5>}
+            {img ? <Image src={img} alt={''} width={72} height={40} /> : <h5>#{id}</h5>}
           </div>
           <h3>{name}</h3>
           <span className={css.players}>
@@ -91,7 +91,7 @@ export default function ChallengePreview({
         <summary>
           {notification && <div className={css.badge} />}
           <div className={css.img}>
-            {img ? <Image src={img} alt={''} width={60} height={40} /> : <h5>#{id}</h5>}
+            {img ? <Image src={img} alt={''} width={72} height={40} /> : <h5>#{id}</h5>}
           </div>
 
           <div className={css.content}>
