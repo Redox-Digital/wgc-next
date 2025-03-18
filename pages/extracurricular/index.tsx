@@ -64,17 +64,12 @@ export default function SponsoredClubhouse() {
         {`
           * {
             /* Overwriting Color Variables to fit the Sponsor's Identity */
-            --black: #212529;
-            --black-rgb: 33, 37, 41;
-
-            --dark: #10312b;
-            --dark-rgb: 16, 49, 43;
-
-            --primary: #0d6656;
-            --primary-rgb: 13, 102, 86;
-
-            --accent: #fe5e1b;
-            --accent-rgb: 254, 94, 27;
+            --black: #0d1720;
+            --black-rgb: 13, 23, 32;
+            --primary: #252c32;
+            --primary-rgb: 27, 44, 50;
+            --accent: #d9e3f2;
+            --accent-rgb: 217, 227, 242;
           }
         `}
       </style>
@@ -83,7 +78,7 @@ export default function SponsoredClubhouse() {
         <link type="image/svg+xml" href="/logos/favicon_excr.svg" />
       </Head>
       {/* Insert below the hex code of the PRIMARY color */}
-      <ChangeBackgroundColor color="#0d6656" />
+      <ChangeBackgroundColor color="var(--primary)" />
 
       <Hero
         title={
@@ -136,7 +131,7 @@ export default function SponsoredClubhouse() {
           btnLabel={'The shop'}
           href={'https://ex-cr.com/?utm_source=wgc'}
           btnBlank
-          img={'/sponsors/4ACES_Mar2025/4ACES_landing_cta.webp'}
+          img={'/sponsors/4Aces/4Aces_landing_cta.webp'}
           opacity={0.4}
         />
       </section>
