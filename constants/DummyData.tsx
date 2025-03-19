@@ -259,7 +259,7 @@ export const dummySponsors: Sponsor[] = [
     name: '4ACES',
     img: '/sponsors/4Aces/4aces_sponsor.png',
     runningChallenge: 2,
-    url: '/extracurricular',
+    url: '/4aces',
   },
   {
     name: 'THÉOBROMA',
