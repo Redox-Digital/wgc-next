@@ -38,8 +38,8 @@ export default function LandingPage() {
             </p>
 
             <div className={css.btns}>
-              {/* Only for dev purpose, the Swal button isn't meant to be used here. */}
-              <Button onClick={showPopup}>Swal</Button>
+              {/* Only for dev purpose, the Swal button isn't meant to be used here. 
+              <Button onClick={showPopup}>Swal</Button> */}
 
               <Button href="/profile/login/">Login</Button>
               <Button href="/profile/create/" outline darkBg>
