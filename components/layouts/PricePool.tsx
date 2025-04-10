@@ -7,15 +7,16 @@ import Link from 'next/link';
 type Props = {
   prizes?: PriceType[];
   preview?: boolean;
+  privateChallenge?: boolean;
   className?: string;
 };
 
-export default function PricePool({ preview, prizes, className }: Props) {
+export default function PricePool({ preview, prizes, className, privateChallenge }: Props) {
   return preview ? (
     <>
       <Link
         href="#pricepool"
-        className={`${css.pricesPreview} ${className}`}
+        className={`${css.pricesPreview} ${privateChallenge && css.private} ${className}`}
         title="See Price Pool"
       >
         <small>Price Pool</small>

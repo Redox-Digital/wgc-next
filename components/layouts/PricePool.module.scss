@@ -166,3 +166,20 @@
     }
   }
 }
+
+.private {
+  min-height: 120px;
+  padding-top: var(--sm);
+
+  .price {
+    height: 100%;
+
+    > img {
+      height: 100%;
+    }
+  }
+
+  small {
+    display: none;
+  }
+}

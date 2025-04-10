@@ -106,7 +106,7 @@ export default function SponsoredLobby() {
 
         {/* If cash price, show MoneyPool */}
         {prizes.length ? (
-          <PricePool className={css.poolPreview} prizes={prizes} preview />
+          <PricePool privateChallenge className={css.poolPreview} prizes={prizes} preview />
         ) : (
           <MoneyPool className={css.poolPreview} total={102} />
         )}
