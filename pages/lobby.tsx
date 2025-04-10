@@ -69,7 +69,12 @@ export default function Lobby() {
           </Link>
         </div>
 
-        <Image src="/sponsors/sponsor_excr.png" alt="" width={700} height={466} />
+        <Image
+          src="/sponsors/4Aces/4Aces_Mar2025/4aces_challenge_mar2025.png"
+          alt=""
+          width={700}
+          height={466}
+        />
 
         <div className={css.introInfos}>
           <div className={css.timer}>

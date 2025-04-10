@@ -22,7 +22,7 @@ export const challenges: ChallengePreview[] = [
     players: 10,
     dates: '18.11 - 22.11.25',
     fee: 0,
-    img: '/sponsors/4Aces/4Aces_Mar2025/4aces_challenge_mar2025.svg',
+    img: '/sponsors/4Aces/4Aces_Mar2025/4aces_challenge_mar2025.png',
     url: '/lobby',
   },
   {
@@ -220,17 +220,17 @@ export const dummyLeaderboard: Player[] = [
 export const dummyPrizes: PriceType[] = [
   {
     img: '/sponsors/4Aces/4Aces_Mar2025/WGC_4ACES_1stPrice.png',
-    title: '1st Price',
+    title: '1st Prize',
     desc: '$500 EXCR gift card + signed 4Aces Miami basketball jersey',
   },
   {
     img: '/sponsors/4Aces/4Aces_Mar2025/WGC_4ACES_2ndPrice.png',
-    title: '2nd Price',
+    title: '2nd Prize',
     desc: '$250 EXCR gift card + 4Aces Miami capsule',
   },
   {
     img: '/sponsors/4Aces/4Aces_Mar2025/WGC_4ACES_3rdPrice.png',
-    title: '3rd Price',
+    title: '3rd Prize',
     desc: '$150 EXCR gift card + 4Aces Miami hat',
   },
   {
