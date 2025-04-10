@@ -71,3 +71,23 @@ export function SweetAlertJoin() {
     },
   });
 }
+
+type MoreInfoProps = {
+  text: React.ReactNode;
+};
+export function SweetAlertMoreInfo(content: React.ReactNode) {
+  return Swal.fire({
+    // title: 'Hello There',
+    html: `<p class="">${content}</p>`,
+    showCloseButton: true,
+
+    customClass: {
+      container: swalCss.swalBackdrop,
+      popup: swalCss.container,
+      input: swalCss.input,
+      title: swalCss.title,
+      confirmButton: swalCss.confirmButton,
+      closeButton: swalCss.closeButton,
+    },
+  });
+}

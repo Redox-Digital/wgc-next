@@ -70,7 +70,7 @@
     }
   }
   > textarea {
-    min-height: 150px;
+    min-height: 100px;
   }
 
   &.errorInput {
@@ -116,4 +116,21 @@
   > small {
     opacity: 0.7;
   }
+}
+
+.moreInfoBtn {
+  height: 11px;
+  width: 11px;
+
+  font-size: 9px;
+  background: transparent;
+  color: var(--primary);
+  border-radius: 100px;
+  padding: 0;
+  margin: 0;
+  margin-left: 3px;
+  border: none;
+  outline: 1px var(--primary) solid;
+
+  cursor: pointer;
 }

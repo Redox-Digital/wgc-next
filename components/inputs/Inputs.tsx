@@ -1,3 +1,4 @@
+import SweetAlert, { SweetAlertMoreInfo } from '../content/SweetAlert';
 import css from './Inputs.module.scss';
 import Image from 'next/image';
 
@@ -11,6 +12,8 @@ type TextInputType = {
   width?: '50' | '33' | '66' | '50t';
   type: 'text' | 'number' | 'date' | 'textarea' | 'file' | 'password' | 'email';
   errorMsg?: string;
+  moreInfo?: React.ReactNode;
+  disabled?: boolean;
 };
 
 function getInputWidth(width?: '50' | '33' | '66' | '50t') {
@@ -44,16 +47,23 @@ export function TextInput({
   dark,
   value,
   errorMsg,
+  moreInfo,
+  disabled,
 }: TextInputType) {
   if (type === 'textarea') {
     return (
-      <label htmlFor={id} className={`${css.input} ${className} ${errorMsg ? css.errorInput : ''}`}>
-        <span>{label}</span>
-        <textarea id={id} name={id} placeholder={placeholder} defaultChecked>
-          {value}
-        </textarea>
-        {errorMsg ? <span className={css.errorMsg}>{errorMsg}</span> : ''}
-      </label>
+      <>
+        <label
+          htmlFor={id}
+          className={`${css.input} ${className} ${errorMsg ? css.errorInput : ''}`}
+        >
+          <span>{label}</span>
+          <textarea id={id} name={id} placeholder={placeholder} defaultChecked disabled={disabled}>
+            {value}
+          </textarea>
+          {errorMsg ? <span className={css.errorMsg}>{errorMsg}</span> : ''}
+        </label>
+      </>
     );
   }
   return (
@@ -64,8 +74,26 @@ export function TextInput({
           errorMsg ? css.errorInput : ''
         }`}
       >
-        <span>{label}</span>
-        <input type={type} id={id} name={id} placeholder={placeholder} value={value}></input>
+        <span>
+          {label}
+          {moreInfo && (
+            <button
+              type="button"
+              className={css.moreInfoBtn}
+              onClick={() => SweetAlertMoreInfo(moreInfo)}
+            >
+              i
+            </button>
+          )}
+        </span>
+        <input
+          type={type}
+          id={id}
+          name={id}
+          placeholder={placeholder}
+          value={value}
+          disabled={disabled}
+        />
         {type === 'file' && (
           <Image src="/pictograms/photo-dark.svg" alt="" width={20} height={20} />
         )}
@@ -93,6 +121,7 @@ type SelectInputType = {
   width?: '50' | '33' | '66' | '50t';
   dark?: boolean;
   options: { value: string; label: string }[];
+  onChange?: () => void;
 };
 
 export function SelectInput({
@@ -103,6 +132,7 @@ export function SelectInput({
   width,
   dark,
   value,
+  onChange,
 }: SelectInputType) {
   return (
     <label
@@ -111,7 +141,7 @@ export function SelectInput({
     >
       <span>{label}</span>
 
-      <select name={id} id={id}>
+      <select name={id} id={id} onChange={onChange}>
         {options.map((o) => (
           <option value={o.value} key={o.value} selected={o.value === value}>
             {o.label}
