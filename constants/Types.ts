@@ -44,6 +44,12 @@ type FormStep = {
 
 type PriceType = {
   img: string;
-  title: string;
+  title:
+    | '1st Prize'
+    | '2nd Prize'
+    | '3rd Prize'
+    | '4th Prize'
+    | '5th Prize'
+    | 'For all participants';
   desc: string | React.ReactNode;
 };

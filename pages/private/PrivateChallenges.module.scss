@@ -119,3 +119,83 @@
     max-width: calc((100% - 46px - 2 * var(--sm)) / 2);
   }
 }
+
+.formStep .formRowPrizes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sm);
+  width: 100%;
+  flex-wrap: wrap;
+
+  border: solid 1px black !important;
+  margin-inline: calc(var(--sm) * -1);
+  padding: var(--sm);
+}
+
+.prizePool {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sm);
+  width: 100%;
+
+  > button > img {
+    object-fit: cover;
+  }
+}
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  gap: var(--sm);
+  justify-content: flex-end;
+}
+
+.toggles {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: var(--sm);
+  background-color: var(--true-white);
+  border: solid 3px var(--true-white);
+  border-radius: var(--sm);
+
+  > label {
+    display: flex;
+    width: 100%;
+
+    cursor: pointer;
+
+    > input {
+      display: none;
+
+      + span {
+        padding: var(--sm) var(--md);
+        background-color: var(--true-white);
+        width: 100%;
+        text-align: center;
+        font-size: var(--fs-sm);
+      }
+
+      &:checked + span {
+        background: var(--accent);
+        border-radius: var(--sm);
+      }
+    }
+  }
+}
+
+.cashPrizeInput {
+  > input {
+    outline-color: var(--grey) !important;
+
+    &:disabled {
+      outline-color: var(--grey) !important;
+      background-color: var(--grey);
+      cursor: not-allowed;
+    }
+  }
+
+  > span {
+    color: var(--black) !important;
+  }
+}

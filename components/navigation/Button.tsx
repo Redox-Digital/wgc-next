@@ -109,3 +109,18 @@ export function GearButton({ gear, className, onClick }: GearBtnProps) {
     </button>
   );
 }
+
+type PrizeBtnProps = {
+  prize: PriceType;
+  className?: string;
+  onClick?: () => void;
+};
+
+export function PrizeBtnProps({ prize, className, onClick }: PrizeBtnProps) {
+  return (
+    <button type="button" className={`${css.gearBtn} ${className}`} onClick={onClick}>
+      <Image src={prize.img} alt={''} width={50} height={50} />
+      <span>{prize.title}</span>
+    </button>
+  );
+}
