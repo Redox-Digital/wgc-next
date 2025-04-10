@@ -45,8 +45,8 @@ export default function Clubhouse() {
             <Button onClick={() => setModal(!yourChallengeModal)} outline darkBg>
               Enter a score
             </Button>
-            <Button href={'/profile'} outline darkBg>
-              Check your profile
+            <Button href={'/private/create/'} outline darkBg>
+              Create your own Challenge
             </Button>
           </div>
           <StatBar
