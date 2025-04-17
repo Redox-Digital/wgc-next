@@ -29,46 +29,7 @@ export default function CreatePrivateChallenge() {
         <>
           <TextInput id={'name'} label={'Challenge Name'} type={'text'} />
           <TextInput id={'description'} label={'Description (optional)'} type={'textarea'} />
-          <TextInput id={'banner'} label={'Banner'} type={'file'} />
 
-          <SelectInput
-            id={'fee'}
-            label={'Fee Type'}
-            options={[
-              {
-                value: 'buy',
-                label: 'Buy-in',
-              },
-
-              {
-                value: 'free',
-                label: 'Free',
-              },
-            ]}
-            width="50"
-          />
-          <TextInput
-            id={'cost'}
-            label={'Cost to join (USD)'}
-            type={'number'}
-            width="50"
-            value="0"
-          />
-          <SelectInput
-            id={'status'}
-            label={'Status'}
-            options={[
-              {
-                value: 'amateur',
-                label: 'Amateur',
-              },
-              {
-                value: 'pro',
-                label: 'Pro',
-              },
-            ]}
-            width="50t"
-          />
           <SelectInput
             id={'game'}
             label={'Game Type'}
@@ -78,17 +39,8 @@ export default function CreatePrivateChallenge() {
                 label: 'Net Stableford',
               },
             ]}
-            width="50t"
           />
-        </>
-      ),
-    },
-    {
-      id: 1,
-      title: 'Challenge dates',
-      description: 'You can add one or more Challenges to create a Championship',
-      body: (
-        <>
+          {/*
           <TextInput
             id={'challengeNb'}
             label={'Challenge counted for Leaderboard'}
@@ -96,6 +48,7 @@ export default function CreatePrivateChallenge() {
             placeholder="1"
             moreInfo="More infos about the Challenge's number (TBD)"
           />
+          */}
           <div className={css.formRow}>
             <TextInput id={'startDate'} label={'Start Date'} type={'date'} width="50" />
             <TextInput
@@ -109,6 +62,8 @@ export default function CreatePrivateChallenge() {
               <Image src="/pictograms/trash.svg" alt="Delete" width={12} height={12} />
             </Button>
           </div>
+
+          {/* 
 
           <div className={css.formRow}>
             <TextInput
@@ -151,6 +106,56 @@ export default function CreatePrivateChallenge() {
           </div>
 
           <Button onClick={() => null}>Add another Challenge</Button>
+
+          */}
+        </>
+      ),
+    },
+    {
+      id: 1,
+      title: 'Challenge settings',
+      description:
+        'Configure your Challenge how you intend to play it, and decorate your lobby with a custom banner.',
+      body: (
+        <>
+          <SelectInput
+            id={'status'}
+            label={'Status'}
+            options={[
+              {
+                value: 'amateur',
+                label: 'Amateur',
+              },
+              {
+                value: 'pro',
+                label: 'Pro',
+              },
+            ]}
+          />
+          <SelectInput
+            id={'fee'}
+            label={'Fee Type'}
+            options={[
+              {
+                value: 'buy',
+                label: 'Buy-in',
+              },
+
+              {
+                value: 'free',
+                label: 'Free',
+              },
+            ]}
+            width="50"
+          />
+          <TextInput
+            id={'cost'}
+            label={'Cost to join (USD)'}
+            type={'number'}
+            width="50"
+            value="0"
+          />
+          <TextInput id={'banner'} label={"Challenge's Banner"} type={'file'} />
         </>
       ),
     },
@@ -210,6 +215,7 @@ export default function CreatePrivateChallenge() {
                 id="toggleCash"
                 name="toggle"
                 value="cash"
+                checked={prizePoolType === 'cash'}
                 onClick={() => setPrizePoolType('cash')}
               />
               <span>Cash</span>
@@ -221,6 +227,7 @@ export default function CreatePrivateChallenge() {
                 id="toggleGoodies"
                 name="toggle"
                 value="goodies"
+                checked={prizePoolType === 'goodies'}
                 onClick={() => setPrizePoolType('goodies')}
               />
               <span>Goodies</span>
