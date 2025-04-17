@@ -85,7 +85,7 @@ export const privateChallenges: ChallengePreview[] = [
     players: 4,
     dates: '18.11 - 22.11.25',
     fee: 10,
-    img: 'https://www.bridgestoneamericas.com/content/dam/corpcomm/americas/assets/media-center/logos/bridgestone-logos/bridgestone-b-mark-logos/album-cover.png',
+    img: '/layouts/private_challenge_placeholder.svg',
   },
   {
     id: 540,
