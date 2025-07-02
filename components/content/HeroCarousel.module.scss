@@ -1,0 +1,134 @@
+@mixin side-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(var(--primary-rgb), 1) 0%,
+    rgba(var(--primary-rgb), 0) 100%
+  );
+}
+
+// Animation
+$sq-width: 200px;
+$sq-height: 100px;
+$nb-items: 3;
+$anim-speed: 40s;
+
+/*
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc($sq-width * $nb-items * -1));
+  }
+}
+  */
+
+.heroCarousel {
+  width: calc(100% + 2 * var(--sct-horiz-margin));
+  margin-inline: calc(var(--sct-horiz-margin) * -1);
+  overflow: hidden;
+  position: relative;
+
+  /*
+  &::before,
+  &::after {
+    @include side-gradient;
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 100px;
+    z-index: 2;
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  &::before {
+    left: 0px;
+    top: 0;
+  }
+    */
+
+  > h4 {
+    margin-inline: var(--sct-horiz-margin);
+    padding-bottom: var(--sm);
+    z-index: 2;
+    position: relative;
+  }
+
+  .carousel {
+    padding-inline: var(--sct-horiz-margin);
+    animation: scroll $anim-speed linear;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: var(--sm);
+    padding-bottom: var(--sm);
+
+    overflow: visible;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    // scroll-snap-points-x: repeat(calc(var(--card-size) + var(--gap-size)));
+    scroll-behavior: smooth;
+    scroll-padding: var(--sct-horiz-margin);
+    -webkit-overflow-scrolling: touch;
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media screen and (min-width: 1200px) {
+      overflow: visible;
+      animation: none;
+      max-width: 900px;
+    }
+  }
+
+  .priceItem {
+    background-color: var(--white);
+    color: var(--dark);
+    padding: var(--xs);
+    padding-right: var(--sm);
+    border-radius: var(--xs);
+    box-shadow: var(--shadow-hover);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: var(--sm);
+
+    width: 100%;
+    min-width: 200px;
+    max-width: 240px;
+
+    @media screen and (min-width: 1200px) {
+      max-width: 300px;
+    }
+
+    > img {
+      width: 100%;
+      max-width: 60px;
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 4px;
+
+      @media screen and (min-width: 1200px) {
+        max-width: 80px;
+      }
+    }
+
+    > small {
+    }
+  }
+}

@@ -7,6 +7,8 @@ import SectionTitle from '@/components/layouts/SectionTitle';
 import ChallengePreview from '@/components/content/ChallengePreview';
 import { ChangeBackgroundColor } from '../clubhouse';
 import SponsoredPricesPreview from '@/components/content/SponsoredPricesPreview';
+import Button from '@/components/navigation/Button';
+import HeroCarousel from '@/components/content/HeroCarousel';
 
 export default function SponsoredClubhouse() {
   const challenges: ChallengePreview[] = [
@@ -62,6 +64,12 @@ export default function SponsoredClubhouse() {
     },
   ];
 
+  const futurePrices: { title: string; url: string }[] = [
+    { title: '2 Masters 2026 tickets', url: '/sponsors/futurePrices/masters2026.jpg' },
+    { title: 'Play golf with a Major Champion', url: '/sponsors/futurePrices/majorwinner.jpg' },
+    { title: 'Ryder Cup experience', url: '/sponsors/futurePrices/rydercup.jpg' },
+  ];
+
   return (
     <>
       <style jsx global>
@@ -113,6 +121,10 @@ export default function SponsoredClubhouse() {
           Play in the club of your choice in real life while measuring yourself & your score,
           virtually against any other player in the world!
         </p>
+        <HeroCarousel prices={futurePrices} />
+        <Button small href="/profile/create">
+          Stay in the loop - free sign up
+        </Button>
       </Hero>
 
       <main className={css.clubhouse}>
