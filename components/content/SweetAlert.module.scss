@@ -49,12 +49,16 @@
     transition: all 0.3s ease-in-out;
     transform: translateY(-1px);
     box-shadow: var(--shadow-hover);
+
+    background: var(--green);
   }
 
   &:active {
     outline-color: var(--black);
     box-shadow: inset var(--shadow-clicked);
     transition: all 0s;
+
+    background: var(--green);
   }
 }
 
@@ -97,4 +101,13 @@
 }
 
 .text {
+}
+
+.footer > a {
+  color: var(--accent);
+  text-decoration: underline;
+
+  &:hover {
+    color: var(--white);
+  }
 }

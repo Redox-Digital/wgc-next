@@ -4,6 +4,7 @@ import Image from 'next/image';
 import SectionTitle from './SectionTitle';
 import Button from '../navigation/Button';
 import PricePool from './PricePool';
+import Badge from '../content/LeagueBadge';
 
 type LeaderboardProps = {
   players?: Player[];
@@ -14,7 +15,18 @@ type LeaderboardProps = {
   ongoing?: boolean;
   prizes?: PriceType[]; // For future usage.
   btn?: { link: string; label: string };
+  xpLeaderboard?: boolean;
 };
+
+function numberAbbr(num: number): string {
+  if (num >= 1000000) {
+    return `${(Math.round((num / 1000000) * 100) / 100).toFixed(2)}M`;
+  } else if (num >= 1000) {
+    return `${(Math.round((num / 1000) * 100) / 100).toFixed(2)}k`;
+  } else {
+    return num.toString();
+  }
+}
 
 export default function Leaderboard({
   players,
@@ -25,6 +37,7 @@ export default function Leaderboard({
   ongoing = true,
   prizes,
   btn,
+  xpLeaderboard,
 }: LeaderboardProps) {
   // If challenge not ongoing, we don't display the podium.
   // If there are less than 3 players, we don't display the podium.
@@ -46,7 +59,7 @@ export default function Leaderboard({
       (!ongoing && players?.length !== 0) ? (
         <>
           {players ? (
-            <Rankings players={players} ongoing={ongoing} />
+            <Rankings players={players} ongoing={ongoing} showLeagues={xpLeaderboard} />
           ) : (
             <p>
               <i>No score registered yet</i>
@@ -56,9 +69,19 @@ export default function Leaderboard({
       ) : players && players.length >= 3 ? (
         // DEV : design not great yet, if no player is ranked.
         <>
-          <Podium first={players[0]} second={players[1]} third={players[2]} />
+          <Podium
+            first={players[0]}
+            second={players[1]}
+            third={players[2]}
+            showLeagues={xpLeaderboard}
+          />
           {players.length > 3 && (
-            <Rankings players={players.slice(3)} startRank={4} ongoing={ongoing} />
+            <Rankings
+              players={players.slice(3)}
+              startRank={4}
+              ongoing={ongoing}
+              showLeagues={xpLeaderboard}
+            />
           )}
         </>
       ) : (
@@ -79,52 +102,62 @@ type PodiumProps = {
   second: Player;
   third: Player;
   btn?: { link: string; label: string };
+  showLeagues?: boolean;
 };
 
-function Podium({ first, second, third, btn }: PodiumProps) {
+type PodiumStepProps = {
+  rank: number;
+  player: Player;
+  showLeagues?: boolean;
+  className?: string;
+};
+
+function PodiumStep({ rank, player, showLeagues, className }: PodiumStepProps) {
+  return (
+    <div className={`${css.podiumStep} ${className}`}>
+      <Image src={player.img} alt={''} width={40} height={40} />
+      <span className={css.rank}>{rank}</span>
+      <h5>
+        {player.name} <span className={css.flag}>{player.flag}</span>
+      </h5>
+      {}
+      {showLeagues ? (
+        <>
+          <p>{numberAbbr(player.xp)} XP</p>
+          <p>Level {player.level}</p>
+          <Badge userLevel={player.level} />
+        </>
+      ) : (
+        <>
+          <p>{player.pointsScored} pts</p>
+          <p>{player.challengesWon} win(s)</p>
+        </>
+      )}
+      {/* <p>$ {first.moneyWon} won</p> */}
+    </div>
+  );
+}
+
+function Podium({ first, second, third, btn, showLeagues }: PodiumProps) {
   return (
     <section className={css.podiumSection}>
       <div className={css.podium}>
-        <div className={`${css.podiumStep} ${css.first}`}>
-          <Image src={first.img} alt={''} width={40} height={40} />
-          <span className={css.rank}>1</span>
-          <h5>
-            {first.name} <span className={css.flag}>{first.flag}</span>
-          </h5>
-          <p>{first.pointsScored} pts</p>
-          <p>{first.challengesWon} win(s)</p>
-          {/* <p>$ {first.moneyWon} won</p> */}
-        </div>
-
-        <div className={`${css.podiumStep} ${css.second}`}>
-          <Image src={second.img} alt={''} width={40} height={40} />
-          <span className={css.rank}>2</span>
-          <h5>
-            {second.name} <span className={css.flag}>{second.flag}</span>
-          </h5>
-          <p>{second.pointsScored} pts</p>
-          <p>{second.challengesWon} win(s)</p>
-          {/* <p>$ {second.moneyWon} won</p> */}
-        </div>
-
-        <div className={`${css.podiumStep} ${css.third}`}>
-          <Image src={third.img} alt={''} width={40} height={40} />
-          <span className={css.rank}>3</span>
-          <h5>
-            {third.name} <span className={css.flag}>{third.flag}</span>
-          </h5>
-          <p>{third.pointsScored} pts</p>
-          <p>{third.challengesWon} win(s)</p>
-          {/* <p>$ {third.moneyWon} won</p> */}
-        </div>
+        <PodiumStep rank={1} player={first} className={css.first} showLeagues={showLeagues} />
+        <PodiumStep rank={2} player={second} className={css.second} showLeagues={showLeagues} />
+        <PodiumStep rank={3} player={third} className={css.third} showLeagues={showLeagues} />
       </div>
     </section>
   );
 }
 
-type RankingsProps = { players: Player[]; startRank?: number; ongoing?: boolean };
+type RankingsProps = {
+  players: Player[];
+  startRank?: number;
+  ongoing?: boolean;
+  showLeagues?: boolean;
+};
 
-export function Rankings({ players, startRank = 1, ongoing = true }: RankingsProps) {
+export function Rankings({ players, startRank = 1, ongoing = true, showLeagues }: RankingsProps) {
   return (
     <section className={css.rankingsSct}>
       <table className={css.rankings}>
@@ -132,8 +165,17 @@ export function Rankings({ players, startRank = 1, ongoing = true }: RankingsPro
           <tr>
             <th>Pos.</th>
             <th className={css.name}>Name</th>
-            <th>HCP</th>
-            <th>Pts</th>
+            {showLeagues ? (
+              <>
+                <th>XP</th>
+                <th>League</th>
+              </>
+            ) : (
+              <>
+                <th>HCP</th>
+                <th>Pts</th>
+              </>
+            )}
           </tr>
         </thead>
 
@@ -146,8 +188,19 @@ export function Rankings({ players, startRank = 1, ongoing = true }: RankingsPro
               <td className={css.pos}>{ongoing ? `#${key + startRank}` : '-'}</td>
               <td className={css.name}>{p.name}</td>
 
-              <td className={css.hcp}>{p.hcp.toFixed(1)}</td>
-              <td className={css.score}>{p.pointsScored}</td>
+              {showLeagues ? (
+                <>
+                  <td className={css.xp}>{numberAbbr(p.xp)}</td>
+                  <td className={css.league}>
+                    <Badge userLevel={p.level} dot />
+                  </td>
+                </>
+              ) : (
+                <>
+                  <td className={css.hcp}>{p.hcp.toFixed(1)}</td>
+                  <td className={css.score}>{p.pointsScored}</td>
+                </>
+              )}
             </tr>
           ))}
         </tbody>

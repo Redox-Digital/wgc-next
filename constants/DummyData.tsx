@@ -99,31 +99,6 @@ export const privateChallenges: ChallengePreview[] = [
   },
 ];
 
-const getRandInt = (max: number, min: number): number =>
-  Math.floor(Math.random() * (max - min) + min);
-
-const randomNames = [
-  'Jonas Jaeggi',
-  'Guadalupe Bullock',
-  'Deena Roth',
-  'Malik Murphy',
-  'Eric Bolton',
-  'Bernard Mercado',
-  'Shannon Meyers',
-  'Osvaldo Wise',
-  'Bernadine Schwartz',
-  'Laura Walton',
-];
-
-const randomFlags = ['🏳️', '🇺🇸', '🇨🇭', '🇸🇪', '🇨🇦'];
-const randomImgs = [
-  'https://picsum.photos/50',
-  'https://picsum.photos/49',
-  'https://picsum.photos/51',
-  'https://picsum.photos/52',
-  'https://picsum.photos/48',
-];
-
 export const dummyLeaderboard: Player[] = [
   {
     name: 'Jonas Jaeggi',
@@ -133,6 +108,19 @@ export const dummyLeaderboard: Player[] = [
     moneyWon: 269,
     img: 'https://picsum.photos/52',
     hcp: 6,
+    xp: 252098,
+    level: 100,
+  },
+  {
+    name: 'Fredrik Hansen',
+    flag: '🇸🇪',
+    pointsScored: 205,
+    challengesWon: 8,
+    moneyWon: 66,
+    img: 'https://picsum.photos/49',
+    hcp: 0,
+    xp: 200123,
+    level: 95,
   },
   {
     name: 'Guadalupe Bullock',
@@ -142,6 +130,8 @@ export const dummyLeaderboard: Player[] = [
     moneyWon: 66,
     img: 'https://picsum.photos/49',
     hcp: 0,
+    xp: 144001,
+    level: 89,
   },
   {
     name: 'Deena Roth',
@@ -151,6 +141,8 @@ export const dummyLeaderboard: Player[] = [
     moneyWon: 158,
     img: 'https://picsum.photos/50',
     hcp: 33,
+    xp: 63546,
+    level: 78,
   },
   {
     name: 'Malik Murphy',
@@ -160,6 +152,8 @@ export const dummyLeaderboard: Player[] = [
     moneyWon: 239,
     img: 'https://picsum.photos/52',
     hcp: 26,
+    xp: 39000,
+    level: 67,
   },
   {
     name: 'Eric Bolton',
@@ -169,6 +163,8 @@ export const dummyLeaderboard: Player[] = [
     moneyWon: 219,
     img: 'https://picsum.photos/50',
     hcp: 11,
+    xp: 27654,
+    level: 56,
   },
   {
     name: 'Bernard Mercado',
@@ -178,6 +174,8 @@ export const dummyLeaderboard: Player[] = [
     moneyWon: 118,
     img: 'https://picsum.photos/51',
     hcp: 0,
+    xp: 12046,
+    level: 45,
   },
   {
     name: 'Shannon Meyers',
@@ -187,6 +185,8 @@ export const dummyLeaderboard: Player[] = [
     moneyWon: 62,
     img: 'https://picsum.photos/49',
     hcp: 25,
+    xp: 7023,
+    level: 34,
   },
   {
     name: 'Osvaldo Wise',
@@ -196,6 +196,8 @@ export const dummyLeaderboard: Player[] = [
     moneyWon: 87,
     img: 'https://picsum.photos/52',
     hcp: 0,
+    xp: 3900,
+    level: 23,
   },
   {
     name: 'Bernadine Schwartz',
@@ -205,6 +207,8 @@ export const dummyLeaderboard: Player[] = [
     moneyWon: 134,
     img: 'https://picsum.photos/49',
     hcp: 20,
+    xp: 1800,
+    level: 15,
   },
   {
     name: 'Laura Walton',
@@ -214,6 +218,8 @@ export const dummyLeaderboard: Player[] = [
     moneyWon: 224,
     img: 'https://picsum.photos/52',
     hcp: 34,
+    xp: 430,
+    level: 5,
   },
 ];
 

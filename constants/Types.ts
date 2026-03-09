@@ -13,6 +13,8 @@ type Player = {
   challengesWon: number;
   moneyWon: number;
   hcp: number;
+  xp: number;
+  level: number;
 };
 
 type ChallengePreview = {

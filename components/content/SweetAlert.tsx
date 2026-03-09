@@ -72,9 +72,6 @@ export function SweetAlertJoin() {
   });
 }
 
-type MoreInfoProps = {
-  text: React.ReactNode;
-};
 export function SweetAlertMoreInfo(content: React.ReactNode) {
   return Swal.fire({
     // title: 'Hello There',
@@ -88,6 +85,26 @@ export function SweetAlertMoreInfo(content: React.ReactNode) {
       title: swalCss.title,
       confirmButton: swalCss.confirmButton,
       closeButton: swalCss.closeButton,
+    },
+  });
+}
+
+export function SweetAlertLeagues() {
+  return Swal.fire({
+    title: 'Leagues',
+    html: `<p class="">Enter your scores, participates in challenges, win and have fun !</p><p>
+Move up the leagues and show the world that you mean business on the green.</p>`,
+    footer: '<a href="/profile/leagues">See all leagues</a>',
+
+    showCloseButton: true,
+    customClass: {
+      container: swalCss.swalBackdrop,
+      popup: swalCss.container,
+      input: swalCss.input,
+      title: swalCss.title,
+      confirmButton: swalCss.confirmButton,
+      closeButton: swalCss.closeButton,
+      footer: swalCss.footer,
     },
   });
 }
