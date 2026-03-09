@@ -11,7 +11,7 @@
   gap: var(--md);
 
   padding-bottom: var(--sct-vert-margin);
-  width: 100%;
+  width: calc(100% + 2 * var(--sct-horiz-margin));
 }
 
 .rankingsSct {
@@ -67,10 +67,6 @@
 
         padding-right: var(--sm);
 
-        > img {
-          border-radius: var(--sm);
-        }
-
         > td {
           &.pos {
             color: var(--accent);
@@ -86,6 +82,14 @@
           &.score {
             min-width: 36px;
             text-align: right;
+          }
+          &.img {
+            display: flex;
+            padding: 0;
+
+            img {
+              border-radius: var(--sm);
+            }
           }
         }
       }

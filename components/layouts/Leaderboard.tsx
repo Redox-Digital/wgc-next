@@ -1,3 +1,4 @@
+'use client';
 import css from './Leaderboard.module.scss';
 import Image from 'next/image';
 import SectionTitle from './SectionTitle';
@@ -92,7 +93,7 @@ function Podium({ first, second, third, btn }: PodiumProps) {
           </h5>
           <p>{first.pointsScored} pts</p>
           <p>{first.challengesWon} win(s)</p>
-          <p>$ {first.moneyWon} won</p>
+          {/* <p>$ {first.moneyWon} won</p> */}
         </div>
 
         <div className={`${css.podiumStep} ${css.second}`}>
@@ -103,7 +104,7 @@ function Podium({ first, second, third, btn }: PodiumProps) {
           </h5>
           <p>{second.pointsScored} pts</p>
           <p>{second.challengesWon} win(s)</p>
-          <p>$ {second.moneyWon} won</p>
+          {/* <p>$ {second.moneyWon} won</p> */}
         </div>
 
         <div className={`${css.podiumStep} ${css.third}`}>
@@ -114,7 +115,7 @@ function Podium({ first, second, third, btn }: PodiumProps) {
           </h5>
           <p>{third.pointsScored} pts</p>
           <p>{third.challengesWon} win(s)</p>
-          <p>$ {third.moneyWon} won</p>
+          {/* <p>$ {third.moneyWon} won</p> */}
         </div>
       </div>
     </section>
@@ -139,7 +140,9 @@ export function Rankings({ players, startRank = 1, ongoing = true }: RankingsPro
         <tbody>
           {players.map((p, key) => (
             <tr key={key + startRank}>
-              <Image src={p.img} alt={''} width={40} height={40} />
+              <td className={css.img}>
+                <Image src={p.img} alt={''} width={40} height={40} />
+              </td>
               <td className={css.pos}>{ongoing ? `#${key + startRank}` : '-'}</td>
               <td className={css.name}>{p.name}</td>
 
