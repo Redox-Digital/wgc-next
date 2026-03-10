@@ -2,6 +2,7 @@ import { useState } from 'react';
 import css from './FormBuilder.module.scss';
 import PageTitle from '../content/PageTitle';
 import Button from '../navigation/Button';
+import ProgressBar from '../content/ProgressBar';
 
 type Props = {
   confirmationUrl: string;
@@ -54,29 +55,13 @@ function FormStep({ step, currentStep }: FormStepProps) {
   );
 }
 
-type ProgressType = {
-  steps: number;
-  currentStep: number;
-};
-
-function ProgressBar({ steps, currentStep }: ProgressType) {
-  return (
-    <div className={css.progressBar}>
-      <span className={css.bar}>
-        <span className={css.progress} style={{ width: `${((currentStep + 1) / steps) * 100}%` }} />
-      </span>
-      <small>
-        Step {currentStep + 1} of {steps}
-      </small>
-    </div>
-  );
-}
-
-interface NavProps extends ProgressType {
+type NavProps = {
   prevStep: () => void;
   nextStep: () => void;
   confirmationUrl: string;
-}
+  steps: number;
+  currentStep: number;
+};
 
 function FormNav({ steps, currentStep, confirmationUrl, prevStep, nextStep }: NavProps) {
   // DEV: Animate steps when switching
@@ -96,7 +81,11 @@ function FormNav({ steps, currentStep, confirmationUrl, prevStep, nextStep }: Na
       ) : (
         <Button onClick={nextStep}>Continue</Button>
       )}
-      <ProgressBar steps={steps} currentStep={currentStep} />
+      <ProgressBar
+        labels={[`Step ${currentStep + 1} of ${steps}`]}
+        totalScore={steps}
+        currentScore={currentStep}
+      />
     </div>
   );
 }
