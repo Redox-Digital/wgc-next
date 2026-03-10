@@ -25,7 +25,7 @@ type Props = {
   dot?: boolean;
 };
 
-function leagueFinder(lvl: number) {
+export function leagueFinder(lvl: number) {
   return leagues[Math.floor(Math.abs(lvl) / 10)] || leagues[0];
 }
 

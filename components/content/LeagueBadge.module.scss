@@ -22,22 +22,27 @@
 .rookie {
   color: var(--dark-green);
   background: #c7f7a6;
+  outline-color: #c7f7a6;
 }
 
 .weekender {
   background: #002f18;
+  outline-color: #002f18;
 }
 
 .clubMember {
   background: #072a6c;
+  outline-color: #072a6c;
 }
 
 .ironSeeker {
   background: #712200;
+  outline-color: #712200;
 }
 
 .clubChampion {
   background: #472b0a;
+  outline-color: #472b0a;
 }
 
 .tourProspect {
@@ -45,6 +50,7 @@
     --League-TourProspect,
     linear-gradient(102deg, #804a00 8.9%, #895e1a 39.44%, #b08d57 69.98%, #9c7a3c 101.45%)
   );
+  outline-color: #b08d57;
 }
 
 .tournamentReady {
@@ -53,6 +59,7 @@
     --League-TournamenReady,
     linear-gradient(96deg, #a6a7ad 4.75%, #f5f3f2 60.44%, #ddd 116.14%)
   );
+  outline-color: #a6a7ad;
 }
 
 .clubhouseKing {
@@ -61,6 +68,7 @@
     --League-ClubhouseKing,
     linear-gradient(97deg, #997300 5.24%, #d5c453 68.88%, #9d8516 132.52%)
   );
+  outline-color: #d5c453;
 }
 
 .pgaChampion {
@@ -69,6 +77,7 @@
     --League-PGAChampion,
     linear-gradient(97deg, #47dbfa 5.36%, #80ecff 38.83%, #effffe 72.3%, #8af4ff 106.79%)
   );
+  outline-color: #47dbfa;
 }
 
 .grandmaster {
@@ -77,6 +86,7 @@
     --League-Grandmaster,
     linear-gradient(96deg, #c06fe5 4.63%, #cd9bee 34.78%, #f0d7b8 64.93%, #eeb7f4 95.99%)
   );
+  outline-color: #c06fe5;
 }
 
 .golflegend {
