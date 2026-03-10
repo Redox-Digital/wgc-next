@@ -1,0 +1,239 @@
+.notification {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: row;
+  padding: var(--sm);
+  gap: 10px;
+  height: auto;
+
+  &:not(:last-of-type) {
+    border-bottom: solid 1px var(--grey);
+  }
+
+  > img {
+    min-width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 48px;
+  }
+
+  > .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 4px;
+    width: 100%;
+    height: fit-content;
+    min-height: 48px;
+
+    > .texts {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 100%;
+
+      @media screen and (min-width: 1200px) {
+        gap: 10px;
+      }
+
+      > p {
+        font-family: var(--fontfamily-titles);
+        font-size: 14px; // DEV TBC
+        line-height: 1.2em;
+
+        @media screen and (min-width: 1200px) {
+          font-size: var(--fs-sm);
+        }
+      }
+
+      > .actions {
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+
+        @media screen and (min-width: 1200px) {
+          margin-bottom: 6px;
+        }
+      }
+    }
+
+    > .infos {
+      width: 60px;
+      display: flex;
+      flex-direction: column-reverse;
+
+      height: 100%;
+      height: stretch;
+
+      justify-content: space-between;
+      align-items: flex-end;
+
+      .dot {
+        display: block;
+        background-color: var(--accent);
+        width: 12px;
+        height: 12px;
+        border-radius: 12px;
+      }
+
+      small {
+        text-align: right;
+        opacity: 0.75;
+
+        @media screen and (min-width: 1200px) {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+.list {
+  position: fixed;
+  background-color: var(--dark);
+  background:
+    radial-gradient(
+      171.57% 105.57% at 100% 100%,
+      rgba(200, 248, 67, 0.1) 0%,
+      rgba(10, 26, 17, 0.1) 80%
+    ),
+    #0a1a11;
+  height: 100%;
+  width: 100%;
+
+  @media screen and (min-width: 1200px) {
+    max-width: 600px;
+  }
+
+  z-index: 9;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--md);
+
+  padding-block: calc(var(--navbar-height) + var(--md)) var(--lg);
+  padding-inline: var(--sct-horiz-margin);
+
+  right: -100vw;
+  transition: right 0.3s ease-in-out;
+
+  &.open {
+    right: 0;
+    transition: right 0.3s ease-in-out;
+  }
+
+  > .head {
+    display: flex;
+    flex-direction: row;
+    color: var(--white);
+
+    gap: var(--sm);
+
+    > h2 {
+      width: 100%;
+    }
+  }
+
+  > .body {
+    padding-block: var(--xs);
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--white);
+    border-radius: var(--sm);
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .closeBtn {
+    display: block;
+    min-height: 32px;
+    min-width: 32px;
+  }
+}
+
+.btn {
+  width: 100%;
+  background: none;
+  border: none;
+  display: flex;
+  min-width: 42px;
+  min-height: 42px;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  position: relative;
+  cursor: pointer;
+
+  > .label {
+    color: var(--white);
+    font-family: var(--fontfamily-titles);
+    font-weight: 500;
+    display: none;
+
+    @media screen and (min-width: 1200px) {
+      display: inline;
+      text-align: left;
+      font-size: var(--fs-sm);
+      margin-left: var(--sm);
+    }
+
+    @media screen and (min-width: 1400px) {
+      font-size: var(--fs-p);
+    }
+  }
+
+  > .dot {
+    display: block;
+    position: absolute;
+
+    height: 8px;
+    width: 8px;
+    background-color: var(--accent);
+    border-radius: 100px;
+
+    left: 24px;
+    top: 10px;
+
+    outline: solid var(--black) 2px;
+
+    transition: all 0.3s ease-in-out;
+
+    @media screen and (min-width: 1200px) {
+    }
+  }
+
+  &.bgLight > .dot {
+    background-color: var(--primary);
+    outline-color: var(--white);
+
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.animation {
+  opacity: 0.7;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  aspect-ratio: 1;
+  z-index: 0;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  @media screen and (min-width: 1200px) {
+    width: 100%;
+    right: 0;
+  }
+}

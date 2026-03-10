@@ -305,3 +305,428 @@ export const dummyLeaderboard: Player[] = randomNames.map((p) => ({
   hcp: getRandInt(0, 54),
 }));
 */
+
+export const dummyNotifications: NotificationType[] = [
+  {
+    id: '1',
+    img: 'https://randomuser.me/api/portraits/med/men/67.jpg',
+    text: (
+      <>
+        <b>Mikaël Ruffieux</b> followed you.
+      </>
+    ),
+    unread: true,
+    timestamp: new Date(2022, 1, 1),
+    type: 'follow',
+  },
+  {
+    id: '2',
+    text: (
+      <>
+        <b>Masters Week</b> : double XP for everyone ! ⛳
+      </>
+    ),
+    unread: true,
+
+    timestamp: new Date(2022, 4, 1),
+    type: 'general',
+  },
+  {
+    id: '3',
+    img: 'https://randomuser.me/api/portraits/med/men/75.jpg',
+    text: (
+      <>
+        <b>Jonas Jaeggi</b> won the <b>4Aces Miami Vice Challenge</b> ! 🏆
+      </>
+    ),
+    unread: true,
+
+    timestamp: new Date(2023, 4, 12),
+    type: 'cheerable',
+  },
+  {
+    id: '4',
+    img: 'https://randomuser.me/api/portraits/med/men/75.jpg',
+    text: (
+      <>
+        <b>Jonas Jaeggi</b> cheered <b>your promotion</b> 👏🏻
+      </>
+    ),
+    unread: true,
+
+    timestamp: new Date(2023, 7, 25),
+    type: 'reaction',
+  },
+  {
+    id: '5',
+    img: 'https://randomuser.me/api/portraits/med/men/67.jpg',
+    text: (
+      <>
+        <b>Mikaël Ruffieux</b> joined the <b>4Aces Winter Challenge</b>! 📝
+      </>
+    ),
+    unread: true,
+    timestamp: new Date(2025, 1, 1),
+    type: 'challenge',
+  },
+  {
+    id: '6',
+    img: 'https://randomuser.me/api/portraits/med/men/75.jpg',
+    text: (
+      <>
+        <b>Jonas Jaeggi</b> has reached a new rank : <b>PGA Champion</b>
+      </>
+    ),
+    timestamp: new Date(2023, 7, 25),
+    type: 'cheerable',
+  },
+  {
+    id: '7',
+    img: 'https://randomuser.me/api/portraits/med/men/67.jpg',
+    text: (
+      <>
+        <b>Mikaël Ruffieux</b> joined the <b>4Aces Miami Vice Challenge</b>! 📝
+      </>
+    ),
+    timestamp: new Date(2022, 1, 1),
+    type: 'challenge',
+  },
+  // END OF TEST
+  /*
+  {
+    id: '1',
+    img: 'https://randomuser.me/api/portraits/med/men/67.jpg',
+    text: (
+      <>
+        <b>Mikaël Ruffieux</b> followed you.
+      </>
+    ),
+    unread: true,
+    timestamp: new Date(2022, 1, 1),
+    type: 'follow',
+  },
+  {
+    id: '2',
+    text: (
+      <>
+        <b>Masters Week</b> : double XP for everyone ! ⛳
+      </>
+    ),
+    unread: true,
+
+    timestamp: new Date(2022, 4, 1),
+    type: 'general',
+  },
+  {
+    id: '3',
+    img: 'https://randomuser.me/api/portraits/med/men/75.jpg',
+    text: (
+      <>
+        <b>Jonas Jaeggi</b> won the <b>4Aces Miami Vice Challenge</b> ! 🏆
+      </>
+    ),
+    unread: true,
+
+    timestamp: new Date(2023, 4, 12),
+    type: 'cheerable',
+  },
+  {
+    id: '4',
+    img: 'https://randomuser.me/api/portraits/med/men/75.jpg',
+    text: (
+      <>
+        <b>Jonas Jaeggi</b> cheered <b>your promotion</b> 👏🏻
+      </>
+    ),
+    unread: true,
+
+    timestamp: new Date(2023, 7, 25),
+    type: 'reaction',
+  },
+  {
+    id: '5',
+    img: 'https://randomuser.me/api/portraits/med/men/67.jpg',
+    text: (
+      <>
+        <b>Mikaël Ruffieux</b> joined the <b>4Aces Winter Challenge</b>! 📝
+      </>
+    ),
+    unread: true,
+    timestamp: new Date(2025, 1, 1),
+    type: 'challenge',
+  },
+  {
+    id: '6',
+    img: 'https://randomuser.me/api/portraits/med/men/75.jpg',
+    text: (
+      <>
+        <b>Jonas Jaeggi</b> has reached a new rank : <b>PGA Champion</b>
+      </>
+    ),
+    timestamp: new Date(2023, 7, 25),
+    type: 'cheerable',
+  },
+  {
+    id: '7',
+    img: 'https://randomuser.me/api/portraits/med/men/67.jpg',
+    text: (
+      <>
+        <b>Mikaël Ruffieux</b> joined the <b>4Aces Miami Vice Challenge</b>! 📝
+      </>
+    ),
+    timestamp: new Date(2022, 1, 1),
+    type: 'challenge',
+  },
+  {
+    id: '1',
+    img: 'https://randomuser.me/api/portraits/med/men/67.jpg',
+    text: (
+      <>
+        <b>Mikaël Ruffieux</b> followed you.
+      </>
+    ),
+    unread: true,
+    timestamp: new Date(2022, 1, 1),
+    type: 'follow',
+  },
+  {
+    id: '2',
+    text: (
+      <>
+        <b>Masters Week</b> : double XP for everyone ! ⛳
+      </>
+    ),
+    unread: true,
+
+    timestamp: new Date(2022, 4, 1),
+    type: 'general',
+  },
+  {
+    id: '3',
+    img: 'https://randomuser.me/api/portraits/med/men/75.jpg',
+    text: (
+      <>
+        <b>Jonas Jaeggi</b> won the <b>4Aces Miami Vice Challenge</b> ! 🏆
+      </>
+    ),
+    unread: true,
+
+    timestamp: new Date(2023, 4, 12),
+    type: 'cheerable',
+  },
+  {
+    id: '4',
+    img: 'https://randomuser.me/api/portraits/med/men/75.jpg',
+    text: (
+      <>
+        <b>Jonas Jaeggi</b> cheered <b>your promotion</b> 👏🏻
+      </>
+    ),
+    unread: true,
+
+    timestamp: new Date(2023, 7, 25),
+    type: 'reaction',
+  },
+  {
+    id: '5',
+    img: 'https://randomuser.me/api/portraits/med/men/67.jpg',
+    text: (
+      <>
+        <b>Mikaël Ruffieux</b> joined the <b>4Aces Winter Challenge</b>! 📝
+      </>
+    ),
+    unread: true,
+    timestamp: new Date(2025, 1, 1),
+    type: 'challenge',
+  },
+  {
+    id: '6',
+    img: 'https://randomuser.me/api/portraits/med/men/75.jpg',
+    text: (
+      <>
+        <b>Jonas Jaeggi</b> has reached a new rank : <b>PGA Champion</b>
+      </>
+    ),
+    timestamp: new Date(2023, 7, 25),
+    type: 'cheerable',
+  },
+  {
+    id: '7',
+    img: 'https://randomuser.me/api/portraits/med/men/67.jpg',
+    text: (
+      <>
+        <b>Mikaël Ruffieux</b> joined the <b>4Aces Miami Vice Challenge</b>! 📝
+      </>
+    ),
+    timestamp: new Date(2022, 1, 1),
+    type: 'challenge',
+  },
+  {
+    id: '1',
+    img: 'https://randomuser.me/api/portraits/med/men/67.jpg',
+    text: (
+      <>
+        <b>Mikaël Ruffieux</b> followed you.
+      </>
+    ),
+    unread: true,
+    timestamp: new Date(2022, 1, 1),
+    type: 'follow',
+  },
+  {
+    id: '2',
+    text: (
+      <>
+        <b>Masters Week</b> : double XP for everyone ! ⛳
+      </>
+    ),
+    unread: true,
+
+    timestamp: new Date(2022, 4, 1),
+    type: 'general',
+  },
+  {
+    id: '3',
+    img: 'https://randomuser.me/api/portraits/med/men/75.jpg',
+    text: (
+      <>
+        <b>Jonas Jaeggi</b> won the <b>4Aces Miami Vice Challenge</b> ! 🏆
+      </>
+    ),
+    unread: true,
+
+    timestamp: new Date(2023, 4, 12),
+    type: 'cheerable',
+  },
+  {
+    id: '4',
+    img: 'https://randomuser.me/api/portraits/med/men/75.jpg',
+    text: (
+      <>
+        <b>Jonas Jaeggi</b> cheered <b>your promotion</b> 👏🏻
+      </>
+    ),
+    unread: true,
+
+    timestamp: new Date(2023, 7, 25),
+    type: 'reaction',
+  },
+  {
+    id: '5',
+    img: 'https://randomuser.me/api/portraits/med/men/67.jpg',
+    text: (
+      <>
+        <b>Mikaël Ruffieux</b> joined the <b>4Aces Winter Challenge</b>! 📝
+      </>
+    ),
+    unread: true,
+    timestamp: new Date(2025, 1, 1),
+    type: 'challenge',
+  },
+  {
+    id: '6',
+    img: 'https://randomuser.me/api/portraits/med/men/75.jpg',
+    text: (
+      <>
+        <b>Jonas Jaeggi</b> has reached a new rank : <b>PGA Champion</b>
+      </>
+    ),
+    timestamp: new Date(2023, 7, 25),
+    type: 'cheerable',
+  },
+  {
+    id: '7',
+    img: 'https://randomuser.me/api/portraits/med/men/67.jpg',
+    text: (
+      <>
+        <b>Mikaël Ruffieux</b> joined the <b>4Aces Miami Vice Challenge</b>! 📝
+      </>
+    ),
+    timestamp: new Date(2022, 1, 1),
+    type: 'challenge',
+  },
+  {
+    id: '1',
+    img: 'https://randomuser.me/api/portraits/med/men/67.jpg',
+    text: (
+      <>
+        <b>Mikaël Ruffieux</b> followed you.
+      </>
+    ),
+    unread: true,
+    timestamp: new Date(2022, 1, 1),
+    type: 'follow',
+  },
+  {
+    id: '2',
+    text: (
+      <>
+        <b>Masters Week</b> : double XP for everyone ! ⛳
+      </>
+    ),
+    unread: true,
+
+    timestamp: new Date(2022, 4, 1),
+    type: 'general',
+  },
+  {
+    id: '3',
+    img: 'https://randomuser.me/api/portraits/med/men/75.jpg',
+    text: (
+      <>
+        <b>Jonas Jaeggi</b> won the <b>4Aces Miami Vice Challenge</b> ! 🏆
+      </>
+    ),
+    unread: true,
+
+    timestamp: new Date(2023, 4, 12),
+    type: 'cheerable',
+  },
+  {
+    id: '4',
+    img: 'https://randomuser.me/api/portraits/med/men/75.jpg',
+    text: (
+      <>
+        <b>Jonas Jaeggi</b> cheered <b>your promotion</b> 👏🏻
+      </>
+    ),
+    unread: true,
+
+    timestamp: new Date(2023, 7, 25),
+    type: 'reaction',
+  },
+  {
+    id: '5',
+    img: 'https://randomuser.me/api/portraits/med/men/67.jpg',
+    text: (
+      <>
+        <b>Mikaël Ruffieux</b> joined the <b>4Aces Winter Challenge</b>! 📝
+      </>
+    ),
+    unread: true,
+    timestamp: new Date(2025, 1, 1),
+    type: 'challenge',
+  },
+  {
+    id: '6',
+    img: 'https://randomuser.me/api/portraits/med/men/75.jpg',
+    text: (
+      <>
+        <b>Jonas Jaeggi</b> has reached a new rank : <b>PGA Champion</b>
+      </>
+    ),
+    timestamp: new Date(2023, 7, 25),
+    type: 'cheerable',
+  },
+  {
+    id: '7',
+    img: 'https://randomuser.me/api/portraits/med/men/67.jpg',
+    text: (
+      <>
+        <b>Mikaël Ruffieux</b> joined the <b>4Aces Miami Vice Challenge</b>! 📝
+      </>
+    ),
+    timestamp: new Date(2022, 1, 1),
+    type: 'challenge',
+  }, */
+];

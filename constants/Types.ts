@@ -55,3 +55,12 @@ type PriceType = {
     | 'For all participants';
   desc: string | React.ReactNode;
 };
+
+type NotificationType = {
+  id: string;
+  img?: string;
+  text: string | React.ReactNode;
+  unread?: boolean;
+  timestamp: Date;
+  type: 'general' | 'follow' | 'cheerable' | 'reaction' | 'challenge';
+};
