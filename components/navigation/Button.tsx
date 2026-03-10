@@ -6,6 +6,7 @@ type Props = {
   href?: string;
   outline?: boolean;
   small?: boolean;
+  xs?: boolean;
   darkBg?: boolean;
   title?: string;
   className?: string;
@@ -23,12 +24,13 @@ export default function Button({
   blank,
   title,
   small,
+  xs,
   onClick,
 }: Props) {
   return href ? (
     <Link
       href={href}
-      className={`${css.btn} ${small && css.small} ${outline && css.outline} ${
+      className={`${css.btn} ${small && css.small} ${xs && css.xs} ${outline && css.outline} ${
         darkBg && css.darkBg
       } ${className}`}
       target={blank ? '_blank' : ''}
@@ -40,7 +42,7 @@ export default function Button({
   ) : (
     <button
       type="button"
-      className={`${css.btn} ${small && css.small} ${outline && css.outline} ${
+      className={`${css.btn} ${xs && css.xs} ${small && css.small} ${outline && css.outline} ${
         darkBg && css.darkBg
       } ${className}`}
       onClick={onClick ? onClick : () => history.back()} /* TBC */

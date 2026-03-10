@@ -5,8 +5,9 @@ import { NavLink, MainNavLinks, UserLinks, LegalLinks, socialLinks } from '@/con
 import Link from 'next/link';
 import Image from 'next/image';
 import MobileMenu from './MobileMenu';
-import Button from './Button';
-import StatBar from '../content/StatBar';
+import Button from '../Button';
+import StatBar from '../../content/StatBar';
+import NotificationsList, { NotifButton } from './Notifications';
 
 type MenuProps = {
   logo: string;
@@ -20,9 +21,11 @@ type MenuProps = {
 export default function Menu({ logo, logoUrl, links, sponsored, logged, setLogged }: MenuProps) {
   //navbar scroll when active state
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [notifOpen, setNotifOpen] = useState<boolean>(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const toggleLog = () => setLogged(!logged);
+  const toggleNotif = () => setNotifOpen(!notifOpen);
 
   return (
     <>
@@ -47,14 +50,17 @@ export default function Menu({ logo, logoUrl, links, sponsored, logged, setLogge
             )}
 
             {logged ? (
-              <Link href="/profile" className={css.profile} onClick={() => setMenuOpen(false)}>
-                <Image
-                  src="https://wgc.gg/images/profile-picture.png"
-                  width={40}
-                  height={40}
-                  alt="Username"
-                />
-              </Link>
+              <span className={css.rightLinks}>
+                <Link href="/profile" className={css.profile} onClick={() => setMenuOpen(false)}>
+                  <Image
+                    src="https://wgc.gg/images/profile-picture.png"
+                    width={40}
+                    height={40}
+                    alt="Username"
+                  />
+                </Link>
+                <NotifButton onClick={toggleNotif} unreadNotif={true} menuOpen={menuOpen} />
+              </span>
             ) : (
               <>
                 <Link
@@ -70,7 +76,9 @@ export default function Menu({ logo, logoUrl, links, sponsored, logged, setLogge
         </div>
       </nav>
 
-      <SideMenu toggleLogged={toggleLog} logged={logged} />
+      <NotificationsList isOpen={notifOpen} toggle={toggleNotif} />
+
+      <SideMenu toggleLogged={toggleLog} logged={logged} toggleNotifMenu={toggleNotif} />
 
       <MobileMenu
         open={menuOpen}
@@ -113,14 +121,17 @@ export function UserMenu({ name, img, hcp, className, flag = '🏳️', onClick 
 type SideMenuProps = {
   logged?: boolean;
   toggleLogged: () => void;
+  toggleNotifMenu: () => void;
 };
 
-export function SideMenu({ logged, toggleLogged }: SideMenuProps) {
+export function SideMenu({ logged, toggleLogged, toggleNotifMenu }: SideMenuProps) {
   return (
     <nav className={`${css.sideMenu}`}>
       <Link href="/clubhouse">
         <Image src="/logos/wgc-text.svg" alt="" width={300} height={80} />
       </Link>
+
+      {logged && <NotifButton onClick={toggleNotifMenu} unreadNotif={true} />}
 
       <div className={css.navigation}>
         <h4>Navigation</h4>

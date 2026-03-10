@@ -1,6 +1,6 @@
 import { usePathname } from 'next/navigation';
 import Footer from './navigation/Footer';
-import Menu from './navigation/Menu';
+import Menu from './navigation/menu/Menu';
 import { MainNavLinks } from '@/constants/Navigation';
 import { useState } from 'react';
 

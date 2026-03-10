@@ -3,7 +3,7 @@ import { MainNavLinks, UserLinks, LegalLinks } from '@/constants/Navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
-import Button from './Button';
+import Button from '../Button';
 import { UserMenu } from './Menu';
 
 type Props = {
