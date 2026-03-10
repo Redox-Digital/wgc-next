@@ -61,6 +61,41 @@ export default function XpTogglesInput({ setBothRadios, setArg1, setArg2, arg1, 
   );
 }
 
+type toggleProps = {
+  arg: string;
+  setArg: Dispatch<SetStateAction<string>>;
+  className?: string;
+};
+
+export function FriendsToggleInput({ arg, setArg, className }: toggleProps) {
+  return (
+    <div className={`${css.toggles} ${className}`}>
+      <div className={css.toggle1}>
+        <label htmlFor="followers">
+          <input
+            type="radio"
+            name="arg"
+            id="followers"
+            onClick={() => setArg('followers')}
+            checked={arg === 'followers'}
+          />
+          <span>Followers</span>
+        </label>
+        <label htmlFor="following">
+          <input
+            type="radio"
+            name="arg"
+            id="following"
+            onClick={() => setArg('following')}
+            checked={arg === 'following'}
+          />
+          <span>Following</span>
+        </label>
+      </div>
+    </div>
+  );
+}
+
 // Legacy Function
 /*
 export function TogglesInput({ setBothRadios, setArg1, setArg2, arg1, arg2 }: Props) {

@@ -4,6 +4,8 @@ import { SettingButton } from '@/components/navigation/Button';
 import StatBar from '@/components/content/StatBar';
 import Badge, { leagueFinder } from '@/components/content/LeagueBadge';
 import ProgressBar from '@/components/content/ProgressBar';
+import { FriendsBar } from './friends';
+import CopyLink from '@/components/inputs/CopyLink';
 
 export default function Profile() {
   const bag = [
@@ -65,24 +67,37 @@ export default function Profile() {
       <StatBar elements={stats} />
       <section>
         <StatBar title="Bag" elements={bag} className={css.bag} />
-        <SettingButton picto="/pictograms/edit-dark.svg" href="/profile/gear">
-          Edit bag
+      </section>
+
+      <section>
+        <h6>Social</h6>
+        <FriendsBar following={20} followers={26} />
+        <SettingButton
+          picto="/pictograms/friends-dark.svg"
+          href="/profile/friends/search"
+          highlighted
+        >
+          Add new friends
         </SettingButton>
       </section>
 
       <section>
-        <h6>Profile</h6>
-        <SettingButton picto="/pictograms/list-dark.svg" href="/profile/history">
-          Challenge history
-        </SettingButton>
-        <SettingButton picto="/pictograms/gear-dark.svg" href="/profile/edit">
-          Edit profile
+        <h6>Earn XP by referring your friends!</h6>
+        {/* DEV : replace with the correct referal link synthax */}
+        <CopyLink text="https://wgc.gg/register?affiliate=7874" />
+      </section>
+
+      <section>
+        <h6>Quick Links</h6>
+
+        <SettingButton picto="/pictograms/gear-dark.svg" href="/profile/settings">
+          Settings
         </SettingButton>
         <SettingButton picto="/pictograms/wallet-dark.svg" href="/profile/wallet">
           Wallet
         </SettingButton>
-        <SettingButton picto="/pictograms/logout-danger.svg" className={css.danger}>
-          Logout
+        <SettingButton picto="/pictograms/list-dark.svg" href="/profile/history">
+          Challenge history
         </SettingButton>
       </section>
     </main>

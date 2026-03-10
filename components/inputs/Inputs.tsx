@@ -14,6 +14,7 @@ type TextInputType = {
   errorMsg?: string;
   moreInfo?: React.ReactNode;
   disabled?: boolean;
+  changeHandler?: (e: any) => void;
 };
 
 function getInputWidth(width?: '50' | '33' | '66' | '50t') {
@@ -49,6 +50,7 @@ export function TextInput({
   errorMsg,
   moreInfo,
   disabled,
+  changeHandler,
 }: TextInputType) {
   if (type === 'textarea') {
     return (
@@ -58,7 +60,14 @@ export function TextInput({
           className={`${css.input} ${className} ${errorMsg ? css.errorInput : ''}`}
         >
           <span>{label}</span>
-          <textarea id={id} name={id} placeholder={placeholder} defaultChecked disabled={disabled}>
+          <textarea
+            id={id}
+            name={id}
+            placeholder={placeholder}
+            defaultChecked
+            disabled={disabled}
+            onChange={changeHandler}
+          >
             {value}
           </textarea>
           {errorMsg ? <span className={css.errorMsg}>{errorMsg}</span> : ''}
@@ -93,6 +102,7 @@ export function TextInput({
           placeholder={placeholder}
           value={value}
           disabled={disabled}
+          onChange={changeHandler}
         />
         {type === 'file' && (
           <Image src="/pictograms/photo-dark.svg" alt="" width={20} height={20} />

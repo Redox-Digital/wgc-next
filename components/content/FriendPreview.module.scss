@@ -1,0 +1,64 @@
+.friendsPreview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: 100%;
+  background: #fff;
+
+  border-radius: 10px;
+  border: 1px solid var(--grey);
+  padding: 3px;
+  padding-right: 11px;
+  gap: 15px;
+
+  > img {
+    width: 41px;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  > a {
+    width: 100%;
+  }
+}
+
+.addFriendBtn {
+  border: none;
+  color: var(--accent);
+  background-color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 25px;
+  height: 25px;
+  border-radius: 3px;
+  font-size: var(--sm);
+  overflow: hidden;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+
+  &:disabled {
+    opacity: 0.75;
+    background-color: var(--accent);
+    color: var(--dark);
+
+    width: 100%;
+    max-width: 90px;
+
+    transition: all 0.3s ease-in-out;
+    cursor: default;
+
+    > img {
+      width: 12px;
+      height: auto;
+      aspect-ratio: 1;
+      margin-left: var(--xs);
+    }
+  }
+}

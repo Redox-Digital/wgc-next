@@ -68,6 +68,7 @@ type SettingsBtnProps = {
   onClick?: () => void;
   picto?: string;
   children?: string | React.ReactNode;
+  highlighted?: boolean;
 };
 
 export function SettingButton({
@@ -77,11 +78,12 @@ export function SettingButton({
   onClick,
   children,
   picto,
+  highlighted,
 }: SettingsBtnProps) {
   return href ? (
     <Link
       href={href}
-      className={`${css.settingBtn} ${className}`}
+      className={`${css.settingBtn} ${className} ${highlighted && css.highlighted}`}
       target={blank ? '_blank' : ''}
       onClick={onClick}
     >

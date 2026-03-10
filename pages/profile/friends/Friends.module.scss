@@ -1,0 +1,51 @@
+.page {
+  width: 100%;
+  max-width: var(--max-paragraph-width);
+  margin-inline: auto;
+  min-height: var(--fullscreen-height);
+
+  section {
+    gap: var(--xs);
+
+    h6 {
+      margin-left: var(--md);
+    }
+  }
+}
+
+.friendsList {
+  .toggle {
+    border-radius: 12px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.friendsBar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--black);
+  border-radius: 12px;
+  padding: var(--sm);
+  gap: var(--lg);
+  justify-content: center;
+
+  > a {
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      color: var(--white);
+    }
+    > small {
+      color: var(--accent);
+      font-size: var(--fs-xs);
+    }
+  }
+}
