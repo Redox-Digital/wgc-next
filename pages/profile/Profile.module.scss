@@ -28,6 +28,10 @@
     }
   }
 
+  .bag img {
+    background-color: var(--white);
+  }
+
   .user {
     display: flex;
     flex-direction: column;

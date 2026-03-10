@@ -25,6 +25,7 @@ export default function Profile() {
       name: 'Balls',
       picto: '/brands/tm.png',
     },
+    { name: 'Edit', picto: '/pictograms/edit-dark.svg', url: '/profile/gear' },
   ];
 
   const stats = [

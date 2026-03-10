@@ -31,17 +31,29 @@
       width: 100%;
       justify-content: flex-end;
 
-      > img {
+      > a {
+        display: flex;
+        flex-direction: column;
+        gap: var(--xs);
+
+        > img {
+          background-color: var(--accent) !important;
+          outline: solid 4px var(--accent);
+          border-radius: 1px;
+        }
+      }
+
+      img {
         border-radius: 3px;
         object-fit: contain;
       }
 
-      > small {
+      small {
         font-size: var(--fs-xs);
         color: var(--accent);
       }
 
-      > span {
+      span {
         font-family: var(--fontfamily-titles);
         margin: 0;
         font-weight: 700;
