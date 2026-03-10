@@ -2,6 +2,8 @@ import css from './Profile.module.scss';
 import Image from 'next/image';
 import { SettingButton } from '@/components/navigation/Button';
 import StatBar from '@/components/content/StatBar';
+import Badge, { leagueFinder } from '@/components/content/LeagueBadge';
+import ProgressBar from '@/components/content/ProgressBar';
 
 export default function Profile() {
   const bag = [
@@ -26,17 +28,21 @@ export default function Profile() {
   const stats = [
     { name: 'HCP', value: '16.0', picto: '/pictograms/profile-hcp.svg' },
     { name: 'Challenges played', value: 24, picto: '/pictograms/profile-challenges.svg' },
-    { name: 'Member since', value: '12/26/22', picto: '/pictograms/profile-date.svg' },
+    { name: 'Wallet', value: '$100.00', picto: '/pictograms/wallet-gradient.svg' },
   ];
+
   return (
     <main className={css.profilePage}>
       <div className={`${css.user}`}>
+        <Badge userLevel={3} />
+
         <label htmlFor="profilePicture" title="Change profile picture">
           <Image
             src={'https://wgc.gg/images/profile-picture.png'}
             alt={'Jonas Jaeggi'}
             width={80}
             height={80}
+            className={leagueFinder(2).className}
           />
           <span>
             <Image src="/pictograms/pen-black.svg" alt="" width={16} height={16} />
@@ -44,14 +50,17 @@ export default function Profile() {
           <input type="image" name="profilePicture" id="profilePicture" />
         </label>
 
-        <h2>Jonas Jaeggi 🏳️</h2>
-        <small>
-          HCP: 16.0 |{' '}
-          <span>
-            <Image src="/pictograms/wallet-white.svg" alt="Wallet" width={15} height={15} />
-            &nbsp;$100.00
-          </span>
-        </small>
+        <div className={css.username}>
+          <h2>Jonas Jaeggi 🏳️</h2>
+          <small>Member since 2022</small>
+        </div>
+
+        <ProgressBar
+          currentScore={145}
+          totalScore={205}
+          labels={['Your Progress', `Level ${2}`, `${145} / ${205}`]}
+          className={css.levelBar}
+        />
       </div>
       <StatBar elements={stats} />
       <section>

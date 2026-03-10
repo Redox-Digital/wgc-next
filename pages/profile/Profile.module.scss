@@ -17,7 +17,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--xs);
+    gap: var(--sm);
+
+    > .username {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      > small {
+        opacity: 0.5;
+        font-family: var(--fontfamily-titles);
+        font-size: 15px;
+      }
+    }
 
     > small {
       opacity: 0.7;
@@ -54,7 +67,11 @@
       }
 
       > img {
+        outline-style: solid;
+        outline-width: 3px;
         border-radius: 1000px;
+
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
       }
       > input {
         display: none;
@@ -136,4 +153,13 @@
   max-width: var(--max-paragraph-width);
   margin-inline: auto;
   min-height: var(--fullscreen-height);
+}
+
+.levelBar {
+  flex-direction: column-reverse !important;
+  gap: 4px !important;
+
+  small {
+    font-size: var(--fs-h6);
+  }
 }
