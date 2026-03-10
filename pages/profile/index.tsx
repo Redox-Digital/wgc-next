@@ -6,6 +6,9 @@ import Badge, { leagueFinder } from '@/components/content/LeagueBadge';
 import ProgressBar from '@/components/content/ProgressBar';
 import { FriendsBar } from './friends';
 import CopyLink from '@/components/inputs/CopyLink';
+import { BadgesPreviewList } from '@/components/content/Badges';
+
+import { userBadges } from '@/components/content/Badges';
 
 export default function Profile() {
   const bag = [
@@ -86,6 +89,11 @@ export default function Profile() {
         <h6>Earn XP by referring your friends!</h6>
         {/* DEV : replace with the correct referal link synthax */}
         <CopyLink text="https://wgc.gg/register?affiliate=7874" />
+      </section>
+
+      <section>
+        <h6>Badges</h6>
+        <BadgesPreviewList badges={userBadges} />
       </section>
 
       <section>

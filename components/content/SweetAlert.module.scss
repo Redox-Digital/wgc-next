@@ -111,3 +111,30 @@
     color: var(--white);
   }
 }
+
+.badge {
+  &Surtitle {
+    color: var(--accent);
+    text-align: center;
+    font-family: var(--fontfamily-titles);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &Title {
+  }
+
+  &Date {
+    width: fit-content;
+    display: block;
+    margin-top: 16px;
+    margin-inline: auto;
+    color: var(--blue);
+    padding: 4px 8px;
+    border-radius: 100px;
+
+    background-color: rgba(var(--blue-rgb), 0.3);
+  }
+}

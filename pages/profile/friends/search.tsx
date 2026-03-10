@@ -19,7 +19,7 @@ export default function FriendsSearch() {
     img: user.img,
     url: '/profile',
     notFollowed: true,
-    pending: Boolean(Math.round(Math.random())),
+    pending: Math.random() < 0.5,
   }));
 
   return (

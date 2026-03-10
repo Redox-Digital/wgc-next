@@ -108,3 +108,32 @@ Move up the leagues and show the world that you mean business on the green.</p>`
     },
   });
 }
+
+type SwalBadgeProps = {
+  img: string;
+  title: string;
+  description: string;
+  date: Date;
+};
+
+export function SweetAlertBadge({ img, title, description, date }: SwalBadgeProps) {
+  return Swal.fire({
+    title: '',
+    imageUrl: img,
+    // imageHeight: 120,
+    html: `<p class="${swalCss.badgeSurtitle}">${title}</p>
+    <h3 class="${swalCss.badgeTitle}">${description}</h3>
+    <small class="${swalCss.badgeDate}">${date.toDateString()}</small>`,
+
+    showCloseButton: true,
+    customClass: {
+      container: swalCss.swalBackdrop,
+      popup: swalCss.container,
+      input: swalCss.input,
+      title: swalCss.title,
+      confirmButton: swalCss.confirmButton,
+      closeButton: swalCss.closeButton,
+      footer: swalCss.footer,
+    },
+  });
+}
