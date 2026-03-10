@@ -1,52 +1,79 @@
+import Link from 'next/link';
 import css from './LeagueBadge.module.scss';
 import { SweetAlertLeagues } from './SweetAlert';
 
 type League = {
   title: string;
   className: string;
+  badgeUrl: string;
 };
 
-const leagues: League[] = [
-  { title: 'Rookie', className: css.rookie },
-  { title: 'Weekender', className: css.weekender },
-  { title: 'Club Member', className: css.clubMember },
-  { title: 'Iron Seeker', className: css.ironSeeker },
-  { title: 'Club Champion', className: css.clubChampion },
-  { title: 'Tour Prospect', className: css.tourProspect },
-  { title: 'Tournament Ready', className: css.tournamentReady },
-  { title: 'Clubhouse King', className: css.clubhouseKing },
-  { title: 'PGA Champion', className: css.pgaChampion },
-  { title: 'Grandmaster', className: css.grandmaster },
-  { title: 'Golf Legend', className: css.golflegend },
+export const leagues: League[] = [
+  { title: 'Rookie', className: css.rookie, badgeUrl: '/leagues/Rookie.svg' },
+  { title: 'Weekender', className: css.weekender, badgeUrl: '/leagues/Weekender.svg' },
+  { title: 'Club Member', className: css.clubMember, badgeUrl: '/leagues/ClubMember.svg' },
+  { title: 'Iron Seeker', className: css.ironSeeker, badgeUrl: '/leagues/IronSeeker.svg' },
+  { title: 'Club Champion', className: css.clubChampion, badgeUrl: '/leagues/ClubChampion.svg' },
+  { title: 'Tour Prospect', className: css.tourProspect, badgeUrl: '/leagues/TourProspect.svg' },
+  {
+    title: 'Tournament Ready',
+    className: css.tournamentReady,
+    badgeUrl: '/leagues/TournamentReady.svg',
+  },
+  { title: 'Clubhouse King', className: css.clubhouseKing, badgeUrl: '/leagues/ClubhouseKing.svg' },
+  { title: 'PGA Champion', className: css.pgaChampion, badgeUrl: '/leagues/PgaChampion.svg' },
+  { title: 'Grandmaster', className: css.grandmaster, badgeUrl: '/leagues/Grandmaster.svg' },
+  { title: 'Golf Legend', className: css.golflegend, badgeUrl: '/leagues/GolfLegend.svg' },
 ];
-
-type Props = {
-  userLevel: number;
-  dot?: boolean;
-};
 
 export function leagueFinder(lvl: number) {
   return leagues[Math.floor(Math.abs(lvl) / 10)] || leagues[0];
 }
 
-export default function Badge({ userLevel, dot }: Props) {
+type Props = {
+  userLevel: number;
+  href?: string;
+  modal?: boolean;
+  dot?: boolean;
+  locked?: boolean;
+};
+
+export default function Badge({ userLevel, dot, modal, locked, href }: Props) {
   if (dot) {
     return (
       <span
         onClick={() => SweetAlertLeagues()}
-        className={`${css.leagueTag} ${css.dot} ${leagueFinder(userLevel).className}`}
+        className={`${css.leagueTag} ${css.dot} ${leagueFinder(userLevel).className} ${locked && css.locked}`}
         title={`${leagueFinder(userLevel).title}, Level ${userLevel}`}
       />
     );
-  } else {
+  } else if (modal) {
     return (
       <div
         onClick={() => SweetAlertLeagues()}
-        className={`${css.leagueTag} ${leagueFinder(userLevel).className}`}
+        className={`${css.leagueTag} ${leagueFinder(userLevel).className} ${locked && css.locked}`}
         title={`${leagueFinder(userLevel).title}, Level ${userLevel}`}
       >
         {leagueFinder(userLevel).title}
       </div>
+    );
+  } else if (href) {
+    return (
+      <Link
+        className={`${css.leagueTag} ${leagueFinder(userLevel).className} ${locked && css.locked}`}
+        title={`${leagueFinder(userLevel).title}, Level ${userLevel}`}
+        href={'/profile/leagues'}
+      >
+        {leagueFinder(userLevel).title}
+      </Link>
+    );
+  } else {
+    return (
+      <span
+        className={`${css.leagueTag} ${css.span} ${leagueFinder(userLevel).className} ${locked && css.locked}`}
+      >
+        {leagueFinder(userLevel).title}
+      </span>
     );
   }
 }

@@ -3,11 +3,13 @@
   padding: 4px 8px;
   justify-content: center;
   align-items: center;
+  text-align: center;
   border-radius: 36px;
 
   font-size: var(--fs-xs);
   line-height: 100%;
   min-width: 50px;
+  white-space: nowrap;
 
   color: var(--white);
   cursor: help;
@@ -16,6 +18,17 @@
     width: 15px;
     height: 15px;
     min-width: 0px;
+  }
+
+  &.span {
+    cursor: inherit;
+  }
+
+  &.locked {
+    color: var(--white) !important;
+    background: #808080 !important;
+    outline-color: #808080 !important;
+    cursor: inherit;
   }
 }
 
@@ -26,6 +39,7 @@
 }
 
 .weekender {
+  color: var(--white);
   background: #002f18;
   outline-color: #002f18;
 }

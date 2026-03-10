@@ -34,7 +34,7 @@ export default function Profile() {
   return (
     <main className={css.profilePage}>
       <div className={`${css.user}`}>
-        <Badge userLevel={3} />
+        <Badge userLevel={3} href="/profile/leagues" />
 
         <label htmlFor="profilePicture" title="Change profile picture">
           <Image

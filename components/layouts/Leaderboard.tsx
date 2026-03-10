@@ -125,7 +125,7 @@ function PodiumStep({ rank, player, showLeagues, className }: PodiumStepProps) {
         <>
           <p>{numberAbbr(player.xp)} XP</p>
           <p>Level {player.level}</p>
-          <Badge userLevel={player.level} />
+          <Badge userLevel={player.level} modal />
         </>
       ) : (
         <>

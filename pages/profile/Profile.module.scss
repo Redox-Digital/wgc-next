@@ -163,3 +163,56 @@
     font-size: var(--fs-h6);
   }
 }
+
+.leaguesPage {
+  min-height: 65vh;
+  overflow: visible;
+
+  > section {
+    display: flex;
+    flex-direction: column;
+    opacity: 0.75;
+  }
+  .carouselWrapper {
+    width: 100%;
+    overflow: visible;
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .carousel {
+      display: flex;
+      flex-direction: row;
+      gap: var(--sm);
+      transform-style: preserve-3d;
+      overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
+    align-items: center;
+
+    > img {
+      width: 64px;
+      aspect-ratio: 1;
+      height: auto;
+      object-fit: contain;
+
+      @media screen and (min-width: 1200px) {
+        width: 86px;
+      }
+    }
+
+    &.locked {
+      opacity: 0.4;
+    }
+  }
+}
