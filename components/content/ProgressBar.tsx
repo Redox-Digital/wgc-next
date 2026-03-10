@@ -9,7 +9,7 @@ type ProgressType = {
 
 export default function ProgressBar({ labels, totalScore, currentScore, className }: ProgressType) {
   return (
-    <div className={`${css.progressBar} ${className}`}>
+    <div className={`${className} ${css.progressBar}`}>
       <span className={css.bar}>
         <span
           className={css.progress}
