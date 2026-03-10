@@ -12,6 +12,7 @@ type Props = {
   className?: string;
   blank?: boolean;
   onClick?: () => void;
+  disabled?: boolean;
   children?: string | React.ReactNode;
 };
 
@@ -25,6 +26,7 @@ export default function Button({
   title,
   small,
   xs,
+  disabled,
   onClick,
 }: Props) {
   return href ? (
@@ -47,6 +49,7 @@ export default function Button({
       } ${className}`}
       onClick={onClick ? onClick : () => history.back()} /* TBC */
       title={title}
+      disabled={disabled}
     >
       {children}
     </button>

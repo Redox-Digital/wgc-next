@@ -1,0 +1,20 @@
+.page {
+  width: 100%;
+  max-width: var(--max-paragraph-width);
+  margin-inline: auto;
+  min-height: var(--fullscreen-height);
+
+  section {
+    gap: var(--xs);
+
+    h6 {
+      margin-left: var(--md);
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}

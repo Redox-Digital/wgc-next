@@ -1,5 +1,5 @@
 import PageTitle from '@/components/content/PageTitle';
-import css from './Friends.module.scss';
+import css from './UsersPages.module.scss';
 import CopyLink from '@/components/inputs/CopyLink';
 import { TextInput } from '@/components/inputs/Inputs';
 import { useState } from 'react';
@@ -13,18 +13,37 @@ export default function FriendsSearch() {
     setSearch(e.target.value);
   };
 
+  // DEV : use user's unique ID instead.
+  const slugify = (input: string) => {
+    if (!input) return '';
+
+    // make lower case and trim
+    var slug = input.toLowerCase().trim();
+
+    // remove accents from charaters
+    slug = slug.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+    // replace invalid chars with spaces
+    slug = slug.replace(/[^a-z0-9\s-]/g, ' ').trim();
+
+    // replace multiple spaces or hyphens with a single hyphen
+    slug = slug.replace(/[\s-]+/g, '-');
+
+    return slug;
+  };
+
   // DEV : Static Data
   const friends: UserPreviewProps[] = dummyLeaderboard.map((user) => ({
     name: `${user.name} ${user.flag}`,
     img: user.img,
-    url: '/profile',
+    url: `/users/${slugify(user.name)}`,
     notFollowed: true,
     pending: Math.random() < 0.5,
   }));
 
   return (
     <main className={css.page}>
-      <PageTitle title="Add friends" returnBtn />
+      <PageTitle title="Find other players" returnBtn />
 
       <section className={css.search}>
         <h6>Search</h6>

@@ -147,9 +147,10 @@ export const userBadges: UserBadgeType[] = badges.map((b) => ({
 
 type ListProps = {
   badges: UserBadgeType[];
+  username?: string;
 };
 
-export function BadgesPreviewList({ badges }: ListProps) {
+export function BadgesPreviewList({ badges, username }: ListProps) {
   return (
     <div className={css.previewList}>
       {badges.slice(0, 4).map((b) => (
@@ -163,7 +164,10 @@ export function BadgesPreviewList({ badges }: ListProps) {
           height={80}
         />
       ))}
-      <Link className={css.arrowLink} href="/profile/badges">
+      <Link
+        className={css.arrowLink}
+        href={username ? `/users/${username}/badges` : '/profile/badges'}
+      >
         <Image src="/pictograms/arrow-return.svg" width={16} height={16} alt="" />
       </Link>
     </div>

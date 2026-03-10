@@ -10,6 +10,7 @@ type Player = {
   flag: string;
   img: string;
   pointsScored: number;
+  challengesPlayed: number;
   challengesWon: number;
   moneyWon: number;
   hcp: number;

@@ -76,11 +76,7 @@ export default function Profile() {
       <section>
         <h6>Social</h6>
         <FriendsBar following={20} followers={26} />
-        <SettingButton
-          picto="/pictograms/friends-dark.svg"
-          href="/profile/friends/search"
-          highlighted
-        >
+        <SettingButton picto="/pictograms/friends-dark.svg" href="/users" highlighted>
           Add new friends
         </SettingButton>
       </section>

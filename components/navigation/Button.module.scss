@@ -51,7 +51,7 @@
     }
     &:active {
       border-color: var(--white);
-      color: var(--white) !important;
+      color: var(--white);
       background: var(--primary);
     }
   }
@@ -74,6 +74,29 @@
     min-width: 48px;
 
     padding: 5px 12px;
+  }
+
+  &:disabled {
+    color: var(--black) !important;
+    opacity: 0.5;
+    background-color: var(--grey) !important;
+    outline-color: var(--black);
+
+    color: var(--black) !important;
+    border-color: var(--black) !important;
+    cursor: auto;
+
+    &:hover {
+      color: var(--black) !important;
+      transform: none;
+      box-shadow: none;
+      border-color: var(--black) !important;
+    }
+
+    &:active {
+      color: var(--black) !important;
+      border-color: var(--black) !important;
+    }
   }
 }
 

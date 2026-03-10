@@ -1,11 +1,12 @@
 import PageTitle from '@/components/content/PageTitle';
-import css from './Friends.module.scss';
+import css from '@/pages/profile/friends/Friends.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FriendsToggleInput } from '@/components/inputs/TogglesInput';
 import { dummyLeaderboard } from '@/constants/DummyData';
 import { FriendPreview, UserPreviewProps } from '@/components/content/FriendPreview';
+import { useParams } from 'next/navigation';
 
 export default function FriendsIndex() {
   // DEV : implement dyn filter
