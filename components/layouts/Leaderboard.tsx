@@ -22,7 +22,7 @@ function numberAbbr(num: number): string {
   if (num >= 1000000) {
     return `${(Math.round((num / 1000000) * 100) / 100).toFixed(2)}M`;
   } else if (num >= 1000) {
-    return `${(Math.round((num / 1000) * 100) / 100).toFixed(2)}k`;
+    return `${(Math.round((num / 1000) * 100) / 100).toFixed(1)}k`;
   } else {
     return num.toString();
   }

@@ -24,11 +24,12 @@
     border-collapse: collapse;
     max-width: var(--max-block-width);
     margin-inline: auto;
+    font-family: var(--fontfamily-titles);
 
     > thead {
       color: var(--white);
       font-size: var(--fs-xs);
-      text-transform: capitalize;
+      text-transform: uppercase;
       display: flex;
       // Left : border + img width + gap
       padding-inline: calc(3px + 40px + var(--sm)) calc(3px + var(--sm));
@@ -62,7 +63,7 @@
         color: var(--white);
         font-size: var(--fs-sm);
         border: solid 3px var(--black);
-        border-radius: var(--sm);
+        border-radius: 10px;
         overflow: hidden;
 
         padding-right: var(--sm);
@@ -88,7 +89,7 @@
             padding: 0;
 
             img {
-              border-radius: var(--sm);
+              border-radius: 8px;
             }
           }
         }
@@ -131,7 +132,7 @@
       width: 100%;
       color: var(--black);
       background-color: var(--accent);
-      border-radius: var(--sm);
+      border-radius: 10px;
 
       display: flex;
       flex-direction: column;
@@ -144,6 +145,8 @@
       gap: var(--xs);
 
       > .rank {
+        font-family: var(--fontfamily-titles);
+
         width: 24px;
         height: 24px;
         font-size: var(--fs-s);
@@ -162,6 +165,7 @@
         font-size: 14px; // DEV: TBC
         font-weight: 700;
         margin-bottom: var(--xs);
+        font-family: var(--fontfamily-titles);
 
         .flag {
           display: none;
@@ -183,7 +187,7 @@
 
       > img {
         position: absolute;
-        border-radius: var(--xs);
+        border-radius: 8px;
         top: -18px;
 
         object-fit: cover;
