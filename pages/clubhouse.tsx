@@ -84,7 +84,7 @@ export default function Clubhouse() {
         </Hero>
       ) */}
 
-      {<EventHero />}
+      <EventHero />
 
       <main className={css.clubhouse}>
         <SponsorsSection sponsors={sponsors} />

@@ -21,10 +21,15 @@ export default function Hero({ title, children, gradient }: Props) {
   );
 }
 
-export function EventHero() {
+type EventHeroProps = {
+  alt?: boolean;
+};
+
+// DEV : static values for now.
+export function EventHero({ alt }: EventHeroProps) {
   return (
     <>
-      <header className={css.eventHero}>
+      <header className={`${css.eventHero} ${alt && css.alt}`}>
         <div className={css.container}>
           <Image
             className={css.mainSponsor}
@@ -36,14 +41,28 @@ export function EventHero() {
           />
           <div className={css.content}>
             <div className={css.texts}>
-              <h1>Play golf, win big</h1>
-              <p>
-                Join the exclusive <b>Jaquet Droz Challenge</b> to win a unique timepiece worth
-                north of <b>€300’000.-</b> and <b>LIV Golf Pro-Am spots</b>.
-              </p>
+              {alt ? (
+                <h1>
+                  Playing golf physically <br />
+                  while competing digitally
+                </h1>
+              ) : (
+                <h1>Play golf, win big</h1>
+              )}
+              {alt ? (
+                <p>
+                  Play in the club of your choice in real life while measuring yourself & your
+                  score, virtually against any other player in the world!
+                </p>
+              ) : (
+                <p>
+                  Join the exclusive <b>Jaquet Droz Challenge</b> to win a unique timepiece worth
+                  north of <b>€300’000.-</b> and <b>LIV Golf Pro-Am spots</b>.
+                </p>
+              )}
             </div>
             <div className={css.actions}>
-              <Button href="/ugolf-bluegreen">Join the Challenge</Button>
+              {alt || <Button href="/ugolf-bluegreen">Join the Challenge</Button>}
 
               <div className={css.secondarySponsor}>
                 <small>sponsored by</small>{' '}
