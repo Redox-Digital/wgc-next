@@ -4,7 +4,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 12px 24px; // TBC
+  padding: 8px 18px; // TBC
   width: fit-content;
   height: fit-content !important;
   border: none;
@@ -13,12 +13,17 @@
   gap: var(--xs);
 
   font-size: var(--fs-p);
+  font-family: var(--fontfamily-titles);
   transition: all 0.3s ease-in-out;
 
   background: var(--accent);
   color: var(--black) !important;
 
   border-radius: 1000px;
+
+  @media screen and (min-width: 600px) {
+    padding: 12px 24px; // TBC
+  }
 
   @media screen and (min-width: 1200px) {
     min-width: 120px; // DEV : TBC

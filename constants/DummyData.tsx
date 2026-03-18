@@ -267,6 +267,12 @@ export const dummyPrizes: PriceType[] = [
 
 export const dummySponsors: Sponsor[] = [
   {
+    name: 'UGOLF & BLUEGREEN',
+    img: '/sponsors/UGOLFxBLUEGREEN/UGOLFxBLUEGREEN_color.png',
+    runningChallenge: 4,
+    url: '/ugolf-bluegreen',
+  },
+  {
     name: 'World Golf Challenge',
     img: '/sponsors/WGC/wgc_sponsor.png',
     runningChallenge: 0,
@@ -294,12 +300,6 @@ export const dummySponsors: Sponsor[] = [
     name: 'Extracurricular',
     img: '/sponsors/z_MockUps/excr_sponsor.png',
     runningChallenge: 2,
-    url: '/extracurricular',
-  },
-  {
-    name: 'Coca Cola',
-    img: '/sponsors/z_MockUps/coca_sponsor.png',
-    runningChallenge: 4,
     url: '/extracurricular',
   },
 ];
