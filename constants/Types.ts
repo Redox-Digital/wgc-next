@@ -23,7 +23,7 @@ type ChallengePreview = {
   img?: string;
   hcp: 'single' | 'up to 18' | 'up to 54';
   name: string;
-  pool: number;
+  pool?: number;
   gameType: string;
   players: number;
   dates: string;

@@ -101,12 +101,14 @@
 
     img {
       height: 50px;
-      width: 100%;
+      width: auto;
       aspect-ratio: 1;
-      object-fit: contain;
+      object-fit: cover;
+      background-color: var(--white);
+      border-radius: var(--sm);
 
       @media screen and (min-width: 900px) {
-        height: calc(100% - 18px - var(--sm));
+        height: calc(100% - 3 * var(--fs-xs) - var(--sm));
       }
     }
 

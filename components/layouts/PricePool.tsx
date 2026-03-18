@@ -1,11 +1,11 @@
 import css from './PricePool.module.scss';
 import Image from 'next/image';
 import SectionTitle from './SectionTitle';
-import Button from '../navigation/Button';
 import Link from 'next/link';
+import { PrizeType } from './PriceList';
 
 type Props = {
-  prizes?: PriceType[];
+  prizes?: PrizeType[];
   preview?: boolean;
   privateChallenge?: boolean;
   className?: string;
@@ -17,14 +17,14 @@ export default function PricePool({ preview, prizes, className, privateChallenge
       <Link
         href="#pricepool"
         className={`${css.pricesPreview} ${privateChallenge && css.private} ${className}`}
-        title="See Price Pool"
+        title="See Prize Pool"
       >
-        <small>Price Pool</small>
+        <small>Prize Pool</small>
 
         {prizes &&
           prizes.slice(0, 3).map((p, key) => (
             <div className={css.price} key={key}>
-              <Image src={p.img} alt={''} width={50} height={50} />
+              {p.img && <Image src={p.img} alt={''} width={50} height={50} />}
               <small className="xs">{p.title}</small>
             </div>
           ))}
@@ -41,10 +41,10 @@ export default function PricePool({ preview, prizes, className, privateChallenge
         {prizes &&
           prizes.map((p, key) => (
             <div className={css.price} key={key}>
-              <Image src={p.img} alt={''} width={250} height={250} />
+              {p.img && <Image src={p.img} alt={''} width={250} height={250} />}
               <div className={css.texts}>
                 <h4>{p.title}</h4>
-                <small>{p.desc}</small>
+                {p.description && <small>{p.description}</small>}
               </div>
             </div>
           ))}
@@ -67,7 +67,7 @@ export function MoneyPool({ total, breakdown, className }: MoneyPoolType) {
   return (
     <div className={`${css.moneyPool} ${className}`}>
       <div className={css.total}>
-        <small>Price Pool</small>
+        <small>Prize Pool</small>
         <h3>$ {total?.toFixed(2)}</h3>
       </div>
       {breakdown && (
