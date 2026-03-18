@@ -1,13 +1,54 @@
 .sctTitles {
-  color: var(--wgc-black);
-  max-width: var(--wgc-max-block-width);
+  color: var(--dark);
   display: flex;
   flex-direction: column;
-  gap: var(--wgc-margin);
+  gap: var(--sm);
+  justify-content: space-between;
 
-  > p {
+  &.dark {
+    color: var(--white);
+  }
+
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+  }
+
+  .titles {
+    display: flex;
+    flex-direction: column;
+    gap: var(--xs);
+    max-width: var(--max-block-width);
+
+    > p {
+      opacity: 0.7;
+      text-wrap: balance;
+      text-wrap: pretty;
+    }
+  }
+}
+
+.countdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--xs);
+  max-width: var(--max-block-width);
+
+  &Title {
+    text-align: center;
+    background: var(--dark);
+
+    border-radius: 8px;
+    padding: 8px 12px;
+
+    > h3 {
+      background: var(--Grandient_Blue, linear-gradient(135deg, #c7f7fd 0%, #c8f843 100%));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &Desc {
     opacity: 0.7;
-    text-wrap: balance;
-    text-wrap: pretty;
   }
 }
