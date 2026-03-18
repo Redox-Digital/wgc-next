@@ -84,7 +84,7 @@ export default function SponsoredClubhouse() {
         <link type="image/svg+xml" href="/logos/favicon_excr.svg" />
       </Head>
       {/* Insert below the hex code of the PRIMARY color */}
-      <ChangeBackgroundColor color="var(--primary)" />
+      <ChangeBackgroundColor color="var(--primary)" gradientBg />
 
       <Hero
         title={

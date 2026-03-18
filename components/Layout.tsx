@@ -14,6 +14,13 @@ export default function Layout({ children }: Props) {
 
   const path = usePathname();
 
+  const transparentMenuPages: string[] = [
+    '/clubhouse/',
+    '/ugolf-bluegreen/',
+    '/extracurricular/',
+    '/4aces/',
+  ];
+
   return (
     <>
       {path === '/' || (
@@ -23,6 +30,7 @@ export default function Layout({ children }: Props) {
           links={MainNavLinks}
           logged={logged}
           setLogged={setLogged}
+          transparent={transparentMenuPages.includes(path)}
         />
       )}
       {children}

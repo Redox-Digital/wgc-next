@@ -5,18 +5,22 @@ html {
 body {
   margin: 0;
   background-color: var(--bg-color);
-  background:
-    radial-gradient(
-      53.6% 107.22% at 0% 67.87%,
-      rgba(var(--accent-rgb), 0.2) 0%,
-      rgba(var(--primary-rgb), 0.2) 100%
-    ),
-    radial-gradient(
-      162% 127.03% at 169.31% -28.76%,
-      rgba(var(--accent-rgb), 0.1) 0%,
-      var(--primary) 100%
-    ),
-    rgba(var(--primary-rgb), 0.2);
+
+  &.bgGradient {
+    background:
+      radial-gradient(
+        53.6% 107.22% at 0% 67.87%,
+        rgba(var(--accent-rgb), 0.2) 0%,
+        rgba(var(--primary-rgb), 0.2) 100%
+      ),
+      radial-gradient(
+        162% 127.03% at 169.31% -28.76%,
+        rgba(var(--accent-rgb), 0.1) 0%,
+        var(--primary) 100%
+      ),
+      rgba(var(--primary-rgb), 0.2);
+  }
+
   box-sizing: border-box;
 
   // Fonts

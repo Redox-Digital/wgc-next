@@ -23,7 +23,7 @@ export default function Clubhouse() {
 
   return (
     <>
-      <ChangeBackgroundColor color="#002F18" />
+      <ChangeBackgroundColor color="var(--primary)" gradientBg />
 
       {/* DEV: Removing default Hero for JD x 4Aces Challenge
       
@@ -145,16 +145,19 @@ export default function Clubhouse() {
 
 type ColorProps = {
   color: string;
+  gradientBg?: boolean;
 };
 
 // Weird function, but working. It changes the background color of the page.
-export function ChangeBackgroundColor({ color }: ColorProps) {
+export function ChangeBackgroundColor({ color, gradientBg }: ColorProps) {
   useEffect(() => {
     document.body.style.backgroundColor = color;
+    if (gradientBg) document.body.className = 'bgGradient';
 
     // Cleanup function to reset the background color when the component is unmounted
     return () => {
       document.body.style.backgroundColor = '';
+      document.body.className = '';
     };
   }, [color]);
 

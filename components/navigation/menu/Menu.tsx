@@ -15,10 +15,19 @@ type MenuProps = {
   links: NavLink[];
   sponsored?: boolean;
   logged?: boolean;
+  transparent?: boolean;
   setLogged: (logged: boolean) => void;
 };
 
-export default function Menu({ logo, logoUrl, links, sponsored, logged, setLogged }: MenuProps) {
+export default function Menu({
+  logo,
+  transparent,
+  logoUrl,
+  links,
+  sponsored,
+  logged,
+  setLogged,
+}: MenuProps) {
   //navbar scroll when active state
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [notifOpen, setNotifOpen] = useState<boolean>(false);
@@ -78,7 +87,12 @@ export default function Menu({ logo, logoUrl, links, sponsored, logged, setLogge
 
       <NotificationsList isOpen={notifOpen} toggle={toggleNotif} />
 
-      <SideMenu toggleLogged={toggleLog} logged={logged} toggleNotifMenu={toggleNotif} />
+      <SideMenu
+        transparent={transparent}
+        toggleLogged={toggleLog}
+        logged={logged}
+        toggleNotifMenu={toggleNotif}
+      />
 
       <MobileMenu
         open={menuOpen}
@@ -120,13 +134,14 @@ export function UserMenu({ name, img, hcp, className, flag = '🏳️', onClick 
 
 type SideMenuProps = {
   logged?: boolean;
+  transparent?: boolean;
   toggleLogged: () => void;
   toggleNotifMenu: () => void;
 };
 
-export function SideMenu({ logged, toggleLogged, toggleNotifMenu }: SideMenuProps) {
+export function SideMenu({ transparent, logged, toggleLogged, toggleNotifMenu }: SideMenuProps) {
   return (
-    <nav className={`${css.sideMenu}`}>
+    <nav className={`${css.sideMenu} ${transparent && css.transparent}`}>
       <Link href="/clubhouse">
         <Image src="/logos/wgc-text.svg" alt="" width={300} height={80} />
       </Link>
