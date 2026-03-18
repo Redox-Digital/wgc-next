@@ -1,4 +1,5 @@
-import css from './SponsoredPages.module.scss';
+import css from '@/components/layouts/SponsoredPages.module.scss';
+
 import Head from 'next/head';
 import Hero from '@/components/layouts/Hero';
 import PricePool from '@/components/layouts/PricePool';
