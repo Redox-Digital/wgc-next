@@ -59,11 +59,15 @@ export default function ChallengePreview({
             <br />
             <b>{gameType}</b>
           </span>
-          <span>
-            Price pool
-            <br />
-            <b>${pool.toFixed(2)}</b>
-          </span>
+          {pool ? (
+            <span>
+              Price pool
+              <br />
+              <b>€{pool.toFixed(2)}</b>
+            </span>
+          ) : (
+            ''
+          )}
         </div>
         <div className={css.foot}>
           {edit && (
@@ -78,7 +82,7 @@ export default function ChallengePreview({
               <Image src="/pictograms/settings-white.svg" alt="" width={14} height={14} />
             </Button>
           )}
-          <span className={css.fee}>{fee ? `Buy-in $${fee}` : 'Free'}</span>
+          <span className={css.fee}>{fee ? `Buy-in €${fee}` : 'Free'}</span>
           <Button small href={url || '/lobby'}>
             Join now{' '}
           </Button>{' '}
@@ -147,7 +151,7 @@ export default function ChallengePreview({
           )}
 
           <Button small href={url || '/lobby'}>
-            {fee ? `Buy-in ${fee}$` : 'Join for free'}
+            {fee ? `Buy-in ${fee}€` : 'Join for free'}
           </Button>
         </div>
       </details>
