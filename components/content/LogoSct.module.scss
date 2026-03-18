@@ -1,0 +1,18 @@
+.logoSct {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+
+  &.marginTop {
+    margin-top: var(--sct-vert-margin);
+  }
+
+  &.marginBottom {
+    margin-bottom: var(--sct-vert-margin);
+  }
+
+  > img {
+    width: 100%;
+    padding-inline: var(--sct-horiz-margin);
+  }
+}
