@@ -22,18 +22,6 @@
   }
 }
 
-.logoSct {
-  position: relative;
-  width: 100%;
-  min-height: 100px;
-  margin-bottom: var(--lg);
-
-  > img {
-    width: 100%;
-    padding-inline: var(--sct-horiz-margin);
-  }
-}
-
 .heroBtns {
   display: flex;
   flex-direction: row;

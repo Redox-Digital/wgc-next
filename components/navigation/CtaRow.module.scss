@@ -1,0 +1,96 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sm);
+
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 600px) {
+    flex-wrap: nowrap;
+  }
+
+  @media screen and (min-width: 900px) {
+    gap: var(--md);
+  }
+}
+
+.cta {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  height: 150px;
+  width: 150px;
+  align-items: center;
+  justify-content: center;
+
+  border: solid 1px var(--white);
+  border-radius: var(--sm);
+
+  /* InnerShadows */
+  box-shadow:
+    0 0px 0px 0 rgba(0, 0, 0, 0.25),
+    -3.667px 3.667px 33px 0 rgba(0, 0, 0, 0.25) inset,
+    3.667px -3.667px 33px 0 rgba(255, 255, 255, 0.15) inset;
+
+  transition: all 0.3s ease-in-out;
+
+  @media screen and (min-width: 900px) {
+    height: 210px;
+    width: 210px;
+  }
+
+  span {
+    z-index: 2;
+    color: var(--white);
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+
+    font-family: var(--fontfamily-titles);
+    font-size: var(--fs-h3);
+    font-weight: 600;
+
+    padding: var(--sm);
+
+    @media screen and (min-width: 900px) {
+      font-size: var(--fs-h2);
+    }
+  }
+
+  img {
+    z-index: 0;
+    object-fit: cover;
+    transition: transform ease-in-out 0.3s;
+  }
+
+  .overlay {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    opacity: 0.5;
+    background: linear-gradient(0deg, rgba(0, 32, 16, 1) 0%, rgba(0, 32, 16, 1) 100%);
+    transition: opacity ease-in-out 0.3s;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 2px 4px 0 rgba(0, 0, 0, 0.15),
+      -3.667px 3.667px 33px 0 rgba(0, 0, 0, 0.25) inset,
+      3.667px -3.667px 33px 0 rgba(255, 255, 255, 0.15) inset;
+    transition: all 0.3s ease-in-out;
+
+    img {
+      transform: scale(1.05);
+      transition: transform ease-in-out 0.3s;
+    }
+
+    .overlay {
+      opacity: 0.7;
+      transition: opacity ease-in-out 0.3s;
+    }
+  }
+}
