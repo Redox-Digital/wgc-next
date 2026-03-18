@@ -1,0 +1,148 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--md);
+
+  padding-inline: var(--sct-horiz-margin);
+
+  &.light > .sctTitle {
+    > h2,
+    > p {
+      color: var(--dark) !important;
+    }
+  }
+}
+
+.sctTitle {
+  width: 100%;
+  max-width: 960px;
+  margin-inline: auto;
+
+  text-align: center;
+  color: var(--white);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--sm);
+
+  h2 {
+    color: var(--accent);
+  }
+
+  p {
+    opacity: 0.7;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  gap: var(--md);
+
+  max-width: var(--max-paragraph-width);
+  margin-inline: auto;
+}
+
+.prize {
+  display: flex;
+  flex-direction: column;
+  background: var(--dark);
+  background:
+    linear-gradient(
+      97deg,
+      rgba(var(--primary-rgb), 0.2) 58.55%,
+      rgba(var(--accent-rgb), 0.2) 100.06%
+    ),
+    var(--dark);
+
+  color: var(--white);
+
+  border-radius: var(--sm);
+  overflow: hidden;
+
+  box-shadow: 6px 6px 18px 0 rgba(var(--dark-rgb), 0.25);
+
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
+  }
+
+  .logo {
+    height: 32px;
+    object-fit: contain;
+  }
+
+  > .content {
+    padding: var(--sm);
+    gap: var(--md);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media screen and (min-width: 600px) {
+      padding: var(--md);
+    }
+
+    > .texts {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sm);
+
+      > h3 {
+        background: linear-gradient(135deg, #c7f7fd 0%, #c8f843 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        line-height: normal;
+      }
+
+      > small {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  > img {
+    object-fit: cover;
+    height: stretch;
+    width: 100%;
+    max-width: 100%;
+    max-height: 240px;
+
+    &.contain {
+      object-fit: contain;
+
+      @media screen and (min-width: 600px) {
+        object-fit: cover;
+      }
+    }
+
+    @media screen and (min-width: 600px) {
+      object-fit: cover;
+      max-width: 240px;
+      max-height: 100%;
+    }
+
+    @media screen and (min-width: 900px) {
+      max-width: 270px;
+    }
+  }
+}
+
+.badge {
+  width: fit-content;
+  display: flex;
+  padding: 8px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 36px;
+
+  font-size: 10px;
+  text-transform: uppercase;
+  height: 24px;
+}
