@@ -6,11 +6,14 @@ type Props = {
   children: React.ReactNode;
   inverted?: boolean;
   className?: string;
+  lightBg?: boolean;
 };
 
-export default function TextImgSection({ img, children, inverted, className }: Props) {
+export default function TextImgSection({ img, children, inverted, className, lightBg }: Props) {
   return (
-    <section className={`${css.section} ${inverted && css.inverted} ${className}`}>
+    <section
+      className={`${css.section} ${inverted && css.inverted} ${lightBg && css.light} ${className}`}
+    >
       <Image src={img} alt="" width={500} height={600} />
       <div className={css.content}>{children}</div>
     </section>

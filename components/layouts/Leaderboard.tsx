@@ -43,7 +43,7 @@ export default function Leaderboard({
   // If there are less than 3 players, we don't display the podium.
   return (
     <div className={`${css.leaderboard} ${dark && css.dark} ${className}`}>
-      <SectionTitle title={ongoing ? title : 'Players'} className={css.sctTitles}>
+      <SectionTitle darkBg title={ongoing ? title : 'Players'} className={css.sctTitles}>
         {description && <small>{description}</small>}
       </SectionTitle>
 

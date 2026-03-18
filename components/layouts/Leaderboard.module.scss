@@ -10,6 +10,8 @@
   align-items: center;
   gap: var(--md);
 
+  max-width: 100%;
+
   padding-bottom: var(--sct-vert-margin);
   width: calc(100% + 2 * var(--sct-horiz-margin));
 }
