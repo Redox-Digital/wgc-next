@@ -1,0 +1,180 @@
+import css from '@/pages/Lobby.module.scss'; // Using the main Lobby's CSS file
+import PricePool, { MoneyPool } from '@/components/layouts/PricePool';
+import Image from 'next/image';
+import Button, { ReturnButton } from '@/components/navigation/Button';
+import Link from 'next/link';
+import Head from 'next/head';
+import CTA from '@/components/navigation/CTA';
+import { useState } from 'react';
+import { TextInput } from '@/components/inputs/Inputs';
+import Modal from '@/components/layouts/Modal';
+import CopyLink from '@/components/inputs/CopyLink';
+import Leaderboard from '@/components/layouts/Leaderboard';
+import { dummyLeaderboard, dummyPrizes } from '@/constants/DummyData';
+import TextImgSection from '@/components/layouts/TextImgSection';
+import LogoSct from '@/components/content/LogoSct';
+import PriceList, { prizes, PrizeType } from '@/components/layouts/PriceList';
+
+export default function SponsoredLobby() {
+  const rules: { label: string; value: string | React.ReactNode }[] = [
+    {
+      label: 'Game type',
+      value: (
+        <>
+          Net Stableford{' '}
+          <Link
+            href="/support/net-stableford"
+            title="Click to learn more about Net Stableford"
+            target="_blank"
+          >
+            <Image src="/pictograms/info-white.svg" alt="" width={16} height={16} />
+          </Link>
+        </>
+      ),
+    },
+    { label: 'Buy-in cost', value: 'Free' },
+    { label: 'Course type', value: '18 holes' },
+    { label: 'Player HCP', value: 'Up to 18' },
+    { label: 'Player count min.', value: '0' },
+    { label: 'Player count max.', value: '-' },
+  ];
+
+  const prizesList: PrizeType[] = prizes; // dummyPrizes;
+
+  const [enterScore, showScoreModal] = useState<boolean>(false);
+
+  return (
+    <>
+      <Head>
+        <title>Lobby | UGOLF x BLUEGREEN</title>
+      </Head>
+
+      <Modal
+        open={enterScore}
+        title={<>Enter your score Net&nbsp;Stableford</>}
+        closeModal={() => showScoreModal(false)}
+        className={css.scoreModal}
+      >
+        <>
+          <form>
+            <TextInput id={'score'} label={'Score'} type={'number'} dark />
+
+            <div className={css.btns}>
+              <Button outline darkBg onClick={() => showScoreModal(false)}>
+                Cancel
+              </Button>
+              <Button onClick={() => showScoreModal(false)}>Confirm</Button>
+            </div>
+          </form>
+        </>
+      </Modal>
+
+      <header className={css.header}>
+        <div className={css.top}>
+          <ReturnButton />
+          <h1>UGOLF x BLUEGREEN Challenge</h1>
+        </div>
+
+        <Image
+          src="/sponsors/UGOLFxBLUEGREEN/UGxBG_Apr2026/WGC_UGxBG_challenge.png"
+          alt=""
+          width={700}
+          height={466}
+        />
+
+        <div className={css.introInfos}>
+          <div className={css.timer}>
+            <small>
+              <b>Ongoing</b> – Ends in :
+            </small>
+            <small>1 Day 10:30:02</small>
+          </div>
+          <CopyLink text={'https://wgc.gg/extracurricular/lobby/7874'} />
+        </div>
+
+        {/* If cash price, show MoneyPool */}
+        {prizes.length ? (
+          <PricePool className={css.poolPreview} prizes={prizesList} preview />
+        ) : (
+          <MoneyPool className={css.poolPreview} total={102} />
+        )}
+
+        <div className={css.btns}>
+          {/* <Button href="/lobby">Join Challenge</Button> */}
+          <Button onClick={() => showScoreModal(true)}>Enter score</Button>
+          <Button href="/clubhouse" outline>
+            Unregister
+          </Button>
+          {/* Show if it's a "goodies" Price Pool */}
+          {/*<Button href="#pricepool" outline>
+            See Price Pool
+          </Button>*/}
+        </div>
+      </header>
+      <main className={css.main}>
+        <section className={css.rules}>
+          <div className={css.title}>
+            <h3>Game Rules</h3>
+            <p>
+              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+
+          <div className={css.boxes}>
+            {rules.map((rule, key) => (
+              <div key={key} className={css.rule}>
+                <label className="xs">{rule.label}</label>
+                <small>{rule.value}</small>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <Leaderboard
+          players={dummyLeaderboard}
+          title={'Leaderboard'}
+          className={css.leaderboard}
+          ongoing={true}
+        />
+
+        <PriceList lightBg />
+
+        {/* prizes.length && <PricePool prizes={prizes} /> */}
+
+        {/*<section>
+          <CTA
+            title={'Do you want more ?'}
+            description={
+              <p>
+                More Free and Buy-in Challenges available on wgc.gg & your own Challenges with
+                friends, clients, club members to create!
+              </p>
+            }
+            btnLabel={'Visit wgc.gg'}
+            btnBlank
+            href={'https://wgc.gg'}
+            img={'/layouts/clubhouse/lobby-cta.jpg'}
+          />
+        </section> */}
+
+        <TextImgSection img={'/layouts/clubhouse/wgc-how-to.jpg'} lightBg>
+          <>
+            <h2>How to play</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales nulla nibh,
+              ut ornare ipsum bibendum at. Nulla laoreet nisi elit, nec ultrices velit faucibus id.
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'row', gap: '12px', flexWrap: 'wrap' }}>
+              <Button href="/support">Learn how to play</Button>
+              <Button href="/terms" outline>
+                Terms and conditions
+              </Button>
+            </div>
+          </>
+        </TextImgSection>
+        <LogoSct lightBg />
+      </main>
+    </>
+  );
+}

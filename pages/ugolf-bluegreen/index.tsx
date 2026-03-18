@@ -1,0 +1,153 @@
+import css from '@/components/layouts/SponsoredPages.module.scss';
+import Head from 'next/head';
+import Hero, { EventHero } from '@/components/layouts/Hero';
+import PricePool from '@/components/layouts/PricePool';
+import CTA from '@/components/navigation/CTA';
+import SectionTitle from '@/components/layouts/SectionTitle';
+import ChallengePreview from '@/components/content/ChallengePreview';
+import { ChangeBackgroundColor } from '../clubhouse';
+import Button from '@/components/navigation/Button';
+import SponsoredPricesPreview from '@/components/content/SponsoredPricesPreview';
+import LogoSct from '@/components/content/LogoSct';
+import TextImgSection from '@/components/layouts/TextImgSection';
+import PriceList from '@/components/layouts/PriceList';
+
+export default function SponsoredClubhouse() {
+  const challenges: ChallengePreview[] = [
+    {
+      url: '/ugolf-bluegreen/lobby',
+      img: '/sponsors/UGOLFxBLUEGREEN/UGxBG_Apr2026/WGC_UGxBG_challenge.png',
+      name: 'UGOLF x BLUEGREEN Challenge',
+      dates: 'Mar. 14th to Mar. 18th',
+      gameType: 'Net Strableford',
+      hcp: 'single',
+      players: 11,
+      id: 0,
+      pool: 0,
+      fee: 110,
+    },
+    {
+      url: '/ugolf-bluegreen/lobby',
+      img: '/sponsors/UGOLFxBLUEGREEN/UGxBG_Apr2026/WGC_UGxBG_challenge.png',
+      name: 'UGOLF x BLUEGREEN Challenge',
+      dates: 'Mar. 14th to Mar. 18th',
+      gameType: 'Net Strableford',
+      hcp: 'up to 18',
+      players: 8,
+      id: 1,
+      pool: 0,
+      fee: 110,
+    },
+    {
+      url: '/ugolf-bluegreen/lobby',
+      img: '/sponsors/UGOLFxBLUEGREEN/UGxBG_Apr2026/WGC_UGxBG_challenge.png',
+      name: 'UGOLF x BLUEGREEN Challenge',
+      dates: 'Mar. 14th to Mar. 18th',
+      gameType: 'Net Strableford',
+      hcp: 'up to 54',
+      players: 0,
+      id: 2,
+      pool: 0,
+      fee: 110,
+    },
+  ];
+
+  return (
+    <>
+      <Head>
+        <title>UGOLF x BLUEGREEN | Welcome</title>
+        <link type="image/svg+xml" href="/logos/favicon_excr.svg" />
+      </Head>
+      {/* Insert below the hex code of the PRIMARY color */}
+      <ChangeBackgroundColor color="var(--primary)" gradientBg />
+
+      {/* <Hero
+        title={
+          <span>
+            Playing golf physically&nbsp;
+            <br />
+            while competing digitally
+          </span>
+        }
+        gradient
+      >
+        <p>
+          Play in the club of your choice in real life while measuring yourself & your score,
+          virtually against any other player in the world!
+        </p>
+      </Hero>*/}
+
+      <EventHero alt />
+
+      <main className={css.clubhouse}>
+        <SectionTitle
+          title={'Our Challenges'}
+          countdown={{
+            title: 'Early Bird Fee :',
+            description:
+              'The Early Bird get the worm ! Take advantage of a special rate by joining the Challanges before XX/XX/2026',
+            targetTimestamp: new Date('2027-01-01T00:00:00'),
+          }}
+        >
+          <p>
+            Choose the category that suits you the most and join players from all around the world.
+          </p>
+        </SectionTitle>
+        <div className={css.challenges}>
+          {challenges.map((c, key) => (
+            <ChallengePreview key={key} {...c} />
+          ))}
+        </div>
+
+        {/* <SponsoredPricesPreview prices={prices} /> */}
+      </main>
+
+      <PriceList />
+
+      <TextImgSection img={'/layouts/clubhouse/wgc-how-to.jpg'}>
+        <>
+          <h2>How to play</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales nulla nibh, ut
+            ornare ipsum bibendum at. Nulla laoreet nisi elit, nec ultrices velit faucibus id.
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'row', gap: '12px', flexWrap: 'wrap' }}>
+            <Button href="/support">Learn how to play</Button>
+            <Button href="/terms" outline darkBg>
+              Terms and conditions
+            </Button>
+          </div>
+        </>
+      </TextImgSection>
+
+      <LogoSct marginTop marginBottom />
+
+      {/*
+      <section className={css.homeCTAs}>
+        <CTA
+          title={'How to play'}
+          description={<p>Playing golf physically while competing digitally.</p>}
+          btnLabel={'Learn how to play'}
+          href={'/support'}
+          img={'/layouts/clubhouse/wgc-how-to.jpg'}
+          opacity={0.15}
+        />
+        <CTA
+          title={'Look fresh on the greens'}
+          description={
+            <p>
+              Elevate your wardrobe by visiting our sponsor&apos;s e-shop, <b>Extracurricular</b>,
+              and discover men&apos;s premium golf apparel including polos, hats, shorts, and pants.
+            </p>
+          }
+          btnLabel={'The shop'}
+          href={'https://ex-cr.com/?utm_source=wgc'}
+          btnBlank
+          img={'/sponsors/4Aces/4Aces_landing_cta.webp'}
+          opacity={0.4}
+        />
+      </section>
+      */}
+    </>
+  );
+}
