@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout';
 import type { AppProps } from 'next/app';
+import '@/styles/wgc-variables.scss';
 import '@/styles/wgc-globals.scss';
 
 import { Inter, Lexend, Syne } from 'next/font/google';
