@@ -60,7 +60,7 @@ export function EventHero({ alt }: EventHeroProps) {
             <div className={css.actions}>
               {alt ? (
                 /* If user already logged in : don't show. */
-                <Button href="/">Register now</Button>
+                <Button href="/profile/login">Sign in</Button>
               ) : (
                 <Button href="/jaquet-droz">Join the Challenge</Button>
               )}

@@ -146,8 +146,8 @@ export default function SponsoredClubhouse() {
             <b>Tout cela pour seulement 125 €.</b>
           </>
         }
-        btnLabel="S'inscrire"
-        href={'/profile/create'}
+        btnLabel="Se connecter"
+        href={'/profile/login'}
         img={'/sponsors/JaquetDroz/wgc-JD-lobby-cta.jpg'}
         logo={{ src: '/sponsors/JaquetDroz/blocmarque-BGUG_white.svg', title: 'BLUEGREEN x UGOLF' }}
         badge={
