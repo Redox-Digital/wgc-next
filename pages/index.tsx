@@ -8,6 +8,7 @@ import { SweetAlertJoin } from '@/components/content/SweetAlert';
 
 import logo from '@/public/logos/logo-wgc-full-accent-white.svg';
 import { useEffect } from 'react';
+import { ChangeBody } from '@/utils/changePageSettings';
 
 export default function LandingPage() {
   // DEV
@@ -16,7 +17,7 @@ export default function LandingPage() {
 
   return (
     <>
-      <ChangeBody color="#002F18" />
+      <ChangeBody color="#002F18" gradientBg />
 
       <main className={css.landingPage}>
         <div className={css.container}>
@@ -62,27 +63,4 @@ export default function LandingPage() {
       </main>
     </>
   );
-}
-
-type ColorProps = {
-  color: string;
-};
-
-// Weird function, but working. It changes the background color of the page and removes the paddings / margins.
-// Use only on the Landing Page.
-export function ChangeBody({ color }: ColorProps) {
-  useEffect(() => {
-    document.body.style.backgroundColor = color;
-    document.body.style.padding = '0px';
-    document.body.style.margin = '0px';
-
-    // Cleanup function to reset the inline CSS when the component is unmounted
-    return () => {
-      document.body.style.backgroundColor = '';
-      document.body.style.padding = '';
-      document.body.style.margin = '';
-    };
-  }, [color]);
-
-  return null;
 }

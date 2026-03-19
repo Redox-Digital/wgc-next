@@ -3,7 +3,7 @@ import css from '@/pages/support/SupportPages.module.scss';
 import Image from 'next/image';
 import Button from '@/components/navigation/Button';
 import TableofContent from '@/components/navigation/TableofContent';
-import { ChangeBackgroundColor } from './clubhouse';
+import { ChangeBackgroundColor } from '@/utils/changePageSettings';
 
 export default function Terms() {
   const anchors = [

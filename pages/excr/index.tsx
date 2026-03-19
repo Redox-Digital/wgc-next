@@ -5,7 +5,7 @@ import PricePool from '@/components/layouts/PricePool';
 import CTA from '@/components/navigation/CTA';
 import SectionTitle from '@/components/layouts/SectionTitle';
 import ChallengePreview from '@/components/content/ChallengePreview';
-import { ChangeBackgroundColor } from '../clubhouse';
+import { ChangeBackgroundColor } from '@/utils/changePageSettings';
 import SponsoredPricesPreview from '@/components/content/SponsoredPricesPreview';
 import Button from '@/components/navigation/Button';
 import HeroCarousel from '@/components/content/HeroCarousel';

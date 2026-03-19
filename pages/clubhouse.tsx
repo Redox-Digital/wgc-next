@@ -13,6 +13,7 @@ import StatBar from '@/components/content/StatBar';
 import LogoSct from '@/components/content/LogoSct';
 import CtaRow from '@/components/navigation/CtaRow';
 import TextImgSection from '@/components/layouts/TextImgSection';
+import { ChangeBackgroundColor } from '@/utils/changePageSettings';
 
 const sponsors: Sponsor[] = dummySponsors;
 
@@ -141,25 +142,4 @@ export default function Clubhouse() {
       />
     </>
   );
-}
-
-type ColorProps = {
-  color: string;
-  gradientBg?: boolean;
-};
-
-// Weird function, but working. It changes the background color of the page.
-export function ChangeBackgroundColor({ color, gradientBg }: ColorProps) {
-  useEffect(() => {
-    document.body.style.backgroundColor = color;
-    if (gradientBg) document.body.className = 'bgGradient';
-
-    // Cleanup function to reset the background color when the component is unmounted
-    return () => {
-      document.body.style.backgroundColor = '';
-      document.body.className = '';
-    };
-  }, [color]);
-
-  return null;
 }
