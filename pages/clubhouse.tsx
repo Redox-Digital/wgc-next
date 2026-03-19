@@ -90,7 +90,6 @@ export default function Clubhouse() {
       <main className={css.clubhouse}>
         <SponsorsSection sponsors={sponsors} />
         <NextChallengeSection />
-
         <CtaRow />
       </main>
 

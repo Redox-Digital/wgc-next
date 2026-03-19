@@ -15,46 +15,46 @@ import Image from 'next/image';
 import SponsorsSection from '@/components/layouts/SponsorsSection';
 import SponsorsBanner from '@/components/layouts/SponsorsBanner';
 
-export default function SponsoredClubhouse() {
-  const challenges: ChallengePreview[] = [
-    {
-      url: '/jaquet-droz/lobby',
-      img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg',
-      name: 'Jaquet Droz Challenge',
-      dates: 'Mar. 14th to Mar. 18th',
-      gameType: 'Net Strableford',
-      hcp: 'single',
-      players: 11,
-      id: 0,
-      pool: 0,
-      fee: 110,
-    },
-    {
-      url: '/jaquet-droz/lobby',
-      img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg',
-      name: 'Jaquet Droz Challenge',
-      dates: 'Mar. 14th to Mar. 18th',
-      gameType: 'Net Strableford',
-      hcp: 'up to 18',
-      players: 8,
-      id: 1,
-      pool: 0,
-      fee: 110,
-    },
-    {
-      url: '/jaquet-droz/lobby',
-      img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg',
-      name: 'Jaquet Droz Challenge',
-      dates: 'Mar. 14th to Mar. 18th',
-      gameType: 'Net Strableford',
-      hcp: 'up to 54',
-      players: 0,
-      id: 2,
-      pool: 0,
-      fee: 110,
-    },
-  ];
+export const jdChallenges: ChallengePreview[] = [
+  {
+    url: '/jaquet-droz/lobby',
+    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg',
+    name: 'Jaquet Droz Challenge',
+    dates: 'Mar. 14th to Mar. 18th',
+    gameType: 'Net Strableford',
+    hcp: 'single',
+    players: 11,
+    id: 0,
+    pool: 0,
+    fee: 110,
+  },
+  {
+    url: '/jaquet-droz/lobby',
+    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg',
+    name: 'Jaquet Droz Challenge',
+    dates: 'Mar. 14th to Mar. 18th',
+    gameType: 'Net Strableford',
+    hcp: 'up to 18',
+    players: 8,
+    id: 1,
+    pool: 0,
+    fee: 110,
+  },
+  {
+    url: '/jaquet-droz/lobby',
+    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg',
+    name: 'Jaquet Droz Challenge',
+    dates: 'Mar. 14th to Mar. 18th',
+    gameType: 'Net Strableford',
+    hcp: 'up to 54',
+    players: 0,
+    id: 2,
+    pool: 0,
+    fee: 110,
+  },
+];
 
+export default function SponsoredClubhouse() {
   return (
     <>
       <Head>
@@ -92,7 +92,7 @@ export default function SponsoredClubhouse() {
           </p>
         </SectionTitle>
         <div className={css.challenges}>
-          {challenges.map((c, key) => (
+          {jdChallenges.map((c, key) => (
             <ChallengePreview key={key} {...c} />
           ))}
         </div>

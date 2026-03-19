@@ -278,6 +278,7 @@ export const dummySponsors: Sponsor[] = [
     runningChallenge: 0,
     url: '/extracurricular',
   },
+  /*
   {
     name: '4ACES',
     img: '/sponsors/4Aces/4aces_sponsor.png',
@@ -301,7 +302,7 @@ export const dummySponsors: Sponsor[] = [
     img: '/sponsors/z_MockUps/excr_sponsor.png',
     runningChallenge: 2,
     url: '/extracurricular',
-  },
+  },*/
 ];
 
 /* Dummy Data with randomly generated numbers 

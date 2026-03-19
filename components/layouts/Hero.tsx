@@ -52,7 +52,7 @@ export function EventHero({ alt }: EventHeroProps) {
                 </p>
               ) : (
                 <p>
-                  Join the exclusive <b>Jaquet Droz Challenge</b> to win a unique timepiece worth
+                  Join the exclusive <b>Jaquet Droz Challenge</b> to win a unique timepiece worth{' '}
                   <b>€300’000.-</b> and <b>LIV Golf Pro-Am spots</b>.
                 </p>
               )}

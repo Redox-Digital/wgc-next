@@ -3,9 +3,11 @@ import Button from '../navigation/Button';
 import SectionTitle from './SectionTitle';
 import ChallengePreview from '../content/ChallengePreview';
 import { challenges } from '@/constants/DummyData';
+import { jdChallenges } from '@/pages/jaquet-droz';
 
 export default function NextChallengeSection() {
-  const nextChallenges: ChallengePreview[] = challenges.slice(0, 3); // Get the 3 next Challenges
+  const nextChallenges: ChallengePreview[] = jdChallenges.slice(0, 3); // Get the 3 next Challenges
+
   return (
     <section className={css.section}>
       <SectionTitle title="Next Challenges">
