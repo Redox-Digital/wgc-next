@@ -3,7 +3,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--sm);
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
 
   &.dark {
     color: var(--white);
