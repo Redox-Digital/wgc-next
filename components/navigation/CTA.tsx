@@ -37,3 +37,45 @@ export default function CTA({
     </div>
   );
 }
+
+interface RichCtaProps extends Props {
+  logo?: { src: string; title: string };
+  badge?: string | React.ReactNode;
+}
+
+export function RichCTA({
+  title,
+  description,
+  img,
+  btnLabel,
+  badge,
+  href,
+  btnBlank,
+  logo,
+}: RichCtaProps) {
+  return (
+    <section className={css.richCTA}>
+      <div className={css.container}>
+        <div className={css.content}>
+          <div className={css.head}>
+            <h2>{title}</h2>
+            {logo && <Image src={logo.src} alt={logo.title} width={500} height={80} />}
+          </div>
+          <div className={css.body}>
+            <p>{description}</p>
+          </div>
+          <div className={css.foot}>
+            {/* If already logged in : Join now */}
+            {
+              <Button href={href} blank={btnBlank}>
+                {btnLabel}
+              </Button>
+            }
+            {badge && <span className={css.badge}>{badge}</span>}
+          </div>
+        </div>
+        <Image src={img} alt="" width={500} height={80} />
+      </div>
+    </section>
+  );
+}

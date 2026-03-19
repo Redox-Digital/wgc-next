@@ -61,3 +61,136 @@
     }
   }
 }
+
+.richCTA {
+  padding-inline: var(--sct-horiz-margin);
+  color: var(--white);
+
+  > .container {
+    width: 100%;
+    max-width: 1004px;
+
+    margin-inline: auto;
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 24px;
+    overflow: hidden;
+    border: 2px solid #fff;
+
+    background:
+      linear-gradient(
+        94deg,
+        rgba(0, 47, 24, 0.2) 50.44%,
+        rgba(200, 248, 67, 0.2) 85.59%,
+        rgba(0, 47, 24, 0.2) 98.7%
+      ),
+      #0a1a11;
+    box-shadow:
+      -4px 4px 36px 0 rgba(0, 0, 0, 0.25) inset,
+      4px -4px 36px 0 rgba(255, 255, 255, 0.15) inset;
+
+    @media screen and (min-width: 900px) {
+      max-height: 240px;
+      flex-direction: row;
+    }
+
+    > img {
+      height: 240px;
+      width: 100%;
+      object-fit: cover;
+
+      @media screen and (min-width: 900px) {
+        max-width: 360px;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: var(--md);
+    gap: var(--sm);
+
+    width: 100%;
+
+    @media screen and (min-width: 600px) {
+      min-width: 600px;
+    }
+
+    @media screen and (min-width: 900px) {
+      padding: var(--lg);
+      min-height: 240px;
+    }
+  }
+
+  .head {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: var(--sm);
+
+    @media screen and (min-width: 600px) {
+      flex-direction: row;
+      align-items: center;
+
+      flex-wrap: nowrap;
+    }
+
+    > h2 {
+      background: var(--Grandient_Blue, linear-gradient(135deg, #c7f7fd 0%, #c8f843 100%));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    > img {
+      height: 100%;
+      width: auto;
+
+      max-height: 40px;
+      object-fit: contain;
+    }
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
+
+    max-width: 600px;
+  }
+
+  .foot {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--sm);
+
+    @media screen and (min-width: 600px) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .badge {
+    display: flex;
+    padding: 8px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 8px;
+    border: 1px solid var(--Yellow, #c8f843);
+
+    font-family: var(--fontfamily-titles);
+    font-weight: 400;
+    font-size: var(--fs-h4);
+  }
+}
