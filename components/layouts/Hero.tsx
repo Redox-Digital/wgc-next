@@ -50,7 +50,7 @@ export function EventHero({ alt }: EventHeroProps) {
               ) : (
                 <p>
                   Join the exclusive <b>Jaquet Droz Challenge</b> to win a unique timepiece worth
-                  north of <b>€300’000.-</b> and <b>LIV Golf Pro-Am spots</b>.
+                  <b>€300’000.-</b> and <b>LIV Golf Pro-Am spots</b>.
                 </p>
               )}
             </div>
@@ -58,7 +58,7 @@ export function EventHero({ alt }: EventHeroProps) {
               {alt || <Button href="/jaquet-droz">Join the Challenge</Button>}
 
               <div className={css.secondarySponsor}>
-                <small>sponsored by</small>{' '}
+                <small>proposed by</small>{' '}
                 <Image
                   src="/sponsors/JaquetDroz/JDx4A_white.svg"
                   alt="Jaquet Droz x 4Aces GC"

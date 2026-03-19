@@ -11,7 +11,7 @@ export const prizes: PrizeType[] = [
     description: (
       <>
         <b>L'art de la haute horlogerie.</b> Une pièce exclusive en <b>titane de 41mm</b> dotée d’un
-        <b>mouvement Tourbillon</b> squelette. Son cadran en saphir et index en or gris révèle son
+        <b> mouvement Tourbillon</b> squelette. Son cadran en saphir et index en or gris révèle son
         exception! <b>Valeur</b> : +€300’000.-
       </>
     ),
@@ -67,7 +67,7 @@ export default function PriceList({ lightBg }: Props) {
         <p>
           Our generous sponsors are treating you to something special! Check out our selection of
           prizes for the winners, plus a bonus raffle for a chance to win a Jaquet Droz Swiss
-          timepiece worth north of €300’000.-.
+          timepiece worth €300’000.-.
         </p>
       </div>
       <ul className={css.list}>
