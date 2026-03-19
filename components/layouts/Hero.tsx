@@ -39,13 +39,16 @@ export function EventHero({ alt }: EventHeroProps) {
             width={300}
             height={90}
           />
+
           <div className={css.content}>
             <div className={css.texts}>
-              {alt ? <h1>Jaquet Droz Challenge</h1> : <h1>Play golf, win big</h1>}
+              {alt ? <h1>Visez l'exceptionnel</h1> : <h1>Play golf, win big</h1>}
               {alt ? (
                 <p>
-                  Play in the club of your choice in real life while measuring yourself & your
-                  score, virtually against any other player in the world!
+                  <b>Une montre à € 300’000 et votre place lors du LIV Pro-Am.</b>
+                  <br />
+                  Jaquet Droz Challenge, le premier tournoi international où votre passion compte
+                  plus que votre score.
                 </p>
               ) : (
                 <p>
@@ -55,7 +58,12 @@ export function EventHero({ alt }: EventHeroProps) {
               )}
             </div>
             <div className={css.actions}>
-              {alt || <Button href="/jaquet-droz">Join the Challenge</Button>}
+              {alt ? (
+                /* If user already logged in : don't show. */
+                <Button href="/">Register now</Button>
+              ) : (
+                <Button href="/jaquet-droz">Join the Challenge</Button>
+              )}
 
               <div className={css.secondarySponsor}>
                 <small>proposed by</small>{' '}

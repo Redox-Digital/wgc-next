@@ -2,7 +2,7 @@ import css from '@/components/layouts/SponsoredPages.module.scss';
 import Head from 'next/head';
 import Hero, { EventHero } from '@/components/layouts/Hero';
 import PricePool from '@/components/layouts/PricePool';
-import CTA from '@/components/navigation/CTA';
+import CTA, { RichCTA } from '@/components/navigation/CTA';
 import SectionTitle from '@/components/layouts/SectionTitle';
 import ChallengePreview from '@/components/content/ChallengePreview';
 import { ChangeBackgroundColor } from '@/utils/changePageSettings';
@@ -10,7 +10,10 @@ import Button from '@/components/navigation/Button';
 import SponsoredPricesPreview from '@/components/content/SponsoredPricesPreview';
 import LogoSct from '@/components/content/LogoSct';
 import TextImgSection from '@/components/layouts/TextImgSection';
-import PriceList from '@/components/layouts/PriceList';
+import PriceList, { PriceListShort } from '@/components/layouts/PriceList';
+import Image from 'next/image';
+import SponsorsSection from '@/components/layouts/SponsorsSection';
+import SponsorsBanner from '@/components/layouts/SponsorsBanner';
 
 export default function SponsoredClubhouse() {
   const challenges: ChallengePreview[] = [
@@ -80,16 +83,12 @@ export default function SponsoredClubhouse() {
       <EventHero alt />
 
       <main className={css.clubhouse}>
-        <SectionTitle
-          title={'Our Challenges'}
-          countdown={{
-            title: 'Early Bird Access : 500 spots remaining',
-            description:
-              'The Early Bird get the worm ! Take advantage of a special rate by joining early.',
-          }}
-        >
+        <PriceListShort lightBg />
+
+        <SectionTitle title={'Rejoignez le Challenge'}>
           <p>
-            Choose the category that suits you the most and join players from all around the world.
+            Choisissez votre catégorie en fonction de votre handicap, entrez votre score, et tentez
+            votre chance !
           </p>
         </SectionTitle>
         <div className={css.challenges}>
@@ -101,23 +100,62 @@ export default function SponsoredClubhouse() {
         {/* <SponsoredPricesPreview prices={prices} /> */}
       </main>
 
-      <PriceList />
-
-      <TextImgSection img={'/layouts/clubhouse/wgc-how-to.jpg'}>
+      <TextImgSection img={'/sponsors/JaquetDroz/wgc-hcp-section.jpg'} inverted>
         <>
-          <h2>How to play</h2>
+          <h2>
+            <em>Index 54 ou Scratch ?</em>
+            <br />
+            Vous jouez pour le même rêve.
+          </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales nulla nibh, ut
-            ornare ipsum bibendum at. Nulla laoreet nisi elit, nec ultrices velit faucibus id.
+            Nous célébrons le golf dans sa globalité. Ne laissez pas votre handicap vous freiner. La
+            montre Jaquet Droz et les places Pro-Am ne dépendent pas de votre carte de score. Votre
+            seule obligation : vous inscrire et prendre du plaisir sur le parcours.
           </p>
+          <p>
+            Le sort est le seul juge, et <b>il est le même pour tous.</b>
+          </p>
+
           <div style={{ display: 'flex', flexDirection: 'row', gap: '12px', flexWrap: 'wrap' }}>
-            <Button href="/support">Learn how to play</Button>
+            <Button href="/support">Comment participer ?</Button>
             <Button href="/terms" outline darkBg>
-              Terms and conditions
+              Conditions de participation
             </Button>
           </div>
         </>
       </TextImgSection>
+
+      <SponsorsBanner
+        title="L'excellence reconnue par les plus grands"
+        logos={[
+          { src: '/sponsors/JaquetDroz/blocmarque-BGUG_white.svg', title: 'BLUEGREEN x UGOLF' },
+          { src: '/sponsors/JaquetDroz/JDx4A_white.svg', title: 'Jaquet Droz x 4Aces GC' },
+        ]}
+      >
+        <p>
+          Un événement organisé en partenariat avec BLUEGREEN et UGOLF, leaders du golf en France,
+          et soutenu par Jaquet Droz et les 4Aces.
+        </p>
+      </SponsorsBanner>
+
+      <RichCTA
+        title={'Prêt à relever le défi ?'}
+        description={
+          <>
+            Intégrez le classement international et jouez pour une dotation à 6 chiffres.{' '}
+            <b>Tout cela pour seulement 125 €.</b>
+          </>
+        }
+        btnLabel="S'inscrire"
+        href={'/profile/create'}
+        img={'/sponsors/JaquetDroz/wgc-JD-lobby-cta.jpg'}
+        logo={{ src: '/sponsors/JaquetDroz/blocmarque-BGUG_white.svg', title: 'BLUEGREEN x UGOLF' }}
+        badge={
+          <>
+            Accès « Early Bird » : <b>500 places</b> restantes
+          </>
+        }
+      />
 
       <LogoSct marginTop marginBottom />
 

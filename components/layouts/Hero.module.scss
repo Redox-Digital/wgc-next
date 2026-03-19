@@ -281,12 +281,50 @@
 }
 
 .eventHero.alt {
-  .container > .mainSponsor {
-    width: 180px;
-    height: auto;
+  .container {
+    > .bothSponsors {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
 
-    @media screen and (min-width: 600px) {
-      width: 240px;
+      max-width: 540px;
+
+      > .mainSponsor {
+        width: 180px;
+        height: auto;
+
+        @media screen and (min-width: 600px) {
+          width: 240px;
+        }
+      }
+
+      > .secondarySponsor {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        opacity: 0.75;
+        gap: var(--sm);
+
+        position: absolute;
+        bottom: 18px;
+        right: 18px;
+
+        @media screen and (min-width: 600px) {
+          bottom: inherit;
+          right: inherit;
+          position: relative;
+        }
+      }
     }
+  }
+
+  .content .texts > p > b {
+    color: var(--white);
+  }
+
+  > img {
+    object-position: right bottom;
   }
 }

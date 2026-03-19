@@ -1,14 +1,15 @@
 .section {
   display: flex;
   flex-direction: row-reverse;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-around;
   flex-direction: column-reverse;
 
   padding: var(--sct-def-margins);
   gap: var(--md);
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 900px) {
+    align-items: center;
     flex-direction: row-reverse;
 
     &.inverted {
@@ -24,7 +25,7 @@
     object-fit: cover;
     border-radius: var(--md);
 
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 900px) {
       width: calc((100% - var(--md)) / 2);
       aspect-ratio: 5/6;
     }
@@ -35,7 +36,7 @@
   }
 
   > .content {
-    max-width: 500px;
+    max-width: var(--max-paragraph-width);
 
     width: 100%;
     color: var(--white);
@@ -48,17 +49,25 @@
       font-size: var(--fs-h1);
       font-weight: 700;
       letter-spacing: -0.03em;
+
+      > em {
+        font-style: normal;
+        background: var(--Grandient_Blue, linear-gradient(135deg, #c7f7fd 0%, #c8f843 100%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
 
     > p {
-      opacity: 0.8;
+      opacity: 0.9;
     }
 
     > p:last-of-type {
       margin-bottom: var(--sm);
     }
 
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 900px) {
       width: calc((100% - var(--md)) / 2);
     }
   }
