@@ -73,8 +73,9 @@
 
 .eventHero {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: stretch;
   max-width: var(--max-container-width);
 
   width: calc(100% - 2 * var(--xs));
@@ -107,7 +108,7 @@
   @media screen and (min-width: 600px) {
     min-height: 400px;
 
-    align-items: flex-end;
+    align-items: stretch;
 
     width: calc(100% - 2 * var(--sm));
   }
@@ -118,12 +119,10 @@
   }
 
   .container {
+    flex: 1;
     z-index: 1;
     width: 100%;
     max-width: var(--max-container-width);
-
-    height: stretch;
-    min-height: 100%;
 
     gap: var(--md);
 
