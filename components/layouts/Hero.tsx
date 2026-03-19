@@ -34,21 +34,14 @@ export function EventHero({ alt }: EventHeroProps) {
           <Image
             className={css.mainSponsor}
             // DEV : update file to svg
-            src="/sponsors/UGOLFxBLUEGREEN/UGOLFxBLUEGREEN_white.png"
+            src="/sponsors/JaquetDroz/blocmarque-BGUG_white.svg"
             alt="BLUEGREEN & UGOLF"
             width={300}
             height={90}
           />
           <div className={css.content}>
             <div className={css.texts}>
-              {alt ? (
-                <h1>
-                  Playing golf physically <br />
-                  while competing digitally
-                </h1>
-              ) : (
-                <h1>Play golf, win big</h1>
-              )}
+              {alt ? <h1>Jaquet Droz Challenge</h1> : <h1>Play golf, win big</h1>}
               {alt ? (
                 <p>
                   Play in the club of your choice in real life while measuring yourself & your
@@ -62,12 +55,12 @@ export function EventHero({ alt }: EventHeroProps) {
               )}
             </div>
             <div className={css.actions}>
-              {alt || <Button href="/ugolf-bluegreen">Join the Challenge</Button>}
+              {alt || <Button href="/jaquet-droz">Join the Challenge</Button>}
 
               <div className={css.secondarySponsor}>
                 <small>sponsored by</small>{' '}
                 <Image
-                  src="/sponsors/UGOLFxBLUEGREEN/JDx4A_white.svg"
+                  src="/sponsors/JaquetDroz/JDx4A_white.svg"
                   alt="Jaquet Droz x 4Aces GC"
                   width={176}
                   height={32}
@@ -77,13 +70,23 @@ export function EventHero({ alt }: EventHeroProps) {
           </div>
         </div>
 
-        <Image
-          src="/sponsors/UGOLFxBLUEGREEN/JD_tourbillon_square.png"
-          alt=""
-          width={550}
-          height={550}
-          className={css.sideImg}
-        />
+        {alt ? (
+          <Image
+            src="/sponsors/JaquetDroz/JD_tourbillon_2_square.png"
+            alt=""
+            width={550}
+            height={550}
+            className={css.sideImg}
+          />
+        ) : (
+          <Image
+            src="/sponsors/JaquetDroz/JD_tourbillon_square.png"
+            alt=""
+            width={550}
+            height={550}
+            className={css.sideImg}
+          />
+        )}
       </header>
 
       <span id="intro">{/* Anchor */}</span>

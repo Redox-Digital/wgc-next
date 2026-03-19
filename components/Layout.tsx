@@ -16,7 +16,7 @@ export default function Layout({ children }: Props) {
 
   const transparentMenuPages: string[] = [
     '/clubhouse/',
-    '/ugolf-bluegreen/',
+    '/jaquet-droz/',
     '/extracurricular/',
     '/4aces/',
   ];

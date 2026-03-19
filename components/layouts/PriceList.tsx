@@ -7,7 +7,7 @@ import Image from 'next/image';
 export const prizes: PrizeType[] = [
   {
     title: 'Jaquet Droz Tourbillon Skelet-One',
-    logo: '/sponsors/UGOLFxBLUEGREEN/JD_white.svg',
+    logo: '/sponsors/JaquetDroz/JD_white.svg',
     description: (
       <>
         <b>L'art de la haute horlogerie.</b> Une pièce exclusive en <b>titane de 41mm</b> dotée d’un
@@ -18,12 +18,12 @@ export const prizes: PrizeType[] = [
     badge: {
       title: 'Global Raffle',
     },
-    img: '/sponsors/UGOLFxBLUEGREEN/UGxBG_Apr2026/WGC_UGxBG_Price01.png',
+    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price01.png',
     imgContain: true,
   },
   {
     title: 'LIV Pro-Am à Valderrama',
-    logo: '/sponsors/UGOLFxBLUEGREEN/4Aces_Logo_white.svg',
+    logo: '/sponsors/JaquetDroz/4Aces_Logo_white.svg',
 
     description: (
       <>
@@ -35,11 +35,11 @@ export const prizes: PrizeType[] = [
       title: 'category winner',
       className: leagueCss.clubhouseKing,
     },
-    img: '/sponsors/UGOLFxBLUEGREEN/UGxBG_Apr2026/WGC_UGxBG_Price02.jpg',
+    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price02.jpg',
   },
   {
     title: 'Pack Officiel 4Aces',
-    logo: '/sponsors/UGOLFxBLUEGREEN/4Aces_Logo_white.svg',
+    logo: '/sponsors/JaquetDroz/4Aces_Logo_white.svg',
 
     description: (
       <>
@@ -51,7 +51,7 @@ export const prizes: PrizeType[] = [
       title: 'top 20 of each category',
       className: leagueCss.tournamentReady,
     },
-    img: '/sponsors/UGOLFxBLUEGREEN/UGxBG_Apr2026/WGC_UGxBG_Price03.webp',
+    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price03.webp',
   },
 ];
 

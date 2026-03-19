@@ -5,7 +5,7 @@ import PricePool from '@/components/layouts/PricePool';
 import CTA from '@/components/navigation/CTA';
 import SectionTitle from '@/components/layouts/SectionTitle';
 import ChallengePreview from '@/components/content/ChallengePreview';
-import { ChangeBackgroundColor } from '../clubhouse';
+import { ChangeBackgroundColor } from '@/utils/changePageSettings';
 import Button from '@/components/navigation/Button';
 import SponsoredPricesPreview from '@/components/content/SponsoredPricesPreview';
 import LogoSct from '@/components/content/LogoSct';
@@ -15,9 +15,9 @@ import PriceList from '@/components/layouts/PriceList';
 export default function SponsoredClubhouse() {
   const challenges: ChallengePreview[] = [
     {
-      url: '/ugolf-bluegreen/lobby',
-      img: '/sponsors/UGOLFxBLUEGREEN/UGxBG_Apr2026/WGC_UGxBG_challenge.png',
-      name: 'UGOLF x BLUEGREEN Challenge',
+      url: '/jaquet-droz/lobby',
+      img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg',
+      name: 'Jaquet Droz Challenge',
       dates: 'Mar. 14th to Mar. 18th',
       gameType: 'Net Strableford',
       hcp: 'single',
@@ -27,9 +27,9 @@ export default function SponsoredClubhouse() {
       fee: 110,
     },
     {
-      url: '/ugolf-bluegreen/lobby',
-      img: '/sponsors/UGOLFxBLUEGREEN/UGxBG_Apr2026/WGC_UGxBG_challenge.png',
-      name: 'UGOLF x BLUEGREEN Challenge',
+      url: '/jaquet-droz/lobby',
+      img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg',
+      name: 'Jaquet Droz Challenge',
       dates: 'Mar. 14th to Mar. 18th',
       gameType: 'Net Strableford',
       hcp: 'up to 18',
@@ -39,9 +39,9 @@ export default function SponsoredClubhouse() {
       fee: 110,
     },
     {
-      url: '/ugolf-bluegreen/lobby',
-      img: '/sponsors/UGOLFxBLUEGREEN/UGxBG_Apr2026/WGC_UGxBG_challenge.png',
-      name: 'UGOLF x BLUEGREEN Challenge',
+      url: '/jaquet-droz/lobby',
+      img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg',
+      name: 'Jaquet Droz Challenge',
       dates: 'Mar. 14th to Mar. 18th',
       gameType: 'Net Strableford',
       hcp: 'up to 54',
@@ -83,10 +83,9 @@ export default function SponsoredClubhouse() {
         <SectionTitle
           title={'Our Challenges'}
           countdown={{
-            title: 'Early Bird Fee :',
+            title: 'Early Bird Access : 500 spots remaining',
             description:
-              'The Early Bird get the worm ! Take advantage of a special rate by joining the Challanges before XX/XX/2026',
-            targetTimestamp: new Date('2027-01-01T00:00:00'),
+              'The Early Bird get the worm ! Take advantage of a special rate by joining early.',
           }}
         >
           <p>

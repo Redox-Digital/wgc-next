@@ -267,10 +267,10 @@ export const dummyPrizes: PriceType[] = [
 
 export const dummySponsors: Sponsor[] = [
   {
-    name: 'UGOLF & BLUEGREEN',
-    img: '/sponsors/UGOLFxBLUEGREEN/UGOLFxBLUEGREEN_color.png',
+    name: 'Jaquet Droz',
+    img: '/sponsors/JaquetDroz/JD-monogram.svg',
     runningChallenge: 4,
-    url: '/ugolf-bluegreen',
+    url: '/jaquet-droz',
   },
   {
     name: 'World Golf Challenge',

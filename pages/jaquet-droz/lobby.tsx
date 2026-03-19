@@ -76,7 +76,7 @@ export default function SponsoredLobby() {
         </div>
 
         <Image
-          src="/sponsors/UGOLFxBLUEGREEN/UGxBG_Apr2026/WGC_UGxBG_challenge.png"
+          src="/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_challenge.png"
           alt=""
           width={700}
           height={466}
