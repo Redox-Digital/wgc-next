@@ -3,7 +3,7 @@ import css from './SectionTitle.module.scss';
 
 type Props = {
   title: string | React.ReactNode;
-  countdown?: { title: string; description?: string; targetTimestamp: Date };
+  countdown?: { title: string; description?: string /* targetTimestamp: Date */ };
   children?: string | React.ReactNode;
   darkBg?: boolean;
   className?: string;
@@ -20,9 +20,7 @@ export default function SectionTitle({ title, children, darkBg, className, count
       {countdown ? (
         <div className={css.countdown}>
           <div className={css.countdownTitle}>
-            <h3>
-              {countdown.title} <Countdown targetTimestamp={countdown.targetTimestamp.getTime()} />
-            </h3>
+            <h3>{countdown.title}</h3>
           </div>
           {countdown.description ? (
             <small className={css.countdownDesc}>{countdown.description}</small>

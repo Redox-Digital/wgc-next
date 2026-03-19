@@ -75,6 +75,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  max-width: var(--max-container-width);
 
   width: calc(100% - 2 * var(--xs));
   min-height: 600px;
@@ -249,6 +250,7 @@
     max-width: 330px;
     height: auto;
     object-fit: cover;
+    object-position: 20%;
 
     @media screen and (min-width: 600px) {
       right: -60px;
@@ -271,6 +273,10 @@
 
     @media screen and (min-width: 1200px) {
       right: 0;
+    }
+
+    @media screen and (min-width: 1600px) {
+      right: 5%;
     }
   }
 }
