@@ -75,7 +75,7 @@
     object-fit: contain;
   }
 
-  > .content {
+  .content {
     padding: var(--sm);
     gap: var(--md);
     display: flex;
@@ -86,12 +86,12 @@
       padding: var(--md);
     }
 
-    > .texts {
+    .texts {
       display: flex;
       flex-direction: column;
       gap: var(--sm);
 
-      > h3 {
+      h3 {
         background: linear-gradient(135deg, #c7f7fd 0%, #c8f843 100%);
         background-clip: text;
         -webkit-background-clip: text;
@@ -100,7 +100,7 @@
         line-height: normal;
       }
 
-      > small {
+      small {
         opacity: 0.7;
       }
     }
@@ -145,4 +145,49 @@
   font-size: 10px;
   text-transform: uppercase;
   height: 24px;
+}
+
+// SHORT LIST + CARDS
+.shortListSection {
+  padding: 0;
+
+  .shortList {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: var(--md);
+    flex-wrap: wrap;
+
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column-reverse;
+
+  max-width: 360px;
+  justify-content: flex-end;
+  position: relative;
+  flex-shrink: 1;
+
+  --img-height: 210px;
+
+  > img {
+    width: 100%;
+    max-width: none;
+
+    height: 100%;
+    max-height: var(--img-height);
+
+    object-fit: cover;
+  }
+
+  .badge {
+    position: absolute;
+    // img h - badge h - padding
+    top: calc(var(--img-height) - 24px - var(--sm));
+    left: var(--sm);
+  }
 }
