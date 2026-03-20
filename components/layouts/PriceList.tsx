@@ -68,8 +68,7 @@ export const prizesShort: PrizeType[] = [
     badge: {
       title: 'tirage au sort global',
     },
-    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price01.png',
-    imgContain: true,
+    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price01-alt.jpg',
   },
   {
     title: 'LIV Pro-Am Valderrama',
@@ -195,7 +194,7 @@ export function PrizeLine({
           src={img}
           alt=""
           width={270}
-          height={240}
+          height={270}
         />
       )}
     </li>

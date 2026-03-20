@@ -107,11 +107,12 @@
   }
 
   > img {
-    object-fit: cover;
-    height: stretch;
+    flex: 1;
     width: 100%;
-    max-width: 100%;
-    max-height: 240px;
+
+    object-fit: cover;
+    width: 100%;
+    min-width: 240px;
 
     &.contain {
       object-fit: contain;
@@ -124,7 +125,7 @@
     @media screen and (min-width: 600px) {
       object-fit: cover;
       max-width: 240px;
-      max-height: 100%;
+      // max-height: 100%;
     }
 
     @media screen and (min-width: 900px) {

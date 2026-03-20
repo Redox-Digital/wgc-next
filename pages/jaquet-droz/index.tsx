@@ -58,7 +58,7 @@ export default function SponsoredClubhouse() {
   return (
     <>
       <Head>
-        <title>UGOLF x BLUEGREEN | Welcome</title>
+        <title>Jaquet Droz Challenge | Welcome</title>
         <link type="image/svg+xml" href="/logos/favicon_excr.svg" />
       </Head>
       {/* Insert below the hex code of the PRIMARY color */}
