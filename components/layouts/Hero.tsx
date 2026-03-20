@@ -80,7 +80,7 @@ export function EventHero({ alt }: EventHeroProps) {
 
         {alt ? (
           <Image
-            src="/sponsors/JaquetDroz/JD-02-detour-sq.png"
+            src="/sponsors/JaquetDroz/JD-03-detour-sq.png"
             alt=""
             width={550}
             height={550}
