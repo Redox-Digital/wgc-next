@@ -3,7 +3,7 @@ name: Deploy Static NextTS site
 on:
   push:
     branches:
-      - staging
+      - production
 
 jobs:
   build-and-deploy:
