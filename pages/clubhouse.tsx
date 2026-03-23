@@ -101,7 +101,19 @@ export default function Clubhouse() {
             ornare ipsum bibendum at. Nulla laoreet nisi elit, nec ultrices velit faucibus id.
           </p>
           {/* DEV : If user not logged in, Register Page, if logged in -> Lobby */}
-          <Button href="/profile/login">Sign in</Button>
+          <div className={css.textImgBtns}>
+            {' '}
+            {logged ? (
+              <Button href="/jaquet-droz/">The Jacquet Droz Challenge</Button>
+            ) : (
+              <>
+                <Button href="/profile/login">Sign in</Button>
+                <Button href="/jaquet-droz/" outline darkBg>
+                  The Jacquet Droz Challenge
+                </Button>
+              </>
+            )}
+          </div>
         </>
       </TextImgSection>
 
