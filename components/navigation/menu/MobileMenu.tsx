@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import Button from '../Button';
 import { UserMenu } from './Menu';
+import RegionSelect, { LangSelect } from '../LocalesSelectors';
 
 type Props = {
   open: boolean;
@@ -92,13 +93,9 @@ export default function MobileMenu({ open, toggleMenu, toggleLogged, logged }: P
             ))}
           </div>
 
-          <small className={css.regionSelect}>
-            Region :{' '}
-            <select name="region" id="region">
-              <option value="eu">Europe</option>
-              <option value="am">Americas</option>
-              <option value="as">Asia</option>
-            </select>
+          <small className={css.localesSelects}>
+            <LangSelect />
+            <RegionSelect />
           </small>
         </div>
       </nav>

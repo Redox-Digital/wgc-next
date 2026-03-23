@@ -2,6 +2,7 @@ import Link from 'next/link';
 import css from './Footer.module.scss';
 import { LegalLinks, MainNavLinks, socialLinks, UserLinks } from '@/constants/Navigation';
 import Image from 'next/image';
+import RegionSelect, { LangSelect } from './LocalesSelectors';
 
 type Props = {
   sponsored?: boolean;
@@ -11,14 +12,11 @@ export default function Footer({ sponsored }: Props) {
   return (
     <footer className={css.footer}>
       <div className={css.container}>
-        <small className={`${css.regionSelect} ${css.mobile}`}>
-          Region :{' '}
-          <select name="region" id="region">
-            <option value="eu">Europe</option>
-            <option value="am">Americas</option>
-            <option value="as">Asia</option>
-          </select>
+        <small className={`${css.localesSelects} ${css.mobile}`}>
+          <LangSelect />
+          <RegionSelect />
         </small>
+
         <div className={css.body}>
           <div className={css.col}>
             <h4>Navigation</h4>
@@ -76,13 +74,9 @@ export default function Footer({ sponsored }: Props) {
             </Link>
           </span>
 
-          <small className={`${css.regionSelect} ${css.desktop}`}>
-            Region :{' '}
-            <select name="region" id="region">
-              <option value="eu">Europe</option>
-              <option value="am">Americas</option>
-              <option value="as">Asia</option>
-            </select>
+          <small className={`${css.localesSelects} ${css.desktop}`}>
+            <LangSelect />
+            <RegionSelect />
           </small>
 
           <div className={`${css.socials} ${css.desktop}`}>

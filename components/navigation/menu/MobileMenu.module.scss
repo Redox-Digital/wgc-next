@@ -3,7 +3,8 @@
   padding: var(--lg) var(--sm);
   padding-top: calc(var(--navbar-height) + var(--lg));
   background-color: var(--dark);
-  background: radial-gradient(
+  background:
+    radial-gradient(
       110% 120% at 0% 0%,
       rgba(var(--accent-rgb), 0.15) 0%,
       rgba(var(--dark-rgb), 0.15) 85%
@@ -118,19 +119,8 @@
   color: var(--danger) !important;
 }
 
-.regionSelect {
+.localesSelects {
   display: flex;
-  flex-direction: row;
-  color: var(--white);
-  gap: var(--xs);
-  align-items: center;
-
-  > select {
-    background-color: var(--accent);
-    border: none;
-    color: var(--black);
-    padding: 2px var(--sm);
-    border-radius: 1000px;
-    cursor: pointer;
-  }
+  flex-direction: column;
+  gap: var(--sm);
 }
