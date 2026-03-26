@@ -17,6 +17,7 @@ export const prizes: PrizeType[] = [
     ),
     badge: {
       title: 'Global Raffle',
+      className: leagueCss.pgaChampion,
     },
     img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price01.png',
     imgContain: true,
