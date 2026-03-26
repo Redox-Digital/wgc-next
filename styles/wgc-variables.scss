@@ -1,5 +1,6 @@
 * {
   --white: #fafafa;
+  --white-rgb: 255, 255, 255;
   --true-white: #fff;
 
   --bg-color: var(--white);
@@ -15,15 +16,14 @@
   --primary: #002f18;
   --primary-rgb: 0, 47, 24;
 
-  --secondary: #c7f7fd; // TBC
+  --secondary: #c7f7fd;
+  --secondary-rgb: 200, 248, 67;
   --accent: #c8f843;
   --accent-rgb: 200, 248, 67;
 
-  --blue: #c7f7fd;
-  --blue-rgb: 199, 247, 253;
-
   --gradient: linear-gradient(45deg, var(--accent) 0%, var(--primary) 100%);
   --gradient-challenge: linear-gradient(77deg, var(--dark) 0.89%, var(--primary) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
 
   --gold: linear-gradient(132deg, #ffd700 6.6%, #ffb800 100.54%);
   --silver: linear-gradient(131deg, #c0c0c0 6.65%, #e4e4e4 90.1%);
