@@ -62,7 +62,7 @@ export function EventHero({ alt }: EventHeroProps) {
                 /* If user already logged in : don't show. */
                 <Button href="/profile/login">Sign in</Button>
               ) : (
-                <Button href="/jaquet-droz">Join the Challenge</Button>
+                <Button href="/jaquet-droz/">The Jaquet Droz Challenge</Button>
               )}
 
               <div className={css.secondarySponsor}>
