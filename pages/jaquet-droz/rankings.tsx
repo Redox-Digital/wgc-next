@@ -15,14 +15,17 @@ export default function Rankings() {
         {`
           * {
             /* Overwriting Color Variables to fit the Sponsor's Identity */
-            --black: #0d1720;
-            --black-rgb: 13, 23, 32;
+            /* Jaquet Droz Challenge */
+            --black: #141414;
+            --black-rgb: 20, 20, 20;
+            --primary: #333333;
+            --primary-rgb: 51, 51, 51;
+            --accent: #f86d43;
+            --accent-rgb: 248, 109, 67;
+            --secondary: #fafafa;
+            --secondary-rgb: 250, 250, 250;
 
-            --primary: #252c32;
-            --black-rgb: 27, 44, 50;
-
-            --accent: #d9e3f2;
-            --accent-rgb: 217, 227, 242;
+            --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
           }
         `}
       </style>

@@ -57,6 +57,24 @@ export const jdChallenges: ChallengePreview[] = [
 export default function SponsoredClubhouse() {
   return (
     <>
+      <style jsx global>
+        {`
+          * {
+            /* Overwriting Color Variables to fit the Sponsor's Identity */
+            /* Jaquet Droz Challenge */
+            --black: #141414;
+            --black-rgb: 20, 20, 20;
+            --primary: #333333;
+            --primary-rgb: 51, 51, 51;
+            --accent: #b5991c;
+            --accent-rgb: 181, 153, 28;
+            --secondary: #fafafa;
+            --secondary-rgb: 250, 250, 250;
+
+            --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+          }
+        `}
+      </style>
       <Head>
         <title>Jaquet Droz Challenge | Welcome</title>
         <link type="image/svg+xml" href="/logos/favicon_excr.svg" />
