@@ -1,6 +1,7 @@
 .selectGroup {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   color: var(--white);
   gap: var(--xs);
   align-items: center;

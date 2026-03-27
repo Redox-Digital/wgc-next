@@ -68,6 +68,7 @@ export const prizesShort: PrizeType[] = [
     ),
     badge: {
       title: 'tirage au sort global',
+      className: leagueCss.pgaChampion,
     },
     img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price01-alt.jpg',
   },
