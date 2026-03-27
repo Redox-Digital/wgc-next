@@ -54,8 +54,8 @@ export default function SponsoredLobby() {
             --black-rgb: 20, 20, 20;
             --primary: #333333;
             --primary-rgb: 51, 51, 51;
-            --accent: #f86d43;
-            --accent-rgb: 248, 109, 67;
+            --accent: #b5991c;
+            --accent-rgb: 181, 153, 28;
             --secondary: #fafafa;
             --secondary-rgb: 250, 250, 250;
 
