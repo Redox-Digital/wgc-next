@@ -64,37 +64,41 @@
         align-items: center;
       }
     }
+  }
+}
 
-    > .profilePicture {
-      cursor: pointer;
-      position: relative;
-      border: none;
-      background: none;
+.profilePicture {
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
 
-      > span {
-        width: var(--md);
-        height: var(--md);
-        position: absolute;
-        right: 0;
-        bottom: 0;
+  > span {
+    width: var(--md);
+    height: var(--md);
+    position: absolute;
+    right: 0;
+    bottom: 0;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        background-color: var(--accent);
-        border-radius: 3px;
-        overflow: hidden;
-      }
-      > img {
-        outline-style: solid;
-        outline-width: 3px;
-        border-radius: 1000px;
-        object-fit: cover;
+    background-color: var(--accent);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  > img {
+    outline-style: solid;
+    outline-width: 3px;
+    border-radius: 1000px;
+    object-fit: cover;
 
-        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
-      }
-    }
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  > input {
+    display: none;
   }
 }
 

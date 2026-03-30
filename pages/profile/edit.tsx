@@ -1,8 +1,10 @@
 import PageTitle from '@/components/content/PageTitle';
 import { SelectInput, TextInput } from '@/components/inputs/Inputs';
+import Image from 'next/image';
 
 import Button from '@/components/navigation/Button';
 import css from './Profile.module.scss';
+import { leagueFinder } from '@/components/content/LeagueBadge';
 
 export default function EditProfile() {
   return (
@@ -10,6 +12,23 @@ export default function EditProfile() {
       <PageTitle title={'Edit Profile'} returnBtn />
 
       <form>
+        <label
+          htmlFor="profilePicture"
+          title="Change profile picture"
+          className={css.profilePicture}
+        >
+          <Image
+            src={'https://wgc.gg/images/profile-picture.png'}
+            alt={'Jonas Jaeggi'}
+            width={80}
+            height={80}
+            className={leagueFinder(2).className}
+          />
+          <span>
+            <Image src="/pictograms/pen-black.svg" alt="" width={16} height={16} />
+          </span>
+          <input type="file" name="profilePicture" id="profilePicture" />
+        </label>
         {/* Address */}
         <TextInput id={'firstName'} label={'First Name'} type={'text'} />
         <TextInput id={'lastName'} label={'Last Name'} type={'text'} />
