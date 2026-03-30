@@ -9,6 +9,7 @@ import CopyLink from '@/components/inputs/CopyLink';
 import { BadgesPreviewList } from '@/components/content/Badges';
 
 import { userBadges } from '@/components/content/Badges';
+import Link from 'next/link';
 
 export default function Profile() {
   const bag = [
@@ -42,7 +43,7 @@ export default function Profile() {
       <div className={`${css.user}`}>
         <Badge userLevel={3} href="/profile/leagues" />
 
-        <label htmlFor="profilePicture" title="Change profile picture">
+        <Link href="/profile/edit" title="Edit your profile" className={css.profilePicture}>
           <Image
             src={'https://wgc.gg/images/profile-picture.png'}
             alt={'Jonas Jaeggi'}
@@ -53,8 +54,7 @@ export default function Profile() {
           <span>
             <Image src="/pictograms/pen-black.svg" alt="" width={16} height={16} />
           </span>
-          <input type="image" name="profilePicture" id="profilePicture" />
-        </label>
+        </Link>
 
         <div className={css.username}>
           <h2>Jonas Jaeggi 🏳️</h2>
@@ -93,16 +93,26 @@ export default function Profile() {
       </section>
 
       <section>
-        <h6>Quick Links</h6>
+        <h6>Settings</h6>
 
-        <SettingButton picto="/pictograms/gear-dark.svg" href="/profile/settings">
-          Settings
+        <SettingButton picto="/pictograms/gear-dark.svg" href="/profile/edit">
+          Edit profile
+        </SettingButton>
+        <SettingButton picto="/pictograms/edit-dark.svg" href="/profile/gear">
+          Edit bag
+        </SettingButton>
+        <SettingButton picto="/pictograms/notification-dark.svg" href="/profile/notifications">
+          Notifications preferences
         </SettingButton>
         <SettingButton picto="/pictograms/wallet-dark.svg" href="/profile/wallet">
           Wallet
         </SettingButton>
         <SettingButton picto="/pictograms/list-dark.svg" href="/profile/history">
           Challenge history
+        </SettingButton>
+
+        <SettingButton picto="/pictograms/logout-danger.svg" className={css.danger}>
+          Logout
         </SettingButton>
       </section>
     </main>
