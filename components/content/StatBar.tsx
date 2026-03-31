@@ -2,18 +2,38 @@ import Link from 'next/link';
 import css from './StatBar.module.scss';
 import Image from 'next/image';
 
+export type StatElt = { name: string; value?: string | number; picto?: string; url?: string };
+
 type StatProps = {
   title?: string;
   className?: string;
-  elements: { name: string; value?: string | number; picto?: string; url?: string }[];
+  clickable?: { href: string; title: string };
+  defaultText?: string;
+  elements: StatElt[];
 };
 
-export default function StatBar({ title, elements, className }: StatProps) {
+export default function StatBar({ title, elements, className, clickable, defaultText }: StatProps) {
+  if (clickable)
+    return (
+      <Link href={clickable.href} title={clickable.title} className={`${css.statBar} ${className}`}>
+        {title && <h6>{title}</h6>}
+        <StatList elements={elements} defaultText={defaultText} />
+      </Link>
+    );
+
   return (
     <div className={`${css.statBar} ${className}`}>
       {title && <h6>{title}</h6>}
-      <ul>
-        {elements.map((item, key) => (
+      <StatList elements={elements} defaultText={defaultText} />
+    </div>
+  );
+}
+
+function StatList({ elements, defaultText }: StatProps) {
+  return (
+    <ul>
+      {elements.length > 0 ? (
+        elements.map((item, key) => (
           <li key={key}>
             {item.url ? (
               <Link href={item.url}>
@@ -29,8 +49,10 @@ export default function StatBar({ title, elements, className }: StatProps) {
               </>
             )}
           </li>
-        ))}
-      </ul>
-    </div>
+        ))
+      ) : (
+        <em>{defaultText}</em>
+      )}
+    </ul>
   );
 }
