@@ -43,6 +43,10 @@ body {
   font-size: var(--fs-p);
   color: var(--black);
 
+  // Safari specifics
+  -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
+
   @media screen and (min-width: 1200px) {
     margin-left: var(--side-menu-width);
     padding-inline: var(--md);
