@@ -114,6 +114,10 @@
     gap: var(--sm);
   }
 
+  .formRow {
+    width: 100%;
+  }
+
   .btns {
     width: 100%;
     display: flex;
@@ -315,4 +319,10 @@
 .leaguesPage {
   max-width: var(--max-paragraph-width);
   margin-inline: auto;
+}
+
+.bagBar {
+  img {
+    background: var(--white);
+  }
 }

@@ -52,7 +52,7 @@ export default function UserPage() {
       <div className={`${css.user}`}>
         <Badge userLevel={player.level} href="/profile/leagues" />
 
-        <label>
+        <span className={css.profilePicture}>
           <Image
             src={player.img}
             alt={player.name}
@@ -60,7 +60,7 @@ export default function UserPage() {
             height={80}
             className={leagueFinder(player.level).className}
           />
-        </label>
+        </span>
 
         <div className={css.username}>
           <h2>
