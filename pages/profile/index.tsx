@@ -1,7 +1,7 @@
 import css from './Profile.module.scss';
 import Image from 'next/image';
 import { SettingButton } from '@/components/navigation/Button';
-import StatBar from '@/components/content/StatBar';
+import StatBar, { StatElt } from '@/components/content/StatBar';
 import Badge, { leagueFinder } from '@/components/content/LeagueBadge';
 import ProgressBar from '@/components/content/ProgressBar';
 import { FriendsBar } from './friends';
@@ -12,7 +12,7 @@ import { userBadges } from '@/components/content/Badges';
 import Link from 'next/link';
 
 export default function Profile() {
-  const bag = [
+  const bag: StatElt[] = [
     {
       name: 'Driver',
       picto: '/brands/wi.png',
@@ -29,13 +29,22 @@ export default function Profile() {
       name: 'Balls',
       picto: '/brands/tm.png',
     },
-    { name: 'Edit', picto: '/pictograms/edit-dark.svg', url: '/profile/gear' },
   ];
 
-  const stats = [
-    { name: 'HCP', value: '16.0', picto: '/pictograms/profile-hcp.svg' },
-    { name: 'Challenges played', value: 24, picto: '/pictograms/profile-challenges.svg' },
-    { name: 'Wallet', value: '$100.00', picto: '/pictograms/wallet-gradient.svg' },
+  const stats: StatElt[] = [
+    { name: 'HCP', value: '16.0', picto: '/pictograms/profile-hcp.svg', url: '/profile/edit' },
+    {
+      name: 'Challenges played',
+      value: 24,
+      picto: '/pictograms/profile-challenges.svg',
+      url: '/profile/history/',
+    },
+    {
+      name: 'Wallet',
+      value: '$100.00',
+      picto: '/pictograms/wallet-gradient.svg',
+      url: '/profile/wallet/',
+    },
   ];
 
   return (
@@ -67,10 +76,18 @@ export default function Profile() {
           labels={['Your Progress', `Level ${2}`, `${145} / ${205}`]}
           className={css.levelBar}
         />
+
+        <StatBar elements={stats} />
       </div>
-      <StatBar elements={stats} />
+
       <section>
-        <StatBar title="Bag" elements={bag} className={css.bag} />
+        <StatBar
+          title="Bag"
+          clickable={{ href: '/profile/gear', title: 'Edit your bag' }}
+          elements={bag}
+          className={css.bagBar}
+          defaultText="Your bag is empty, customize it now!"
+        />
       </section>
 
       <section>
