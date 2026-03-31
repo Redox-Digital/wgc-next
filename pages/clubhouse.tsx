@@ -2,14 +2,11 @@ import Hero, { EventHero } from '@/components/layouts/Hero';
 import css from './Clubhouse.module.scss';
 import SponsorsSection from '@/components/layouts/SponsorsSection';
 import CTA from '@/components/navigation/CTA';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import YourChallengeFAB from '@/components/navigation/YourChallengeFAB';
 import NextChallengeSection from '@/components/layouts/NextChallengesSection';
-import { dummyLeaderboard, dummySponsors } from '@/constants/DummyData';
-import Leaderboard from '@/components/layouts/Leaderboard';
+import { dummySponsors } from '@/constants/DummyData';
 import Button from '@/components/navigation/Button';
-import StatBar from '@/components/content/StatBar';
 import LogoSct from '@/components/content/LogoSct';
 import CtaRow from '@/components/navigation/CtaRow';
 import TextImgSection from '@/components/layouts/TextImgSection';
@@ -95,21 +92,21 @@ export default function Clubhouse() {
 
       <TextImgSection img={'/layouts/clubhouse/wgc-the-best-cta.jpg'}>
         <>
-          <h2>Face the best</h2>
+          <h2>Challenge the legends, take on the world.</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales nulla nibh, ut
-            ornare ipsum bibendum at. Nulla laoreet nisi elit, nec ultrices velit faucibus id.
+            Join the international leaderboard and compete against the best in your category. Your
+            official score may be all that separates you from Valderrama.
           </p>
           {/* DEV : If user not logged in, Register Page, if logged in -> Lobby */}
           <div className={css.textImgBtns}>
             {' '}
             {logged ? (
-              <Button href="/jaquet-droz/">The Jacquet Droz Challenge</Button>
+              <Button href="/jaquet-droz/">The Jaquet Droz Challenge</Button>
             ) : (
               <>
                 <Button href="/profile/login">Sign in</Button>
                 <Button href="/jaquet-droz/" outline darkBg>
-                  The Jacquet Droz Challenge
+                  The Jaquet Droz Challenge
                 </Button>
               </>
             )}

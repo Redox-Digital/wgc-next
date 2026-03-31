@@ -30,12 +30,14 @@ export default function Rankings() {
         `}
       </style>
       <Head>
-        <title>Rankings | EXTRACURRICULAR x WGC</title>
+        <title>Rankings | Jaquet Droz Challenge</title>
       </Head>
 
       <header className={css.header}>
         <PageTitle title={'Leaderboards'} returnBtn className={css.title}>
-          <p>Play well, play more, and climb up the EXTRACURRICULAR Challenges!</p>
+          <p>
+            Play well, play more, and climb up the <b>Jaquet Droz</b> Challenges!
+          </p>
         </PageTitle>
 
         <div className={css.toggles}>
@@ -78,7 +80,7 @@ export default function Rankings() {
         {hcpRadio === 'single' && (
           <Leaderboard
             players={dummyLeaderboard}
-            title="Spring Challenge - EXTRACURRICULAR"
+            title="Jaquet Droz Challenge"
             description="HCP single"
           />
         )}
@@ -86,7 +88,7 @@ export default function Rankings() {
         {hcpRadio === 'up to 18' && (
           <Leaderboard
             players={dummyLeaderboard}
-            title="Spring Challenge - EXTRACURRICULAR"
+            title="Jaquet Droz Challenge"
             description="HCP up to 18"
           />
         )}
@@ -94,7 +96,7 @@ export default function Rankings() {
         {hcpRadio === 'up to 54' && (
           <Leaderboard
             players={dummyLeaderboard}
-            title="Spring Challenge - EXTRACURRICULAR"
+            title="Jaquet Droz Challenge"
             description="HCP up to 54"
           />
         )}

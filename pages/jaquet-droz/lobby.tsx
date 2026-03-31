@@ -64,7 +64,7 @@ export default function SponsoredLobby() {
         `}
       </style>
       <Head>
-        <title>Lobby | UGOLF x BLUEGREEN</title>
+        <title>Lobby | Jaquet Droz Challenge</title>
       </Head>
       <Modal
         open={enterScore}
@@ -88,11 +88,11 @@ export default function SponsoredLobby() {
       <header className={css.header}>
         <div className={css.top}>
           <ReturnButton />
-          <h1>UGOLF x BLUEGREEN Challenge</h1>
+          <h1>Jaquet Droz Challenge</h1>
         </div>
 
         <Image
-          src="/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_challenge.png"
+          src="/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg"
           alt=""
           width={700}
           height={466}
@@ -132,8 +132,8 @@ export default function SponsoredLobby() {
           <div className={css.title}>
             <h3>Game Rules</h3>
             <p>
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
+              Your score must be an officially recognized by your national Federation (USGA, R&A,
+              etc). We will be verifying winning scores.
             </p>
           </div>
 
@@ -177,10 +177,7 @@ export default function SponsoredLobby() {
         <TextImgSection img={'/layouts/clubhouse/wgc-how-to.jpg'} lightBg>
           <>
             <h2>How to play</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales nulla nibh,
-              ut ornare ipsum bibendum at. Nulla laoreet nisi elit, nec ultrices velit faucibus id.
-            </p>
+            <p>Learn how to play in 4 simple steps</p>
             <div style={{ display: 'flex', flexDirection: 'row', gap: '12px', flexWrap: 'wrap' }}>
               <Button href="/support">Learn how to play</Button>
               <Button href="/terms" outline>
