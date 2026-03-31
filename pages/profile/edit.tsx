@@ -12,23 +12,43 @@ export default function EditProfile() {
       <PageTitle title={'Edit Profile'} returnBtn />
 
       <form>
-        <label
-          htmlFor="profilePicture"
-          title="Change profile picture"
-          className={css.profilePicture}
-        >
-          <Image
-            src={'https://wgc.gg/images/profile-picture.png'}
-            alt={'Jonas Jaeggi'}
-            width={80}
-            height={80}
-            className={leagueFinder(2).className}
-          />
-          <span>
-            <Image src="/pictograms/pen-black.svg" alt="" width={16} height={16} />
-          </span>
-          <input type="file" name="profilePicture" id="profilePicture" />
-        </label>
+        <div className={css.formRow}>
+          <label
+            htmlFor="profilePicture"
+            title="Change profile picture"
+            className={css.profilePicture}
+          >
+            <Image
+              src={'https://wgc.gg/images/profile-picture.png'}
+              alt={'Jonas Jaeggi'}
+              width={80}
+              height={80}
+              className={leagueFinder(2).className}
+            />
+            <span>
+              <Image src="/pictograms/pen-black.svg" alt="" width={16} height={16} />
+            </span>
+            <input type="file" name="profilePicture" id="profilePicture" />
+          </label>
+        </div>
+
+        <SelectInput
+          id={'status'}
+          label={'Status'}
+          options={[
+            {
+              value: 'amateur',
+              label: 'Amateur',
+            },
+            {
+              value: 'pro',
+              label: 'Pro',
+            },
+          ]}
+          width="50"
+        />
+        <TextInput id={'hcp'} label={'Handicap'} type={'number'} width="50" />
+
         {/* Address */}
         <TextInput id={'firstName'} label={'First Name'} type={'text'} />
         <TextInput id={'lastName'} label={'Last Name'} type={'text'} />
@@ -76,22 +96,8 @@ export default function EditProfile() {
             },
           ]}
         />
-        <SelectInput
-          id={'status'}
-          label={'Status'}
-          options={[
-            {
-              value: 'amateur',
-              label: 'Amateur',
-            },
-            {
-              value: 'pro',
-              label: 'Pro',
-            },
-          ]}
-        />
-        <TextInput id={'hcp'} label={'Handicap'} type={'number'} width="50" />
-        <TextInput id={'golfId'} label={'National Golf Id (optional)'} type={'text'} width="50" />
+
+        <TextInput id={'golfId'} label={'National Golf Id (optional)'} type={'text'} />
 
         {/* .WGC Settings */}
       </form>
