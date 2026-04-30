@@ -10,9 +10,9 @@ export const prizes: PrizeType[] = [
     logo: '/sponsors/JaquetDroz/JD_white.svg',
     description: (
       <>
-        <b>L'art de la haute horlogerie.</b> Une pièce exclusive en <b>titane de 41mm</b> dotée d’un
+        <b>L'art de la haute horlogerie.</b> Une pièce exclusive en <b>titane de 41mm</b> dotée d'un
         <b> mouvement Tourbillon</b> squelette. Son cadran en saphir et index en or gris révèle son
-        exception! <b>Valeur</b> : +€300’000.-
+        exception! <b>Valeur</b> : +€300'000.-
       </>
     ),
     badge: {
@@ -25,7 +25,6 @@ export const prizes: PrizeType[] = [
   {
     title: 'LIV Pro-Am à Valderrama',
     logo: '/sponsors/JaquetDroz/4Aces_Logo_white.svg',
-
     description: (
       <>
         <b>Jouez avec les légendes.</b> Vivez un tour de golf en immersion totale sur le mythique
@@ -41,7 +40,6 @@ export const prizes: PrizeType[] = [
   {
     title: 'Pack Officiel 4Aces',
     logo: '/sponsors/JaquetDroz/logo-under-armor-white.svg',
-
     description: (
       <>
         <b>Le look complet de l'équipe.</b> Équipez-vous de la tête aux pieds avec la tenue
@@ -63,7 +61,7 @@ export const prizesShort: PrizeType[] = [
     description: (
       <>
         Tentez de remporter par tirage au sort une pièce de haute horlogerie suisse Jaquet Droz,
-        d’une valeur de € 300’000.-.
+        d'une valeur de € 300'000.-.
       </>
     ),
     badge: {
@@ -75,7 +73,6 @@ export const prizesShort: PrizeType[] = [
   {
     title: 'LIV Pro-Am Valderrama',
     logo: '/sponsors/JaquetDroz/4Aces_Logo_white.svg',
-
     description: (
       <>
         Marquez l'histoire en gagnant votre invitation pour jouer aux côtés des légendes lors d'un
@@ -91,7 +88,6 @@ export const prizesShort: PrizeType[] = [
   {
     title: 'Le kit complet des 4Aces',
     logo: '/sponsors/JaquetDroz/logo-under-armor-white.svg',
-
     description: <>Pour un équipement de la tête aux pieds de notre partenaire 4Aces.</>,
     badge: {
       title: 'top 20 de chaque catégorie',
@@ -101,54 +97,6 @@ export const prizesShort: PrizeType[] = [
   },
 ];
 
-type Props = {
-  lightBg?: boolean;
-};
-
-export default function PriceList({ lightBg }: Props) {
-  return (
-    <section className={`${css.section} ${lightBg && css.light}`} id="pricepool">
-      <div className={css.sctTitle}>
-        <h2>A. Lot. Of. Prizes.</h2>
-        <p>
-          Our generous sponsors are treating you to something special! Check out our selection of
-          prizes for the winners, plus a bonus raffle for a chance to win a Jaquet Droz Swiss
-          timepiece worth €300’000.-.
-        </p>
-      </div>
-      <ul className={css.list}>
-        {prizes.map((prize, key) => (
-          <PrizeLine key={key} {...prize} />
-        ))}
-      </ul>
-    </section>
-  );
-}
-
-export function PriceListShort({ lightBg }: Props) {
-  return (
-    <section
-      className={`${css.section} ${css.shortListSection} ${lightBg && css.light}`}
-      id="pricepool"
-    >
-      <div className={css.sctTitle}>
-        <h2>Votre inscription : le ticket pour une expérience exclusive</h2>
-        <p>
-          Tentez de remporter par tirage au sort une pièce de haute horlogerie Jaquet Droz, une
-          œuvre d'art à six chiffres. Pour chaque catégorie, tentez également votre chance de
-          marquer l'histoire en gagnant votre invitation pour jouer aux côtés des légendes lors du
-          LIV Pro-Am de Valderrama.
-        </p>
-      </div>
-      <ul className={css.shortList}>
-        {prizesShort.map((prize, key) => (
-          <PrizeCard key={key} {...prize} />
-        ))}
-      </ul>
-    </section>
-  );
-}
-
 export type PrizeType = {
   logo?: string;
   title: string;
@@ -156,12 +104,53 @@ export type PrizeType = {
   img?: string;
   imgContain?: boolean;
   className?: string;
-
   badge?: {
     title: string;
     className?: string;
   };
 };
+
+type Props = {
+  lightBg?: boolean;
+  title: string;
+  description: React.ReactNode;
+  prizes: PrizeType[];
+};
+
+export default function PriceList({ lightBg, title, description, prizes: prizeList }: Props) {
+  return (
+    <section className={`${css.section} ${lightBg && css.light}`} id="pricepool">
+      <div className={css.sctTitle}>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
+      <ul className={css.list}>
+        {prizeList.map((prize, key) => (
+          <PrizeLine key={key} {...prize} />
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+export function PriceListShort({ lightBg, title, description, prizes: prizeList }: Props) {
+  return (
+    <section
+      className={`${css.section} ${css.shortListSection} ${lightBg && css.light}`}
+      id="pricepool"
+    >
+      <div className={css.sctTitle}>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
+      <ul className={css.shortList}>
+        {prizeList.map((prize, key) => (
+          <PrizeCard key={key} {...prize} />
+        ))}
+      </ul>
+    </section>
+  );
+}
 
 export function PrizeLine({
   logo,

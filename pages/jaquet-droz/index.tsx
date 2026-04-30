@@ -10,10 +10,45 @@ import Button from '@/components/navigation/Button';
 import SponsoredPricesPreview from '@/components/content/SponsoredPricesPreview';
 import LogoSct from '@/components/content/LogoSct';
 import TextImgSection from '@/components/layouts/TextImgSection';
-import PriceList, { PriceListShort } from '@/components/layouts/PriceList';
+import PriceList, { PriceListShort, PrizeType } from '@/components/layouts/PriceList';
+import leagueCss from '@/components/content/LeagueBadge.module.scss';
 import Image from 'next/image';
 import SponsorsSection from '@/components/layouts/SponsorsSection';
 import SponsorsBanner from '@/components/layouts/SponsorsBanner';
+
+const jdPrizesShort: PrizeType[] = [
+  {
+    title: "Une œuvre d'art au poignet",
+    logo: '/sponsors/JaquetDroz/JD_white.svg',
+    description: (
+      <>
+        Tentez de remporter par tirage au sort une pièce de haute horlogerie suisse Jaquet Droz,
+        d'une valeur de € 300'000.-.
+      </>
+    ),
+    badge: { title: 'tirage au sort global', className: leagueCss.pgaChampion },
+    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price01-alt.jpg',
+  },
+  {
+    title: 'LIV Pro-Am Valderrama',
+    logo: '/sponsors/JaquetDroz/4Aces_Logo_white.svg',
+    description: (
+      <>
+        Marquez l'histoire en gagnant votre invitation pour jouer aux côtés des légendes lors d'un
+        Pro-Am exclusif.
+      </>
+    ),
+    badge: { title: 'tirage au sort par catégorie', className: leagueCss.clubhouseKing },
+    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price02.jpg',
+  },
+  {
+    title: 'Le kit complet des 4Aces',
+    logo: '/sponsors/JaquetDroz/logo-under-armor-white.svg',
+    description: <>Pour un équipement de la tête aux pieds de notre partenaire 4Aces.</>,
+    badge: { title: 'top 20 de chaque catégorie', className: leagueCss.tournamentReady },
+    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price03.webp',
+  },
+];
 
 export const jdChallenges: ChallengePreview[] = [
   {
@@ -123,7 +158,19 @@ export default function SponsoredClubhouse() {
       />
 
       <main className={css.clubhouse}>
-        <PriceListShort lightBg />
+        <PriceListShort
+          lightBg
+          title="Votre inscription : le ticket pour une expérience exclusive"
+          description={
+            <>
+              Tentez de remporter par tirage au sort une pièce de haute horlogerie Jaquet Droz, une
+              œuvre d'art à six chiffres. Pour chaque catégorie, tentez également votre chance de
+              marquer l'histoire en gagnant votre invitation pour jouer aux côtés des légendes lors
+              du LIV Pro-Am de Valderrama.
+            </>
+          }
+          prizes={jdPrizesShort}
+        />
 
         <SectionTitle title={'Rejoignez le Challenge'}>
           <p>

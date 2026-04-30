@@ -154,7 +154,18 @@ export default function SponsoredLobby() {
           ongoing={true}
         />
 
-        <PriceList lightBg />
+        <PriceList
+          lightBg
+          title="A. Lot. Of. Prizes."
+          description={
+            <>
+              Our generous sponsors are treating you to something special! Check out our selection
+              of prizes for the winners, plus a bonus raffle for a chance to win a Jaquet Droz Swiss
+              timepiece worth €300'000.-.
+            </>
+          }
+          prizes={prizes}
+        />
 
         {/* prizes.length && <PricePool prizes={prizes} /> */}
 
