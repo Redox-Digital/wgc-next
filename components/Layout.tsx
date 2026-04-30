@@ -5,7 +5,7 @@ import { MainNavLinks } from '@/constants/Navigation';
 import { useState } from 'react';
 
 type Props = {
-  children: string | JSX.Element;
+  children: string | React.ReactNode;
 };
 
 export default function Layout({ children }: Props) {
