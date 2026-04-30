@@ -82,7 +82,26 @@ export default function Clubhouse() {
         </Hero>
       ) */}
 
-      <EventHero />
+      <EventHero
+        title="Play golf, win big"
+        description={
+          <p>
+            Join the exclusive <b>Jaquet Droz Challenge</b> to win a unique timepiece worth{' '}
+            <b>€300’000.-</b> and <b>LIV Golf Pro-Am spots</b>.
+          </p>
+        }
+        actions={[
+          {
+            label: 'The Jaquet Droz Challenge',
+            href: '/jaquet-droz/',
+          },
+        ]}
+        image={{ src: '/sponsors/JaquetDroz/JD-01-detour-zoomed.png' }}
+        mainSponsor={{
+          src: '/sponsors/JaquetDroz/blocmarque-BGUG_white.svg',
+          alt: 'BLUEGREEN & UGOLF',
+        }}
+      />
 
       <main className={css.clubhouse}>
         <SponsorsSection sponsors={sponsors} />

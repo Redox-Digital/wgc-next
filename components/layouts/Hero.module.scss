@@ -135,7 +135,7 @@
     position: relative;
 
     @media screen and (min-width: 600px) {
-      justify-content: space-between;
+      justify-content: flex-end;
 
       padding: var(--md) 0px var(--md) var(--md);
     }

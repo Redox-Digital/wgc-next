@@ -98,7 +98,29 @@ export default function SponsoredClubhouse() {
         </p>
       </Hero>*/}
 
-      <EventHero alt />
+      <EventHero
+        alt
+        title="Visez l'exceptionnel"
+        description={
+          <p>
+            <b>Une montre à € 300’000 et votre place lors du LIV Pro-Am.</b>
+            <br />
+            Jaquet Droz Challenge, le premier tournoi international où votre passion compte plus que
+            votre score.
+          </p>
+        }
+        actions={[
+          {
+            label: 'Sign in',
+            href: '/profile/login',
+          },
+        ]}
+        image={{ src: '/sponsors/JaquetDroz/JD-03-detour-sq.png' }}
+        mainSponsor={{
+          src: '/sponsors/JaquetDroz/blocmarque-BGUG_white.svg',
+          alt: 'BLUEGREEN & UGOLF',
+        }}
+      />
 
       <main className={css.clubhouse}>
         <PriceListShort lightBg />
