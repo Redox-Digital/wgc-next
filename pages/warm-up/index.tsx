@@ -12,21 +12,38 @@ import SponsoredPricesPreview from '@/components/content/SponsoredPricesPreview'
 import { PriceListShort, PrizeType } from '@/components/layouts/PriceList';
 import TextImgSection from '@/components/layouts/TextImgSection';
 import LogoSct from '@/components/content/LogoSct';
+import leagueCss from '@/components/content/LeagueBadge.module.scss';
 
-const warmUpPrizes: PrizeType[] = [
+export const warmUpPrizes: PrizeType[] = [
   {
-    title: 'WGC Premium Golf Balls',
-    logo: '/logos/logo-wgc-full-accent-white.svg',
-    description: <>A set of exclusive WGC Premium balls, drawn at random among all participants.</>,
-    badge: { title: 'global raffle' },
-    img: '/sponsors/WGC/WGC_May2026/WarmUp-Cover.png',
+    title: 'Exclusive TM Tour Bag signed by Dustin Johnson',
+    logo: '/sponsors/WGC/WGC_May2026/Taylormade.svg',
+    description: (
+      <>
+        Enter the drawing for a chance to win this Major Special Edition golf bag autographed by
+        4Aces star Dustin Johnson.
+      </>
+    ),
+    badge: { title: 'The grand draw', className: leagueCss.pgaChampion },
+    img: '/sponsors/WGC/WGC_May2026/WarmUp-Bag.png',
   },
   {
-    title: 'Signed Tour Bag',
+    title: 'TaylorMade TP5x Balls',
+    logo: '/sponsors/WGC/WGC_May2026/Taylormade.svg',
+    description: (
+      <>
+        You can never have too many golf balls. Complete your golf kit with these WGC-branded balls.
+      </>
+    ),
+    badge: { title: 'Top 3 of each category', className: leagueCss.clubhouseKing },
+    img: '/sponsors/WGC/WGC_May2026/WarmUp-Balls.png',
+  },
+  {
+    title: 'WGC Caps',
     logo: '/logos/logo-wgc-full-accent-white.svg',
-    description: <>A tour bag signed by our partner pros — one winner per category.</>,
-    badge: { title: 'raffle per category' },
-    img: '/sponsors/WGC/WGC_May2026/WarmUp-Cover.png',
+    description: <>Grip it. Click it. Protected from the sun, but not from challenges.</>,
+    badge: { title: 'Top 15 of each category', className: leagueCss.tournamentReady },
+    img: '/sponsors/WGC/WGC_May2026/WarmUp-Caps.png',
   },
 ];
 
@@ -110,10 +127,9 @@ export default function SponsoredClubhouse() {
           prizes={warmUpPrizes}
         />
 
-        <SectionTitle title={'No entry fee. Zero risk. Just golf.'}>
+        <SectionTitle title={'Join the Challenge'}>
           <p>
-            Post your score and join the WGC community. Win exclusive WGC Premium balls and a signed
-            Tour Bag in our exclusive draw.
+            Choose your category based on your handicap, enter your score, and take your chance!
           </p>
         </SectionTitle>
         <div className={css.challenges}>

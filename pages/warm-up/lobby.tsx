@@ -4,13 +4,16 @@ import Image from 'next/image';
 import Button, { ReturnButton } from '@/components/navigation/Button';
 import Link from 'next/link';
 import Head from 'next/head';
-import CTA from '@/components/navigation/CTA';
 import { useState } from 'react';
 import { TextInput } from '@/components/inputs/Inputs';
 import Modal from '@/components/layouts/Modal';
 import CopyLink from '@/components/inputs/CopyLink';
 import Leaderboard from '@/components/layouts/Leaderboard';
-import { dummyLeaderboard, dummyPrizes } from '@/constants/DummyData';
+import { dummyLeaderboard } from '@/constants/DummyData';
+import { warmUpPrizes } from '@/pages/warm-up/index';
+import TextImgSection from '@/components/layouts/TextImgSection';
+import LogoSct from '@/components/content/LogoSct';
+import { PriceListShort } from '@/components/layouts/PriceList';
 
 export default function SponsoredLobby() {
   const rules: { label: string; value: string | React.ReactNode }[] = [
@@ -36,7 +39,7 @@ export default function SponsoredLobby() {
     { label: 'Player count max.', value: '-' },
   ];
 
-  const prizes: PriceType[] = dummyPrizes;
+  const prizes = warmUpPrizes;
 
   const [enterScore, showScoreModal] = useState<boolean>(false);
 
@@ -69,11 +72,11 @@ export default function SponsoredLobby() {
       <header className={css.header}>
         <div className={css.top}>
           <ReturnButton />
-          <h1>Spring Challenge - EXTRACURRICULAR</h1>
+          <h1>WGC Warm-Up Challenge</h1>
         </div>
 
         <Image
-          src="/sponsors/4Aces/4Aces_Mar2025/4aces_challenge_mar2025.png"
+          src="/sponsors/WGC/WGC_May2026/WarmUp-Cover.png"
           alt=""
           width={700}
           height={466}
@@ -86,35 +89,31 @@ export default function SponsoredLobby() {
             </small>
             <small>1 Day 10:30:02</small>
           </div>
-          <CopyLink text={'https://wgc.gg/extracurricular/lobby/7874'} />
+          <CopyLink text={'https://wgc.gg/warm-up/lobby'} />
         </div>
 
         {/* If cash price, show MoneyPool */}
         {prizes.length ? (
-          <PricePool privateChallenge className={css.poolPreview} prizes={prizes} preview />
+          <PricePool className={css.poolPreview} prizes={prizes} preview />
         ) : (
-          <MoneyPool className={css.poolPreview} total={102} />
+          <MoneyPool className={css.poolPreview} total={0} />
         )}
 
         <div className={css.btns}>
-          {/* <Button href="/lobby">Join Challenge</Button> */}
           <Button onClick={() => showScoreModal(true)}>Enter score</Button>
           <Button href="/clubhouse" outline>
             Unregister
           </Button>
-          {/* Show if it's a "goodies" Price Pool */}
-          {/*<Button href="#pricepool" outline>
-            See Price Pool
-          </Button>*/}
         </div>
       </header>
+
       <main className={css.main}>
         <section className={css.rules}>
           <div className={css.title}>
             <h3>Game Rules</h3>
             <p>
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
+              Your score must be officially recognized by your national Federation (USGA, R&A,
+              etc). Post your best Net Stableford round — one entry per player.
             </p>
           </div>
 
@@ -129,29 +128,38 @@ export default function SponsoredLobby() {
         </section>
 
         <Leaderboard
-          players={dummyLeaderboard.slice(0, 1)}
+          players={dummyLeaderboard}
           title={'Leaderboard'}
           className={css.leaderboard}
           ongoing={true}
         />
 
-        {prizes.length && <PricePool prizes={prizes} />}
+        <PriceListShort
+          lightBg
+          title="No entry fee. Zero risk. Just golf."
+          description={
+            <>
+              Post your score and join the WGC community. Win exclusive WGC Premium balls and a
+              signed Tour Bag in our exclusive draw.
+            </>
+          }
+          prizes={prizes}
+        />
 
-        <section>
-          <CTA
-            title={'Do you want more ?'}
-            description={
-              <p>
-                More Free and Buy-in Challenges available on wgc.gg & your own Challenges with
-                friends, clients, club members to create!
-              </p>
-            }
-            btnLabel={'Visit wgc.gg'}
-            btnBlank
-            href={'https://wgc.gg'}
-            img={'/layouts/clubhouse/lobby-cta.jpg'}
-          />
-        </section>
+        <TextImgSection img={'/layouts/clubhouse/wgc-how-to.jpg'} lightBg>
+          <>
+            <h2>How to play</h2>
+            <p>Learn how to play in 4 simple steps</p>
+            <div style={{ display: 'flex', flexDirection: 'row', gap: '12px', flexWrap: 'wrap' }}>
+              <Button href="/support">Learn how to play</Button>
+              <Button href="/terms" outline>
+                Terms and conditions
+              </Button>
+            </div>
+          </>
+        </TextImgSection>
+
+        <LogoSct lightBg />
       </main>
     </>
   );
