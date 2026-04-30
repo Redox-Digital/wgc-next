@@ -276,7 +276,7 @@ export const dummySponsors: Sponsor[] = [
     name: 'World Golf Challenge',
     img: '/sponsors/WGC/wgc_sponsor.png',
     runningChallenge: 0,
-    url: '/extracurricular',
+    url: '/warm-up',
   },
   /*
   {
