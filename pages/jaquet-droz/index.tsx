@@ -216,7 +216,8 @@ export default function SponsoredClubhouse() {
         title="L'excellence reconnue par les plus grands"
         logos={[
           { src: '/sponsors/JaquetDroz/blocmarque-BGUG_white.svg', title: 'BLUEGREEN x UGOLF' },
-          { src: '/sponsors/JaquetDroz/JDx4A_white.svg', title: 'Jaquet Droz x 4Aces GC' },
+          { src: '/sponsors/JaquetDroz/4Aces_Logo_white.svg', title: '4Aces GC' },
+          { src: '/sponsors/JaquetDroz/JD_white.svg', title: 'Jaquet Droz' },
         ]}
       >
         <p>

@@ -72,7 +72,7 @@ export function EventHero({
                 <div className={css.secondarySponsor}>
                   <small>proposed by</small>{' '}
                   <Image
-                    src="/sponsors/JaquetDroz/JDx4A_white.svg"
+                    src="/sponsors/JaquetDroz/4Aces_Logo_white.svg"
                     alt="Jaquet Droz x 4Aces GC"
                     width={176}
                     height={32}
