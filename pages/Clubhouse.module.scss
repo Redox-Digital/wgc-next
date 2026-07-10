@@ -27,6 +27,12 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: var(--sm);
+  align-items: center;
+
+  > a {
+    color: var(--white);
+    opacity: 1;
+  }
 }
 
 .userStatBar {

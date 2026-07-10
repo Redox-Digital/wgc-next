@@ -1,10 +1,13 @@
+import Link from 'next/link';
+import Button from '../navigation/Button';
 import css from './HowItWorksSection.module.scss';
 
 type Props = {
+  clubhouseVersion?: boolean;
   className?: string;
 };
 
-export default function HowItWorksSection({ className }: Props) {
+export default function HowItWorksSection({ className, clubhouseVersion }: Props) {
   const cards: CardProps[] = [
     {
       number: 1,
@@ -26,7 +29,9 @@ export default function HowItWorksSection({ className }: Props) {
     },
   ];
   return (
-    <section className={`${css.howToSection} ${className}`}>
+    <section
+      className={`${css.howToSection} ${clubhouseVersion && css.clubhouseVersion} ${className}`}
+    >
       <div className={css.container}>
         <div className={css.titles}>
           <h2>How it works</h2>
@@ -38,6 +43,15 @@ export default function HowItWorksSection({ className }: Props) {
             <Card {...card} key={card.number} />
           ))}
         </div>
+
+        {clubhouseVersion && (
+          <div className={css.btns}>
+            <Button href="/challenges">Check available Challenges</Button>
+            <Link href="/support" className="textLink">
+              Frequently Asked Questions
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

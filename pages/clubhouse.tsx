@@ -11,27 +11,27 @@ import LogoSct from '@/components/content/LogoSct';
 import CtaRow from '@/components/navigation/CtaRow';
 import TextImgSection from '@/components/layouts/TextImgSection';
 import { ChangeBackgroundColor } from '@/utils/changePageSettings';
+import StatBar from '@/components/content/StatBar';
+import Link from 'next/link';
+import HowItWorksSection from '@/components/content/HowItWorksSection';
+import GlobalStatBar from '@/components/content/GlobalStatBar';
 
 const sponsors: Sponsor[] = dummySponsors;
 
 export default function Clubhouse() {
   // DEV
-  const [logged, setLogged] = useState<boolean>(true);
+  const [logged, setLogged] = useState<boolean>(false);
   const [yourChallengeModal, setModal] = useState<boolean>(false);
 
   return (
     <>
-      <ChangeBackgroundColor color="var(--primary)" gradientBg />
+      <ChangeBackgroundColor color="var(--primary)" />
 
-      {/* DEV: Removing default Hero for JD x 4Aces Challenge
-      
-      logged ? (
+      {logged ? (
         <Hero
           title={
             <>
-              Welcome back,&nbsp;
-              <br />
-              Jonas Jaeggi
+              Welcome back, <em>Jonas Jaeggi</em>
             </>
           }
           gradient
@@ -52,36 +52,43 @@ export default function Clubhouse() {
               Create your own Challenge
             </Button>
           </div>
-          <StatBar
+          {/* <StatBar
             elements={[
               { name: 'HCP', value: '16.0' },
               { name: 'Ongoing Challenges', value: 13 }, // Active Challenge in total
               { name: 'Monthly rank', value: '#4' },
             ]}
             className={css.userStatBar}
-          />
+          /> */}
         </Hero>
       ) : (
-        <Hero title={<>Playing golf physically while competing digitally</>} gradient>
+        <Hero
+          title={
+            <>
+              Play golf <em>physically</em>.<br />
+              Compete <em>digitally</em>.
+            </>
+          }
+        >
           <p>
-            Welcome to your favorite golf platform!
-            <br />
-            What do you want to do today ?
+            Play your round at your local club and go head-to-head with golfers around the world on
+            one global leaderboard.
           </p>
           <div className={css.heroBtns}>
-            <Button href={'/profile/login'} darkBg>
+            <Button href={'/profile/create'} darkBg>
+              Register for free
+            </Button>
+            <Button href={'/profile/login'} outline darkBg>
               Login
             </Button>
-            <Button href={'/profile/create'} outline darkBg>
-              Create an account
-            </Button>
-            <Button href={'/support'} outline darkBg>
-              How to play
-            </Button>
+            <Link className="textLink" href="/support">
+              How it works
+            </Link>
           </div>
         </Hero>
-      ) */}
+      )}
 
+      {/*
       <EventHero
         title="Play golf, win big"
         description={
@@ -101,14 +108,23 @@ export default function Clubhouse() {
           src: '/sponsors/JaquetDroz/blocmarque-BGUG_white.svg',
           alt: 'BLUEGREEN & UGOLF',
         }}
+      /> */}
+
+      <GlobalStatBar
+        elements={[
+          { title: '1’000+', desc: 'golfers competing' }, // DEV : if possible, the real (dynamic) number
+          { title: '35+', desc: 'countries' }, // DEV : if possible, the real (dynamic) number
+          { title: 'Official', desc: 'federation scores' },
+        ]}
       />
 
       <main className={css.clubhouse}>
         <SponsorsSection sponsors={sponsors} />
         <NextChallengeSection />
-        <CtaRow />
+        {/* <CtaRow /> */}
       </main>
 
+      {/*
       <TextImgSection img={'/layouts/clubhouse/wgc-the-best-cta.jpg'}>
         <>
           <h2>Challenge the legends, take on the world.</h2>
@@ -116,7 +132,7 @@ export default function Clubhouse() {
             Join the international leaderboard and compete against the best in your category. Your
             official score may be all that separates you from Valderrama.
           </p>
-          {/* DEV : If user not logged in, Register Page, if logged in -> Lobby */}
+          {/* DEV : If user not logged in, Register Page, if logged in -> Lobby 
           <div className={css.textImgBtns}>
             {' '}
             {logged ? (
@@ -131,7 +147,7 @@ export default function Clubhouse() {
             )}
           </div>
         </>
-      </TextImgSection>
+      </TextImgSection> */}
 
       {/* DEV : removing for now.
       <Leaderboard
@@ -141,6 +157,8 @@ export default function Clubhouse() {
         btn={{ link: '/leaderboards', label: 'All leaderboards' }}
         ongoing
       /> */}
+
+      <HowItWorksSection clubhouseVersion />
 
       <LogoSct marginTop />
 

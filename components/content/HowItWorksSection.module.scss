@@ -1,6 +1,10 @@
 .howToSection {
   background: linear-gradient(180deg, rgba(10, 26, 17, 1) 0%, rgba(10, 26, 17, 0) 100%);
 
+  &.clubhouseVersion {
+    background: transparent;
+  }
+
   .container {
     max-width: calc(100% - 2 * var(--sct-horiz-margin));
 
@@ -31,6 +35,18 @@
         align-items: center;
         justify-content: space-between;
       }
+    }
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--md);
+    align-items: center;
+    justify-content: center;
+    > a {
+      color: var(--white);
     }
   }
 }

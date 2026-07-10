@@ -1,0 +1,54 @@
+.globalStatBar {
+  display: flex;
+  flex-direction: row;
+  margin-block: var(--md);
+
+  display: flex;
+  padding: 18px 12px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 24px;
+  border: 1px solid rgba(200, 248, 67, 0.5);
+  background: rgba(9, 23, 15, 0.5);
+
+  margin-inline: var(--sct-horiz-margin);
+
+  @media screen and (min-width: 1200px) {
+    margin-inline: 0;
+  }
+}
+
+.elt {
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  border-right: solid 1px rgba(var(--accent-rgb), 0.5);
+  width: 100%;
+  max-width: 240px;
+  padding-inline: var(--sm);
+  text-align: center;
+
+  &:last-of-type {
+    border-right: none;
+  }
+
+  > p {
+    font-family: var(--fontfamily-special);
+    text-align: center;
+
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 741;
+    line-height: 120%; /* 33.6px */
+
+    color: var(--accent);
+
+    @media screen and (min-width: 540px) {
+      font-size: 28px;
+    }
+  }
+
+  > small {
+  }
+}

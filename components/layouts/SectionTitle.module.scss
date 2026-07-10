@@ -18,7 +18,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--xs);
-    max-width: var(--max-block-width);
+    max-width: var(--max-paragraph-width);
 
     > p {
       opacity: 0.7;

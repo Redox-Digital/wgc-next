@@ -35,7 +35,8 @@ export default function LandingPage() {
 
             <div className={css.titles}>
               <h1>
-                Compete against golfers <em>worldwide</em> <br />— from your home course.
+                Compete against golfers <em>worldwide</em> <br />
+                from your home course.
               </h1>
               <p>
                 Submit your official handicap scores and climb a global leaderboard. No travel
@@ -48,7 +49,6 @@ export default function LandingPage() {
               <Button href="/profile/login/" outline darkBg>
                 Login
               </Button>
-              <span>{/* spacer */}</span>
               <Link className="textLink" href="/support">
                 How it works
               </Link>
@@ -61,7 +61,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <HowItWorksSection className={css.fullWidthSct}></HowItWorksSection>
+        <HowItWorksSection className={css.fullWidthSct} />
       </main>
     </>
   );

@@ -10,14 +10,20 @@ export default function NextChallengeSection() {
 
   return (
     <section className={css.section}>
-      <SectionTitle title="Next Challenges">
-        <p>Join your first Challenge, play your best and have fun!</p>
-      </SectionTitle>
-      <div className={css.challenges}>
-        {nextChallenges.map((challenge) => (
-          <ChallengePreview key={challenge.id} {...challenge} />
-        ))}
-      </div>
+      {nextChallenges && nextChallenges.length > 0 ? (
+        <>
+          <SectionTitle title="Next Challenges">
+            <p>Join your first Challenge, play your best and have fun!</p>
+          </SectionTitle>
+          <div className={css.challenges}>
+            {nextChallenges.map((challenge) => (
+              <ChallengePreview key={challenge.id} {...challenge} />
+            ))}
+          </div>
+        </>
+      ) : (
+        ''
+      )}
       <div className={css.btns}>
         <Button href="/challenges">All Challenges</Button>
         <Button href="/challenges#private" outline>
