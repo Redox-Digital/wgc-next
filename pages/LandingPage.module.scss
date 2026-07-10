@@ -73,8 +73,20 @@
         flex-wrap: wrap;
         color: var(--white);
         align-items: center;
+
         > a {
           color: var(--white);
+        }
+
+        > span {
+          display: none;
+          height: 22px;
+          width: 1px;
+          background: rgba(255, 255, 255, 0.5);
+
+          @media screen and (min-width: 480px) {
+            display: block;
+          }
         }
       }
     }

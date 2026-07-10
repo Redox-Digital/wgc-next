@@ -48,8 +48,8 @@ export default function LandingPage() {
               <Button href="/profile/login/" outline darkBg>
                 Login
               </Button>
-              |
-              <Link className="textLink" href="/clubhouse">
+              <span>{/* spacer */}</span>
+              <Link className="textLink" href="/support">
                 How it works
               </Link>
             </div>
