@@ -1,171 +1,103 @@
 .landingPage {
-  padding: 0;
-  min-height: 100vh;
-  min-height: 100dvh;
+  padding-block: var(--lg);
+  padding-inline: 0;
 
-  display: flex;
-  justify-content: center;
+  @media screen and (min-width: 900px) {
+    padding-block: var(--xl);
+  }
 
-  overflow-x: hidden;
-
-  background: radial-gradient(
-      74.16% 70.65% at 2.57% -40.48%,
-      rgba(200, 248, 67, 0.25) 0%,
-      rgba(200, 248, 67, 0) 100%
-    ),
-    radial-gradient(
-      126.13% 136.35% at 113.72% 143.26%,
-      rgba(200, 248, 67, 0.5) 0%,
-      rgba(200, 248, 67, 0) 100%
-    ),
-    #002f18;
-
-  .container {
-    position: relative;
-    width: 100%;
-    max-width: calc(660px + 400px + var(--lg));
-    margin-inline: auto;
-    padding: var(--sct-def-margins);
-    padding-inline: var(--md);
-
-    gap: var(--lg);
-
+  .hero {
+    color: var(--white);
     display: flex;
     flex-direction: column;
-
-    color: var(--white);
     justify-content: center;
     align-items: center;
+    gap: var(--lg);
+    padding-inline: var(--sct-horiz-margin);
 
     @media screen and (min-width: 900px) {
       flex-direction: row;
-      align-items: center;
-      padding-block: 0;
-      padding-inline: var(--sct-horiz-margin);
+      align-items: normal;
     }
 
     .content {
-      z-index: 1;
+      width: 100%;
+      max-width: 600px;
       display: flex;
       flex-direction: column;
-      gap: var(--md);
-      padding-bottom: 50px;
-      max-width: 660px;
+      gap: var(--lg);
 
-      @media screen and (min-width: 1200px) {
-        max-width: 600px;
-      }
-    }
-
-    .title {
-      display: flex;
-      flex-direction: row;
-      gap: 38px;
-      align-items: center;
-      justify-content: center;
-
-      img {
-        width: 90%;
+      > img {
+        height: 100%;
+        max-width: 210px;
+        max-height: 60px;
         object-fit: contain;
-        height: auto;
+      }
 
-        @media screen and (min-width: 900px) {
-          width: 100%;
+      .titles {
+        display: flex;
+        flex-direction: column;
+        gap: var(--md);
+
+        > h1 {
+          font-size: 40px;
+          max-width: 420px;
+
+          @media screen and (min-width: 1200px) {
+            font-size: 60px;
+            max-width: 100%;
+          }
+
+          > em {
+            color: var(--accent);
+          }
+
+          > br {
+            display: none;
+
+            @media screen and (min-width: 420px) {
+              display: inline;
+            }
+          }
+        }
+
+        > p {
+          max-width: 420px;
         }
       }
 
-      h1 {
-        position: absolute;
-        top: -1000px;
-      }
-    }
-
-    p {
-      font-family: var(--fontfamily-titles);
-      font-weight: 400;
-      font-size: 20px;
-      line-height: normal;
-      text-align: center;
-
-      @media screen and (min-width: 900px) {
-        text-align: left;
-      }
-
-      @media screen and (min-width: 1200px) {
-        font-size: 26px;
-      }
-    }
-
-    .btns {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: var(--md);
-      align-items: center;
-      justify-content: center;
-
-      @media screen and (min-width: 900px) {
-        justify-content: flex-start;
-      }
-
-      > a {
+      .btns {
+        display: flex;
+        flex-direction: row;
+        gap: var(--sm);
+        flex-wrap: wrap;
         color: var(--white);
-        opacity: 1;
+        align-items: center;
+        > a {
+          color: var(--white);
+        }
       }
     }
 
     .deco {
       width: 100%;
-      display: flex;
-      justify-content: center;
-
-      @media screen and (min-width: 900px) {
-        // text w - gap - paddings
-        max-width: calc((100% - 500px - var(--lg) - var(--sct-horiz-margin) * 2));
-        max-height: 90vh;
-      }
-
-      @media screen and (min-width: 1200px) {
-        max-width: 400px;
-      }
+      max-width: 400px;
 
       > video {
-        width: 90%;
-        max-width: 400px;
-        height: 100%;
-        object-fit: contain;
-        transform: rotate(10deg);
-
-        @media screen and (min-width: 900px) {
-          height: 90vh;
-          width: 100%;
-        }
+        width: 100%;
+        max-height: 600px;
       }
     }
-  }
-}
-
-.copy {
-  position: absolute;
-  bottom: var(--sct-horiz-margin);
-  right: var(--sct-horiz-margin);
-  color: var(--white);
-  opacity: 0.5;
-  font-size: var(--fs-sm);
-  transition: opacity 0.3s ease-in-out;
-
-  &:hover {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
   }
 }
 
 .backgroundDeco {
   position: fixed;
   height: auto;
-  opacity: 0.2;
+  opacity: 0.15;
   top: 30px;
   right: -30vw;
+  z-index: -1;
 
   @media screen and (min-width: 900px) {
     top: 150px;

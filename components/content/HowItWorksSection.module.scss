@@ -1,0 +1,82 @@
+.howToSection {
+  background: linear-gradient(180deg, rgba(10, 26, 17, 1) 0%, rgba(10, 26, 17, 0) 100%);
+
+  .container {
+    max-width: calc(100% - 2 * var(--sct-horiz-margin));
+
+    @media screen and (min-width: 1200px) {
+      max-width: var(--max-container-width);
+    }
+
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--lg);
+    color: var(--white);
+    padding-block: var(--xl) var(--lg);
+
+    padding-inline: var(--sm);
+
+    > .titles {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sm);
+
+      > p {
+        opacity: 0.75;
+      }
+
+      @media screen and (min-width: 900px) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+.cardsRow {
+  display: flex;
+  flex-direction: row;
+  gap: var(--sm);
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 900px) {
+    gap: var(--md);
+    flex-wrap: nowrap;
+  }
+}
+
+.card {
+  display: flex;
+  padding: var(--md);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sm);
+  flex: 1 0 0;
+
+  min-width: 200px;
+  width: 100%;
+
+  border-radius: var(--sm);
+  border: 1px solid rgba(200, 248, 67, 0.2);
+  background:
+    radial-gradient(
+      43.62% 67.58% at 32.02% 0%,
+      rgba(200, 248, 67, 0.1) 0%,
+      rgba(0, 47, 24, 0.1) 100%
+    ),
+    rgba(6, 39, 14, 0.5);
+
+  backdrop-filter: blur(20px);
+
+  color: var(--white);
+
+  > span {
+    color: var(--accent);
+  }
+
+  > small {
+    opacity: 0.75;
+  }
+}

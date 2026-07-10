@@ -34,7 +34,7 @@ export default function Layout({ children }: Props) {
         />
       )}
       {children}
-      {path === '/' || <Footer />}
+      <Footer />
     </>
   );
 }
