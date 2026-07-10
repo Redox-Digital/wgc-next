@@ -41,7 +41,8 @@ type GearType = {
 type FormStep = {
   id: number;
   title: string;
-  description: string;
+  description?: string;
+  infobox?: string;
   body: string | React.ReactNode;
 };
 

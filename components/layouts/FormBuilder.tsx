@@ -3,6 +3,7 @@ import css from './FormBuilder.module.scss';
 import PageTitle from '../content/PageTitle';
 import Button from '../navigation/Button';
 import ProgressBar from '../content/ProgressBar';
+import Infobox from '../content/Infobox';
 
 type Props = {
   confirmationUrl: string;
@@ -46,7 +47,10 @@ function FormStep({ step, currentStep }: FormStepProps) {
   return (
     <>
       <PageTitle title={step.title} className={currentStep !== step.id ? css.hideTitle : ''}>
-        <p>{step.description}</p>
+        <>
+          {step.description && <p>{step.description}</p>}
+          {step.infobox && <Infobox>{step.infobox}</Infobox>}
+        </>
       </PageTitle>
       <section className={`${css.formStep} ${currentStep === step.id ? css.show : ''}`}>
         <fieldset>{step.body}</fieldset>
@@ -77,7 +81,7 @@ function FormNav({ steps, currentStep, confirmationUrl, prevStep, nextStep }: Na
 
       {currentStep + 1 === steps ? (
         // Replace this with a input:submit to send and validate the form.
-        <Button href={confirmationUrl}>Create</Button>
+        <Button href={confirmationUrl}>Create my account</Button>
       ) : (
         <Button onClick={nextStep}>Continue</Button>
       )}

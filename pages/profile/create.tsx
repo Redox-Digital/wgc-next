@@ -1,5 +1,6 @@
 import FormBuilder from '@/components/layouts/FormBuilder';
 import css from './Onboarding.module.scss';
+import btnCss from '@/components/navigation/Button.module.scss';
 import { SelectInput, TextInput } from '@/components/inputs/Inputs';
 import Image from 'next/image';
 import Modal from '@/components/layouts/Modal';
@@ -7,6 +8,7 @@ import Button, { GearButton, SettingButton } from '@/components/navigation/Butto
 import { BrandOptions, GearOptions } from '@/constants/FormOptions';
 
 import { useState } from 'react';
+import Infobox from '@/components/content/Infobox';
 
 export default function Register() {
   // DEV: For demo purpose
@@ -58,7 +60,8 @@ export default function Register() {
     {
       id: 1,
       title: 'Personal infos',
-      description: 'We need this to pay you.',
+      description: '',
+      infobox: 'This information is required for prize eligibililty and account verification.',
       body: (
         <>
           <TextInput id={'birth'} label={'Date of Birth'} type={'date'} width="50t" />
@@ -123,6 +126,10 @@ export default function Register() {
             width="50"
             placeholder="..."
           />
+          <Infobox>
+            Your handicap and Golf ID help us place you in the right challenge category and ensure
+            faire competition.
+          </Infobox>
         </>
       ),
     },
@@ -194,8 +201,12 @@ export default function Register() {
       body: (
         <>
           <label htmlFor="profilePicture" className={css.profilePicture}>
-            <Image src="/pictograms/camera-grey.svg" alt="" height={120} width={120} />
+            <div className={css.ppPlaceholder}>
+              <Image src="/pictograms/camera-grey.svg" alt="" height={120} width={120} />
+            </div>
             <input name="profilePicture" id="profilePicture" type="file" />
+            <span className={`${btnCss.btn}`}>Choose a photo</span>
+            <small>JPG or PNG, any size is fine : we’ll resize it for you automatically.</small>
           </label>
         </>
       ),

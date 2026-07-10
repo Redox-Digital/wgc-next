@@ -102,18 +102,32 @@
 }
 
 .profilePicture {
-  width: 240px;
-  aspect-ratio: 1;
-  background-color: var(--true-white);
-  margin-inline: auto;
-  border: solid 1px var(--grey);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  border-radius: 1000px;
+  gap: var(--sm);
+  margin-inline: auto;
+  cursor: pointer;
+
+  > .ppPlaceholder {
+    width: 180px;
+    aspect-ratio: 1;
+    background-color: var(--true-white);
+    margin-inline: auto;
+    border: solid 1px var(--grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1000px;
+  }
 
   > input {
     display: none;
+  }
+
+  > small {
+    opacity: 0.5;
+    text-align: center;
   }
 }
 
