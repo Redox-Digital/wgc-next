@@ -90,15 +90,32 @@
         }
       }
     }
+  }
+}
 
-    .deco {
-      width: 100%;
-      max-width: 400px;
+.deco {
+  width: 100%;
+  max-width: 400px;
 
-      > video {
-        width: 100%;
-        max-height: 600px;
-      }
+  > video {
+    width: 100%;
+    max-height: 600px;
+  }
+
+  &Desktop {
+    display: none;
+
+    @media screen and (min-width: 900px) {
+      display: block;
+    }
+  }
+
+  &Mobile {
+    display: block;
+    margin-inline: auto;
+
+    @media screen and (min-width: 900px) {
+      display: none;
     }
   }
 }

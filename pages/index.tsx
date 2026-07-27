@@ -54,7 +54,7 @@ export default function LandingPage() {
               </Link>
             </div>
           </div>
-          <div className={css.deco}>
+          <div className={`${css.deco} ${css.decoDesktop}`}>
             <video autoPlay loop muted playsInline>
               <source src="/layouts/landing/wgc-landing-animation.webm" type="video/mp4" />
             </video>
@@ -62,6 +62,12 @@ export default function LandingPage() {
         </section>
 
         <HowItWorksSection className={css.fullWidthSct} />
+
+        <div className={`${css.deco} ${css.decoMobile}`}>
+          <video autoPlay loop muted playsInline>
+            <source src="/layouts/landing/wgc-landing-animation.webm" type="video/mp4" />
+          </video>
+        </div>
       </main>
     </>
   );

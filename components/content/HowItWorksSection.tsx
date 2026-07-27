@@ -12,8 +12,7 @@ export default function HowItWorksSection({ className, clubhouseVersion }: Props
     {
       number: 1,
       title: 'Register & connect',
-      description:
-        'Link your golf federation account so your official handicap and scores count automatically.',
+      description: 'Sign up and pay for your admission using our secure payment system.',
     },
     {
       number: 2,
