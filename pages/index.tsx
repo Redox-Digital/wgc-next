@@ -38,10 +38,7 @@ export default function LandingPage() {
                 Compete against golfers <em>worldwide</em> <br />
                 from your home course.
               </h1>
-              <p>
-                Submit your official handicap scores and climb a global leaderboard. No travel
-                needed.
-              </p>
+              <p>Submit your official scores and climb a global leaderboard. No travel needed.</p>
             </div>
 
             <div className={css.btns}>
