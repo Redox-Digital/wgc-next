@@ -1,4 +1,4 @@
-import css from '@/components/layouts/SponsoredPages.module.scss';
+import css from '@/components/layouts/SponsorPageLayout.module.scss';
 
 import Head from 'next/head';
 import Hero, { EventHero } from '@/components/layouts/Hero';

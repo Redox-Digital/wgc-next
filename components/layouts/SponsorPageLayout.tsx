@@ -1,0 +1,97 @@
+import css from '@/components/layouts/SponsorPageLayout.module.scss';
+import Head from 'next/head';
+import SectionTitle from '@/components/layouts/SectionTitle';
+import ChallengePreview from '@/components/content/ChallengePreview';
+import { ChangeBackgroundColor } from '@/utils/changePageSettings';
+import LogoSct from '@/components/content/LogoSct';
+import TextImgSection from '@/components/layouts/TextImgSection';
+import { PriceListShort, PrizeType } from '@/components/layouts/PriceList';
+
+export type SponsorPageLayoutProps = {
+  style: string;
+  challengeTitle: string;
+  light?: boolean;
+
+  hero: React.ReactNode; // DEV : find a solution to avoid misuses.
+  children?: React.ReactNode;
+  txtImgSct: {
+    content: React.ReactNode;
+    image?: string;
+  };
+  challenges: {
+    title?: React.ReactNode;
+    description?: React.ReactNode;
+    list: ChallengePreview[];
+  };
+  prices: {
+    title?: React.ReactNode;
+    description?: React.ReactNode;
+    list: PrizeType[];
+  };
+};
+
+export default function SponsorPageLayout({
+  style,
+  challengeTitle,
+  hero,
+  light,
+  children,
+  txtImgSct,
+  challenges,
+  prices,
+}: SponsorPageLayoutProps) {
+  return (
+    <>
+      <style jsx global>
+        {style}
+      </style>
+      <Head>
+        <title>{challengeTitle} | Welcome</title>
+      </Head>
+      {/* Insert below the hex code of the PRIMARY color */}
+      <ChangeBackgroundColor color={light ? 'var(--primary)' : 'var(--dark)'} gradientBg />
+
+      {hero}
+
+      <main className={css.clubhouse}>
+        {prices && (
+          <PriceListShort
+            lightBg
+            title={prices.title || 'No entry fee. Zero risk. Just golf.'}
+            description={
+              prices.description ||
+              'Submit your score and join the WGC Community. Win exclusive prizes from our sponsors.'
+            }
+            prizes={prices.list}
+          />
+        )}
+
+        <SectionTitle title={challenges.title || `Join the ${challengeTitle}`}>
+          {challenges.description || (
+            <p>
+              Choisissez votre catégorie en fonction de votre handicap, entrez votre score, et
+              tentez votre chance !
+            </p>
+          )}
+        </SectionTitle>
+        <div className={css.challenges}>
+          {challenges && challenges.list.length > 0 ? (
+            challenges.list.map((c, key) => <ChallengePreview key={key} {...c} />)
+          ) : (
+            <h3>
+              <i style={{ fontStyle: 'italic' }}>No active Challenge at the moment.</i>
+            </h3>
+          )}
+        </div>
+      </main>
+
+      <TextImgSection img={txtImgSct.image || '/layouts/home/hcp-single.JPG'} inverted>
+        {txtImgSct.content}
+      </TextImgSection>
+
+      {children}
+
+      <LogoSct marginTop marginBottom />
+    </>
+  );
+}

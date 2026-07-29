@@ -266,6 +266,7 @@ export const dummyPrizes: PriceType[] = [
 ];
 
 export const dummySponsors: Sponsor[] = [
+  { name: 'BePopcorn', img: '', runningChallenge: 2, url: '/bepopcorn' },
   {
     name: 'Jaquet Droz',
     img: '/sponsors/JaquetDroz/JD-monogram.svg',

@@ -15,8 +15,9 @@ import leagueCss from '@/components/content/LeagueBadge.module.scss';
 import Image from 'next/image';
 import SponsorsSection from '@/components/layouts/SponsorsSection';
 import SponsorsBanner from '@/components/layouts/SponsorsBanner';
+import SponsorPageLayout, { SponsorPageLayoutProps } from '@/components/layouts/SponsorPageLayout';
 
-const jdPrizesShort: PrizeType[] = [
+const bpopPrizes: PrizeType[] = [
   {
     title: "Une œuvre d'art au poignet",
     logo: '/sponsors/JaquetDroz/JD_white.svg',
@@ -50,11 +51,11 @@ const jdPrizesShort: PrizeType[] = [
   },
 ];
 
-export const jdChallenges: ChallengePreview[] = [
+export const bpopChallenges: ChallengePreview[] = [
   {
     url: '/bepopcorn/lobby',
     img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg',
-    name: 'Jaquet Droz Challenge',
+    name: 'BePopcorn Challenge 🍿',
     dates: 'Mar. 14th to Mar. 18th',
     gameType: 'Net Strableford',
     hcp: 'single',
@@ -66,7 +67,7 @@ export const jdChallenges: ChallengePreview[] = [
   {
     url: '/bepopcorn/lobby',
     img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg',
-    name: 'Jaquet Droz Challenge',
+    name: 'BePopcorn Challenge 🍿',
     dates: 'Mar. 14th to Mar. 18th',
     gameType: 'Net Strableford',
     hcp: 'up to 18',
@@ -78,7 +79,7 @@ export const jdChallenges: ChallengePreview[] = [
   {
     url: '/bepopcorn/lobby',
     img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg',
-    name: 'Jaquet Droz Challenge',
+    name: 'BePopcorn Challenge 🍿',
     dates: 'Mar. 14th to Mar. 18th',
     gameType: 'Net Strableford',
     hcp: 'up to 54',
@@ -89,14 +90,13 @@ export const jdChallenges: ChallengePreview[] = [
   },
 ];
 
-export default function SponsoredClubhouse() {
-  return (
-    <>
-      <style jsx global>
-        {`
+export default function BePopcornIndex() {
+  const bePopSponsorPage: SponsorPageLayoutProps = {
+    style: `
           * {
             /* Overwriting Color Variables to fit the Sponsor's Identity */
-            /* Jaquet Droz Challenge */
+            /* BePopcorn Challenge */
+
             --black: #141414;
             --black-rgb: 20, 20, 20;
             --primary: #333333;
@@ -107,112 +107,59 @@ export default function SponsoredClubhouse() {
             --secondary-rgb: 250, 250, 250;
 
             --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+
           }
-        `}
-      </style>
-      <Head>
-        <title>Jaquet Droz Challenge | Welcome</title>
-        <link type="image/svg+xml" href="/logos/favicon_excr.svg" />
-      </Head>
-      {/* Insert below the hex code of the PRIMARY color */}
-      <ChangeBackgroundColor color="var(--primary)" gradientBg />
-
-      {/* <Hero
-        title={
-          <span>
-            Playing golf physically&nbsp;
-            <br />
-            while competing digitally
-          </span>
-        }
-        gradient
-      >
-        <p>
-          Play in the club of your choice in real life while measuring yourself & your score,
-          virtually against any other player in the world!
-        </p>
-      </Hero>*/}
-
+        `,
+    challengeTitle: 'BePopcorn Challenge 🍿',
+    hero: (
       <EventHero
         alt
-        title="Visez l'exceptionnel"
-        description={
-          <p>
-            <b>Une montre à € 300’000 et votre place lors du LIV Pro-Am.</b>
-            <br />
-            Jaquet Droz Challenge, le premier tournoi international où votre passion compte plus que
-            votre score.
-          </p>
+        title={
+          <>
+            Let’s celebrate the <em>1,000&nbsp;users</em> milestone
+          </>
         }
-        actions={[
-          {
-            label: 'Sign in',
-            href: '/profile/login',
-          },
-        ]}
-        image={{ src: '/sponsors/JaquetDroz/JD-03-detour-sq.png' }}
-        mainSponsor={{
-          src: '/sponsors/JaquetDroz/blocmarque-BGUG_white.svg',
-          alt: 'BLUEGREEN & UGOLF',
-        }}
+        description={<p>Join the WGC Warm-Up Challenge !</p>}
+        mainSponsor={{ src: '/logos/logo-wgc-full-accent-white.svg', alt: 'World Golf Challenge' }}
+        hideSponsors
+        image={{ src: '/layouts/home/lobby_hero.jpg', style: { right: 0, maxWidth: '100%' } }}
       />
-
-      <main className={css.clubhouse}>
-        <PriceListShort
-          lightBg
-          title="Votre inscription : le ticket pour une expérience exclusive"
-          description={
-            <>
-              Tentez de remporter par tirage au sort une pièce de haute horlogerie Jaquet Droz, une
-              œuvre d'art à six chiffres. Pour chaque catégorie, tentez également votre chance de
-              marquer l'histoire en gagnant votre invitation pour jouer aux côtés des légendes lors
-              du LIV Pro-Am de Valderrama.
-            </>
-          }
-          prizes={jdPrizesShort}
-        />
-
-        <SectionTitle title={'Rejoignez le Challenge'}>
-          <p>
-            Choisissez votre catégorie en fonction de votre handicap, entrez votre score, et tentez
-            votre chance !
-          </p>
-        </SectionTitle>
-        <div className={css.challenges}>
-          {jdChallenges.map((c, key) => (
-            <ChallengePreview key={key} {...c} />
-          ))}
-        </div>
-
-        {/* <SponsoredPricesPreview prices={prices} /> */}
-      </main>
-
-      <TextImgSection img={'/sponsors/JaquetDroz/wgc-hcp-section.jpg'} inverted>
+    ),
+    txtImgSct: {
+      content: (
         <>
-          <h2>
-            <em>Index 54 ou Scratch ?</em>
-            <br />
-            Vous jouez pour le même rêve.
-          </h2>
+          <h2>Playing golf physically while competing digitally.</h2>
           <p>
-            Nous célébrons le golf dans sa globalité. Ne laissez pas votre handicap vous freiner. La
-            montre Jaquet Droz et les places Pro-Am ne dépendent pas de votre carte de score. Votre
-            seule obligation : vous inscrire et prendre du plaisir sur le parcours.
+            Play in the club of your choice in real life while measuring yourself & your score,
+            virtually against any other player in the world!
           </p>
-          <p>
-            Le sort est le seul juge, et <b>il est le même pour tous.</b>
-          </p>
-
           <div style={{ display: 'flex', flexDirection: 'row', gap: '12px', flexWrap: 'wrap' }}>
-            <Button href="/support">Comment participer ?</Button>
+            <Button href="/support">How to play ?</Button>
             <Button href="/terms" outline darkBg>
-              Conditions de participation
+              Terms & Conditions
             </Button>
           </div>
         </>
-      </TextImgSection>
+      ),
+      image: '',
+    },
+    challenges: {
+      title: undefined,
+      description: undefined,
+      list: bpopChallenges,
+    },
+    prices: {
+      title: undefined,
+      description: undefined,
+      list: bpopPrizes,
+    },
+  };
 
-      <SponsorsBanner
+  return (
+    <>
+      <SponsorPageLayout {...bePopSponsorPage}></SponsorPageLayout>
+
+      {/* <SponsorsBanner
         title="L'excellence reconnue par les plus grands"
         logos={[
           { src: '/sponsors/JaquetDroz/blocmarque-BGUG_white.svg', title: 'BLUEGREEN x UGOLF' },
@@ -224,9 +171,9 @@ export default function SponsoredClubhouse() {
           Un événement organisé en partenariat avec BLUEGREEN et UGOLF, leaders du golf en France,
           et soutenu par Jaquet Droz et les 4Aces.
         </p>
-      </SponsorsBanner>
+      </SponsorsBanner> */}
 
-      <RichCTA
+      {/* <RichCTA
         title={'Prêt à relever le défi ?'}
         description={
           <>
@@ -243,36 +190,7 @@ export default function SponsoredClubhouse() {
             Accès « Early Bird » : <b>500 places</b> restantes
           </>
         }
-      />
-
-      <LogoSct marginTop marginBottom />
-
-      {/*
-      <section className={css.homeCTAs}>
-        <CTA
-          title={'How to play'}
-          description={<p>Playing golf physically while competing digitally.</p>}
-          btnLabel={'Learn how to play'}
-          href={'/support'}
-          img={'/layouts/clubhouse/wgc-how-to.jpg'}
-          opacity={0.15}
-        />
-        <CTA
-          title={'Look fresh on the greens'}
-          description={
-            <p>
-              Elevate your wardrobe by visiting our sponsor&apos;s e-shop, <b>Extracurricular</b>,
-              and discover men&apos;s premium golf apparel including polos, hats, shorts, and pants.
-            </p>
-          }
-          btnLabel={'The shop'}
-          href={'https://ex-cr.com/?utm_source=wgc'}
-          btnBlank
-          img={'/sponsors/4Aces/4Aces_landing_cta.webp'}
-          opacity={0.4}
-        />
-      </section>
-      */}
+      /> */}
     </>
   );
 }
