@@ -1,6 +1,6 @@
 {
   "name": "wgc-next",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -23,6 +23,7 @@
     "typescript": "^5"
   },
   "overrides": {
-    "postcss": "^8.5.10"
+    "postcss": "^8.5.10",
+    "sharp": "^0.35.3"
   }
 }
