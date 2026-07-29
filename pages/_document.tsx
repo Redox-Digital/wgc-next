@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation';
 
 export default function Document() {
   return (
-    <Html lang="fr">
+    <Html lang="fr" data-scroll-behavior="smooth">
       <Head>
         <link rel="icon" href="/logos/favicon.svg" type="image/svg+xml" />
 

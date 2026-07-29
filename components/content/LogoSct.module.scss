@@ -11,8 +11,18 @@
     margin-bottom: var(--sct-vert-margin);
   }
 
-  > img {
+  > svg {
     width: 100%;
     padding-inline: var(--sct-horiz-margin);
+    height: auto;
+    max-height: 100px;
+
+    > path {
+      fill: var(--white);
+    }
+
+    &.lightBg > path {
+      fill: var(--dark);
+    }
   }
 }
