@@ -1,15 +1,31 @@
+.challenge {
+  --background-color: var(--dark);
+  --text-color: var(--white);
+
+  --gradient-challenge: linear-gradient(77deg, var(--dark) 0.89%, var(--primary) 100%);
+
+  &.light {
+    --background-color: var(--white);
+    --text-color: var(--dark);
+
+    --gradient-challenge: linear-gradient(77deg, var(--white) 0.89%, var(--primary) 100%);
+  }
+}
+
 .challengeDesktop {
   display: none;
   flex-direction: column;
   gap: var(--sm);
-  color: var(--white);
-  background-color: var(--primary);
+  color: var(--text-color);
+  background-color: var(--background-color);
   background: var(--gradient-challenge);
 
   min-width: 420px;
   width: calc((100% - var(--sm) * 2) / 3);
   padding: var(--md);
   border-radius: var(--md);
+
+  box-shadow: 6px 6px 18px 0 rgba(var(--accent-rgb), 0.2);
 
   @media screen and (min-width: 1200px) {
     display: flex;
@@ -97,7 +113,7 @@
   }
 
   .body {
-    background-color: var(--dark);
+    background-color: var(--background-color);
     padding: var(--sm);
     border-radius: var(--sm);
 
@@ -115,7 +131,7 @@
 
     > .fee {
       padding: 8px 24px;
-      outline: var(--grey) solid 1px;
+      outline: rgba(var(--accent-rgb), 0.5) solid 1px;
       border-radius: 1000px;
       text-align: center;
 
@@ -133,15 +149,17 @@
 .challengeMobile {
   display: flex;
   flex-direction: column;
-  background-color: var(--primary);
+  background-color: var(--background-color);
   background: var(--gradient-challenge);
   border-radius: var(--sm);
   // overflow: hidden;
-  color: var(--white);
+  color: var(--text-color);
   width: 100%;
   max-width: var(--max-block-width);
 
   transition: all 0.3s ease-in-out;
+
+  box-shadow: 6px 6px 18px 0 rgba(var(--accent-rgb), 0.2);
 
   &.yourChallenges {
     > summary,
@@ -242,7 +260,7 @@
         > .pool {
           font-size: var(--fs-sm);
           background-color: var(--accent);
-          color: var(--black);
+          color: var(--background-color);
           padding: 2px 8px;
           border-radius: 100px;
           height: fit-content;
@@ -255,7 +273,7 @@
 
         .hcp {
           padding: 4px 8px;
-          outline: solid 1px var(--white);
+          outline: solid 1px var(--grey);
           border-radius: 1000px;
           font-size: var(--fs-xs);
         }
@@ -309,7 +327,7 @@
       width: 100%;
       display: flex;
       flex-direction: row;
-      background: var(--dark);
+      background: var(--background-color);
       padding: var(--sm);
       border-radius: var(--sm);
 

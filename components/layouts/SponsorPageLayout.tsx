@@ -48,14 +48,18 @@ export default function SponsorPageLayout({
       <Head>
         <title>{challengeTitle} | Welcome</title>
       </Head>
-      {/* Insert below the hex code of the PRIMARY color */}
-      <ChangeBackgroundColor color={light ? 'var(--primary)' : 'var(--dark)'} gradientBg />
+      <ChangeBackgroundColor
+        lightTheme={light}
+        color={light ? 'var(--white)' : 'var(--primary)'}
+        gradientBg
+      />
 
       {hero}
 
-      <main className={css.clubhouse}>
+      <main className={`${css.clubhouse} ${light && css.light}`}>
         {prices && (
           <PriceListShort
+            lightTheme={light}
             lightBg
             title={prices.title || 'No entry fee. Zero risk. Just golf.'}
             description={
@@ -76,7 +80,7 @@ export default function SponsorPageLayout({
         </SectionTitle>
         <div className={css.challenges}>
           {challenges && challenges.list.length > 0 ? (
-            challenges.list.map((c, key) => <ChallengePreview key={key} {...c} />)
+            challenges.list.map((c, key) => <ChallengePreview light={light} key={key} {...c} />)
           ) : (
             <h3>
               <i style={{ fontStyle: 'italic' }}>No active Challenge at the moment.</i>
@@ -85,13 +89,17 @@ export default function SponsorPageLayout({
         </div>
       </main>
 
-      <TextImgSection img={txtImgSct.image || '/layouts/home/hcp-single.JPG'} inverted>
+      <TextImgSection
+        img={txtImgSct.image || '/layouts/home/hcp-single.JPG'}
+        inverted
+        lightBg={light}
+      >
         {txtImgSct.content}
       </TextImgSection>
 
       {children}
 
-      <LogoSct marginTop marginBottom />
+      <LogoSct marginTop marginBottom lightBg={light} />
     </>
   );
 }

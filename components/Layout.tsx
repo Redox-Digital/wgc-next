@@ -14,12 +14,17 @@ export default function Layout({ children }: Props) {
 
   const path = usePathname();
 
+  // DEV : shitty way to fix this problem; to be improved.
   const transparentMenuPages: string[] = [
+    '/warm-up/',
     '/clubhouse/',
     '/jaquet-droz/',
     '/extracurricular/',
     '/4aces/',
+    '/bepopcorn/',
   ];
+
+  const lightThemedPages: string[] = ['/bepopcorn/'];
 
   return (
     <>
@@ -31,10 +36,11 @@ export default function Layout({ children }: Props) {
           logged={logged}
           setLogged={setLogged}
           transparent={transparentMenuPages.includes(path)}
+          light={lightThemedPages.includes(path)}
         />
       )}
       {children}
-      <Footer />
+      <Footer light={lightThemedPages.includes(path)} />
     </>
   );
 }

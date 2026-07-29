@@ -3,7 +3,7 @@
   --white-rgb: 255, 255, 255;
   --true-white: #fff;
 
-  --bg-color: var(--white);
+  --page-bg-color: var(--white);
 
   --grey: #efeef2;
   // --dark-grey: #797979;
@@ -22,7 +22,6 @@
   --accent-rgb: 200, 248, 67;
 
   --gradient: linear-gradient(45deg, var(--accent) 0%, var(--primary) 100%);
-  --gradient-challenge: linear-gradient(77deg, var(--dark) 0.89%, var(--primary) 100%);
   --gradient-accent: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
 
   --gold: linear-gradient(132deg, #ffd700 6.6%, #ffb800 100.54%);

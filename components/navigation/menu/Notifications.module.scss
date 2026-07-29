@@ -95,8 +95,8 @@
   background:
     radial-gradient(
       171.57% 105.57% at 100% 100%,
-      rgba(200, 248, 67, 0.1) 0%,
-      rgba(10, 26, 17, 0.1) 80%
+      rgba(var(--accent-rgb), 0.1) 0%,
+      rgba(var(--dark-rgb), 0.1) 80%
     ),
     #0a1a11;
   height: 100%;
@@ -173,7 +173,7 @@
   cursor: pointer;
 
   > .label {
-    color: var(--white);
+    color: var(--text-color);
     font-family: var(--fontfamily-titles);
     font-weight: 500;
     display: none;
@@ -202,7 +202,7 @@
     left: 24px;
     top: 10px;
 
-    outline: solid var(--black) 2px;
+    outline: solid var(--background-color) 2px;
 
     transition: all 0.3s ease-in-out;
 
@@ -210,11 +210,23 @@
     }
   }
 
-  &.bgLight > .dot {
-    background-color: var(--primary);
-    outline-color: var(--white);
+  > svg {
+    fill: var(--white);
 
-    transition: all 0.3s ease-in-out;
+    @media screen and (min-width: 1200px) {
+      fill: var(--text-color);
+    }
+  }
+
+  &.bgLight {
+    > .dot {
+      outline-color: var(--white);
+      transition: all 0.3s ease-in-out;
+    }
+
+    > svg {
+      fill: var(--text-color) !important;
+    }
   }
 }
 

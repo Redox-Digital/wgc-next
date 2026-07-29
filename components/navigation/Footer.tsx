@@ -3,14 +3,16 @@ import css from './Footer.module.scss';
 import { LegalLinks, MainNavLinks, socialLinks, UserLinks } from '@/constants/Navigation';
 import Image from 'next/image';
 import RegionSelect, { LangSelect } from './LocalesSelectors';
+import Logo from '../content/Logo';
 
 type Props = {
+  light?: boolean;
   sponsored?: boolean;
 };
 
-export default function Footer({ sponsored }: Props) {
+export default function Footer({ light, sponsored }: Props) {
   return (
-    <footer className={css.footer}>
+    <footer className={`${css.footer} ${light && css.light}`}>
       <div className={css.container}>
         <small className={`${css.localesSelects} ${css.mobile}`}>
           <LangSelect />
@@ -43,24 +45,14 @@ export default function Footer({ sponsored }: Props) {
             ))}
           </div>
 
-          <Image
-            className={css.desktop}
-            src={'/logos/logo-wgc-icon-gradient.svg'}
-            alt={''}
-            width={80}
-            height={80}
-          />
+          <Logo className={`${css.desktop}`} />
 
           <div className={`${css.col} ${css.mobile}`}>
             <h4>Socials</h4>
             <div className={css.socials}>
               {socialLinks.map((link) => (
                 <Link href={link.url} key={link.url} target="_blank">
-                  {link.icon ? (
-                    <Image width={16} height={16} src={link.icon} alt={link.label} />
-                  ) : (
-                    link.label
-                  )}
+                  {link.svg || link.label}
                 </Link>
               ))}
             </div>
@@ -68,7 +60,7 @@ export default function Footer({ sponsored }: Props) {
         </div>
         <div className={css.foot}>
           <span>
-            &copy; 2025{' '}
+            &copy; 2026{' '}
             <Link href={'https://wgc.gg'} target="_blank">
               World Golf Challenge
             </Link>
@@ -82,21 +74,11 @@ export default function Footer({ sponsored }: Props) {
           <div className={`${css.socials} ${css.desktop}`}>
             {socialLinks.map((link) => (
               <Link href={link.url} key={link.url} target="_blank">
-                {link.icon ? (
-                  <Image width={16} height={16} src={link.icon} alt={link.label} />
-                ) : (
-                  link.label
-                )}
+                {link.svg || link.label}
               </Link>
             ))}
           </div>
-          <Image
-            className={css.mobile}
-            src={'/logos/logo-wgc-icon-gradient.svg'}
-            alt={''}
-            width={80}
-            height={80}
-          />
+          <Logo className={css.mobile} />
         </div>
       </div>
     </footer>

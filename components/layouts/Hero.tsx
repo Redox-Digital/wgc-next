@@ -9,10 +9,10 @@ type Props = {
   children?: string | React.ReactNode;
 };
 
-export default function Hero({ title, children, gradient }: Props) {
+export default function SimpleHero({ title, children, gradient }: Props) {
   return (
     <>
-      <header className={`${css.hero} ${gradient && css.gradientBg}`}>
+      <header className={`${css.hero} ${css.simpleHero} ${gradient && css.gradientBg}`}>
         <h1>{title}</h1>
         <div className={css.content}>{children}</div>
       </header>
@@ -23,6 +23,7 @@ export default function Hero({ title, children, gradient }: Props) {
 }
 
 type EventHeroProps = {
+  light?: boolean;
   title: React.ReactNode;
   description?: React.ReactNode;
   hideSponsors?: boolean;
@@ -34,6 +35,7 @@ type EventHeroProps = {
 
 // DEV : static values for now.
 export function EventHero({
+  light,
   alt,
   hideSponsors,
   title,
@@ -44,7 +46,7 @@ export function EventHero({
 }: EventHeroProps) {
   return (
     <>
-      <header className={`${css.eventHero} ${alt && css.alt}`}>
+      <header className={`${css.hero} ${css.eventHero} ${alt && css.alt} ${light && css.light}`}>
         <div className={css.container}>
           {mainSponsor && (
             <Image

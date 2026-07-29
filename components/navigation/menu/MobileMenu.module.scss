@@ -1,4 +1,6 @@
 .mobileMenu {
+  --text-color: var(--white);
+
   z-index: 9;
   padding: var(--lg) var(--sm);
   padding-top: calc(var(--navbar-height) + var(--lg));
@@ -82,7 +84,7 @@
       }
 
       > a {
-        color: var(--white);
+        color: var(--text-color);
         font-size: var(--fs-h2);
         font-family: var(--fontfamily-titles);
         font-weight: 600;

@@ -23,10 +23,11 @@ export default function ChallengePreview({
   yourChallenges,
   url,
   edit,
+  light,
 }: Props) {
   return (
     <>
-      <div className={css.challengeDesktop}>
+      <div className={`${css.challenge} ${css.challengeDesktop} ${light && css.light}`}>
         <div className={css.head}>
           <div className={css.img}>
             {img ? <Image src={img} alt={''} width={72} height={40} /> : <h5>#{id}</h5>}
@@ -34,7 +35,12 @@ export default function ChallengePreview({
           <h3>{name}</h3>
           <span className={css.players}>
             <small>{players}</small>{' '}
-            <Image src={'/pictograms/user-white.svg'} alt={''} width={16} height={16} />
+            <Image
+              src={`/pictograms/user${light ? '' : '-white'}.svg`}
+              alt={''}
+              width={16}
+              height={16}
+            />
           </span>
         </div>
 
@@ -91,7 +97,9 @@ export default function ChallengePreview({
       {/* .Destkop */}
 
       {/* Mobile */}
-      <details className={`${css.challengeMobile} ${yourChallenges && css.yourChallenges}`}>
+      <details
+        className={`${css.challenge} ${css.challengeMobile} ${light && css.light} ${yourChallenges && css.yourChallenges}`}
+      >
         <summary>
           {notification && <div className={css.badge} />}
           <div className={css.img}>

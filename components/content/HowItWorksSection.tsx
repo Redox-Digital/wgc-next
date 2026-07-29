@@ -45,7 +45,9 @@ export default function HowItWorksSection({ className, clubhouseVersion }: Props
 
         {clubhouseVersion && (
           <div className={css.btns}>
-            <Button href="/challenges">Check available Challenges</Button>
+            <Button href="/challenges" darkBg>
+              Check available Challenges
+            </Button>
             <Link href="/support" className="textLink">
               Frequently Asked Questions
             </Link>

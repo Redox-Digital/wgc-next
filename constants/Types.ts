@@ -29,6 +29,7 @@ type ChallengePreview = {
   dates: string;
   fee: number;
   url?: string;
+  light?: boolean;
 };
 
 type GearType = {

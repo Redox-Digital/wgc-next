@@ -1,20 +1,7 @@
-import css from '@/components/layouts/SponsorPageLayout.module.scss';
-import Head from 'next/head';
-import Hero, { EventHero } from '@/components/layouts/Hero';
-import PricePool from '@/components/layouts/PricePool';
-import CTA, { RichCTA } from '@/components/navigation/CTA';
-import SectionTitle from '@/components/layouts/SectionTitle';
-import ChallengePreview from '@/components/content/ChallengePreview';
-import { ChangeBackgroundColor } from '@/utils/changePageSettings';
+import { EventHero } from '@/components/layouts/Hero';
 import Button from '@/components/navigation/Button';
-import SponsoredPricesPreview from '@/components/content/SponsoredPricesPreview';
-import LogoSct from '@/components/content/LogoSct';
-import TextImgSection from '@/components/layouts/TextImgSection';
-import PriceList, { PriceListShort, PrizeType } from '@/components/layouts/PriceList';
+import { PrizeType } from '@/components/layouts/PriceList';
 import leagueCss from '@/components/content/LeagueBadge.module.scss';
-import Image from 'next/image';
-import SponsorsSection from '@/components/layouts/SponsorsSection';
-import SponsorsBanner from '@/components/layouts/SponsorsBanner';
 import SponsorPageLayout, { SponsorPageLayoutProps } from '@/components/layouts/SponsorPageLayout';
 
 const bpopPrizes: PrizeType[] = [
@@ -95,24 +82,27 @@ export default function BePopcornIndex() {
     style: `
           * {
             /* Overwriting Color Variables to fit the Sponsor's Identity */
-            /* BePopcorn Challenge */
+            /* BePopcorn Challenge - LIGHT THEME */
 
-            --black: #141414;
-            --black-rgb: 20, 20, 20;
-            --primary: #333333;
-            --primary-rgb: 51, 51, 51;
-            --accent: #b5991c;
-            --accent-rgb: 181, 153, 28;
-            --secondary: #fafafa;
-            --secondary-rgb: 250, 250, 250;
+            --dark : #1b1b1b;
+            --dark-rgb : 27, 27, 27;
+            --primary: #FFF9D2;
+            --primary-rgb: 255, 249, 210;
+            --accent: #D7A057;
+            --accent-rgb: 215, 160, 87;
+            --secondary: #E1B780;
+            --secondary-rgb: 225, 183, 128;
+            --white: #ffffff;
 
-            --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
 
           }
         `,
     challengeTitle: 'BePopcorn Challenge 🍿',
+    light: true,
     hero: (
       <EventHero
+        light
         alt
         title={
           <>
@@ -128,14 +118,16 @@ export default function BePopcornIndex() {
     txtImgSct: {
       content: (
         <>
-          <h2>Playing golf physically while competing digitally.</h2>
+          <h2>
+            Playing golf <em>physically</em> while competing <em>digitally</em>.
+          </h2>
           <p>
             Play in the club of your choice in real life while measuring yourself & your score,
             virtually against any other player in the world!
           </p>
           <div style={{ display: 'flex', flexDirection: 'row', gap: '12px', flexWrap: 'wrap' }}>
             <Button href="/support">How to play ?</Button>
-            <Button href="/terms" outline darkBg>
+            <Button href="/terms" outline>
               Terms & Conditions
             </Button>
           </div>

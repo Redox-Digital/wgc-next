@@ -1,5 +1,7 @@
 .footer {
-  color: var(--white);
+  --text-color: var(--white);
+
+  color: var(--text-color);
   background:
     radial-gradient(
       171.57% 105.57% at 100% 100%,
@@ -21,6 +23,18 @@
     max-width: var(--max-container-width);
   }
 
+  &.light {
+    --text-color: var(--dark);
+
+    background:
+      radial-gradient(
+        171.57% 105.57% at 100% 100%,
+        rgba(var(--accent-rgb), 0.1) 0%,
+        rgba(var(--primary-rgb), 0.1) 80%
+      ),
+      var(--primary);
+  }
+
   .container {
     width: 100%;
     max-width: var(--max-container-width);
@@ -31,7 +45,7 @@
     gap: var(--lg);
 
     a {
-      color: var(--white);
+      color: var(--text-color);
       font-size: var(--fs-h2);
       font-family: var(--fontfamily-titles);
       font-weight: 600;
@@ -127,8 +141,8 @@
     justify-content: center;
   }
 
-  img {
-    filter: invert(1);
+  svg {
+    fill: var(--text-color);
   }
 }
 

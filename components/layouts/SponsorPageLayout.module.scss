@@ -1,4 +1,7 @@
 .clubhouse {
+  --text-color: var(--dark);
+  --background-color: var(--white);
+
   padding-top: var(--sct-vert-margin) !important;
   margin-bottom: var(--sct-vert-margin);
 
@@ -7,6 +10,10 @@
 
   max-width: var(--max-container-width);
   margin-inline: auto;
+
+  &.light {
+    background-color: var(--primary);
+  }
 
   .challenges {
     display: flex;
@@ -18,6 +25,7 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      justify-content: center;
     }
   }
 

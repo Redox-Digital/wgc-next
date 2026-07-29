@@ -15,6 +15,7 @@ import StatBar from '@/components/content/StatBar';
 import Link from 'next/link';
 import HowItWorksSection from '@/components/content/HowItWorksSection';
 import GlobalStatBar from '@/components/content/GlobalStatBar';
+import SimpleHero from '@/components/layouts/Hero';
 
 const sponsors: Sponsor[] = dummySponsors;
 
@@ -28,7 +29,7 @@ export default function Clubhouse() {
       <ChangeBackgroundColor color="var(--primary)" />
 
       {logged ? (
-        <Hero
+        <SimpleHero
           title={
             <>
               Welcome back, <em>Jonas Jaeggi</em>
@@ -60,7 +61,7 @@ export default function Clubhouse() {
             ]}
             className={css.userStatBar}
           /> */}
-        </Hero>
+        </SimpleHero>
       ) : (
         <Hero
           title={

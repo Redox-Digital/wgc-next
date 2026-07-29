@@ -1,8 +1,19 @@
+// Common class to all types of Hero
 .hero {
+  --text-color: var(--white);
+  --background-color: var(--dark);
+
+  &.light {
+    --text-color: var(--dark);
+    --background-color: var(--white);
+  }
+}
+
+.simpleHero {
   padding: var(--sct-def-margins);
   padding-top: calc(var(--navbar-height) + var(--lg));
 
-  color: var(--white);
+  color: var(--text-color);
 
   display: flex;
   flex-direction: column;
@@ -11,12 +22,11 @@
   min-height: 500px;
   justify-content: center;
 
-  background-color: var(--primary);
+  background: transparent;
 
   @media screen and (min-width: 1200px) {
     min-height: 360px;
 
-    background-color: transparent;
     margin-inline: auto;
     max-width: var(--max-container-width);
   }
@@ -79,18 +89,18 @@
 
   width: calc(100% - 2 * var(--xs));
   min-height: 600px;
-  background-color: var(--dark);
-  color: var(--white);
+  background-color: var(--background-color);
+  color: var(--text-color);
   margin-block: calc(var(--md) + var(--navbar-height)) var(--md);
   margin-inline: auto;
 
-  outline: var(--white) 2px solid;
+  outline: rgba(var(--accent-rgb), 0.2) 2px solid;
   border-radius: var(--md);
 
   position: relative;
   overflow: hidden;
 
-  background: var(--black);
+  background: var(--background-color);
   background:
     radial-gradient(
       268.99% 154.86% at 110% 97.49%,
@@ -98,11 +108,17 @@
       rgba(var(--primary-rgb), 0.5) 71.73%,
       var(--primary) 100%
     ),
-    var(--dark);
+    var(--background-color);
 
   box-shadow:
-    -4px 4px 36px 0 rgba(0, 0, 0, 0.25) inset,
-    4px -4px 36px 0 rgba(255, 255, 255, 0.15) inset;
+    -4px 4px 36px 0 rgba(var(--dark-rgb), 0.25) inset,
+    4px -4px 36px 0 rgba(var(--white-rgb), 0.15) inset;
+
+  &.light {
+    box-shadow:
+      -4px 4px 36px 0 rgba(var(--accent-rgb), 0.25) inset,
+      4px -4px 36px 0 rgba(var(--white-rgb), 0.15) inset;
+  }
 
   @media screen and (min-width: 600px) {
     min-height: 400px;
@@ -318,7 +334,7 @@
   }
 
   .content .texts > p > b {
-    color: var(--white);
+    color: var(--text-color);
   }
 
   > img {

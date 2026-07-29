@@ -1,14 +1,24 @@
 .section {
+  --background-color: var(--dark);
+  --text-color: var(--white);
+  --invert-logo: 0;
+
+  &.light {
+    --background-color: var(--white);
+    --text-color: var(--dark);
+    --invert-logo: 1;
+  }
+
   display: flex;
   flex-direction: column;
   gap: var(--md);
 
   padding-inline: var(--sct-horiz-margin);
 
-  &.light > .sctTitle {
+  &.lightBg > .sctTitle {
     > h2,
     > p {
-      color: var(--dark) !important;
+      color: var(--text-color) !important;
     }
   }
 }
@@ -19,7 +29,7 @@
   margin-inline: auto;
 
   text-align: center;
-  color: var(--white);
+  color: var(--text-color);
 
   display: flex;
   flex-direction: column;
@@ -50,16 +60,16 @@
 .prize {
   display: flex;
   flex-direction: column;
-  background: var(--dark);
+  background: var(--background-color);
   background:
     linear-gradient(
       97deg,
       rgba(var(--primary-rgb), 0.2) 58.55%,
       rgba(var(--accent-rgb), 0.2) 100.06%
     ),
-    var(--dark);
+    var(--background-color);
 
-  color: var(--white);
+  color: var(--text-color);
 
   border-radius: var(--sm);
   overflow: hidden;
@@ -73,6 +83,7 @@
   .logo {
     height: 32px;
     object-fit: contain;
+    filter: invert(var(--invert-logo));
   }
 
   .content {
@@ -113,14 +124,6 @@
     object-fit: cover;
     width: 100%;
     min-width: 240px;
-
-    &.contain {
-      object-fit: contain;
-
-      @media screen and (min-width: 600px) {
-        object-fit: cover;
-      }
-    }
 
     @media screen and (min-width: 600px) {
       object-fit: cover;
@@ -168,12 +171,20 @@
   display: flex;
   flex-direction: column-reverse;
   width: 100%;
-  max-width: 360px;
+  max-width: 290px;
   justify-content: flex-end;
   position: relative;
   flex-shrink: 1;
 
   --img-height: 210px;
+
+  @media screen and (min-width: 1600px) {
+    max-width: 340px;
+  }
+
+  @media screen and (min-width: 1800px) {
+    max-width: 360px;
+  }
 
   > img {
     width: 100%;

@@ -4,7 +4,7 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--bg-color);
+  background-color: var(--page-bg-color);
 
   &.bgGradient {
     background:
@@ -14,11 +14,29 @@ body {
         rgba(var(--primary-rgb), 0.2) 100%
       ),
       radial-gradient(
-        162% 127.03% at 169.31% -28.76%,
+        98.26% 77.8% at 100% 0%,
         rgba(var(--accent-rgb), 0.1) 0%,
-        var(--primary) 100%
+        rgba(var(--primary-rgb), 1) 100%
       ),
-      rgba(var(--primary-rgb), 0.2);
+      rgba(var(--primary-rgb), 1);
+
+    &.lightTheme {
+      background:
+        radial-gradient(
+          53.6% 107.22% at 0% 67.87%,
+          rgba(var(--primary-rgb), 0.2) 0%,
+          rgba(var(--white-rgb), 0.2) 100%
+        ),
+        radial-gradient(
+          98.26% 77.8% at 100% 0%,
+          rgba(var(--primary-rgb), 0.2) 0%,
+          rgba(var(--white-rgb), 1) 100%
+        ),
+        rgba(var(--primary-rgb), 1);
+    }
+  }
+
+  &.lightTheme {
   }
 
   box-sizing: border-box;
@@ -143,9 +161,10 @@ body {
 
   a {
     text-decoration: none;
-    color: var(--black);
+    color: inherit;
 
     &.textLink {
+      color: inherit;
       opacity: 0.7;
       text-decoration: underline;
     }

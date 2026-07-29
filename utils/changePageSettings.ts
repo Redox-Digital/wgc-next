@@ -3,13 +3,15 @@ import { useEffect } from 'react';
 type ColorProps = {
   color: string;
   gradientBg?: boolean;
+  lightTheme?: boolean;
 };
 
 // Weird function, but working. It changes the background color of the page.
-export function ChangeBackgroundColor({ color, gradientBg }: ColorProps) {
+export function ChangeBackgroundColor({ color, gradientBg, lightTheme }: ColorProps) {
   useEffect(() => {
     document.body.style.backgroundColor = color;
-    if (gradientBg) document.body.className = 'bgGradient';
+    if (gradientBg) document.body.classList.add('bgGradient');
+    if (lightTheme) document.body.classList.add('lightTheme');
 
     // Cleanup function to reset the background color when the component is unmounted
     return () => {
@@ -23,10 +25,11 @@ export function ChangeBackgroundColor({ color, gradientBg }: ColorProps) {
 
 // Weird function, but working. It changes the background color of the page and removes the paddings / margins.
 // Use only on the Landing Page.
-export function ChangeBody({ color, gradientBg }: ColorProps) {
+export function ChangeBody({ color, gradientBg, lightTheme }: ColorProps) {
   useEffect(() => {
     document.body.style.backgroundColor = color;
-    if (gradientBg) document.body.className = 'bgGradient';
+    if (gradientBg) document.body.classList.add('bgGradient');
+    if (lightTheme) document.body.classList.add('lightTheme');
 
     document.body.style.padding = '0px';
     document.body.style.margin = '0px';

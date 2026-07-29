@@ -111,15 +111,25 @@ export type PrizeType = {
 };
 
 type Props = {
+  lightTheme?: boolean;
   lightBg?: boolean;
   title: React.ReactNode;
   description: React.ReactNode;
   prizes: PrizeType[];
 };
 
-export default function PriceList({ lightBg, title, description, prizes: prizeList }: Props) {
+export default function PriceList({
+  lightTheme,
+  lightBg,
+  title,
+  description,
+  prizes: prizeList,
+}: Props) {
   return (
-    <section className={`${css.section} ${lightBg && css.light}`} id="pricepool">
+    <section
+      className={`${css.section} ${lightBg && css.lightBg} ${lightTheme && css.light}`}
+      id="pricepool"
+    >
       <div className={css.sctTitle}>
         <h2>{title}</h2>
         <p>{description}</p>
@@ -133,10 +143,16 @@ export default function PriceList({ lightBg, title, description, prizes: prizeLi
   );
 }
 
-export function PriceListShort({ lightBg, title, description, prizes: prizeList }: Props) {
+export function PriceListShort({
+  lightTheme,
+  lightBg,
+  title,
+  description,
+  prizes: prizeList,
+}: Props) {
   return (
     <section
-      className={`${css.section} ${css.shortListSection} ${lightBg && css.light}`}
+      className={`${css.section} ${css.shortListSection} ${lightBg && css.lightBg} ${lightTheme && css.light}`}
       id="pricepool"
     >
       <div className={css.sctTitle}>
@@ -219,15 +235,7 @@ export function PrizeCard({
         </div>
       </div>
 
-      {img && (
-        <Image
-          className={`${css.image} ${imgContain && css.contain}`}
-          src={img}
-          alt=""
-          width={360}
-          height={180}
-        />
-      )}
+      {img && <Image className={`${css.image}`} src={img} alt="" width={360} height={180} />}
     </li>
   );
 }

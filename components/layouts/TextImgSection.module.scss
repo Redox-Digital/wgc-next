@@ -1,4 +1,6 @@
 .section {
+  --text-color: var(--white);
+
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-start;
@@ -31,15 +33,15 @@
     }
   }
 
-  &.light > .content {
-    color: var(--dark);
+  &.light {
+    --text-color: var(--dark);
   }
 
   > .content {
     max-width: var(--max-paragraph-width);
 
     width: 100%;
-    color: var(--white);
+    color: var(--text-color);
 
     display: flex;
     flex-direction: column;
