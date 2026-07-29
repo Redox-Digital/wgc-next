@@ -42,7 +42,9 @@ export default function LandingPage() {
             </div>
 
             <div className={css.btns}>
-              <Button href="/profile/create/">Register for free</Button>
+              <Button href="/profile/create/" darkBg>
+                Register for free
+              </Button>
               <Button href="/profile/login/" outline darkBg>
                 Login
               </Button>
