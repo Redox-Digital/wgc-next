@@ -112,7 +112,7 @@ export type PrizeType = {
 
 type Props = {
   lightBg?: boolean;
-  title: string;
+  title: React.ReactNode;
   description: React.ReactNode;
   prizes: PrizeType[];
 };

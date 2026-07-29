@@ -23,7 +23,7 @@ export default function Hero({ title, children, gradient }: Props) {
 }
 
 type EventHeroProps = {
-  title: string;
+  title: React.ReactNode;
   description?: React.ReactNode;
   hideSponsors?: boolean;
   actions?: { label: string; href: string; secondary?: boolean }[];
@@ -51,7 +51,7 @@ export function EventHero({
               className={css.mainSponsor}
               src={mainSponsor.src}
               alt={mainSponsor.alt || ''}
-              width={300}
+              width={240}
               height={90}
             />
           )}
