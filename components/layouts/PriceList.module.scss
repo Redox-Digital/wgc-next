@@ -57,9 +57,17 @@
   margin-inline: auto;
 }
 
+// Base card appearance — shared by PrizeCard and PrizeLine (mobile)
 .prize {
+  --img-height: 210px;
+
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  width: 100%;
+  max-width: 290px;
+
+  position: relative;
+
   background: var(--background-color);
   background:
     linear-gradient(
@@ -76,10 +84,6 @@
 
   box-shadow: 6px 6px 18px 0 rgba(var(--dark-rgb), 0.25);
 
-  @media screen and (min-width: 600px) {
-    flex-direction: row;
-  }
-
   .logo {
     height: 32px;
     object-fit: contain;
@@ -92,10 +96,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    @media screen and (min-width: 600px) {
-      padding: var(--md);
-    }
 
     .texts {
       display: flex;
@@ -118,21 +118,35 @@
   }
 
   > img {
-    flex: 1;
     width: 100%;
-
+    height: 100%;
+    max-height: var(--img-height);
     object-fit: cover;
-    width: 100%;
-    min-width: 240px;
+  }
 
+  // PrizeLine: wide horizontal layout at 600px+
+  &:not(.card) {
     @media screen and (min-width: 600px) {
-      object-fit: cover;
-      max-width: 240px;
-      // max-height: 100%;
-    }
+      flex-direction: row;
+      max-width: var(--max-paragraph-width);
 
-    @media screen and (min-width: 900px) {
-      max-width: 270px;
+      .content {
+        padding: var(--md);
+      }
+
+      > img {
+        flex: 1;
+        max-height: unset;
+        max-width: 240px;
+        min-width: 240px;
+      }
+
+      @media screen and (min-width: 900px) {
+        > img {
+          max-width: 270px;
+          min-width: 270px;
+        }
+      }
     }
   }
 }
@@ -149,6 +163,18 @@
   font-size: 10px;
   text-transform: uppercase;
   height: 24px;
+
+  // Absolute over the image — card-like on mobile
+  position: absolute;
+  top: calc(var(--img-height) - 24px - var(--sm));
+  left: var(--sm);
+
+  // Reset to flow inside .content for PrizeLine at 600px+
+  .prize:not(.card) & {
+    @media screen and (min-width: 600px) {
+      position: static;
+    }
+  }
 }
 
 // UNIFIED LIST
@@ -165,24 +191,12 @@
 
   padding: 0;
   margin: 0;
-
-  // Large items span the full row and are centered
-  .prize:not(.card) {
-    width: 100%;
-    max-width: var(--max-paragraph-width);
-  }
 }
 
+// PrizeCard specifics
 .card {
-  display: flex;
-  flex-direction: column-reverse;
-  width: 100%;
-  max-width: 290px;
   justify-content: flex-end;
-  position: relative;
   flex-shrink: 1;
-
-  --img-height: 210px;
 
   @media screen and (min-width: 1600px) {
     max-width: 340px;
@@ -193,19 +207,6 @@
   }
 
   > img {
-    width: 100%;
     max-width: none;
-
-    height: 100%;
-    max-height: var(--img-height);
-
-    object-fit: cover;
-  }
-
-  .badge {
-    position: absolute;
-    // img h - badge h - padding
-    top: calc(var(--img-height) - 24px - var(--sm));
-    left: var(--sm);
   }
 }

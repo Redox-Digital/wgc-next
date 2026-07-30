@@ -13,7 +13,7 @@ import Leaderboard from '@/components/layouts/Leaderboard';
 import { dummyLeaderboard, dummyPrizes } from '@/constants/DummyData';
 import TextImgSection from '@/components/layouts/TextImgSection';
 import LogoSct from '@/components/content/LogoSct';
-import PriceList, { prizes, PrizeType } from '@/components/layouts/PriceList';
+import PriceList, { PrizeType } from '@/components/layouts/PriceList';
 
 export default function SponsoredLobby() {
   const rules: { label: string; value: string | React.ReactNode }[] = [
@@ -39,7 +39,7 @@ export default function SponsoredLobby() {
     { label: 'Player count max.', value: '-' },
   ];
 
-  const prizesList: PrizeType[] = prizes; // dummyPrizes;
+  const prizesList: PrizeType[] = dummyPrizes;
 
   const [enterScore, showScoreModal] = useState<boolean>(false);
 
@@ -109,7 +109,7 @@ export default function SponsoredLobby() {
         </div>
 
         {/* If cash price, show MoneyPool */}
-        {prizes.length ? (
+        {prizesList.length ? (
           <PricePool className={css.poolPreview} prizes={prizesList} preview />
         ) : (
           <MoneyPool className={css.poolPreview} total={102} />
@@ -164,7 +164,7 @@ export default function SponsoredLobby() {
               timepiece worth €300'000.-.
             </>
           }
-          prizes={prizes}
+          prizes={prizesList}
         />
 
         {/* prizes.length && <PricePool prizes={prizes} /> */}

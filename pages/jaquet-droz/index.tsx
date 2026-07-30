@@ -10,7 +10,7 @@ import Button from '@/components/navigation/Button';
 import SponsoredPricesPreview from '@/components/content/SponsoredPricesPreview';
 import LogoSct from '@/components/content/LogoSct';
 import TextImgSection from '@/components/layouts/TextImgSection';
-import PriceList, { PriceListShort, PrizeType } from '@/components/layouts/PriceList';
+import PriceList, { PrizeType } from '@/components/layouts/PriceList';
 import leagueCss from '@/components/content/LeagueBadge.module.scss';
 import Image from 'next/image';
 import SponsorsSection from '@/components/layouts/SponsorsSection';
@@ -158,7 +158,7 @@ export default function SponsoredClubhouse() {
       />
 
       <main className={css.clubhouse}>
-        <PriceListShort
+        <PriceList
           lightBg
           title="Votre inscription : le ticket pour une expérience exclusive"
           description={

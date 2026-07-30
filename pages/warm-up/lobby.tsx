@@ -13,7 +13,7 @@ import { dummyLeaderboard } from '@/constants/DummyData';
 import { warmUpPrizes } from '@/pages/warm-up/index';
 import TextImgSection from '@/components/layouts/TextImgSection';
 import LogoSct from '@/components/content/LogoSct';
-import { PriceListShort } from '@/components/layouts/PriceList';
+import PriceList from '@/components/layouts/PriceList';
 
 export default function SponsoredLobby() {
   const rules: { label: string; value: string | React.ReactNode }[] = [
@@ -134,7 +134,7 @@ export default function SponsoredLobby() {
           ongoing={true}
         />
 
-        <PriceListShort
+        <PriceList
           lightBg
           title="No entry fee. Zero risk. Just golf."
           description={

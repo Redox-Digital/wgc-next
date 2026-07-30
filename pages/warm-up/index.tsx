@@ -9,7 +9,7 @@ import ChallengePreview from '@/components/content/ChallengePreview';
 import { ChangeBackgroundColor } from '@/utils/changePageSettings';
 import Button from '@/components/navigation/Button';
 import SponsoredPricesPreview from '@/components/content/SponsoredPricesPreview';
-import { PriceListShort, PrizeType } from '@/components/layouts/PriceList';
+import PriceList, { PrizeType } from '@/components/layouts/PriceList';
 import TextImgSection from '@/components/layouts/TextImgSection';
 import LogoSct from '@/components/content/LogoSct';
 import leagueCss from '@/components/content/LeagueBadge.module.scss';
@@ -115,7 +115,7 @@ export default function SponsoredClubhouse() {
       />
 
       <main className={css.clubhouse}>
-        <PriceListShort
+        <PriceList
           lightBg
           title="No entry fee. Zero risk. Just golf."
           description={
