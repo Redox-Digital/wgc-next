@@ -5,7 +5,7 @@ import ChallengePreview from '@/components/content/ChallengePreview';
 import { ChangeBackgroundColor } from '@/utils/changePageSettings';
 import LogoSct from '@/components/content/LogoSct';
 import TextImgSection from '@/components/layouts/TextImgSection';
-import { PriceListShort, PrizeType } from '@/components/layouts/PriceList';
+import PriceList, { PrizeType } from './PriceList';
 
 export type SponsorChallengeConfig = {
   style: string;
@@ -62,7 +62,7 @@ export default function SponsorPageLayout({
 
       <main className={`${css.clubhouse} ${light && css.light}`}>
         {prices && (
-          <PriceListShort
+          <PriceList
             lightTheme={light}
             lightBg
             title={prices.title || 'No entry fee. Zero risk. Just golf.'}

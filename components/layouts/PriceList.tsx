@@ -2,104 +2,6 @@ import css from './PriceList.module.scss';
 import leagueCss from '@/components/content/LeagueBadge.module.scss';
 import Image from 'next/image';
 
-// DEV : static prizes for now.
-
-export const prizes: PrizeType[] = [
-  {
-    title: 'Jaquet Droz Tourbillon Skelet-One',
-    logo: '/sponsors/JaquetDroz/JD_white.svg',
-    description: (
-      <>
-        <b>L'art de la haute horlogerie.</b> Une pièce exclusive en <b>titane de 41mm</b> dotée d'un
-        <b> mouvement Tourbillon</b> squelette. Son cadran en saphir et index en or gris révèle son
-        exception! <b>Valeur</b> : +€300'000.-
-      </>
-    ),
-    badge: {
-      title: 'Global Raffle',
-      className: leagueCss.pgaChampion,
-    },
-    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price01.png',
-    imgContain: true,
-    largeCard: true,
-  },
-  {
-    title: 'LIV Pro-Am à Valderrama',
-    logo: '/sponsors/JaquetDroz/4Aces_Logo_white.svg',
-    description: (
-      <>
-        <b>Jouez avec les légendes.</b> Vivez un tour de golf en immersion totale sur le mythique
-        parcours de <b>Valderrama</b> (Espagne) aux côtés des stars des <b>4Aces GC</b>.
-      </>
-    ),
-    badge: {
-      title: 'category winner',
-      className: leagueCss.clubhouseKing,
-    },
-    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price02.jpg',
-    largeCard: true,
-  },
-  {
-    title: 'Pack Officiel 4Aces',
-    logo: '/sponsors/JaquetDroz/logo-under-armor-white.svg',
-    description: (
-      <>
-        <b>Le look complet de l'équipe.</b> Équipez-vous de la tête aux pieds avec la tenue
-        officielle des 4Aces portée.
-      </>
-    ),
-    badge: {
-      title: 'top 20 of each category',
-      className: leagueCss.tournamentReady,
-    },
-    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price03.webp',
-    largeCard: true,
-  },
-];
-
-export const prizesShort: PrizeType[] = [
-  {
-    title: "Une œuvre d'art au poignet",
-    logo: '/sponsors/JaquetDroz/JD_white.svg',
-    description: (
-      <>
-        Tentez de remporter par tirage au sort une pièce de haute horlogerie suisse Jaquet Droz,
-        d'une valeur de € 300'000.-.
-      </>
-    ),
-    badge: {
-      title: 'tirage au sort global',
-      className: leagueCss.pgaChampion,
-    },
-    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price01-alt.jpg',
-  },
-  {
-    title: 'LIV Pro-Am Valderrama',
-    logo: '/sponsors/JaquetDroz/4Aces_Logo_white.svg',
-    description: (
-      <>
-        Marquez l'histoire en gagnant votre invitation pour jouer aux côtés des légendes lors d'un
-        Pro-Am exclusif.
-      </>
-    ),
-    badge: {
-      title: 'tirage au sort par catégorie',
-      className: leagueCss.clubhouseKing,
-    },
-    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price02.jpg',
-  },
-  {
-    title: 'Le kit complet des 4Aces',
-    logo: '/sponsors/JaquetDroz/logo-under-armor-white.svg',
-    description: <>Pour un équipement de la tête aux pieds de notre partenaire 4Aces.</>,
-    badge: {
-      title: 'top 20 de chaque catégorie',
-      className: leagueCss.tournamentReady,
-    },
-    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price03.webp',
-  },
-];
-
 export type PrizeType = {
   logo?: string;
   title: string;
@@ -140,18 +42,12 @@ export default function PriceList({
       </div>
       <ul className={css.shortList}>
         {prizeList.map((prize, key) =>
-          prize.largeCard ? (
-            <PrizeLine key={key} {...prize} />
-          ) : (
-            <PrizeCard key={key} {...prize} />
-          )
+          prize.largeCard ? <PrizeLine key={key} {...prize} /> : <PrizeCard key={key} {...prize} />
         )}
       </ul>
     </section>
   );
 }
-
-export { PriceList as PriceListShort };
 
 export function PrizeLine({
   logo,
