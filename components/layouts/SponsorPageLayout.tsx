@@ -97,6 +97,7 @@ export default function SponsorPageLayout({
         {txtImgSct.content}
       </TextImgSection>
 
+      {/* For challenge's specific sections */}
       {children}
 
       <LogoSct marginTop marginBottom lightBg={light} />

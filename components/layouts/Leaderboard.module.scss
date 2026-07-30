@@ -1,6 +1,12 @@
 .leaderboard {
+  --podium-color: var(--accent);
+  --podium-text-color: var(--dark);
+
+  --rank-background-color: var(--dark);
+  --rank-text-color: var(--white);
+
   background-color: var(--primary);
-  color: var(--white);
+  color: var(--rank-text-color);
   margin-inline: calc(var(--sct-horiz-margin) * -1);
   border-bottom-right-radius: var(--md);
   border-bottom-left-radius: var(--md);
@@ -14,6 +20,11 @@
 
   padding-bottom: var(--sct-vert-margin);
   width: calc(100% + 2 * var(--sct-horiz-margin));
+
+  &.light {
+    --rank-background-color: var(--accent);
+    --rank-text-color: var(--black);
+  }
 }
 
 .rankingsSct {
@@ -29,7 +40,7 @@
     font-family: var(--fontfamily-titles);
 
     > thead {
-      color: var(--white);
+      color: var(--podium-text-color);
       font-size: var(--fs-xs);
       text-transform: uppercase;
       display: flex;
@@ -61,10 +72,10 @@
       gap: var(--xs);
 
       > tr {
-        background-color: var(--black);
-        color: var(--white);
+        background-color: var(--rank-background-color);
+        color: var(--rank-text-color);
         font-size: var(--fs-sm);
-        border: solid 3px var(--black);
+        border: solid 3px var(--rank-background-color);
         border-radius: 10px;
         overflow: hidden;
 
@@ -119,7 +130,7 @@
 
   h2,
   small {
-    color: var(--white);
+    color: var(--podium-text-color);
   }
 
   .podium {
@@ -133,7 +144,7 @@
     &Step {
       width: 100%;
       color: var(--black);
-      background-color: var(--accent);
+      background-color: var(--podium-color);
       border-radius: 10px;
 
       display: flex;

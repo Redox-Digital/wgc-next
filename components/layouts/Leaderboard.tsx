@@ -8,7 +8,7 @@ import Badge from '../content/LeagueBadge';
 
 type LeaderboardProps = {
   players?: Player[];
-  dark?: boolean;
+  light?: boolean;
   title: string;
   description?: string;
   className?: string;
@@ -30,7 +30,7 @@ function numberAbbr(num: number): string {
 
 export default function Leaderboard({
   players,
-  dark,
+  light,
   title,
   description,
   className,
@@ -42,8 +42,8 @@ export default function Leaderboard({
   // If challenge not ongoing, we don't display the podium.
   // If there are less than 3 players, we don't display the podium.
   return (
-    <div className={`${css.leaderboard} ${dark && css.dark} ${className}`}>
-      <SectionTitle darkBg title={ongoing ? title : 'Players'} className={css.sctTitles}>
+    <div className={`${css.leaderboard} ${light && css.light} ${className}`}>
+      <SectionTitle darkBg={!light} title={ongoing ? title : 'Players'} className={css.sctTitles}>
         {description && <small>{description}</small>}
       </SectionTitle>
 

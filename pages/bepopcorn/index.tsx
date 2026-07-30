@@ -4,7 +4,7 @@ import { PrizeType } from '@/components/layouts/PriceList';
 import leagueCss from '@/components/content/LeagueBadge.module.scss';
 import SponsorPageLayout, { SponsorPageLayoutProps } from '@/components/layouts/SponsorPageLayout';
 
-const bpopPrizes: PrizeType[] = [
+export const bpopPrizes: PrizeType[] = [
   {
     title: "Une œuvre d'art au poignet",
     logo: '/sponsors/JaquetDroz/JD_white.svg',

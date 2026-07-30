@@ -1,0 +1,66 @@
+.rules {
+  --text-color: var(--white);
+  --background-color: var(--black);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--sm);
+
+  width: 100%;
+  max-width: var(--max-paragraph-width);
+  margin-inline: auto;
+
+  &.light {
+    --text-color: var(--dark);
+    --background-color: var(--primary);
+  }
+
+  > h3,
+  > p {
+    width: 100%;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
+  }
+
+  .boxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--sm);
+  }
+
+  .rule {
+    width: calc((100% - var(--sm)) / 2);
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+    padding: 9px 16px;
+    border-radius: var(--sm);
+
+    label {
+      color: var(--accent);
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    flex-direction: row;
+    max-width: 100%;
+    gap: var(--lg);
+
+    .title {
+      max-width: 400px;
+    }
+
+    .rule {
+      width: calc((100% - var(--sm) * 2) / 3);
+      height: fit-content;
+    }
+  }
+}
