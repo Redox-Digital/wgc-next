@@ -1,5 +1,6 @@
 import css from '@/pages/Lobby.module.scss'; // Using the main Lobby's CSS file
-import PriceList, { PrizeType } from './PriceList';
+import PriceList from './PriceList';
+import { SponsorChallengeConfig } from './SponsorPageLayout';
 import TextImgSection from './TextImgSection';
 import Button, { ReturnButton } from '../navigation/Button';
 import LogoSct from '../content/LogoSct';
@@ -15,23 +16,7 @@ import { useState } from 'react';
 import Head from 'next/head';
 import ChallengeRulesSection from '../content/ChallengeRulesSection';
 
-export type SponsorLobbyLayoutProps = {
-  style: string;
-  challengeTitle: string;
-  light?: boolean;
-
-  hero: React.ReactNode; // DEV : find a solution to avoid misuses.
-  children?: React.ReactNode;
-  txtImgSct: {
-    content: React.ReactNode;
-    image?: string;
-  };
-  prices: {
-    title?: React.ReactNode;
-    description?: React.ReactNode;
-    list: PrizeType[];
-  };
-};
+export type SponsorLobbyLayoutProps = SponsorChallengeConfig;
 
 export default function SponsorLobbyLayout({
   style,
@@ -40,6 +25,8 @@ export default function SponsorLobbyLayout({
   children,
   txtImgSct,
   prices,
+  challengeImage,
+  lobbyUrl,
 }: SponsorLobbyLayoutProps) {
   const [enterScore, showScoreModal] = useState<boolean>(false);
 
@@ -77,7 +64,7 @@ export default function SponsorLobbyLayout({
         </div>
 
         <Image
-          src="/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg"
+          src={challengeImage ?? '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg'}
           alt=""
           width={700}
           height={466}
@@ -90,7 +77,7 @@ export default function SponsorLobbyLayout({
             </small>
             <small>1 Day 10:30:02</small>
           </div>
-          <CopyLink text={'https://wgc.gg/extracurricular/lobby/7874'} />
+          <CopyLink text={lobbyUrl ?? 'https://wgc.gg/extracurricular/lobby/7874'} />
         </div>
 
         {/* If cash price, show MoneyPool */}
@@ -106,10 +93,6 @@ export default function SponsorLobbyLayout({
           <Button href="/clubhouse" outline>
             Unregister
           </Button>
-          {/* Show if it's a "goodies" Price Pool */}
-          {/*<Button href="#pricepool" outline>
-            See Price Pool
-          </Button>*/}
         </div>
       </header>
       <main className={css.main}>

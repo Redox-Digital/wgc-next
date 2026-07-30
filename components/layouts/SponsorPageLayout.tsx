@@ -7,26 +7,30 @@ import LogoSct from '@/components/content/LogoSct';
 import TextImgSection from '@/components/layouts/TextImgSection';
 import { PriceListShort, PrizeType } from '@/components/layouts/PriceList';
 
-export type SponsorPageLayoutProps = {
+export type SponsorChallengeConfig = {
   style: string;
   challengeTitle: string;
   light?: boolean;
-
-  hero: React.ReactNode; // DEV : find a solution to avoid misuses.
+  hero: React.ReactNode;
   children?: React.ReactNode;
   txtImgSct: {
     content: React.ReactNode;
     image?: string;
   };
-  challenges: {
-    title?: React.ReactNode;
-    description?: React.ReactNode;
-    list: ChallengePreview[];
-  };
   prices: {
     title?: React.ReactNode;
     description?: React.ReactNode;
     list: PrizeType[];
+  };
+  challengeImage?: string;
+  lobbyUrl?: string;
+};
+
+export type SponsorPageLayoutProps = SponsorChallengeConfig & {
+  challenges: {
+    title?: React.ReactNode;
+    description?: React.ReactNode;
+    list: ChallengePreview[];
   };
 };
 
