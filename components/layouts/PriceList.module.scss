@@ -151,19 +151,25 @@
   height: 24px;
 }
 
-// SHORT LIST + CARDS
+// UNIFIED LIST
 .shortListSection {
   padding: 0;
+}
 
-  .shortList {
-    display: flex;
+.shortList {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: var(--md);
+  flex-wrap: wrap;
+
+  padding: 0;
+  margin: 0;
+
+  // Large items span the full row and are centered
+  .prize:not(.card) {
     width: 100%;
-    justify-content: center;
-    gap: var(--md);
-    flex-wrap: wrap;
-
-    padding: 0;
-    margin: 0;
+    max-width: var(--max-paragraph-width);
   }
 }
 

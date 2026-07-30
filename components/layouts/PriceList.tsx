@@ -21,6 +21,7 @@ export const prizes: PrizeType[] = [
     },
     img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price01.png',
     imgContain: true,
+    largeCard: true,
   },
   {
     title: 'LIV Pro-Am à Valderrama',
@@ -36,6 +37,7 @@ export const prizes: PrizeType[] = [
       className: leagueCss.clubhouseKing,
     },
     img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price02.jpg',
+    largeCard: true,
   },
   {
     title: 'Pack Officiel 4Aces',
@@ -51,6 +53,7 @@ export const prizes: PrizeType[] = [
       className: leagueCss.tournamentReady,
     },
     img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price03.webp',
+    largeCard: true,
   },
 ];
 
@@ -104,6 +107,7 @@ export type PrizeType = {
   img?: string;
   imgContain?: boolean;
   className?: string;
+  largeCard?: boolean;
   badge?: {
     title: string;
     className?: string;
@@ -127,31 +131,6 @@ export default function PriceList({
 }: Props) {
   return (
     <section
-      className={`${css.section} ${lightBg && css.lightBg} ${lightTheme && css.light}`}
-      id="pricepool"
-    >
-      <div className={css.sctTitle}>
-        <h2>{title}</h2>
-        <p>{description}</p>
-      </div>
-      <ul className={css.list}>
-        {prizeList.map((prize, key) => (
-          <PrizeLine key={key} {...prize} />
-        ))}
-      </ul>
-    </section>
-  );
-}
-
-export function PriceListShort({
-  lightTheme,
-  lightBg,
-  title,
-  description,
-  prizes: prizeList,
-}: Props) {
-  return (
-    <section
       className={`${css.section} ${css.shortListSection} ${lightBg && css.lightBg} ${lightTheme && css.light}`}
       id="pricepool"
     >
@@ -160,13 +139,19 @@ export function PriceListShort({
         <p>{description}</p>
       </div>
       <ul className={css.shortList}>
-        {prizeList.map((prize, key) => (
-          <PrizeCard key={key} {...prize} />
-        ))}
+        {prizeList.map((prize, key) =>
+          prize.largeCard ? (
+            <PrizeLine key={key} {...prize} />
+          ) : (
+            <PrizeCard key={key} {...prize} />
+          )
+        )}
       </ul>
     </section>
   );
 }
+
+export { PriceList as PriceListShort };
 
 export function PrizeLine({
   logo,
