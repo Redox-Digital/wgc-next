@@ -2,48 +2,54 @@ import { EventHero } from '@/components/layouts/Hero';
 import Button from '@/components/navigation/Button';
 import { PrizeType } from '@/components/layouts/PriceList';
 import leagueCss from '@/components/content/LeagueBadge.module.scss';
-import SponsorPageLayout, {
-  SponsorChallengeConfig,
-} from '@/components/layouts/SponsorPageLayout';
+import SponsorPageLayout, { SponsorChallengeConfig } from '@/components/layouts/SponsorPageLayout';
 
 export const bpopPrizes: PrizeType[] = [
   {
-    title: "Une œuvre d'art au poignet",
-    logo: '/sponsors/JaquetDroz/JD_white.svg',
+    title: 'Free Premium Article',
+    logo: '/sponsors/BePopcorn/vice_logo_white.svg',
     description: (
       <>
-        Tentez de remporter par tirage au sort une pièce de haute horlogerie suisse Jaquet Droz,
-        d'une valeur de € 300'000.-.
+        A free <b>VICE Golf premium item</b>, delivered right to your door.
       </>
     ),
-    badge: { title: 'tirage au sort global', className: leagueCss.pgaChampion },
-    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price01-alt.jpg',
+    badge: { title: 'Top 3 de chaque catégorie', className: leagueCss.clubhouseKing },
+    img: '/sponsors/BePopcorn/BePop_Aug2026/Golfclub_VICE.png',
   },
   {
-    title: 'LIV Pro-Am Valderrama',
-    logo: '/sponsors/JaquetDroz/4Aces_Logo_white.svg',
+    title: 'Vice Golf Accessories',
+    logo: '/sponsors/BePopcorn/vice_logo_white.svg',
     description: (
       <>
-        Marquez l'histoire en gagnant votre invitation pour jouer aux côtés des légendes lors d'un
-        Pro-Am exclusif.
+        VICE Golf <b>balls</b>, <b>towels</b>, or <b>accessories</b> to reward your performance.
       </>
     ),
-    badge: { title: 'tirage au sort par catégorie', className: leagueCss.clubhouseKing },
-    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price02.jpg',
+    badge: { title: 'Top 10 de chaque catégorie', className: leagueCss.tournamentReady },
+    img: '/sponsors/BePopcorn/BePop_Aug2026/Accessories_VICE.png',
   },
   {
-    title: 'Le kit complet des 4Aces',
-    logo: '/sponsors/JaquetDroz/logo-under-armor-white.svg',
-    description: <>Pour un équipement de la tête aux pieds de notre partenaire 4Aces.</>,
-    badge: { title: 'top 20 de chaque catégorie', className: leagueCss.tournamentReady },
-    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price03.webp',
+    title: '20% off',
+    logo: '/sponsors/BePopcorn/vice_logo_white.svg',
+    description: (
+      <>
+        A 20% off coupon valid on the entire <b>VICE Golf online store</b>.
+      </>
+    ),
+    badge: { title: 'top 20 de chaque catégorie', className: leagueCss.tourProspect },
+    img: '/sponsors/BePopcorn/BePop_Aug2026/20percents_VICE.png',
   },
   {
-    title: '–30% de rabais sur la boutique Be!Popcorn',
-    logo: '/sponsors/JaquetDroz/logo-under-armor-white.svg',
-    description: <>Pour un équipement de la tête aux pieds de notre partenaire 4Aces.</>,
-    badge: { title: 'top 20 de chaque catégorie', className: leagueCss.tournamentReady },
-    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC_UGxBG_Price03.webp',
+    title: 'VICE Golf & Be!Popcorn Discount Coupons',
+    logo: '/sponsors/BePopcorn/vice_logo_white.svg',
+    description: (
+      <>
+        As soon as you enter your score, you'll automatically receive a <b>10% discount</b> coupon
+        for your next <b>VICE Golf</b> order, as well as a <b>30% discount</b> coupon for your next{' '}
+        <b>Be!Popcorn</b> order.
+      </>
+    ),
+    badge: { title: 'Tous les participants', className: leagueCss.weekender },
+    img: '/sponsors/BePopcorn/BePop_Aug2026/30percents_BePop.png',
     largeCard: true,
   },
 ];
@@ -51,9 +57,9 @@ export const bpopPrizes: PrizeType[] = [
 export const bpopChallenges: ChallengePreview[] = [
   {
     url: '/bepopcorn/lobby',
-    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg',
+    img: '/sponsors/BePopcorn/bepopcorn-logo.png',
     name: 'BePopcorn Challenge 🍿',
-    dates: 'Mar. 14th to Mar. 18th',
+    dates: 'Aug. 8th to Sept. 27th',
     gameType: 'Net Strableford',
     hcp: 'single',
     players: 11,
@@ -63,9 +69,9 @@ export const bpopChallenges: ChallengePreview[] = [
   },
   {
     url: '/bepopcorn/lobby',
-    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg',
+    img: '/sponsors/BePopcorn/bepopcorn-logo.png',
     name: 'BePopcorn Challenge 🍿',
-    dates: 'Mar. 14th to Mar. 18th',
+    dates: 'Aug. 8th to Sept. 27th',
     gameType: 'Net Strableford',
     hcp: 'up to 18',
     players: 8,
@@ -75,9 +81,9 @@ export const bpopChallenges: ChallengePreview[] = [
   },
   {
     url: '/bepopcorn/lobby',
-    img: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg',
+    img: '/sponsors/BePopcorn/bepopcorn-logo.png',
     name: 'BePopcorn Challenge 🍿',
-    dates: 'Mar. 14th to Mar. 18th',
+    dates: 'Aug. 8th to Sept. 27th',
     gameType: 'Net Strableford',
     hcp: 'up to 54',
     players: 0,
@@ -108,6 +114,7 @@ export const bePopConfig: SponsorChallengeConfig = {
         }
       `,
   challengeTitle: 'BePopcorn Challenge 🍿',
+  challengeImage: '/sponsors/BePopcorn/bepopcorn-logo.png',
   light: true,
   hero: (
     <EventHero
@@ -115,13 +122,26 @@ export const bePopConfig: SponsorChallengeConfig = {
       alt
       title={
         <>
-          Let's celebrate the <em>1,000&nbsp;users</em> milestone
+          <em>Swiss popcorn</em>,<br /> a <em>national</em> ranking.
         </>
       }
-      description={<p>Join the WGC Warm-Up Challenge !</p>}
-      mainSponsor={{ src: '/logos/logo-wgc-full-accent-white.svg', alt: 'World Golf Challenge' }}
+      description={<p>Join the Be!Popcorn Challenge !</p>}
+      mainSponsor={{
+        src: '/sponsors/BePopcorn/bepopcorn-logo-square.png',
+        alt: 'World Golf Challenge',
+      }}
       hideSponsors
-      image={{ src: '/layouts/home/lobby_hero.jpg', style: { right: 0, maxWidth: '100%' } }}
+      image={{
+        src: '/sponsors/BePopcorn/BePop_Aug2026/BePop_home_banner.jpg',
+        style: { right: 0, maxWidth: '100%' },
+      }}
+      // Actions for dev purpose
+      actions={[
+        {
+          label: 'Join the Challenge',
+          href: '#',
+        },
+      ]}
     />
   ),
   txtImgSct: {
@@ -145,8 +165,7 @@ export const bePopConfig: SponsorChallengeConfig = {
     image: '',
   },
   prices: { list: bpopPrizes },
-  challengeImage: '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg',
-  lobbyUrl: 'https://wgc.gg/bepopcorn/lobby',
+  lobbyUrl: '/bepopcorn/lobby',
 };
 
 export default function BePopcornIndex() {
