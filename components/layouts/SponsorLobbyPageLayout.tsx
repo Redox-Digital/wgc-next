@@ -64,7 +64,7 @@ export default function SponsorLobbyLayout({
         </div>
 
         <Image
-          src={challengeImage ?? '/sponsors/JaquetDroz/UGxBG_Apr2026/WGC-JD-challenge.svg'}
+          src={challengeImage ?? '/sponsors/WGC/wgc_sponsor.png'}
           alt=""
           width={700}
           height={466}

@@ -55,11 +55,13 @@
 }
 
 .clubChampion {
+  color: var(--white);
   background: #472b0a;
   outline-color: #472b0a;
 }
 
 .tourProspect {
+  color: var(--white);
   background: var(
     --League-TourProspect,
     linear-gradient(102deg, #804a00 8.9%, #895e1a 39.44%, #b08d57 69.98%, #9c7a3c 101.45%)

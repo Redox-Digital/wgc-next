@@ -186,7 +186,7 @@
 
   // Absolute over the image — card-like on mobile
   position: absolute;
-  top: calc(var(--img-height) - 24px - var(--sm));
+  top: calc(var(--img-height) - var(--md) - var(--sm));
   left: var(--sm);
 
   // Reset to flow inside .content for PrizeLine at 600px+
@@ -228,5 +228,6 @@
 
   > img {
     max-width: none;
+    height: var(--img-height);
   }
 }

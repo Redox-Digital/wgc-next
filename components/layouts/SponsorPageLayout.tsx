@@ -10,6 +10,7 @@ import PriceList, { PrizeType } from './PriceList';
 export type SponsorChallengeConfig = {
   style: string;
   challengeTitle: string;
+  challengeImage?: string;
   light?: boolean;
   hero: React.ReactNode;
   children?: React.ReactNode;
@@ -22,7 +23,6 @@ export type SponsorChallengeConfig = {
     description?: React.ReactNode;
     list: PrizeType[];
   };
-  challengeImage?: string;
   lobbyUrl?: string;
 };
 

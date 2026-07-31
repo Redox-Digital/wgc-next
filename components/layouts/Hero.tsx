@@ -33,7 +33,6 @@ type EventHeroProps = {
   mainSponsor?: { src: string; alt?: string };
 };
 
-// DEV : static values for now.
 export function EventHero({
   light,
   alt,
@@ -63,25 +62,29 @@ export function EventHero({
               <h1>{title}</h1>
               {description}
             </div>
-            <div className={css.actions}>
-              {actions?.map((action) => (
-                <Button outline={action.secondary} href={action.href}>
-                  {action.label}
-                </Button>
-              ))}
+            {actions && hideSponsors ? (
+              <div className={css.actions}>
+                {actions?.map((action) => (
+                  <Button outline={action.secondary} href={action.href}>
+                    {action.label}
+                  </Button>
+                ))}
 
-              {hideSponsors || (
-                <div className={css.secondarySponsor}>
-                  <small>proposed by</small>{' '}
-                  <Image
-                    src="/sponsors/JaquetDroz/4Aces_Logo_white.svg"
-                    alt="Jaquet Droz x 4Aces GC"
-                    width={176}
-                    height={32}
-                  />
-                </div>
-              )}
-            </div>
+                {hideSponsors || (
+                  <div className={css.secondarySponsor}>
+                    <small>proposed by</small>{' '}
+                    <Image
+                      src="/sponsors/JaquetDroz/4Aces_Logo_white.svg"
+                      alt="Jaquet Droz x 4Aces GC"
+                      width={176}
+                      height={32}
+                    />
+                  </div>
+                )}
+              </div>
+            ) : (
+              ''
+            )}
           </div>
         </div>
 
