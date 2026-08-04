@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 export type PrizeType = {
   logo?: string;
+  invertLogo?: boolean;
   title: string;
   description?: string | React.ReactNode;
   img?: string;
@@ -51,6 +52,7 @@ export default function PriceList({
 
 export function PrizeLine({
   logo,
+  invertLogo,
   title,
   description,
   img,
@@ -61,7 +63,15 @@ export function PrizeLine({
   return (
     <li className={`${css.prize} ${className}`}>
       <div className={css.content}>
-        {logo && <Image className={css.logo} src={logo} alt="" width={80} height={32} />}
+        {logo && (
+          <Image
+            className={`${css.logo} ${invertLogo && css.invert}`}
+            src={logo}
+            alt=""
+            width={80}
+            height={32}
+          />
+        )}
 
         <div className={css.texts}>
           {badge ? (
@@ -91,6 +101,7 @@ export function PrizeLine({
 
 export function PrizeCard({
   logo,
+  invertLogo,
   title,
   description,
   img,
@@ -101,7 +112,15 @@ export function PrizeCard({
   return (
     <li className={`${css.prize} ${css.card} ${className}`}>
       <div className={css.content}>
-        {logo && <Image className={css.logo} src={logo} alt="" width={80} height={32} />}
+        {logo && (
+          <Image
+            className={`${css.logo} ${invertLogo && css.invert}`}
+            src={logo}
+            alt=""
+            width={80}
+            height={32}
+          />
+        )}
 
         <div className={css.texts}>
           {badge ? (

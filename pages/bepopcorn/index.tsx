@@ -40,7 +40,8 @@ export const bpopPrizes: PrizeType[] = [
   },
   {
     title: 'VICE Golf & Be!Popcorn Discount Coupons',
-    logo: '/sponsors/BePopcorn/vice_logo_white.svg',
+    logo: '/sponsors/BePopcorn/bepopcorn-logo.png',
+    invertLogo: true,
     description: (
       <>
         As soon as you enter your score, you'll automatically receive a <b>10% discount</b> coupon

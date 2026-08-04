@@ -88,6 +88,12 @@
     height: 32px;
     object-fit: contain;
     filter: invert(var(--invert-logo));
+    object-fit: contain;
+    object-position: left;
+
+    &.invert {
+      filter: invert(0) !important;
+    }
   }
 
   .content {
